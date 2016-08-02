@@ -2,13 +2,40 @@
 % Publications
 %*******************************************************
 \pdfbookmark[1]{Publications}{publications}
-\chapter*{Publications}\graffito{\emph{Attention}: This requires a separate run of \texttt{bibtex} for your \texttt{refsection}, \eg, \texttt{ClassicThesis1-blx} for this file. You might also use \texttt{biber} as the backend for \texttt{biblatex}. See also \url{http://tex.stackexchange.com/questions/128196/problem-with-refsection}.}
+\chapter*{Publications}\graffito{\emph{Attention}: This requires a separate run of \texttt{bibtex} for the \texttt{refsections}, \eg, \texttt{theseLafay20161-blx}, \texttt{theseLafay20162-blx} and \texttt{theseLafay20163-blx} .}
 
 
 %\noindent Put your publications from the thesis here. The packages \texttt{multibib} or \texttt{bibtopic} etc. can be used to handle multiple different bibliographies in your document.
 
 
-\begin{refsection}[ownpubs]
+Analyse perceptive des scènes sonores environnementales \\ \medskip
+
+\begin{refsection}[ownpubs_psycho]
+
+    \small
+    \nocite{*} % is local to to the enclosing refsection
+    \printbibliography[heading=none]
+    
+\end{refsection}
+
+
+\vfill
+Analyse automatique de scènes sonores environnementales\\ \medskip
+
+\begin{refsection}[ownpubs_ml]
+
+    \small
+    \nocite{*} % is local to to the enclosing refsection
+    \printbibliography[heading=none]
+    
+\end{refsection}
+\vfill
+
+\newpage
+\vfill
+Simulation automatique de scènes sonores --- Utilisation de scènes sonores simulées pour l'évaluation des algorithmes en détection automatique d'événements sonores\\ \medskip
+
+\begin{refsection}[ownpubs_simu]
 
     \small
     \nocite{*} % is local to to the enclosing refsection

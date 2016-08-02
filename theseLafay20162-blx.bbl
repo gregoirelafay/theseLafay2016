@@ -1,0 +1,55 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{Lostenlen2016ScatteringObjet}{unpublished}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Lostanlen}{L.}%
+     {Vincent}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lafay}{L.}%
+     {Gr{\'e}goire}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Anden}{A.}%
+     {Joakim}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lagrange}{L.}%
+     {Mathieu}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LV+1}
+  \strng{fullhash}{LVLGAJLM1}
+  \field{sortinit}{L}
+  \field{title}{Object-based Auditory Scenes Similarity Retrieval and
+  Classification With Wavelet Scattering}
+  \field{journaltitle}{IEEE Transactions on audio, speech and language
+  processing, Special issue on Sound Scene and Event Analysis, (submitted)}
+  \field{year}{2016}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
