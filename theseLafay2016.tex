@@ -28,6 +28,11 @@
                 francais,ngerman,american,%
                 ]{scrreprt}
 
+
+\newcommand{\gl}[1]{\textcolor{blue}{GL : #1}}
+\newcommand{\jlc}[1]{\textcolor{green}{J.L. correction : #1}}
+\newcommand{\jls}[1]{\textcolor{red}{J.L. suggestion : #1}}
+\newcommand{\jlv}[1]{\textcolor{magenta}{J.L. vise : #1}}
 %********************************************************************
 % Note: Make all your adjustments in here
 %*******************************************************
@@ -81,8 +86,12 @@
 
 \cleardoublepage
 \ctparttext{preamble text here.}
-\part{Vers un modèle de scènes sonores}
+\part{Percevoir les scènes sonores}
 \include{Chapters/psycho_ea}
+
+\cleardoublepage
+\ctparttext{preamble text here.}
+\part{Vers un modèle de scènes sonores}
 \include{Chapters/psycho_model}
 
 \cleardoublepage
