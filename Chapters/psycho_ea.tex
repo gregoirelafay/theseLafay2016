@@ -464,16 +464,72 @@ En général, pour un environnement donné, la valeur finale d'une l'échelle es
 Beaucoup d'études étudié la manière avec laquelle nous catégorisons les sources sonores. Parmi les plus notables, on trouve les études menées par 
 \subsection{Catégorisation des environnements sonores}
 
-\subsection{Événements et textures sonores}
-
 \subsection{Attributs perceptifs jouant un rôle dans l'évaluation des paysages sonores}
 
 Un grand nombre d'échelles sémantiques ont été utilisées afin d'évaluer les paysages sonores. Parmi elles, certaines semblent avoir été particulièrement prometteuse, notamment 
 
 \subsection{Modélisation de la qualité d'un environnement sonore: contribution des sources sonores}
 
+\subsection{Événements et textures sonores}
 
-\gl{bien développer et définir les indicateurs acoustiques et perceptifs, se baser sur \citep{aletta2016soundscape}}
+\subsubsection{Définition}
+
+S'éloignant de l'approche des paysages sonores, plusieurs étude se sont concentrées sur l'analyse perceptive d'une certaine catégorie de sons appelée texture sonore.
+
+Pour définir la texture sonore, nous nous appuyons sur la définition donnée par \citep[p. 25]{saint1995classification}:  
+
+\begin{itemize}
+\item ``\, Les textures sonores sont des objet composites, formées d'éléments de base appelés atomes\,''
+\item ``\, Les atomes apparaissent suivant un pattern haut-niveau pouvant être soit périodique (galop), soit aléatoire (pluie), voire les deux\,''
+\item ``\, Les caractéristiques haut niveaux des textures restent constantes sur de de longue périodes de temps, ce qui implique qu'elles ne peuvent comporter aucun message complexe\,''
+\item ``\, Le pattern haut-niveau doit être présenté au moins une fois dans sa totalité pendant une période de temps n’excédant pas les quelques  secondes. Cette période est nommé période d'attention (\emph{attention span})\,''
+\end{itemize}
+
+Cette définition est avant tout morphologique, la texture étant définie en fonction de ses caractéristiques physiques. Cette approche vient du fait que la texture a d'abord été étudiée dans le cadre du traitement du signal, beaucoup d'application multimédia ayant besoin de  modèles permettant de synthétiser de telle sons \citep{schwarz2011state}. La notion de texture s'oppose intuitivement à celles d'événement sonore ou de séquence d'événements. Par opposition, l'événement est vu comme un élément discret, un son court et non homogène.
+
+C'est la notion d'information transmise qui semble être capitale pour faire la distinction entre les textures et les séquence d'événements. Les caractéristiques des textures restant stables au cours du temps, l'information transmise finit éventuellement par atteindre une asymptote. A contrario, une succession d'événements distincts, comme c'est le cas pour une séquence musicale ou de parole, transmets de plus en plus d'information (\Cf~Figure~\ref{fig:texture}). En poussant le raisonnement à L’extrême, le bruit blanc peut être vu comme la représentation la plus ``\,pure\,'' d'une texture, ce dernier ne portant ainsi quasi plus d'information.
+
+\begin{figure}[bth]
+        \myfloatalign
+        \includegraphics[width=\linewidth]{gfx/texture}
+        \caption[Information potentielle contenue dans les séquences d'événements, les textures, et le bruit]{Information potentielle contenue dans les séquences d'événements, les textures, et le bruit. D'après \citep{saint1995classification}}\label{fig:texture}
+\end{figure}
+
+\subsubsection{Percevoir les textures}
+
+Contrairement aux événements sonores, la texture est un objet simple, dont le traitement cognitif ne requière pas une analyse poussée. Ce point a été notamment prouvé par les travaux de Josh H. McDermott et ses co-auteurs \citep{mcdermott2011sound,mcdermott2013summary}. A l'aide d'un modèle de texture, inspiré du fonctionnement des premières étapes du système auditif humain allant de la cochlée jusqu'au thalamus, ils ont pu re-synthétisé des textures sonores en ne servant que de statistiques simples calculés à partir de représentations temps-fréquence de signaux de textures enregistrés. Dans un premier temps, la capacité des sujets à identifier les textures synthétisées a été testée \citep{mcdermott2011sound}. Les résultats ont montré que les sons de synthèse étaient aussi bien identifiés au les sons enregistrés, démontrant ainsi que les statistiques du signal sont utiles d'un point de vu cognitif à la reconnaissance, le cerveau étant capable de traiter des sons simples uniquement à partir de l'extraction de ces statistiques.
+
+Dans une seconde expérience, \citep{mcdermott2013summary} les sujets ont dû reconnaître, parmi une triade de sons synthétisés, celui produit par une source différente (\ie un type de texture différent). Les résultats montrent que la capacité de discrimination est fonction de la durée des textures. Plus cette dernière est élevée, plus la capacité à discriminer est importante.  Ce résultat valide les hypothèses formulées par \citep{saint1995classification} sur l'existence d'une période d'attention, nécessaire au cerveau pour comprendre le stimuli comme une texture, et ainsi l'analyser sur la base de statistiques extraites.
+
+\gl{Perception bruit blanc}
+
+\subsubsection{Période d'attention}
+
+Dans nos travaux nous nous sommes également penchés sur cette notion de période d'attention. En poussant cette vision composite à l’extrême, une texture peut être vu comme un empilement d’événements sonores qui cessent d'être perçus de manière distincte, dès lors que ces derniers forment un tout homogène et stable. 
+
+Nous avons suivi cette idée afin de bâtir un protocole permettant de d'analyser la période d'attention. Nous faisons l'hypothèse qu'à partir du moment ou un événement peut être isoler d'un mixture d'événements du même type, le cerveau ne perçoit plus la mixture comme une texture, mais comme une succession d'événement.
+
+Nous avons monté une expérience de reconnaissance de type oui/non (\Cf~\ref{app:xp_texture} pour une description exhaustive de l'expérience). Chaque stimuli est composé d'un son cible, suivi d'une séquence d'événement enchevêtrés de 6 secondes (\Cf~\ref{fig:xptexture}.a). L'objectif pour le sujet est d'indiquer si oui ou non il a entendu le son cible dans la séquence d’événements.
+
+Les séquences sont des sons de trafic, simulés en agglomérant des sons isolés de voiture. La simulation est contrôlée par un paramètre réglant l'espacement temporel inter-onset moyen entre les événements. Cinq valeurs d'espacement sont considérées: $0.1$, $0.3$, $0.5$, $0.7$ et $0.9$ secondes. Les sons isolés de voiture ont tous une durée de $1$ seconde. Pour chaque espacement, nous simulons 20 séquences de trafics, chaque sujet devant alors écouter 100 stimuli. La moitié de ces stimuli sont des pièges, le son cible y étant absent. Nous mesurons les performances des sujets en utilisant la mesure de sensitivité $d'$ (\Cf~Figure~\ref{fig:xptexture}.b). Les résultats montrent que la mixture cesse d'être perçue comme une texture à partir d'un espacement de 0.42 secondes, soit la durée moyenne des événements utilisés (\Cf~Figure~\ref{fig:xptexture3}).
+
+\begin{figure}[bth]
+        \myfloatalign
+        \subfloat[]
+        {\includegraphics[width=.5\linewidth]{gfx/xpTexture1}}
+        \subfloat[]
+        {\includegraphics[width=.5\linewidth]{gfx/xpTexture3}}
+        \caption[Experience sur la période d'attention]{Experience sur la période d'attention. (a) la nature des stimuli utilisés. (b) le seuil d'espacement moyen permettant de faire la distinction entre une séquence d'événements et une texture}\label{fig:xptexture}
+\end{figure}
+
+
+\subsubsection{Connexion}
+
+
+Il est possible de faire des connexions entre les notions de textures/événements, et celles des scènes amorphes/événementielle mises en lumière par \citep{maffiolo_caracterisation_1999}. Pour la notion de texture, nous sommes très proches de celle des séquences amorphes
+De même, on peut voir nos événements comme les objets composant les séquences événementielles. 
+
+Cette dimension événement/texture est cependant orthogonale à celle de ``\,bruit de fond\,'' / ``\,événements de premier plan\,'' (\emph{background}/\emph{foreground}), utilisée dans le langage courant pour discriminer l’environnement urbain. Concernant les notions de background et de foreground, nous considérons que l'une et l'autre peuvent être vue comme des flux auditifs. Un flux auditif peut être composée de textures et d’événements regroupés dans le but de faciliter le traitement auditif de la scène. 
 
 %*****************************************
 %*****************************************
