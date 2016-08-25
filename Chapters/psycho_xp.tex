@@ -69,7 +69,7 @@ Dans le but de créer un corpus de sons isolés de référence pour la simulatio
 Nous recherchons les sources et ambiances sonores les plus souvent citées dans la littérature. Notre étude porte sur 16 articles ou thèses. Chacun d’eux traite de la manière dont nous discriminons les paysages sonores urbains. Plusieurs approches sont possibles, nous en avons relevés 3 :
 
 \begin{itemize}
-\item 8 articles abordent le problème par une approche perceptive, soit en identifiant ou répertoriant des catégories de sources sonores, soit en étudiant l'impact de classes de sons spécifiques sur la perception de l'environnement : \cite{maffiolo_caracterisation_1999,raimbault2002simulation,guastavino_etude_2003,defreville2004aactivity,raimbault2005urban,dubois2006cognitive,devergie_relations_2006,guastavino2006ideal,niessen2010categories}
+\item 9 articles abordent le problème par une approche perceptive, soit en identifiant ou répertoriant des catégories de sources sonores, soit en étudiant l'impact de classes de sons spécifiques sur la perception de l'environnement : \cite{maffiolo_caracterisation_1999,raimbault2002simulation,guastavino_etude_2003,defreville2004aactivity,raimbault2005urban,dubois2006cognitive,devergie_relations_2006,guastavino2006ideal,niessen2010categories}
 \item 3 articles proposent une classification morpho-typologique, divisant l’environnement sonore urbain en ``\,zones sonores\,'' possédant une identité acoustique forte selon la configuration et la pratique du site : \cite{maffiolo_caracterisation_1999,beaumont2004pertinence,polack2008perceptive}
 \item 2 articles répertorient et classifient les sources sonores d’un point de vu expert : \cite{leobon_analyse_1986,brown2011towards}
 \end{itemize}
@@ -198,9 +198,9 @@ Les descripteurs sont calculés sur chaque scène sonore. Nous considérons troi
 \item \emph{Sémantique}: Il s'agit d'un vecteur booléen noté $S=(x_1,x_2,\ldots,x_n)$ indiquant les classes de sons présentes dans la scènes. Chaque point $x$ de ce vecteur correspond à une classe de son particulière: $x=1$ si la classe est présente dans la scènes, et $x=0$ autrement. La dimension $n$ des vecteurs dépend ainsi du niveau d'abstraction considéré, \eg~pour le niveau d'abstraction 1, qui comprend $44$ classes de sons, cette dimension sera de $n=44$.
 \item \emph{Structurel}: Les descripteurs structurels sont calculés à partir des partitions et des signaux des scènes simulées. Trois descripteurs structurels sont envisagés:
 \begin{itemize}
-\item \emph{Diversité} ($Di$) : Il s'agit d'un scalaire représentant la diversité des classes sonores utilisées pour simuler une scènes. Nous calculons $Di$ en comptant le nombre de classes de sons distinctes utilisées pour une simulation. Ce nombre dépend du niveau d'abstraction considéré. Considérons les 2 sous classes du niveau d'abstraction 2 \emph{passage de voiture} et \emph{démarrage de voiture}, toutes deux appartenant à la classe \emph{voiture} du niveau d'abstraction 1, nous comptons 2 classes pour la diversité des niveaux d'abstraction 2 et 1, et seulement 1 pour les niveaux d'abstraction 0 et 1.
-\item \emph{Densité} ($De$) : Il s'agit d'un scalaire représentant la présence temporelle de sources sonores dans une scène simulée. $De$ est calculé en prenant le logarithme de la moyenne du nombre d'éléments sonores présent à chaque fenêtre de 1 seconde. Le calcul de $De$ peut inclure toute les classes de la scènes, ou seulement une partie.
-\item \emph{Niveau Sonore} ($L$) : Pour représenter le niveau sonore, nous nous inspirons du la mesure $L_{Aeq}$. Dans notre cas, il s'agit d'un scalaire, calculé sur le signal en volt et non en pression, et donné en décibel en prenant un référentiel de 1 Volt. Le niveau est obtenu en calculant toutes les secondes la moyenne quadratique du signal, et en moyennant sur la durée de la scène. Un filtrage de type A est opéré avant le calcul des moyennes quadratiques. D'autre descripteurs inspirés eux aussi de descripteurs acoustiques classiques ($L_{Amin}$, $L_{Amax}$, $L_{A10-90}$), et utilisant un opérateur autre que la moyenne (minimum, maximum, les 10-90ème quantiles) pour intégrer les fenêtres de 1 seconde  ont été testés. Mais ces derniers présentant tous une corrélation élevé avec $L$ ($r_{pearson}\geq0.85$, $p<0.01$), nous conservons uniquement ce dernier comme descripteur du niveau sonore.
+\item \emph{Diversité} ($DIV$) : Il s'agit d'un scalaire représentant la diversité des classes sonores utilisées pour simuler une scènes. Nous calculons $DIV$ en comptant le nombre de classes de sons distinctes utilisées pour une simulation. Ce nombre dépend du niveau d'abstraction considéré. Considérons les 2 sous classes du niveau d'abstraction 2 \emph{passage de voiture} et \emph{démarrage de voiture}, toutes deux appartenant à la classe \emph{voiture} du niveau d'abstraction 1, nous comptons 2 classes pour la diversité des niveaux d'abstraction 2 et 1, et seulement 1 pour les niveaux d'abstraction 0 et 1.
+\item \emph{Densité} ($D$) : Il s'agit d'un scalaire représentant le nombre de source sonore présentes en moyenne. Pour obtenir $D$, nous calculons le logarithme du nombre d'éléments sonores par fenêtre de 125 millisecondes (sans recouvrement) et moyennons au cours du temps. Le calcul de $D$ peut inclure toutes les sources sonores de la scènes, ou seulement une partie. Dans ce cas, les fenêtres ne contenant pas de sources sonores ne sont pas prises en compte. Nous notons $DE$ et $DT$ les densités calculées en considérant séparément les source d'événements et de textures sonores respectivement.
+\item \emph{Niveau Sonore} ($L$) : Pour représenter le niveau sonore, nous nous inspirons du la mesure $L_{Aeq}$. Dans notre cas, il s'agit d'un scalaire, calculé sur le signal en volt et non en pression, et donné en décibel en prenant un référentiel de 1 Volt. Le niveau est obtenu en calculant toutes les secondes la moyenne quadratique du signal, et en moyennant sur la durée de la scène. Un filtrage de type A est opéré avant le calcul des moyennes quadratiques. D'autre descripteurs inspirés eux aussi de descripteurs acoustiques classiques ($L_{Amin}$, $L_{Amax}$, $L_{A10-90}$), et utilisant un opérateur autre que la moyenne (minimum, maximum, les 10-90ème quantiles) pour intégrer les fenêtres de 1 seconde  ont été testés. Mais ces derniers présentant tous une corrélation élevé avec $L$ ($r_{pearson}\geq0.76$, $p<0.01$), nous conservons uniquement ce dernier comme descripteur objectif du niveau sonore.
 \end{itemize}
 \end{itemize}
 
@@ -256,22 +256,49 @@ Ces résultats tendent à montrer que l'interface de sélection sans texte n'a p
 
 Nous analysons ici l'agrément perçu des $80$ scènes sonores simulées. 
 
-La Figure~\ref{fig:compA}.a affiche agrément moyen $A$ pour les i- et ni-scènes. Afin de garantir la cohérence de nos données, nous voulons dans un premier temps nous assurer qu'aucune ni-scène n'ait un $A$ supérieur à celui d'une i-scène. Nous observons la Figure~\ref{fig:compA}.a que quatre scènes ont une notation qui ne respecte pas cette contrainte. Ces scènes, ainsi que le correspondante i ou ni, sont supprimées de l'analyse, nous laissant ainsi avec 36 i-scènes et 36 ni-scènes.
+La Figure~\ref{fig:xp2_Aa} affiche agrément moyen $A$ pour les i- et ni-scènes. Afin de garantir la cohérence de nos données, nous voulons dans un premier temps nous assurer qu'aucune ni-scène n'ait un $A$ supérieur à celui d'une i-scène. Nous observons la Figure~\ref{fig:xp2_Aa} que quatre scènes ont une notation qui ne respecte pas cette contrainte. Ces scènes, ainsi que le correspondante i ou ni, sont supprimées de l'analyse, nous laissant ainsi avec 36 i-scènes et 36 ni-scènes.
 
-Dans un second temps nous testons si les sujets ont bien perçu une différence d'agrément entre les i- et ni-scènes. Pour ce faire, nous observons l'agrément moyen de chaque sujet calculé séparément pour chaque type d'environnement (\Cf~Figure~\ref{fig:compA}.b). Il est clair que les i-scènes ont bien été perçues comme significativement plus agréables ($p<0.01$) que les ni-scènes.
+Dans un second temps nous testons si les sujets ont bien perçu une différence d'agrément entre les i- et ni-scènes. Pour ce faire, nous observons l'agrément moyen de chaque sujet calculé séparément pour chaque type d'environnement (\Cf~Figure~\ref{fig:xp2_Ab}). Il est clair que les i-scènes ont bien été perçues comme significativement plus agréables ($p<0.01$) que les ni-scènes.
 
 \begin{figure}[bth]
         \myfloatalign
-        \includegraphics[width=.8\linewidth]{gfxXpUrbanSoundscape/xp2_1-eps-converted-to}
-       \caption[Distributions de l'agrément perçu pour les i- et ni-scènes]{Distributions de l'agrément perçu pour les i- et ni-scènes en considérant (a) l'agrément moyen par scènes et (b) l'agrément moyen par sujet en excluant les scènes extrèmes}\label{fig:compA}
+        \subfloat[]
+        {\includegraphics[width=.5\linewidth]{gfxXpUrbanSoundscape/xp2_1}\label{fig:xp2_Aa}}
+        \subfloat[]
+        {\includegraphics[width=.5\linewidth]{gfxXpUrbanSoundscape/xp2_2}\label{fig:xp2_Ab}}
+       \caption[TODO]{TODO}\label{fig:xp2_A}
 \end{figure}
  
 \subsection{Étude comparative entre les descripteurs structurels}
 
 \begin{figure}[bth]
         \myfloatalign
-        \includegraphics[width=.8\linewidth]{gfxXpUrbanSoundscape/xp1_deSoLv_1-eps-converted-to}
-       \caption[Distribution des descripteurs structurels et corrélation avec l'agrément perçu]{Distribution des descripteurs structurels en considérant (a) la densité d'événement ($D$) et (b) le niveau sonore $L$. Corrélation entre l'agrément perçu $A$ \vs~$D$ (c) et $L$ (d)}\label{fig:compCorrStruct}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_1}\label{fig:soundlevela}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_3}\label{fig:soundlevelb}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_5}\label{fig:soundlevelc}}\par
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_2}\label{fig:soundleveld}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_4}\label{fig:soundlevele}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_6}\label{fig:soundlevelf}}
+       \caption[TODO]{TODO}\label{fig:soundlevel}
+\end{figure}
+
+\begin{figure}[bth]
+        \myfloatalign
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_density_1}\label{fig:densitya}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_density_3}\label{fig:densityb}}\par
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_density_2}\label{fig:densityc}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_density_4}\label{fig:densityd}}
+       \caption[TODO]{TODO}\label{fig:density}
 \end{figure}
 
 \subsection{Influence des descripteurs structurels sur l'agrément perçu}
@@ -280,20 +307,26 @@ Nous analysons maintenant l'existence de potentielles corrélations entre les de
 
 \begin{table}[t]
 \centering
-\begin{tabular}{l c c} 
-                & $L$                          & $D$    \\
+\begin{tabular}{l c c c} 
+            & ensemble                     & i-scènes                   & ni-scènes    \\
 \hline
-ensemble        & \textbf{-0.76} ($p<0.01$)    & \textbf{-0.35} ($p<0.01$) \\
-i-scènes        & -0.32 ($p=0.06$)             & -0.28 ($p=0.10$) \\
-ni-scènes       & \textbf{-0.66} ($p<0.01$)    & \textbf{-0.47} ($p<0.01$) \\
-
+$L$         & \textbf{-0.76} ($p<0.01$)    & -0.32 ($p=0.06$)           & \textbf{-0.67} ($p<0.01$)\\
+$LE$        & \textbf{-0.75} ($p<0.01$)    & -0.20 ($p=0.24$)           & \textbf{-0.75} ($p<0.01$)\\
+$LT$        & \textbf{-0.51} ($p<0.01$)    & -0.33 ($p=0.05$)           &  0.09  ($p=0.6$) \\
+$D$         & \textbf{-0.41} ($p<0.01$)    & -0.31 ($p=0.07$)           & -0.37 ($p=0.03$)\\
+$DE$        & \textbf{-0.34} ($p<0.01$)    & -0.22 ($p=0.21$)           & \textbf{-0.47} ($p<0.01$)\\
 \hline
 \end{tabular}
 \vspace{0.5mm}
-\caption[Coefficients de corrélation linéaire calculés entre l'agrément perçu moyen $A$ \vs~le niveau sonore $L$ et la densité d'événement $D$]{Coefficients de corrélation linéaire calculés entre l'agrément perçu moyen $A$ \vs~le niveau sonore $L$ et la densité d'événement $D$, en considérant l'ensemble des scènes, ainsi que les i-scènes et les ni-scènes séparément.}
+\caption{Coefficients de corrélation linéaire calculés entre l'agrément perçu moyen $A$ \vs~TODO}
 \label{tab:corrStructA}
 \end{table}
 
+\begin{figure}[bth]
+        \myfloatalign
+        \includegraphics[width=.9\linewidth]{gfxXpUrbanSoundscape/xp1_div_1}
+       \caption[TODO]{TODO}\label{fig:diversity}
+\end{figure}
 
 \subsection{Étude comparative entre les descripteurs sémantiques}
 
@@ -330,24 +363,81 @@ d'abstraction & i-scènes & ni-scènes \\
 
 \subsection{Étude des espaces de représentations induits par les descripteurs sémantiques}
 
+\begin{figure}[bth]
+        \myfloatalign
+        \includegraphics[width=.9\linewidth]{gfxXpUrbanSoundscape/pa5_1}
+       \caption[TODO]{TODO}\label{fig:pa5}
+\end{figure}
+
 \subsection{L'influence spécifique des marqueurs sonores sur l'agrément perçu}
 
 \begin{table}[t]
 \centering
 \begin{tabular}{l r r} 
-                    &   i-scenes   & ni-scenes \\
+               &   i-scenes                   & ni-scenes \\
 \hline
-$L_m$         & 0.19  ($p=0.28$)           & \textbf{-0.60} ($p<0.01$) \\
-$L_b$         & \textbf{-0.51} ($p<0.01$)  & -0.16 ($p=0.36$) \\
-$L_{m-b}$     & \textbf{0.69} ($p<0.01$)   & -0.31 ($p=0.06$) \\
-$D_{m}$       & -0.20  ($p=0.24$)          & \textbf{-0.58} ($p<0.01$)  \\
-$D_{b}$       & -0.23  ($p=0.18$)          & -0.30 ($p=0.07$)  \\
+$L_m$            & 0.03  ($p=0.88$)           & \textbf{-0.63} ($p<0.01$) \\
+$LE_m$           & 0.08  ($p=0.66$)           & \textbf{-0.60} ($p<0.01$) \\
+$LT_m$           & -0.11 ($p=0.66$)           & -0.00 ($p=0.98$) \\
+$D_m$            & 0.03 ($p=0.85$)            & -0.32 ($p=0.05$) \\
+$DE_m$           & 0.09  ($p=0.62$)           & \textbf{-0.47} ($p<0.01$) \\
+$L_m-L_b$        & \textbf{0.67} ($p<0.01$)   & -0.24 ($p=0.15$) \\
+$LE_m-LE_b$      & \textbf{0.66} ($p<0.01$)   & -0.31 ($p=0.06$) \\
+$LT_m-LT_b$      & 0.16 ($p=0.54$)            &  0.39 ($p<0.05$) \\
+
 \hline
 \end{tabular}
 \vspace{0.5mm}
-\caption{Coefficients de corrélation linéaire calculés entre l'agrément perçu moyen $A$ \vs~$L_m$, $L_b$, $L_{m-b}$ et $D_m$.}
+\caption{Coefficients de corrélation linéaire calculés entre l'agrément perçu moyen $A$ \vs~TODO.}
 \label{tab:coorMarkers}
 \end{table}
+
+\begin{figure}[bth]
+        \myfloatalign
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_7}\label{fig:soundlevelMarkera}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_11}\label{fig:soundlevelMarkerb}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_15}\label{fig:soundlevelMarkerc}}\par
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_8}\label{fig:soundlevelMarkerd}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_12}\label{fig:soundlevelMarkere}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_16}\label{fig:soundlevelMarkerf}}
+       \caption[TODO]{TODO}\label{fig:soundlevelMarker}
+\end{figure}
+
+\begin{figure}[bth]
+        \myfloatalign
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_density_7}\label{fig:densityMarkera}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_density_9}\label{fig:densityMarkerb}}\par
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_density_8}\label{fig:densityMarkerc}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_density_10}\label{fig:densityMarkerd}}
+       \caption[TODO]{TODO}\label{fig:densityMarker}
+\end{figure}
+
+\begin{figure}[bth]
+        \myfloatalign
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_19}\label{fig:soundlevelMarkerDiffa}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_21}\label{fig:soundlevelMarkerDiffb}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_23}\label{fig:soundlevelMarkerDiffc}}\par
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_20}\label{fig:soundlevelMarkerDiffd}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_22}\label{fig:soundlevelMarkerDiffe}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_24}\label{fig:soundlevelMarkerDifff}}
+       \caption[TODO]{TODO}\label{fig:soundlevelMarkerDiff}
+\end{figure}
 
 \subsection{Discussions}
 
