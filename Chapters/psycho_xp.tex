@@ -50,7 +50,7 @@ Les objectifs de l'expérience d'évaluation sont doubles:
 \item Détecter la présence de cas extrêmes ou ambigus (\emph{outlier}) dans les scènes simulées. Pour le reste de notre étude, la distinction imposée entre les environnements i et ni sert de référence. Il nous faut donc garantir qu'il n'y ait pas d’ambiguïté entre les cas extrêmes des i- et ni-scènes, \ie~que la note d'agrément la plus basse des i-scènes reste supérieure à la note la plus haute des ni-scènes.
 \end{enumerate}
 
-\begin{figure}[bth]
+\begin{figure}[t]
         \myfloatalign
         \includegraphics[width=.8\linewidth]{gfx/5-eps-converted-to}
         \caption{Planification expérimentales des éxperiences de simulation et d'évaluation de l'agrément}\label{fig:xp1_2}
@@ -82,7 +82,7 @@ Nous notons que la typologie ainsi obtenue est très similaire à une autre typo
 
 \begin{figure}[bth]
         \myfloatalign
-        \includegraphics[width=.8\linewidth]{gfxHierarchy/taxonomy}
+        \includegraphics[width=.5\linewidth]{gfxHierarchy/taxonomy}
        \caption[Taxonomies des classes de sons utilisées pour la simulation des environnements sonores urbains]{Taxonomies des classes de sons utilisées pour la simulation des environnements sonores urbains pour (a) les événements sonores et (b) les textures sonores. Nous présentons ici uniquement les niveaux d'abstraction 0 et 1. Un niveau intermédiare, nommé $0+$ et utilisé pour l'analyse est également introduit.}\label{fig:taxonomie}
 \end{figure}
 
@@ -207,7 +207,7 @@ Les descripteurs sont calculés sur chaque scène sonore. Nous considérons troi
 \gl{tableau résumé des descripteurs}
 
 \subsubsection{Méthodologie et Outils statistiques}
-
+\label{sec:ch5_methodoEtStat}
 
 L'objectif de l'étude est d'évaluer l'impact spécifique des différentes sources sonore sur l'agrément perçue via l'utilisation de scènes simulées. Afin de répondre à cette question, nous divisons l'étude en 6 sous-objectifs:
 
@@ -215,7 +215,8 @@ L'objectif de l'étude est d'évaluer l'impact spécifique des différentes sour
 \item \emph{Étude qualitative} : Afin de vérifier la validité écologique de 1) la banque de données et 2) l'interface de sélection, nous réalisons une étude qualitative des commentaires libres des sujets effectués après l'épreuve de simulation.
 \item \emph{Étude comparative entre les descripteurs structurels} : Il s'agit ici d'évaluer si la distinction affective imposée entre les i- et ni-scènes a impacté de manière significative la nature des scènes, \ie~si il existe des différences significatives entre les descripteurs structurels et/ou l'agrément perçu. La significativité est évaluée à partir d'un test de Student à échantillons apparié (\Cf~Annexe~\ref{app:statuni}).
 \item \emph{Influence des descripteurs structurels sur l'agrément perçu}: Nous adoptons ici une méthodologie couramment utilisée dans l'approche dimensionnelle. Pour évaluer l'impact potentiel des descripteurs structurels sur l'agrément perçu, nous étudions l'existence de corrélation linéaire entre entre ces deux types de descripteur. Pour mesurer la corrélation, nous utilisons le coefficient de Pearson (\Cf~Annexe~\ref{app:statuni}).
-\item \emph{Étude comparative entre les descripteurs sémantiques}: Il s'agit ici d'apprécier si la distinction affective imposée a eu un impact sur la composition des scènes en terme de sources sonores. Plus précisément, il s'agit d'observer si il existe des classes de sons qui ont été particulièrement utilisées pour simuler un type d'environnement. Nous utilisons le V-test afin de tester si la présence d'une classe de son est caractéristique d'un environnement (i ou ni) en particulier. Ces classes caractéristiques sont nommées les marqueurs sonores
+\item \emph{Étude comparative entre les descripteurs sémantiques}: Il s'agit ici d'apprécier si la distinction affective imposée a eu un impact sur la composition des scènes en terme de sources sonores. Plus précisément, il s'agit d'observer si il existe des classes de sons qui ont été particulièrement utilisées pour simuler un type d'environnement. Nous utilisons le V-test afin de tester si la présence d'une classe de son est typique d'un environnement (i ou ni) en particulier. Ces classes typique sont nommées les marqueurs sonores.\\
+ \gl{Décrire ici le V-test}
 \item \emph{Étude des espaces de représentations induits par les descripteurs sémantiques}: Dans cette analyse, nous étudions si une représentation basée uniquement sur la présence ou l'absence des classes de sons permets de séparer les deux types d'environnements. Pour ce faire nous considérons l'espace induit par les descripteurs sémantiques $S$. $S$ étant un vecteur booléen, nous calculons les distances entre les scènes à partir de la distance de \emph{hamming}. Considérant les deux vecteurs $S_1=(x_{1,1},x_{1,2},\ldots,x_{1,n})$ et $S_2=(x_{2,1},x_{2,2},\ldots,x_{2,n})$ de dimension $n$, avec $x={0,1}$, la distance de \emph{Hamming} $d_{ham}$ mesure le pourcentage de coordonnés qui diffèrent entre les deux vecteurs. 
 
 
@@ -256,22 +257,38 @@ Ces résultats tendent à montrer que l'interface de sélection sans texte n'a p
 
 Nous analysons ici l'agrément perçu des $80$ scènes sonores simulées. 
 
-La Figure~\ref{fig:xp2_Aa} affiche agrément moyen $A$ pour les i- et ni-scènes. Afin de garantir la cohérence de nos données, nous voulons dans un premier temps nous assurer qu'aucune ni-scène n'ait un $A$ supérieur à celui d'une i-scène. Nous observons la Figure~\ref{fig:xp2_Aa} que quatre scènes ont une notation qui ne respecte pas cette contrainte. Ces scènes, ainsi que le correspondante i ou ni, sont supprimées de l'analyse, nous laissant ainsi avec 36 i-scènes et 36 ni-scènes.
+La Figure~\ref{fig:xp2_Aa} affiche l'agrément moyen $A$ pour les i- et ni-scènes. Afin de garantir la cohérence de nos données, nous voulons dans un premier temps nous assurer qu'aucune ni-scène n'ait un $A$ supérieur à celui d'une i-scène. Nous observons la Figure~\ref{fig:xp2_Aa} que quatre scènes ne respectent pas cette contrainte. Ces scènes, ainsi que leurs correspondantes i ou ni, sont supprimées de l'analyse. 36 i-scènes et 36 ni-scènes sont conservées dans la suite de l'analyse.
 
 Dans un second temps nous testons si les sujets ont bien perçu une différence d'agrément entre les i- et ni-scènes. Pour ce faire, nous observons l'agrément moyen de chaque sujet calculé séparément pour chaque type d'environnement (\Cf~Figure~\ref{fig:xp2_Ab}). Il est clair que les i-scènes ont bien été perçues comme significativement plus agréables ($p<0.01$) que les ni-scènes.
 
-\begin{figure}[bth]
+\begin{figure}[t]
         \myfloatalign
         \subfloat[]
-        {\includegraphics[width=.5\linewidth]{gfxXpUrbanSoundscape/xp2_1}\label{fig:xp2_Aa}}
+        {\includegraphics[width=.4\linewidth]{gfxXpUrbanSoundscape/xp2_1}\label{fig:xp2_Aa}}
         \subfloat[]
-        {\includegraphics[width=.5\linewidth]{gfxXpUrbanSoundscape/xp2_2}\label{fig:xp2_Ab}}
+        {\includegraphics[width=.4\linewidth]{gfxXpUrbanSoundscape/xp2_2}\label{fig:xp2_Ab}}
        \caption[TODO]{TODO}\label{fig:xp2_A}
 \end{figure}
  
 \subsection{Étude comparative entre les descripteurs structurels}
 
-\begin{figure}[bth]
+Dans un premier temps nous nous concentrons sur le niveau sonore. Les figures~\ref{fig:soundlevela},~\ref{fig:soundlevelb} et~\ref{fig:soundlevelc} affichent les distributions des niveaux $L$, $LE$ et $LT$ respectivement. Il existe bien une différence de niveau significative entre les i- et ni-scènes ($L$: $p<0.01$), avec un écart moyen de -7 $dB$ entre ces dernières. Cette différence affecte aussi bien les événements ($LE$: $p<0.01$, écart moyen: -7 $dB$) que les textures ($LT$: $p<0.01$, écart moyen: -6 $dB$). 
+
+Nous vérifions ici sans surprises que le niveau des sources sonore est bien un indicateur d'agrément, les ni-scènes ayant tendance à être plus forte. Par ailleurs, cette différence de niveau affect de manière égale les sources d'événements et de textures sonores. 
+
+Il apparaît que ceux sont les événements qui impactent le plus le niveau global des scènes, l'écart entre $L$ et $LE$ n'étant que de 1 $dB$ pour les i-scènes et les ni-scènes. Cette observation fait écho aux résultats obtenu par Kuwano~\al \citep{kuwano_memory_2003}. Dans un premier temps, les auteurs demandent à un panel de sujet d'évaluer de manière globale une série d'environnements sonores. Dans un second temps, les sujets doivent, pour les mêmes environnements, évaluer le niveau aux instants où ils identifient une source sonore. L'étude montre qu'il n'y a pas de différences significatives entre les jugements globaux et les moyennes des jugements instantanés. On peut penser que nos sujets ont inconsciemment tenu compte de cette réalité perceptive lors de la simulation, en faisant porter le niveau sonore global par des sons courts et bien identifiés, \ie~les événements.
+
+Nous observons enfin que le niveau seul ne permet pas de clairement faire la distinction entre les différents types d'environnement. En effet,  $20\%$ des i-scènes ont un niveau supérieur au niveau minimal des ni-scènes, alors qu'il n'y a pas de recouvrement si l'on considère l'agrément perçu $A$.
+
+Nous considérons maintenant les densités de sources sonores. Les Figures~\ref{fig:densitya} et~\ref{fig:densityb} affichent les distributions de $D$ et $DE$. Que l'on prenne en compte toutes les sources ou uniquement les événements, la densité est significativement plus élevée pour les ni-scènes ($D$: $p<0.01$, $DE$: $p<0.01$). Nous observons un écart moyen de $+0.36$ pour $D$ (soit en moyenne 2.3 sources sonores par fenêtre de plus pour les ni-scènes), et de $+0.32$ pour $DE$ (soit en moyenne 2.1 sources sonores par fenêtre de plus pour les ni-scènes). Si les écarts sont très similaires entre $D$ et $DE$, c'est que la densité des textures ne varie pas de manière significative entre les i- et ni-scènes ($DT$: $p<0.08$), l'écart moyen étant de $+0.17$ (soit en moyenne 0.7 sources sonores par fenêtre de plus pour les ni-scènes), et l'écart médian étant quant à lui nul.
+
+Nous constatons ici que la densité peut être un indicateur de qualité, si l'on considère uniquement les événements sonores. Comme pour les niveaux sonores, la densité ne permet pas de clairement séparer les i- et ni-scènes,  $43\%$ des i-scènes ayant un $DE$ supérieur à la densité d'événement minimale des ni-scènes.
+
+Pour finir, nous nous intéressons à la diversité. Nous affichons sur la figure~\ref{fig:diversity} $DIV$ pour les événements et les textures en distinguant les différents niveaux d'abstractions. Excepté pour le niveau d'abstraction 0, la diversité de classes d'événements sonores est plus élevée pour les ni-scènes ($DIV$ niveau 1,2 et 3: $p<0.01$ ), avec en moyenne 2 classes présentes en plus. Aucune différences significatives n'est observée pour les textures.
+
+Les tendances globales observées tendent à montrer que un environnement sonore non-idéale est plus fort, plus dense et et composé d'une plus grande variété d'événements sonores. Par ailleurs ceux sont les caractéristiques des événements plus celles des textures qui semblent porter la distinction entre les i- et ni-scènes. Cependant, aucun de ces descripteurs ne permets, seul, de faire une distinction nette entre les deux types d'environnements, distinction qui pourtant, est perçue de manière non ambiguë par les sujets. 
+
+\begin{figure}[t]
         \myfloatalign
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_1}\label{fig:soundlevela}}
@@ -288,7 +305,7 @@ Dans un second temps nous testons si les sujets ont bien perçu une différence 
        \caption[TODO]{TODO}\label{fig:soundlevel}
 \end{figure}
 
-\begin{figure}[bth]
+\begin{figure}[t]
         \myfloatalign
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_density_1}\label{fig:densitya}}
@@ -301,9 +318,37 @@ Dans un second temps nous testons si les sujets ont bien perçu une différence 
        \caption[TODO]{TODO}\label{fig:density}
 \end{figure}
 
-\subsection{Influence des descripteurs structurels sur l'agrément perçu}
+\begin{figure}[t]
+        \myfloatalign
+        \includegraphics[width=.9\linewidth]{gfxXpUrbanSoundscape/xp1_div_1}
+       \caption[TODO]{TODO}\label{fig:diversity}
+\end{figure}
 
-Nous analysons maintenant l'existence de potentielles corrélations entre les descripteurs structurelles et $A$. Les coefficients de corrélation linéaire calculés entre $A$ \vs~$L$ et $D$ sont présentés dans le tableau~\ref{tab:corrStructA}.
+\subsection{Influence des descripteurs structurels sur l'agrément perçu}
+\label{sec:ch5_corrDesStruct}
+
+Nous analysons maintenant dans cette section les relations fines qui peuvent exister entre les descripteurs structurels d'une part et l'agrément perçu d'autre part. Contrairement à la section précédant ou la qualité affective des scènes est représentée de manière binaire (i \vs~ni), nous considérons dans cette section comme descripteur subjectif l'agrément moyen $A$. Il s'agit d'étudier l'existence de potentielles corrélations entre les descripteurs structurels et $A$. Les coefficients de corrélation linéaire calculés entre $A$ \vs~$L$, $LE$, $LT$, $D$, $DE$ et la diversité des classes d'événements ($DIV(E)$) sont présentés dans le tableau~\ref{tab:corrStructA}. Les relations entre $A$ et les descripteurs structurels sont illustrées par les figures~\ref{fig:soundleveld},~\ref{fig:soundlevele} et ~\ref{fig:soundlevelf} pour les niveaux sonores, et les figures~\ref{fig:densityc} et~\ref{fig:densityd} pour les densités. 
+
+
+Concernant $L$, on observe une forte corrélation négative\footnote{se référer à l'Annexe~\ref{app:corr} pour une explication quant à la manière d'interpréter le coefficient de corrélation dans ce document}  ($r=-0.76$, $p<0.01$) avec $A$, indiquant de fait que plus le niveau sonore est élevé, et plus la scène est désagréable.
+
+Cependant, la figure~\ref{fig:soundleveld} suggère que cette relation ne s'opère pas de la même manière pour les i- et ni-scènes. En effet la corrélation  entre $L$ et $A$ pour les ni-scènes reste élevée ($r=-0.67$, $p<0.01$), mais est inexistante pour les i-scènes. Le fait que la corrélation entre $L$ et $A$, considérant l'ensemble des scènes, soit élevée,  résulte du fait que les i-scènes ont tendance à être moins forte que les ni-scènes, donnant ainsi l'illusion de prolonger la corrélation négative observée pour les ni-scènes.  
+
+On peut donc conclure que $L$ 1) permet bien de faire la distinction entre les i- et ni-scènes, 2) permet de finement caractériser l'agrément perçu des ni-scènes, 3) mais n'est d'aucune utilité comme indicateur de l'agrément perçu  pour des environnements a priori agréables. 
+
+Les mêmes observations sont faîtes si l'on considère $LE$ (\cf~ref{fig:soundlevele}). Pour les textures (\cf~ref{fig:soundlevelf}), bien que l'on observe une corrélation modérée si l'on considère l'ensemble des scènes ($r=-0.51$, $p<0.01$), aucune corrélation n'est relevée si l'on regarde séparément les i-scènes ($r=-0.33$, $p=0.05$) et les ni-scènes ($r=0.09$, $p=0.06$). Là encore on peut penser que la corrélation négative observée pour l'ensemble des scènes est artificielle, venant du fait que le niveau des textures des i-scènes a tendance à être plus bas que celui des ni-scènes. Ainsi, si les événements sonore conservent une certaine capacité de prédiction de l'agrément pour les ni-scènes, le niveau des textures n'apporte lui que peu d'information, qu'importe l'environnement considéré.
+
+Considérant l'ensemble des scènes, nous observons un corrélation négative faible pour $D$ ($r=-0.41$, $p<0.01$) et $DE$ ($r=-0.34$, $p<0.01$). Là encore, une relation du même acabit est observée pour les ni-scènes, mais aucune corrélation n'est observée pour les i-scènes. La densité de sources sonores semble donc avoir un faible impact sur l'agrément perçu si l'on considère les ni-scènes, mais, comme pour les niveaux, la densité ne semble pas avoir d'impact pour les i-scènes.
+
+En ce qui concerne la diversité des classes d'événements, une corrélation négative faible est obtenue pour les niveaux d'abstraction 1, 2 et 3 en tenant compte de l'ensemble des scènes. Si l'on considère les i-scènes et ni-scènes séparément, aucune corrélation n'est trouvée. Les conclusions sont similaires à celles faites pour $LT$: la diversité permet uniquement de faire la distinction entre les deux types d'environnements, mais ne permet pas de caractériser précisément l'agrément perçu.
+
+En résumer, en présence d'un environnement désagréable, les niveaux sonores, et en particulier ceux des événements, ainsi que dans une moindre mesure la densité de sources présentes, ont un impact négatif sur l'agrément. En présence d'un environnement agréable, aucun des descripteurs structurels considérés ici ne semble influer sur la perception de l'agrément. 
+
+Ces premiers résultats tendent à suggérer qu'il existerait deux modes de perceptions, engageant chacun des descripteurs indépendants, et qui s'activeraient en fonction de la nature de l'environnement en présence (i ou ni). Ainsi, de la même manière que les informations utilisées pour analyser un événement ou une texture dépendent d'une prise de décision antérieure quant à la nature du stimuli (à savoir ``\,est-ce un événement ou une texture ?\,'', \cf~section~\ref{sec:ch3_eventTexture}), les indicateurs qui influent sur l'agrément perçu dépendent eux aussi d'une identification préalable de la nature de l'environnement. 
+
+Le fait qu'aucun des descripteurs globaux (tenant compte de toutes les classes de sons) ne permettent de caractériser l'agrément des i-scènes peut nous amener à penser que toutes les sources sonore ne contribuent pas de manière égale à la perception de l'agrément, mais, que seules les caractéristiques de certaines d'entre elles ont une réelle influence. Afin approfondir ce point, nous analysons à la section suivante les scènes d'un point de vue sémantique, \ie~en nous intéressant à la nature des sources qui les composent. \\
+
+\gl{Ici discussion et convergence avec d'autres papiers}
 
 \begin{table}[t]
 \centering
@@ -313,8 +358,12 @@ Nous analysons maintenant l'existence de potentielles corrélations entre les de
 $L$         & \textbf{-0.76} ($p<0.01$)    & -0.32 ($p=0.06$)           & \textbf{-0.67} ($p<0.01$)\\
 $LE$        & \textbf{-0.75} ($p<0.01$)    & -0.20 ($p=0.24$)           & \textbf{-0.75} ($p<0.01$)\\
 $LT$        & \textbf{-0.51} ($p<0.01$)    & -0.33 ($p=0.05$)           &  0.09  ($p=0.6$) \\
-$D$         & \textbf{-0.41} ($p<0.01$)    & -0.31 ($p=0.07$)           & -0.37 ($p=0.03$)\\
+$D$         & \textbf{-0.41} ($p<0.01$)    & -0.31 ($p=0.07$)           & \textbf{-0.37} ($p=0.03$)\\
 $DE$        & \textbf{-0.34} ($p<0.01$)    & -0.22 ($p=0.21$)           & \textbf{-0.47} ($p<0.01$)\\
+$DIV(E)$ 0     &          -0.07 ($p=0.57$)    & -0.25 ($p=0.15$)           & -0.22 ($p=0.23$)\\
+$DIV(E)$ 1     & \textbf{-0.46} ($p<0.01$)    & -0.25 ($p=0.14$)           & -0.18 ($p=0.30$)\\
+$DIV(E)$ 2     & \textbf{-0.40} ($p<0.01$)    & -0.21 ($p=0.22$)           & -0.18 ($p=0.30$)\\
+$DIV(E)$ 3     & \textbf{-0.36} ($p<0.01$)    & -0.18 ($p=0.30$)           & -0.18 ($p=0.30$)\\
 \hline
 \end{tabular}
 \vspace{0.5mm}
@@ -322,20 +371,52 @@ $DE$        & \textbf{-0.34} ($p<0.01$)    & -0.22 ($p=0.21$)           & \textb
 \label{tab:corrStructA}
 \end{table}
 
-\begin{figure}[bth]
-        \myfloatalign
-        \includegraphics[width=.9\linewidth]{gfxXpUrbanSoundscape/xp1_div_1}
-       \caption[TODO]{TODO}\label{fig:diversity}
-\end{figure}
-
 \subsection{Étude comparative entre les descripteurs sémantiques}
 
+\subsubsection{Analyse qualitative}
+
+Nous analysons la composition des scènes en comptant le nombre de sujet ayant utilisé une classe de sons pour simuler un type d'environnement. Les résultats sont présentés à la figure~\ref{fig:soundsourcea} pour les événements et à la figure~\ref{fig:soundsourceb} pour les textures. Par souci d'espace, nous choisissons un niveau d'abstraction intermédiaire entre le niveau 0 et 1, noté $0+$, pour représenter les classes (\cf~Figure~\ref{fig:taxonomie}).
+
+Nous observons une différence notable dans le choix des classes entre les i- et ni-scènes. La répartition des classes est très proche de celles obtenues dans une étude similaire sur les environnements sonores urbains idéales \citep{guastavino2006ideal}, \ie~les classes suggérant la présence humaine et la nature sont très présentes dans les i-scènes, a contrario les classes désignant des sons mécaniques et de travaux sont principalement utilisés pour les ni-scènes.
+
+Ces résultats confirme un fait déjà observé que la nature sémantique des sources sonores joue un rôle prédominant dans l'appréciation de l'environnement \citep{raimbault2005urban,dubois2006cognitive}.
+
+Nous notons quelques différences avec \citep{guastavino2006ideal}: les résultats obtenu par Guastavino~\al montrent que les sons de \emph{transport publiques} sont caractéristiques des environnements sonores urbains idéales. Les auteurs attribuent ce fait que la perception de l'agrément est entre autre soumise à un contexte socio-culturel. Dans notre représentation du monde, les sons de transports publiques sont positivement connotés, et ont ainsi tendance à être mieux accepté que les sons de véhicules privés.
+
+Dans une certaine mesure, nos résultats contredisent ce fait. La figure~\ref{fig:soundsourcea}  montre en effet que les classes d'événements de \emph{transport publiques} (\emph{bus} et \emph{train}, \cf~Figure~ref{fig:soundsourcec}) ont été utilisées par $28\%$ des sujets pour les i-scènes, mais également  par $42\%$ des sujets pour les ni-scènes. Les résultats ne renient pas le fait que  les sons de \emph{transport publiques} soient bien acceptés: $25\%$ des sujets ont utilisés la classe \emph{bus} pour les i-scènes, soit autant que la classe \emph{Vélo} et plus qu'aucune autre classes de véhicules privés. Cependant les classes \emph{transport publiques} sont également bien présentes dans les ni-scènes, plus par exemple que les classes \emph{voiture} ou \emph{camion}. De ce fait, la classe \emph{transport publiques} ne peut être considérée comme typique d'un environnement sonore urbain idéal.
+
+Cette différence peut s'expliquer par la nature des deux protocoles expérimentaux utilisés. Comme pour notre épreuve de simulation, Guastavino~\al demandent aux sujets de décrire un environnement en se basant sur leurs mémoires. Cependant contrairement à nous, les sujets de Guastavino~\al ne disposent pas de supports sonores. Le fait que nos sujets soient confrontés à la réalité acoustique des sons pour recréer leurs environnements peut avoir pour effet de diminuer l'effet du contexte socio-culturel. D'autres études utilisant des sons comme stimuli montrent que la classe \emph{bus} peut avoir un effet négatif sur l'appréciation de l'environnement \citep{lavandier2006contribution}.
+
+\begin{figure}[t]
+        \myfloatalign
+        \subfloat[]
+        {\includegraphics[width=.8\linewidth]{gfxXpUrbanSoundscape/xp1_class_1}\label{fig:soundsourcea}} \par
+        \subfloat[]
+        {\includegraphics[width=.4\linewidth]{gfxXpUrbanSoundscape/xp1_class_2}\label{fig:soundsourceb}} 
+        \subfloat[]
+        {\includegraphics[width=.4\linewidth]{gfxXpUrbanSoundscape/xp1_class_3}\label{fig:soundsourcec}} 
+       \caption[TODO]{TODO}\label{fig:soundsource}
+\end{figure}
+
+\subsubsection{Marqueurs sonores}
+
+Nous venons de voir qualitativement que la composition de sources sonores des scènes semblent différer entre les deux types d'environnement (i et ni). Nous essayons maintenant de voir si, parmi ces classes, certaines, appelées marqueur sonore, sont typiques d'un environnement en particulier. Pour ce faire, nous utilisons le V-test (\cf~section~\ref{sec:ch5_methodoEtStat}), en considérant séparément chaque niveau d'abstraction. Les résultats sont présentés dans le tableau~\ref{tab:markers}.
+
+Concernant les événements sonores, 9 marqueurs sont identifiés sur l'ensemble des niveaux d'abstraction. Comme la figure~\ref{fig:soundsource} nous le laissait présager, les classes relatives à l'activité humaine (\emph{pas homme béton},\emph{sonnette vélo}), et à la nature (\emph{animaux, oiseaux},\emph{chant d'oiseaux}) sont des marqueurs des i-scènes. Nous notons également la présence la classe \emph{cloche} comme marquer d'un environnement idéal. Ce fait peut être attribué au background socio-culturel des sujets, dans leur grande majorité des citoyens européens. En effet selon Schafer, un son reconnut par un individu comme faisant partie intégrante de son environnement est bien accepté. Les marqueurs des ni-scènes sont des classes faisant référence à des sons de travaux (\emph{travaux}), ou suggérant un trafic dense (\emph{klaxon}, \emph{sirène}). Bien que les marqueurs des ni-scènes soient intuitifs. 
+
+Concernant les textures sonores, 5 marqueurs sont identifiés. Pour les i-scènes, il s'agit de classes faisant référence à des ambiances amorphes calmes (\emph{cour-intérieur/parc} et \emph{parc}). Pour les ni-scènes, il s'agit comme pour les événements de classes faisant référence à des bruits de travaux (\emph{travaux} et \emph{véhicule de travaux}), ainsi que d'une classe faisant référence au trafic (\emph{carrefour}).
+
+
+Bien que l'ensemble des marqueurs identifiés soient intuitifs, nous notons qu'aucune des classes d'événements faisant directement référence aux bruits de véhicules motorisés n'en fait partie. Seule une classe marqueur de texture y fait référence (\emph{carrefour}). Pour représenter un trafic désagréable, les sujets ont porté leur choix sur les classes \emph{klaxon} et \emph{sirène}. On peut supposer que les sons isolés de véhicules sont compris comme faisant partie intégrante de l'environnement urbains, et ne sont ainsi pas particulièrement associé à un environnement désagréable. \\ 
+
+\gl{ici analyse des caractéristiques des classes trafics}
+ 
 \begin{table}[t]
  \setlength{\tabcolsep}{0.2pt}
  \centering
   {\renewcommand{\arraystretch}{0.9}
 \begin{tabular}{c c c c} 
-Niveau        & \multicolumn{2}{c}{Marqueurs sonores} \\
+Niveau        & \multicolumn{2}{c}{Marqueurs sonores événements} \\
 d'abstraction & i-scènes & ni-scènes \\
 \hline
 0  &                               &  construction work (3.78)  \\
@@ -354,6 +435,15 @@ d'abstraction & i-scènes & ni-scènes \\
   & male footsteps                 &  \\
   &   concrete (3.6)               &  \\
   \hline
+  \hline
+          & \multicolumn{2}{c}{Marqueurs sonores textures}      \\
+\hline
+0         &     courtyard/park (4.1) &  construction work (3.9)  \\
+\hline
+          &     park (3.65)           &  crossroads (3.6)  \\
+1         &     park (3.65)           &  vehicle work (3.3)  \\
+\hline
+2         &     park (3.64)           &  crossroads (3.56)  \\
 \end{tabular}
 }
 \vspace{0.5mm}
@@ -363,7 +453,29 @@ d'abstraction & i-scènes & ni-scènes \\
 
 \subsection{Étude des espaces de représentations induits par les descripteurs sémantiques}
 
-\begin{figure}[bth]
+Dans cette partie, nous évaluons la capacité d'une représentation sémantique à séparer les deux types d'environnement. Pour ce faire, nous calculons une précision au rang 5 ($p@5$) sur l'espace induit par les descripteurs sémantiques $S$, et ce pour chaque niveau d'abstraction (\cf~section~\ref{sec:ch5_methodoEtStat}). Les vecteurs $S$ sont construit en utilisant toutes les classes ($ET$), les classes d'événements ($E$), les classes de textures ($T$), les classes d'événements en ne considérant que les marqueurs sonores ($E_m$),  les classes d'événements sans considérer les marqueurs sonores ($E_{w/o,m}$)  Les résultats sont affichés sur la figure~\ref{fig:pa5}.
+
+En ce qui concerne $ET$, la $p@5$ est de $76\%$ pour le niveau d'abstraction 0, et reste supérieure à $86\%$ à partir du niveau d'abstraction 1. Ces résultats confirment qu'il est possible de clairement distinguer les deux types d'environnement en se basant seulement sur la présence ou l'absence des classes de sons. Nous notons également que, plus le niveau d'abstraction est élevé, et plus la capacité à séparer les environnements est importante, en d'autres termes, plus nous sommes précis dans notre description de la composition des scènes, et plus nous sommes à même d'établir une distinction claire entre les i- et ni-scènes.
+
+En considérant séparément $E$ et $T$, il apparaît que 1) la $p@5$ obtenu avec $E$ est similaire à celle obtenue avec $ET$, et 2) que la $p@5$ obtenue avec $T$ est systématiquement inférieur d'environ $10$ à $15\%$ de celle de $E$. Ces résultats indique que l'information sémantique permettant de séparer les deux environnements est principalement portée par les événements. Ces résultats font par ailleurs écho à ceux obtenus par  \citep{maffiolo_caracterisation_1999}, et qui montrent que nous analysons de manière descriptive (en identifiant les sources) les scènes événementielles,\ie~composées d'événements sonores (\cf~section~\ref{sec:ch3_catsoundscape}).
+
+Enfin, il apparaît que la $p@5$ obtenue avec $E_{m}$ est similaire voire supérieure à celles de $E$ et $ET$, et ce bien qu'une information partielle soit utilisée dans ce cas pour décrire les scènes. La dimension des vecteurs de description $S$ dans le cas $E_m$ est en effet inférieure à la dimension des vecteurs $S$ dans $E$, qui est elle même inférieure à celle obtenue dans le cas où toutes les classes sont utilisées ($ET$). Dans le cas où les marqueurs ne sont pas pris en compte pour la description ($E_{w/o,m}$), les précisions chutent, passant même sous celles obtenue en ne considérant que les textures.
+
+
+Pour résumer nous déduisons de cette analyse les points suivants
+
+\begin{enumerate}
+\item Contrairement à ce que nous avions constaté avec les descripteurs structurels, une description sémantique de la composition des scènes en terme de presence/absence de source sonore permet de bien séparer les deux types d'environnement (i ou ni).
+\item L'information sémantique est majoritairement portée par les classes d'événements sonores
+\item Parmi les classes d'événements, seule une partie, \ie~les marqueurs sonores, sont nécessaires afin de faire distinction entre les i- et ni-scènes
+\end{enumerate}
+
+Maintenant que nous nous avons isolé les classes typiques des i- et ni-scènes et que nous avons vérifié que la distinction entre ces environnements dépendait de la présence de ces classes, ils nous reste à voire si une description structurelle  des scènes basée sur ces marqueurs sonores est capable de mieux caractériser l'agrément qu'une description structurelle globale. \\
+
+\gl{analyse marqueur texture ?}\\
+\gl{HCA sur $S$, + ANOVA sur $A$}
+
+\begin{figure}[t]
         \myfloatalign
         \includegraphics[width=.9\linewidth]{gfxXpUrbanSoundscape/pa5_1}
        \caption[TODO]{TODO}\label{fig:pa5}
@@ -379,37 +491,54 @@ d'abstraction & i-scènes & ni-scènes \\
 $L_m$            & 0.03  ($p=0.88$)           & \textbf{-0.63} ($p<0.01$) \\
 $LE_m$           & 0.08  ($p=0.66$)           & \textbf{-0.60} ($p<0.01$) \\
 $LT_m$           & -0.11 ($p=0.66$)           & -0.00 ($p=0.98$) \\
-$D_m$            & 0.03 ($p=0.85$)            & -0.32 ($p=0.05$) \\
-$DE_m$           & 0.09  ($p=0.62$)           & \textbf{-0.47} ($p<0.01$) \\
+$L_b$            & \textbf{-0.52} ($p<0.01$)  & -0.29 ($p=0.09$) \\
+$LE_b$           & \textbf{-0.51} ($p<0.01$)  & -0.16 ($p=0.36$) \\
+$LT_b$           & -0.32 ($p=0.05$)           & \textbf{-0.75} ($p<0.01$) \\
 $L_m-L_b$        & \textbf{0.67} ($p<0.01$)   & -0.24 ($p=0.15$) \\
 $LE_m-LE_b$      & \textbf{0.66} ($p<0.01$)   & -0.31 ($p=0.06$) \\
-$LT_m-LT_b$      & 0.16 ($p=0.54$)            &  0.39 ($p<0.05$) \\
-
+$LT_m-LT_b$      & 0.16 ($p=0.54$)            & \textbf{0.39} ($p<0.05$) \\
+$D_m$            & 0.03 ($p=0.85$)            & -0.32 ($p=0.05$) \\
+$DE_m$           & 0.09  ($p=0.62$)           & \textbf{-0.47} ($p<0.01$) \\
 \hline
 \end{tabular}
 \vspace{0.5mm}
 \caption{Coefficients de corrélation linéaire calculés entre l'agrément perçu moyen $A$ \vs~TODO.}
-\label{tab:coorMarkers}
+\label{tab:corrMarkers}
 \end{table}
 
-\begin{figure}[bth]
-        \myfloatalign
-        \subfloat[]
-        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_7}\label{fig:soundlevelMarkera}}
-        \subfloat[]
-        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_11}\label{fig:soundlevelMarkerb}}
-        \subfloat[]
-        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_15}\label{fig:soundlevelMarkerc}}\par
-        \subfloat[]
-        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_8}\label{fig:soundlevelMarkerd}}
-        \subfloat[]
-        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_12}\label{fig:soundlevelMarkere}}
-        \subfloat[]
-        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_16}\label{fig:soundlevelMarkerf}}
-       \caption[TODO]{TODO}\label{fig:soundlevelMarker}
-\end{figure}
+Comme pour la  section~\ref{sec:ch5_corrDesStruct}, nous évaluons les corrélations entre $A$ et les descripteurs structurels. Pour cette section, les descripteurs structurels sont calculés en tenant compte des marqueurs sonores précédemment identifié. Nous définissons $X_m$ le descripteurs $X$ calculé en ne prenant en compte que les sons des marqueurs. A l'inverse, nous définissons $X_b$ ($b$: pour ``\,bruit\,'') le descripteurs $X$ calculé en prenant en compte toutes les classes de sons excepté les marqueurs. Lorsque que le descripteurs caractérise une i-scène (respectivement ni-scène), nous ne considérons pour le calcul que les marqueurs identifiés pour les i-scènes, que nous nommons i-marqueurs (respectivement ni-scènes/ni-marqueurs). Les résultats sont affichés sur le tableau~\ref{tab:corrMarkers}.
 
-\begin{figure}[bth]
+Considérons dans un premier temps les densités. Les résultats pour $D_m$ et $DE_m$ sont similaires à ceux observés précédemment pour $D$ et $DE$, a l'exception de $DE_m$ pour les ni-scènes qui ne présente plus une corrélation significative. Ces résultats tendent à confirmer que la densité est un indicateur d'agrément de faible importance, qu'on la considère globalement ou en prenant en compte les contributions séparées de différentes sources.
+
+\gl{Rajouter $D_b$}
+
+Concernant les niveaux sonores (\Cf~Figures~\ref{fig:soundlevelMarkera}, \ref{fig:soundlevelMarkerb}, \ref{fig:soundlevelMarkerc}, \ref{fig:soundlevelMarkerd}, \ref{fig:soundlevelMarkere} et~\ref{fig:soundlevelMarkerf}), là encore les même tendances sont observées entre $L_m$, $LE_m$ et $LT_m$ d'une part et $L$, $LE$ et $LT$ d'autre part. Que l'on considère les marqueurs uniquement ou toutes les classes il s'avère que :
+
+\begin{enumerate}
+\item Il existe une différence significative entre les niveaux des i- et ni-scènes ($L_m$, $LE_m$ et $LT_m$: $p<0.01$) 
+\item Le niveau sonore des scènes est majoritairement porté par les événements sonores.
+\item Le niveau sonore des événements a une influence sur la perception de l'agrément pour les ni-scènes, mais pas pour les i-scènes.
+\item Le niveau sonore des textures ne joue aucun rôle dans la perception de l'agrément
+\end{enumerate}
+
+En conclusion, le niveau des ni-marqueurs sonores a une influence négative sur l'agrément pour les ni-scènes, mais le niveau des i-marqueurs n’impacte pas l'agrément perçu pour les i-scènes.
+
+En considérant maintenant les classes non marqueurs, nous remarquons, sur les i-scènes, une corrélation négative modérée pour $L_b$  ($r=-52$, $p<0.01$) et $LE_b$ ($r=-51$, $p<0.01$). C'est la première fois qu'un indicateur objectif nous permet un temps soit peu de caractériser l'agrément des environnements agréable. Il s'avère que le niveau des classes de sons n'étant pas typique d'un environnement agréable a un impact négatif sur l'agrément. 
+
+Par ailleurs, alors que $LT$ ne présentait pas de corrélation pour les ni-scènes, une corrélation négative forte est observée pour $LT_b$ ($r-0.75$, $p<0.01$). Ce fait indique que des classes de textures, utilisées aussi bien pour simuler les i-scènes et les ni-scènes, n'affectent pas l'agrément perçu de la même manière. Pour une même classe \emph{foule}, le niveau perçu dans un cadre idéal n'affectera pas la perception de l'agrément, alors que dans un cadre non-idéal, il impactera négativement le ressentie \gl{chiffre}.
+
+Pour finir, nous considérons un dernier groupe de descripteurs, nommément $L_m-L_b$, $LE_m-LE_b$ et $LT_m-LT_b$ (\Cf~Figures~\ref{fig:soundlevelMarkerDiffa}, \ref{fig:soundlevelMarkerDiffb}, \ref{fig:soundlevelMarkerDiffc},, \ref{fig:soundlevelMarkerDiffd}, \ref{fig:soundlevelMarkerDiffe} et~\ref{fig:soundlevelMarkerDifff}). Il s'agit de la différence entre les niveaux des marqueurs et ceux des autres classes de sons. Ces descripteurs représentent ainsi l’émergence des marqueurs par rapport à la mixture sonore. 
+
+Pour les i-scènes, une corrélation forte et positive est observée pour $L_m-L_b$ ($r=0.67$, $p<0.01$) et $LE_m-LE_b$ ($r=0.66$, $p<0.01$). Pour les ni-scènes, seule une légère corrélation positive est observée pour $L_m-L_b$ ($r=-0.39$, $p<0.05$). Dans le cas des i-scènes, ce n'est donc pas le niveau absolu des marqueurs qui importe, mais leur niveau relatif par rapport aux autres sons qui composent la scène. On un donc pour les environnements idéaux un double mécanisme perceptif: 
+
+\begin{itemize}
+\item Plus le niveau absolu des sons n'étant pas des i-marqueurs est élevé, et plus l'agrément est faible
+\item Plus le niveau relatif des i-marqueurs par rapport aux autres sons est élevé et plus l'agrément est élevé
+\end{itemize}
+
+Pour les ni-scènes, le fait que nous observions des corrélations pour $L_m$ et $LE_m$, et aucune pour $L_m-L_b$ et $LE_m-LE_b$, montre que c'est bien le niveau absolu qui importe.
+
+\begin{figure}[t]
         \myfloatalign
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_density_7}\label{fig:densityMarkera}}
@@ -422,8 +551,20 @@ $LT_m-LT_b$      & 0.16 ($p=0.54$)            &  0.39 ($p<0.05$) \\
        \caption[TODO]{TODO}\label{fig:densityMarker}
 \end{figure}
 
-\begin{figure}[bth]
+\begin{figure}[t]
         \myfloatalign
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_7}\label{fig:soundlevelMarkera}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_11}\label{fig:soundlevelMarkerb}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_15}\label{fig:soundlevelMarkerc}}\par
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_8}\label{fig:soundlevelMarkerd}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_12}\label{fig:soundlevelMarkere}}
+        \subfloat[]
+        {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_16}\label{fig:soundlevelMarkerf}}\par
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_19}\label{fig:soundlevelMarkerDiffa}}
         \subfloat[]
@@ -436,11 +577,19 @@ $LT_m-LT_b$      & 0.16 ($p=0.54$)            &  0.39 ($p<0.05$) \\
         {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_22}\label{fig:soundlevelMarkerDiffe}}
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfxXpUrbanSoundscape/xp_soundlevel_24}\label{fig:soundlevelMarkerDifff}}
-       \caption[TODO]{TODO}\label{fig:soundlevelMarkerDiff}
+       \caption[TODO]{TODO}\label{fig:soundlevelMarker}
 \end{figure}
+
+
+
 
 \subsection{Discussions}
 
+\gl{Résumé des descripteurs utiles}\\
+\gl{Pour améliorer une i-scène, on a une triple action: 1) identifier les sons agréables, 2) augmenter le niveau de ces sons et 3) baisser le niveau des autres}\\
+\gl{Reprendre la conclusion de l'article}\\
+\gl{On a bien montré que les descripteurs à utiliser dépende de la nature de l'environnement. Comme la nature de l'environnement dépend de sa composition, les descripteurs dépendent des sources sonores. Attention cependant, la perception de sources non typique peut elle même varier en fonction du contexte environnemental (\eg~foule)}
+\gl{Proposer un modèle perceptive sur la base du modèle prédictif}
 \section{Simulation et approche positive}
 \label{sec:xp3}
 
