@@ -5,19 +5,75 @@
 \section{Motivations}
 
 \subsection{Analyse sensorielle}
+\label{sec:ch4_anaSo}
 
-\gl{G0: étude de la contribution des sources sonores} \\
-
-\gl{G1: from WAC2015} Some generative systems have already been proposed to generate sound environments \citep{misra2006new,misra2007musical,valle2009framework,finney2010soundscape,schirosa2010system}. Those methods are mostly designed to be used in the sonification of virtual sound environments \citep{valle2009framework,finney2010soundscape}. They may be seen as semi-autonomous generative system as they do not take user interaction as unique input, but also visual descriptions or soundscape recordings. Other methods that have been proposed and take user interaction as input are designed to aid composition, and thus not suited for perceptual studies \citep{misra2006new,misra2007musical}. To the best of our knowledge, only the work of Bruce et al \citep{bruce2009development,bruce2014effects} tackles the issue of proposing a tool that 
+\jlv{Comme nous l'avons vu à la section~\ref{sec:ch3_appCatDim}, les approches expérimentales étudiant les paysages sonores sont de deux natures:} 
+\jls{Comme nous l'avons vu à la section~\ref{sec:ch3_appCatDim}, l'étude expérimentale des paysages sonores adopte deux approches:}
 
 \begin{itemize}
-\item allows humans to manipulate or create a sound environment
-\item  is suited for perceptive experimental research.
+\item \jlv{Les approches catégorielles: où il s'agit de mettre en évidence des catégories de paysages sonores ou de sources sonores} \jls{l'approche catégorielle: la mise en évidence des catégories ou sources sonores}
+\item \jlv{Les approches dimensionnelles: où il s'agit d'identifier les dimensions perceptives engagées dans les processus cognitifs, ainsi que les indicateurs dont elles dépendent} \jls{l'approche dimensionnelle: l'identification des dimensions perceptives engagées dans les processus cognitifs, et des indicateurs dont elles dépendent}
 \end{itemize}
- 
-The tool proposed by Bruce et al allows subjects to add or remove sound sources, change sound level and other acoustical parameters, and set the source positions in the space. Using this framework, they asked subjects to manipulate sound source recordings of a urban square and found that sources inclusion or exclusion depends more on social expectation than acoustic features. Bruce et al point out the fact that the lack of available sources limits the analysis, and suggest to group sound sources into ``\,semantic groups\,'' to circum-
-vent this issue. \\
-G2: \citep{davies2014soundscape} montre que quand on demande à des participants de simuler un paysage sonore, les simulations font références à ce que les participants s'imaginent être un environnement typique, sans tenir compte de leur propre préférence pour des sons particuliers.
+
+\jlv{Concrètement, ces approches suivent des objectifs différents:}
+\jls{Ces approches s'inscrivent dans des démarches différents:}
+
+\begin{itemize}
+\item \jlv{l'approche catégorielle cherche à identifier les objets d'intérêts de l'environnement sonore} \jls{l'approche catégorielle veut identifier les objets d'intérêt \jlc{"objet d'intérêt" c'est le jargon de l'art ?} de l'environnement sonore}
+\item \jlv{l'approche dimensionnelle cherche à identifier les dimensions caractérisant les qualités affectives perçues d'une scène} \jls{l'approche dimensionnelle veut identifier les éléments caractérisant les qualités affectives perçues d'une scène}
+\end{itemize}
+
+\jlc{Ici je jlvise tout car il y a me semble-t-il des lourdeurs des redites (comme dirait Mathias: phrases qui vont au but, ne pas utiliser quatre mots là où trois suffisent). Je tente en suivant une réécriture}
+
+\jlv{Nous pensons que la simulation offre un cadre expérimental élégant permettant de faire le lien entre les deux approches.}
+
+\jlv{Si l'on interroge les influences qu'ont les différents éléments constituant une scène sur les qualités affectives perçues, alors les deux approches se rejoignent naturellement. L'approche catégorielle permet d'établir la liste des éléments d'intérêt, laquelle liste peut servir de base à une annotation des stimuli utilisés par l'approche dimensionnelle afin d'étudier les contributions spécifiques de leurs éléments respectifs.}
+
+\jlv{D'une part, comme illustré à la figure~\ref{fig:paradigmeSimu1}, la simulation peut être vue comme l'approche inverse des épreuves catégorielles (\cf~Section~\ref{sec:ch3_appCategorielle}). Quand les épreuves catégorielles discrétisent l'environnement sonore sur la base d'un tri et/ou d'une description verbale réalisés  par un sujet, la simulation, elle, recompose cet environnement, à partir d'une banque imposée de sons isolés. Ainsi, les catégories sonores, point de sortie des épreuves catégorielles, constituent-elles la banque de sons, point d'entrée de la simulation.}
+
+\jlv{D'autre part, la finalité de la simulation est de produire un environnement complet, dont la partition (\cf~Section~\ref{sec:ch4_modelDes}), \ie~ses caractéristiques structurelles et compositionnelles, est parfaitement connue. Les stimuli ainsi produits peuvent être utilisés par l'approche dimensionnelle, afin d'étudier de manière fine les contributions des différents éléments.}
+
+\jlv{La simulation se pose donc comme un outil intermédiaire, faisant le lien entre les connaissances issues des études adoptant l'approche catégorielle, et les stimuli requis par l'approche dimensionnelle.} 
+
+\jls{La simulation nous paraît offrir un cadre expérimental où les deux approches se rejoignent et se complètent. L'approche catégorielle établit la liste des éléments d'intérêt, laquelle liste sert de base à une annotation des stimuli étudiés par l'approche dimensionnelle. Comme illustré à la figure~\ref{fig:paradigmeSimu1}, la simulation procède, elle, à l'inverse de l'approche catégorielle (\cf~Section~\ref{sec:ch3_appCategorielle}). L'épreuve catégorielle discrétise l'environnement sonore sur la base du tri et/ou de la description verbale du sujet. La simulation, elle, recompose l'environnement, à partir d'une banque imposée de sons isolés. Sa finalité est de produire un environnement complet, dont la partition (\cf~Section~\ref{sec:ch4_modelDes}), \ie~ses caractéristiques structurelles et compositionnelles, est parfaitement connue. Les stimuli obtenus sont utilisés par l'approche dimensionnelle, afin d'étudier de manière fine les contributions spécifiques des différents éléments. On le voit, la simulation est un outil global d'évaluation du signal, dans la mesure où exploite à la fois les ressources des méthodes catégorielles et dimensionnelles.}
+\jlc{par un jeu de copier/coller, j'ai essayé de condensé. Si tu es OK, je pense quand même que, sur cette base, tu devras reformuler pour redonner du sens} 
+  
+
+\jlv{Passer par la simulation présente par ailleurs plusieurs intérêts:}
+\jls{Lsa simulation présente d'autres intérêts:}
+
+\begin{itemize}
+\item \emph{intérêt pratique}: afin d'étudier l'importance relative des différentes sources, il est indispensable de disposer de stimuli dont la partition est connue. Une première solution, \jls{exit:notamment} adoptée par \citep{lavandier2006contribution}, \jlv{est alors} \jls{a été} d'annoter les stimuli. L'annotation cependant est une solution limitée: 
+\begin{enumerate}
+\item \jlv{cette opération est fastidieuse, très coûteuse en temps, et difficile à réaliser pour de grandes banques de données} \jls{l'opération est fastidieuse, longue,et difficile à mettre en œuvre sur de grandes banques de données}
+\item connaître la position des différentes sources dans une mixture sonore ne permet pas d'isoler leurs caractéristiques physiques respectives, et donc de calculer des indicateurs acoustiques dédiés. En traitement du signal, la séparation des sources reste un problème encore très étudié.
+\end{enumerate}
+
+\gl{\jlv{Passer par la simulation nous permet d'obtenir directement le stimuli et son annotation, cette dernière étant produite directement par le sujet, et non par un individu tiers} \jls{Par la simulation, nous obtenons directement le stimuli et son annotation. Qui plus est, celle-ci est produite par le sujet lui-même, et non par un tiers.}}
+
+\item \emph{intérêt écologique}: la validité écologique des stimuli est un problème fondamental en analyse sensorielle. Dans le cas de l'analyse des qualités affectives perçues, où l'on demande \jlv{exit:directement} au sujet ``\,que pensez vous de la qualité $Q$ de cet environnement\,'', il s'agit de garantir que les stimuli proposés fassent sens par rapport à la représentation mentale que le sujet se fait: 
+\begin{itemize}
+\item  du monde sonore; 
+\item  de $Q$. 
+\end{itemize}
+
+Il est possible, dans les approches classiques, de résoudre ces problèmes en étudiant de manière préalable les stimuli à enregistrer (\cf~Section~\ref{sec:ch3_ecologique}). \jlv{La simulation, en renversant la question posée (``\,générer un environnement qui correspond à une certaine valeur de $Q$\,''), garantit, quant à elle, la validité écologique des stimuli. Le sujet est directement responsable de la nature du stimuli. Ce dernier est ainsi directement connecté à la représentation sonore du sujet.} \jls{La simulation, en renversant la question posée (``\,générer un environnement qui correspond à une certaine valeur de $Q$\,''), garantit la validité écologique des stimuli par définition connectés à la représentation sonore du sujet.}
+
+\item \emph{représentativité des stimuli}: toute étude sensorielle, qu'elle soit \emph{in situ} ou en laboratoire, doit sélectionner un nombre restreint d'environnements sonores à évaluer. Il s'agit \jls{exit:alors}, tant que faire se peut, de garantir que le substrat de stimuli proposé soit représentatif de l'ensemble des environnements étudiés, un déséquilibre dans l'élaboration dudit substrat pouvant affecter, \emph{in fine}, l'évaluation des stimuli. 
+
+Dans le cas des études sur la perception des environnements urbains, il est d'usage d'isoler des zones d’intérêts (parc, rue, place, \cf~Section~\ref{sec:ch3_ecologique}), et de répartir équitablement les stimuli parmi ces zones. \jlv{Cependant, l'environnement d'une même zone est changeant, il s'agit alors également de contrôler la diversité structurelle des stimuli provenant d'une même zone, et particulièrement si l'on cherche à étudier l'influence spécifique des différentes sources. Indiscutablement, cette étape est ardue.} \jls{Cependant, l'environnement d'une même zone est changeant. Il est nécessaire de contrôler la diversité structurelle des stimuli en provenant. D'autant plus, si l'on cherche à étudier l'influence spécifique des différentes sources. Cette étape est complexe.}
+
+Si la structure interne des paysages sonores est variable, la diversité des sources sonores qui les composent est plus contrôlable \jlc{au paragraphe précédent variabilité des paysages et contrôle de la diversité structurelle des stimuli = difficulté (ardue), et au présent chapitre, cette diversité est plus contrôlable. Tu confirmes ?}. Des environnements sonores de parcs et de rues peuvent comprendre des voix humaines, des bruits de pas, des sons de voitures etc. Seules les caractéristiques physiques, ainsi que les patterns d'occurrences de ces sources, vont varier. Évaluer des scènes simulées, à partir d'une banque de sons isolés (sources sonores), \jlv{peut se révéler une solution pratique au problème de diversité des stimuli} \jls{peut constituer une solution au problème de la diversité des stimuli.}. \jlv{Prenons l'exemple de l'étude de l'agrément sonore} \jls{considérons l'étude de l'agrément sonore} dans l'environnement urbain. Dans un premier temps, les stimuli sont obtenus via une épreuve de simulation. \jlv{Dans cette dernière} \jls{Dans cette simulation}, seule la qualité affective des stimuli est fixée (agréable/désagréable). Les sujets construisent alors les scènes directement en fonction de l'image qu'ils se font d'un environnement urbain agréable/désagréable, adaptant ainsi la structure de la scène à la qualité de l'environnement. Dans un deuxième temps, \jlv{ces scènes peuvent alors servir de stimuli} \jls{les scènes ainsi élaborées peuvent constituer des stimuli} pour une analyse sémantique différentielle de l'agrément. Cette approche est \jls{exit:notamment} celle utilisée dans nos travaux (\cf~Chapitre~\ref{ch:psycho_xp}). 
+
+Enfin, la plupart des environnements que nous percevons sont relativement neutres, et ne provoquent pas en nous de réactions particulières. Il peut n'être pas évident d'évaluer des dimensions perceptives comme l'agrément, la gêne ou le confort, de ces environnements. Des scènes simulées, sur la base d'une qualité affective imposée (\eg~agréable), proposent, quant à elles, des versions stéréotypées des environnements ainsi qualifiés. On peut voir dans ces scènes un ``\,résumé cognitif\,'', riche et condensé des environnements étudiés. Isoler les éléments d'intérêt de ces scènes peut s'avérer plus facile.
+
+\end{itemize}
+
+\begin{figure}[t]
+        \myfloatalign
+        \includegraphics[width=.8\linewidth]{gfx/1}
+       \caption{TODO}\label{fig:paradigmeSimu1}
+\end{figure}
 
 \subsection{Analyse automatique}
 
@@ -27,120 +83,141 @@ G2: \citep{davies2014soundscape} montre que quand on demande à des participants
 \subsection{Discrétiser l'environnement sonore}
 \label{sec:ch4_modelInspi}
 
+
 \subsubsection{L'unité de bases: la source sonore}
 
-\jlv{Les études portant su l'ASA, et plus spécifiquement sur les processus de ségrégation, montrent que l'humain fait sens de son environnement en isolant les informations relatives aux différentes sources qui composent la scène. Elles montrent notamment que ce groupement intervient très tôt dans la chaîne de traitement, et se base sur des règles génériques innées. \\} \jls{Les études portant su l'ASA, et plus spécifiquement sur les processus de ségrégation, montrent, d'une part, que l'humain fait sens de son environnement en isolant les informations relatives aux différentes sources qui composent la scène, d'autre part, que ce groupement intervient très tôt dans la chaîne de traitement, et se base sur des règles génériques innées. \\}
+Les études portant sur l'ASA, et plus spécifiquement sur les processus de ségrégation, montrent, d'une part, que l'humain fait sens de son environnement en isolant les informations relatives aux différentes sources \jlv{qui composent la scène} \jls{qui le composent \jlc{le = environnement}}, d'autre part, que ce groupement intervient très tôt dans la chaîne de traitement, et se base sur des règles génériques innées.\\
 
-\gl{Neurosciene}
+\gl{TODO: Neuroscience} \\
 
-\jlv{De même, la communauté des paysages sonores \jlc{par "communauté des paysages sonores" ?  tu entends la communauté des chercheurs ?}, adoptant l’approche catégorielle, a également montré que les processus de catégorisation s'appuient également sur la composition sémantique des scènes, \ie~les sources sonores identifiées}. \jls{De même, la recherche en matière de paysages sonores, adoptant l’approche catégorielle, met en évidence que les processus de catégorisation s'appuient également sur la composition sémantique des scènes, \ie~les sources sonores identifiées.}
+De même, la recherche en matière de paysages sonores, adoptant l’approche catégorielle, met en évidence que les processus de catégorisation s'appuient également sur la composition sémantique des scènes, \ie~les sources sonores identifiées.
 
-\jlv{Il semble alors intuitif} \jls{Il nous apparaît alors normal}, pour notre modèle, de considérer comme élément de base la source sonore. Or, comme nous l'avons vu précédemment (\cf~section~ref{XX}), la notion de source sonore est variable, un même objet pouvant être reconnu suivant plusieurs degrés d'abstraction.
+\jlv{Il nous apparaît alors normal, pour notre modèle, de considérer comme élément de base la source sonore. Or, comme nous l'avons vu précédemment (\cf~Section~\ref{sec:ch3_categoEtAbstract}), la notion de source sonore est variable, un même objet pouvant être reconnu suivant plusieurs degrés d'abstraction.} \jlc{Mathias a dit pas de nous} \jls{Il apparaît pertinent, pour notre modèle, de considérer comme élément de base la source sonore. Or, comme vu précédemment (\cf~Section~\ref{sec:ch3_categoEtAbstract}), la notion de source sonore est variable, un même objet pouvant être reconnu suivant plusieurs degrés d'abstraction.} \jlc{Dans la rédaction de ce paragraphe il y a un problème de raisonnement logique: 1) Les études montrent... 2) De même, la recherche met en évidence... 3) (en conséquence de quoi...) Il apparaît pertinent... . Ici la démonstration devrait s'arrêter, mais 4) Or, comme vu précédemment... et puis plus rien, aucune conséquence tirée de ce "or"? Tout ce propos finalement mène nulle part !!!} 
 
-\subsubsection{Typologie: source et action}
+\jlc{je tente de réécrire}
+\jls{Les études portant sur l'ASA, et plus spécifiquement sur les processus de ségrégation, montrent, d'une part, que l'humain fait sens de son environnement en isolant les informations relatives aux différentes sources qui le composent, d'autre part, que ce groupement intervient très tôt dans la chaîne de traitement, et se base sur des règles génériques innées.\\} 
 
-\jlv{Avant de pouvoir enregistrer ces sources, il est nécessaire de les identifier. Une approche naïve serait alors d'établir la liste exhaustive de toutes les classes de sources sonores composant l'environnement sonore. Cette approche soulève alors 2 problèmes:}
-\jls{Avant de pouvoir enregistrer ces sources, il est nécessaire de les identifier. Une démarche naïve consisterait alors à d'établir la liste exhaustive de toutes les classes de sources sonores composant l'environnement sonore. Une telle approche soulèverait deux problèmes:}
+\jls{ \gl{TODO: Neuroscience} \\ \jlc{au passage "neurosciences" ne s'emploie-t-il pas toujours au pluriel?}} 
+
+\jls{Dans le même temps, la recherche sur les paysages sonores, adoptant l’approche catégorielle, met en évidence que les processus de catégorisation s'appuient également sur la composition sémantique des scènes, \ie~les sources sonores identifiées. Il apparaît pertinent, pour notre modèle, de considérer comme élément de base la source sonore. Or, comme vu précédemment (\cf~Section~\ref{sec:ch3_categoEtAbstract}), la notion de source sonore est variable, un même objet pouvant être reconnu suivant plusieurs degrés d'abstraction.}
+
+\jlc{pour ce qui est du "Or" je n'ai pas d'idée. Mais après tout c'est un rappel (\cf~Section~\ref{sec:ch3_categoEtAbstract}). Ne peut-on pas tout simplement supprimer?}
+
+\subsubsection{Typologie: niveaux d'abstractions et nomenclature source-action}
+\label{sec:ch4_sourceAction}
+
+\gl{\jlv{L'obtention de collections de sons relatifs aux différents sources sonores peuplant l'environnement urbain est une nécessité}} \jls{La constitution de banques de sons peuplant l'environnement urbain est incontournable}. Avant d'acquérir ces sources, \ie~de les enregistrer, il est nécessaire de les identifier. Une démarche naïve consisterait alors à établir la liste exhaustive de toutes les classes de sources sonores composant l'environnement. Une telle approche soulèverait deux problèmes:
+\begin{itemize}
+\item une source sonore peut se décrire en fonction de plusieurs niveaux d'abstraction. \jlv{Comme nous l'avons vu (\cf~Section~\ref{sec:ch3_representationMentale}), identifier et nommer sont des actions déterminées par notre représentation mentale du monde} \jls{Identifier et nommer sont des actions déterminées par notre représentation mentale du monde (\cf~Section~\ref{sec:ch3_representationMentale})}. Cette représentation s'organise, entre autre, suivant l'axe vertical des niveaux d'abstraction sur lequel s'appuie notre travail de catégorisation. Ainsi, si deux individus entendent un même son de voiture, il est possible que le premier le nomme ``\,voiture\,'' et le deuxième ``\,moteur\,''. Le dénombrement de l'ensemble des sources pouvant être utilisées par le modèle doit prendre en compte ce fait. Ces sources doivent être regroupées en classes hiérarchisées, afin de bâtir une structure taxonomique;
+\item il n'existe pas de taxonomie standardisée des sources sonores. C'est une tradition des sciences modernes de classer et nommer les éléments avant de les étudier. Dans les domaines de la faune ou de la flore, une observation longue et minutieuse des sujets d'étude a permis d'élaborer un système de classification (taxonomie), et ainsi d'organiser et trier les objets en fonction de leurs propriétés partagées. Elle a permis encore d'élaborer une terminologie précise des classes d'objets. Grâce à quoi, la Biologie est devenue une science, laquelle science, au passage, devait donner naissance à la théorie de l'évolution \citep{lecointre2006tree}. Dans le domaine du son (ainsi que dans celui des odeurs), en revanche, point de système de classification \citep{dubois2000categories,niessen2010categories}. Nous trouvons à cela deux explications:
 
 \begin{itemize}
-\item \jlv{Une source sonore peut se décrire \jlc{avec} plusieurs niveaux d'abstraction. Comme nous l'avons vu, identifier et nommer un objet est très lié à notre représentation mentale du monde. Selon la théorie de la catégorisation, l'organisation catégorielle \jlc{faut-il le rappeler ici le terme puis que qu'après tout nous sommes dans la théorie de la catégorisation ? on retire et du coup on évite une répétition !} de nos représentations \jlc{se déploie}, entre autre, selon un axe verticale, relatif au niveau d'abstraction \jlc{"considéré pour catégoriser un objet perçu" tout ça est un petit peu lourd non ?}}. \jls{Une source sonore peut se décrire en fonction de plusieurs niveaux d'abstraction. Comme nous l'avons vu, identifier et nommer un objet est très lié à notre représentation mentale du monde. Cette représentation s'organise, entre autre, suivant l'axe vertical des niveaux d'abstraction qui détermine notre travail de catégorisation}. Ainsi, si deux individus entendent un même son de voiture, il est possible que le premier le nomme ``\,voiture\,'' et le deuxième ``\,moteur\,''. Le dénombrement de l'ensemble des sources pouvant être utilisées par le modèle doit prendre en compte ce fait. Ces sources doivent être regroupées en classes hiérarchisées, afin de bâtir une structure taxonomique.
-\item \jlv{Il n'existe pas de taxonomie standardisée des sources sonores: C'est une tradition des sciences modernes de classer et nommer les différents objets \jls{exit:d’intérêt} avant de les étudier. Pour ce qui est de la faune ou de la flore, une observation longue et minutieuse des objets \jlc{ne peut-on trouver un synonyme pour éviter la répétition ?} a permis d'élaborer un système de classification standard, permettant d'organiser et trier les différents objets en fonction de leurs propriétés partagées. Les classes d’objets équivalents étant nommées \jlc{nommées se rapporte bien à classes d'objets ?} à l'aide d'une terminologie précise. Ce système a permis à la biologie de devenir une science moderne à part entière, et, entre autre, de mettre à jour le concept de l'évolution des espèces \citep{lecointre2006tree}. Cependant, que ce soit pour \jls{exit:les catégories d'odeurs, c'est déjà compliqué, pas la peine de se disperser} ou les catégories de sons, il n’existe pas de système de classification équivalent \citep{dubois2000categories,niessen2010categories}. Nous isolons trois points qui permettent d'expliquer ce fait.} \jls{Il n'existe pas de taxonomie standardisée des sources sonores. C'est une tradition des sciences modernes de classer et nommer les éléments avant de les étudier. Dans les domaines de la faune ou de la flore, une observation longue et minutieuse des sujets d'étude a permis d'élaborer un système de classification, et ainsi d'organiser et trier les objets en fonction de leurs propriétés partagées. Elle a permis encore d'élaborer une terminologie précise des classes d'objets. Grâce à quoi, la Biologie est devenue une science, laquelle science a donné naissance à la théorie de l'évolution \citep{lecointre2006tree}. Dans le domaine du son, en revanche, point de système de classification\citep{dubois2000categories,niessen2010categories}. Nous trouvons à cela trois explications:}
-\jlc{ATTENTION, tu annonces trois explications, mais tu n'en "itemizes que deux...}
-\begin{itemize}
-\item \emph{Champ lexical limité}: \jlv{L'identification et la description d'un son est un processus subjectif très lié au langage. Deux sujets appartenant à deux groupes sociaux différents n'utiliseront pas les mêmes termes pour décrire un même son. Afin d'établir un système de classification standard, il faut prendre une décision quant à la définition précise des termes utilisés pour décrire les phénomènes acoustiques. Cette opération est d'autant plus facile si il existe déjà un consensus autour du sens global des termes. Or, contrairement à la vision, où un vocabulaire de base, largement partagé, est disponible pour décrire les objets (couleur, forme), il s'avère que le champ lexical utilisé pour décrire précisément le monde sonore est très limité (durée, fréquence)  \citep{dubois2000categories}. La plupart des termes couramment utilisés sont  empruntés à d'autres modalités perceptives. On peut par exemple parler de brillance ou de rugosité des sons. La diversité des termes descriptifs, ainsi que l'absence de consensus sur ce qu'ils désignent, rend difficile la production d'une classification standardisée des sons} \jls{L'identification et la description d'un son est un processus subjectif très lié au langage. Deux sujets appartenant à deux groupes sociaux différents n'utiliseront pas les mêmes mots pour décrire un même objet. Pour établir un système de classification, il faut prendre une décision quant à la définition des termes utilisés. Or, contrairement au domaine de la vision, où une terminologie de base pour décrire les objets (couleur, forme etc.) est globalement partagée, le champ lexical applicable aux phénomènes acoustiques est, d'une part, limité (durée, fréquence...) \citep{dubois2000categories}, d'autre part, emprunté, dans une large mesure, à d'autres domaines perceptifs. On parle ainsi de brillance, ou de rugosité de sons. La diversité des termes descriptifs, et l'absence de consensus sur ce qu'ils désignent, rend difficile l'élaboration d'une classification standardisée.}
-\item \emph{Influence du contexte}: Comme vu à la section~\ref{sec:ch3_identification et Contexte}, l'identification et la description d'un son est dépendantes du contexte, \ie~de la nature des sources cooccurrentes dans la scène \citep{ballas1987interpreting,niessen2008disambiguating,gygi2011incongruency}.
+\item \emph{champ lexical limité}: l'identification et la description d'un son sont des processus subjectifs étroitement liés au langage (\cf~Section~\ref{sec:ch3_catLang}). Deux sujets appartenant à deux groupes sociaux différents n'utiliseront pas les mêmes mots pour décrire un même objet. Pour établir un système de classification, il faut prendre une décision quant à la définition des termes utilisés. Or, contrairement au domaine de la vision, où une terminologie de base pour décrire les objets (couleur, forme etc.) est globalement partagée, le champ lexical applicable aux phénomènes acoustiques est, d'une part, limité (durée, fréquence...) \citep{dubois2000categories}, d'autre part, emprunté, dans une large mesure, à d'autres domaines perceptifs. On parle ainsi de brillance, ou de rugosité de sons. La diversité des termes descriptifs, et l'absence de consensus sur ce qu'ils désignent, rend difficile l'élaboration d'une classification standardisée;
+\item \emph{influence du contexte}: L'identification et la description d'un son, section~\ref{sec:ch3_identification et Contexte} sont dépendantes du contexte, \ie~de la nature des sources cooccurrentes dans la scène \citep{ballas1987interpreting,niessen2008disambiguating,gygi2011incongruency}.
 \end{itemize}
 \end{itemize}
 
-Il apparaît clairement que les classes de sons peuplant notre environnement doivent être organisées autour d'une taxonomie: un système de classe hiérarchisé. Cependant il y a un choix à faire quant à la manière de regrouper les sons à l'intérieur de cette taxonomie.
+Il apparaît clairement que les classes de sons peuplant notre environnement doivent être organisées autour d'une taxonomie: un système de classes hiérarchisées. Cependant il y a un choix à faire quant à la manière de regrouper les sons à l'intérieur de cette taxonomie.
 
-Comme vu à la section~\ref{XX}, plusieurs études ont montré que la catégorisation de sources sonores s'opère suivant des attributs sémantiques. Parmi ceux-ci, deux reviennent souvent:
+Comme vu à la section~\ref{sec:ch3_catSourceSoundScape}, plusieurs études ont montré que la catégorisation des sources sonores s'opère suivant des attributs sémantiques. Parmi ceux-ci, deux reviennent souvent:
 
 \begin{itemize}
-\item La source (agent, objet, fonction),\ie~l'objet émettant son.
-\item L'action,\ie~le mouvement physique étant la cause \jls{à l'origine} du son.
+\item la source (agent, objet, fonction), \ie~l'objet émettant le son;
+\item l'action, \ie~le mouvement physique à l'origine du son.
 \end{itemize} 
 
-Ces deux attributs fonctionnent de concert. Reprenant l'organisation catégorielle verticale à trois niveaux de Rosch (\cf~section~\ref{sec:ch3_categoEtAbstract}), Guyot et al. \citep{guyot1997} ont proposé un système de catégorisation ou les auditeurs identifient des groupement de sources abstraits au niveau superordonné (``\,Bruit généré par une excitation mécanique\,''), des actions au niveau de base (``\,gratter\,'',``\,frotter\,'') et des sources au niveau subordonné (``\,vaisselles\,'',``\,stylo\,''). Reprenant ce système, \citep{houix_lexical_2012} montre que les sons semblent être catégorisés en premier à partir du type de source, et seulement ensuite sur la base de l'action.
+Ces deux attributs fonctionnent de pair. S'inspirant de l'organisation catégorielle verticale à trois niveaux de Rosch (\cf~Section~\ref{sec:ch3_categoEtAbstract}), Guyot et al. \citep{guyot1997} proposent un système de catégorisation où les auditeurs identifient des groupements de sources abstraits, au niveau superordonné (``\,Bruit généré par une excitation mécanique\,''), des actions, au niveau de base (``\,gratter\,'',``\,frotter\,'') et des sources, au niveau subordonné (``\,vaisselle\,'',``\,stylo\,''). Reprenant à son tour ce système, \citep{houix_lexical_2012} montre que les sons sont catégorisés, en premier lieu, à partir du type de sources, et ensuite, seulement, \jlv{à partir de l'action} \jls{à partir d'actions}.
 
+L'association source-action semble être une base \gl{sensée sur laquelle bâtir une taxonomie, dans laquelle} les classes haut-niveaux sont des classes abstraites de sources sonores (``\,véhicule\,''), les classes intermédiaires, des classes de sources sonores (``\,voiture\,''), et les classes basses, des actions sonores (``\,passage\,''). Pour les classes de bas niveau, la perméabilité intra-classe est minimale.
 
-Le couple source-action semble être une bonne base sur laquelle bâtir une taxonomie. Les classes haut-niveaux étant des classes abstraites de sources sonores (``\,véhicule\,''), les classes intermédiaires des classes de sources sonores (``\,voiture\,''), et les classes basses des actions sonores (``\,passage\,''). Pour les classes de bas-niveau, la variabilité intra-classe est alors minimale.
+\jlv{L'association source-action} \jls{Elle, l'association source-action} n'est cependant pas suffisante. Le choix des labels utilisés doit faire l'objet d'une sélection particulière. Ces labels doivent être génériques, compréhensibles, et décrire de manière non ambiguë les objets de la classe considérée. Afin de les choisir, il est possible de se référer aux travaux de Gaver \citep{gaver1993world}, qui propose une taxonomie phénoménologique des sons, aux travaux de Niessen~\al \citep{niessen2010categories} qui, sur la base d'une étude bibliographique de près de 35 publications, établit la liste des catégories sonores les plus utilisées, aux travaux de Salamon~\al \citep{Salamon14}, qui, partant des travaux de \citep{brown2011towards} et reprenant l'association source-action, élabore une taxonomie de sons urbains.
 
-Considérer un couple source-action n'est cependant pas suffisant. Le choix des labels utilisés doit faire l'objet d'une sélection particulière. C'est label doivent être génériques, compréhensible, et décrire de manière non ambiguë les objets de la classe. Afin de les choisir, on peut se référer aux travaux de Gaver \citep{gaver1993world} qui propose une taxonomie phénoménologique des sons, de Niessen~\al \citep{niessen2010categories} qui établissent la liste des catégories sonores les plus utilisées à partir d'une étude bibliographique de 166 papiers, et plus récemment les travaux de Salamon~\al \citep{Salamon14}, qui propose une taxonomie de sons urbains, utilisant également le couple objet-action, et établie sur la base entre autre des travaux de \citep{brown2011towards}.
+Afin de contourner le problème, on peut là encore s’appuyer sur des considérations perceptives \jlv{afin d'établir} \jls{pour établir}, dans un contexte expérimental donné, quels sons requièrent d'être enregistrés séparément, et quels groupes de sons peuvent être enregistrés ensemble.
 
-Dans cette partie, nous montrons que  l'utilisation de la nomenclature basée sur le couple action-source nous permet de dénombrer et trier l'ensemble des sons présents dans l'environnement sonore.
-
-Dans un cas pratique, il s'agirait alors, sur la base de la taxonomie établie, d'enregistrer pour chacune des classes  un nombre de sons suffisant. Considérant des environnements dense comme la ville ou la forêt, c'est approche pose des problèmes pratiques de faisabilité évidents. On peut cependant se demander si il est nécessaire d'enregistrer de manière séparé toutes les sources,\eg~doit on additionner plusieurs sons de voix pour simuler un son de foule ? Si oui, la diversité d'enregistrement nécessaire pourrait être considérable, le cerveau humain étant très sensible à la répétition de sons identiques \citep{agus2010rapid}.
-
-Afin de contourner le problème, on peut là encore s’appuyer sur des considérations perceptives afin d'établir, dans un contexte expérimentale donné, quels sons requiert d'être enregistré séparément, et quels groupes de sons peuvent être enregistrer ensemble
 
 \subsubsection{événements, textures et scènes amorphes}
 
-Tout les sons n'ont pas le même intérêt. Typiquement, une voix humaine pourra facilement être isolée du reste des sons concurrents \citep{carlyon2004brain}. De même, un fond sonore de trafiques urbains sera moins informatif que d'autre sons ponctuels et proches~\citep{southworth1969sonic}.
+Nous avons montré que l'utilisation de la nomenclature basée sur l’association source-action nous permet de dénombrer et trier l'ensemble des sons présents dans l'environnement.
 
-Comme vu à la section~\ref{sec:ch3_catsoundscape}, Maffiolo montrent l'existence de deux processus cognitives distincts dont l'activation dépend de la nature des environnements: pour les scènes amorphes,\ie~sans événement apparent, les scènes sont analysées de manière holistique, alors que des scènes événementielles, \ie~comportant des événements identifiables, sont analysées de manière descriptive, sur la base d'une information sémantique extraite a partir des événements reconnus.
+\jlv{Il s'agit alors} \jls{La question est alors}, sur la base de la taxonomie établie, d'enregistrer, pour chacune des classes, un nombre de sons suffisant. Considérant des environnements denses comme la ville ou la forêt, cette approche pose des problèmes pratiques de faisabilité. 
 
-Ces résultats nous amène à penser que les processus de ségrégation dépendent également de la nature structurelle de l'environnement. Lorsqu'un des événements émergent de la mixture, le cerveau traite l'information des différentes sources de manière séparée. Plusieurs flux auditifs sont ainsi générés, \ie~un pour chaque séquence d'événements émis par la même source. A l'inverse, quand le cerveau ne parvient pas à isoler d'événement, la scène est traité globalement,\ie~tout ces éléments étant aggloméré dans un même flux. 
+\jlc{A partir d'ici nous avons encore me semble-t-il un souci de logique dans l'énoncé. J'explique au paragraphe "Ce que je comprends..."}
 
-De même, les différents travaux sur les textures sonores (\cf~section~\ref{sec:ch3_eventTexture}), montrent que le cerveau a tendance à tendance à résumer l'information extraite lorsqu'il détecte qu'une séquence n'est  composée que d'un mélange de sons similaires et n'apporte pas d'information au cours du temps. 
+Tous les sons n'ont pas le même intérêt. Une voix humaine peut facilement être isolée du reste des sons concurrents \citep{carlyon2004brain}. Inversement, un fond sonore de trafic urbain est moins informatif que d'autres sons ponctuels et proches~\citep{southworth1969sonic}.
+
+Comme vu à la section~\ref{sec:ch3_catsoundscape}, Maffiolo montre l'existence de deux processus cognitifs distincts dont l'activation dépend de la nature des environnements: l'analyse holistique, s'agissant de scènes amorphes, \ie~sans événements apparents, et l'analyse descriptive, \jlv{sur la base d'une information sémantique extraite à partir des événements connus} \jlc{est-ce qu'on ne mettrait pas la phrase "sur la base d'une information..." entre parenthèses?}, s'agissant de scènes événementielles, \ie~comportant des événements identifiables.
+
+Ces résultats nous amènent à penser que les processus de ségrégation dépendent également de la nature structurelle de l'environnement. Lorsque des événements émergent d'un environnement sonore, le cerveau traite l'information des différentes sources de manière séparée. Plusieurs flux auditifs sont ainsi générés \ie~un pour chaque séquence d'événements émis par la même source. A l'inverse, quand le cerveau ne parvient pas à isoler d'événement, la scène est traitée globalement, tous ces éléments étant agglomérés dans un même flux. 
+
+De même, les différents travaux sur les textures sonores (\cf~Section~\ref{sec:ch3_eventTexture}), montrent que le cerveau a tendance à résumer l'information extraite lorsqu'il détecte qu'une séquence n'est composée que d'un mélange de sons similaires, \jlv{et n'apporte pas d'information au cours du temps} \jls{et que ces sons n'enrichissent pas l'information}. 
+
+\jlc{Ce que je comprends: 1) L'approche ... pose des problèmes de faisabilité. 2) Ces problèmes sont: 1°tous les sons n'ont pas le même intérêt... En commentaire: Maffiolo montre... 2°Le cerveau a tendance à résumer... cf les travaux sur les textures sonores... 3) la conséquence: tous ces travaux nous amènent à penser...} 
+\jlc{je tente de réécrire}
+\jls{sLa question est alors, sur la base de la taxonomie établie, d'enregistrer, pour chacune des classes, un nombre de sons suffisant. 
+Considérant des environnements denses comme la ville ou la forêt, cette approche pose des problèmes pratiques de faisabilité. 
+D'une part, tous les sons n'ont pas le même intérêt. Une voix humaine peut facilement être isolée du reste des sons concurrents \citep{carlyon2004brain}. Inversement, un fond sonore de trafic urbain est moins informatif que d'autres sons ponctuels et proches~\citep{southworth1969sonic}. Maffiolo montre à ce sujet (\cf~Section~\ref{sec:ch3_catsoundscape}), l'existence de deux processus cognitifs distincts dont l'activation dépend de la nature des environnements: l'analyse holistique, s'agissant de scènes amorphes, \ie~sans événements apparents, et l'analyse descriptive (sur la base d'une information sémantique extraite à partir des événements connus), s'agissant de scènes événementielles, \ie~comportant des événements identifiables.
+D'autre part, le cerveau a tendance à résumer l'information extraite, lorsqu'il détecte qu'une séquence n'est composée que d'un mélange de sons similaires, et que ces sons n'enrichissent pas l'information. Voir les travaux sur les textures sonores (\cf~Section~\ref{sec:ch3_eventTexture}). Ces résultats nous amènent à penser que les processus de ségrégation dépendent également de la nature structurelle de l'environnement. Lorsque des événements émergent d'un environnement sonore, le cerveau traite l'information des différentes sources de manière séparée. Plusieurs flux auditifs sont ainsi générés \ie~un pour chaque séquence d'événements émis par la même source. A l'inverse, quand le cerveau ne parvient pas à isoler d'événement, la scène est traitée globalement, tous ces éléments étant agglomérés dans un même flux.}
+\jlc{Bien sûr je prends des libertés, et ce d'autant que je ne suis pas sûr de "maîtriser". Sur la base de cette proposition, peux-tu à ton tour réécrire pour redonner tout le sens ?}
 
 Outre les événements sonores, deux autres types de sons semblent pouvoir être isolés:
 
 \begin{itemize}
-\item \emph{Scène amorphes}: un son contenant une faible information sémantique et analysé de manière holistique.
-\item {Texture sonores}: un son dont les caractéristiques physiques restent stables au cours de temps et traité par le cerveau à partir de statistiques extraites d'une représentation temps-fréquence.
+\item \emph{scène amorphe}: un son contenant une faible information sémantique;
+\item {texture sonore}: \jlv{un son dont les caractéristiques physiques restent stables au cours du temps, analysé à partir de statistiques extraites d'une représentation temps-fréquence" puisque explicité plus bas.} \jlc{le puisque n'a pas de sens, et je pense qu'il faut reformuler}
 \end{itemize}
 
-Nous pensons qu'il existe des connexions entre les notions de textures/événements, et celles des scènes amorphes/événementielles. Les séquences événementielles peuvent être vues comme des séquences composées soit uniquement d'événements, soit d'événements et de textures, la présence d'événements, porteurs d'une information plus riche, primant sur la nature des processus mis en œuvre. 
+\jlv{Nous pensons qu'il existe des connexions entre les notions de textures/événements, et celles de scènes amorphes/événementielles. \jls{exit:Les séquences événementielles peuvent être vues comme des séquences composées soit uniquement d'événements, soit d'événements et de textures, la présence d'événements, porteurs d'une information plus riche, primant quant au choix du processus à mettre en œuvre}.}
+ 
+\jls{Il est concevable qu'il existe des connexions entre les notions de textures/événements, et celles de scènes amorphes/événementielles.}
 
-De même, les textures et les scènes amorphes sont traitées de manière holistique, à partir de propriétés acoustiques globales pour les scènes amorphes \citep{dubois2006cognitive,maffiolo_caracterisation_1999}, et sur la base d'une information résumée statistiquement pour les textures\citep{mcdermott2013summary}. Toutes deux portent par ailleurs une information limitée \citep{saint1995classification,nelken2013ear}. Cependant, les séquences amorphes sont spontanément décrites par des sujets comme des ``\,fonds sonores\,'' \citep{maffiolo_caracterisation_1999,guastavino2006ideal}, impliquant que ces dernières n'existent que suite à un processus de construction de flux auditifs, alors que les textures sont des objets seulement définis sur la base de leur nature physique. Un exemple de texture souvent cité est le sons du ``\,galop\,'', qui selon le contexte peut très bien se retrouver au premier plan de la scène. 
+Les textures et les scènes amorphes sont traitées de manière holistique, à partir de propriétés acoustiques globales pour les scènes amorphes \citep{dubois2006cognitive,maffiolo_caracterisation_1999}, et sur la base d'une information résumée statistiquement pour les textures \citep{mcdermott2013summary}. Toutes deux portent une information limitée \citep{saint1995classification,nelken2013ear}. Cependant, les séquences amorphes sont spontanément décrites par les sujets comme des ``\,fonds sonores\,'' \citep{maffiolo_caracterisation_1999,guastavino2006ideal}, \jlv{impliquant} \jls{induisant} qu'elles n'existent que grâce à un processus de construction de flux auditifs, alors que les textures sont des objets définis seulement sur la base de leur nature physique. Un exemple de texture souvent cité est le son du ``\,galop\,'', qui selon le contexte peut se retrouver au premier plan de la scène. 
 
-Considérant cela, nous pensons qu'il est possible de considérer une scènes amorphe comme étant une texture, ses caractéristiques physique demeurant stables au cours du temps, et beaucoup de scènes amorphes (``\,brouhaha de rue\,'', ``\,brouhaha de trafic\,'') étant par ailleurs citées comme étant des textures. Cependant l'inverse, considérer une texture comme une scène amorphe, n'est pas forcément vrai.
-
-Afin de limiter le nombre d'enregistrements nécessaires, il est donc possible d'enregistrer directement des mixtures de sons, à condition que ces dernières puissent être considérée comme des textures, la définition de cette dernière notion englobant les scènes amorphes.
-
-\subsubsection{Discussion}
+\jlv{Considérant cela, nous pensons qu'il est possible d'assimiler une scène amorphe à une texture, ses caractéristiques physiques demeurant stables au cours du temps, nombre de scènes amorphes (``\,brouhaha de rue\,'', ``\,brouhaha de trafic\,'') étant, par ailleurs, citées comme textures. Cependant l'inverse, considérer une texture comme une scène amorphe, n'est pas forcément vrai.}
+ \jls{Partant de là, il est possible d'assimiler une scène amorphe à une texture, ses caractéristiques physiques demeurant stables au cours du temps. De fait, nombre de scènes amorphes (``\,brouhaha de rue\,'', ``\,brouhaha de trafic\,'') sont citées comme textures. Cependant, l'inverse, considérer une texture comme une scène amorphe, n'est pas forcément vrai.}
+ 
+Afin de limiter le nombre d'enregistrements nécessaires, il est donc possible d'enregistrer directement des mixtures de sons, à condition que ces dernières puissent être considérées comme des textures, la définition de cette dernière notion englobant les scènes amorphes. 
 
 \subsection{Description du modèle morphologique}
 \label{sec:ch4_modelDes}
 
-\subsubsection{Collection de sons}
+\subsubsection{Classe et collection de samples}
 \label{sec:ch4_collecSons}
 
-Dans le modèle proposé, la scène sonore est vu comme une somme de source sonores, ou autrement dit, ``\,un squelette d'événements sur un lit de textures\,'' \citep{nelken2013ear}. 
+Dans le modèle proposé, la scène sonore est vue comme une somme de sources sonores, ou autrement dit, ``\,un squelette d'événements sur un lit de textures\,'' \citep{nelken2013ear}. 
 
-D'un point de vu pratique, ces éléments sonores sont enregistrés. L'enregistrement d'un son isolé, qu'il s'agisse d'un événement, ou d'une texture est appelé un \emph{sample}. 
-
+D'un point de vue pratique, ces éléments sonores sont enregistrés. Ces éléments sont nommés des samples.
+ 
 \begin{mydef}
-Un sample est un enregistrement d'un son isolé, qu'il s'agisse d'un événement, ou d'une texture.
+Un sample est un enregistrement d'un son isolé, qu'il s'agisse d'un événement ou d'une texture.
 \end{mydef}
 
 
-Ces samples sont regroupés en classes de sons hiérarchisées, formant une taxonomie. Un exemple d'une partie d'une taxonomie comme utilisé par le modèle est donné figure~\ref{fig:orgDb}. Les niveaux hiérarchique de la taxonomie sont appelé niveau d'abstraction.  Les classes ayant un niveau d'abstraction élevé illustre un regroupement conceptuels de samples ayant potentiellement des caractéristiques variés (\ie~{Humain}). Plus le niveau de la classe est bas, plus le groupement induit est précis, regroupant des samples similaires (\ie~\emph{voix-adulte-cri}). 
+Ces samples, regroupés en classes de sons hiérarchisées, forment une taxonomie. Un exemple est donné figure~\ref{fig:orgDb}. Les niveaux hiérarchiques de la taxonomie sont appelés niveaux d'abstraction. Les classes ayant un niveau d'abstraction élevé constituent un regroupement conceptuel de samples ayant potentiellement des caractéristiques variées (\eg~{Humain}). Plus le niveau de la classe est bas, plus le groupement \jls{exit:induit} est précis, regroupant des samples similaires (\eg~\emph{voix-adulte-cri}). 
 
 \begin{mydef}
-Une classe est une collection de samples, jugés comme équivalent. Si le niveau d'abstraction d'une classe est tel que cette dernière possède des sous-classes, alors sa collection de sample est la somme des collections liées aux sous-classes.
+Une classe est une collection de samples, jugés équivalents. Si le niveau d'abstraction d'une classe est tel que cette dernière possède des sous-classes, alors sa collection de samples est la somme des collections respectives de chacune des sous classes.
 \end{mydef}
 
-Les classes de niveau d'abstraction élevée sont nommés uniquement à l'aide de terme abstraits désignant de manière global les samples qu'elles regroupent (\eg~\emph{transport}), alors que les classes de bas niveau utilise la nomenclature source-action (\eg~\emph{voiture passe}). Les classes du dernier niveau correspondent à des collections de samples, considéré de facto comme équivalents les uns aux autres.
+Les classes de niveau d'abstraction élevé sont nommées uniquement à l'aide de termes abstraits désignant, de manière globale, les samples qu'elles regroupent (\eg~\emph{transport}). Les classes de bas niveau utilisent la nomenclature source-action (\eg~\emph{voiture passe}). Quant aux classes du dernier niveau, elles correspondent à des collections de samples, par définition, équivalents les uns aux autres.
 
-\subsubsection{Séquences de sources sonores}
+\subsubsection{Séquences de samples}
+\label{sec:ch4_seqSample}
 
-Chaque classe de sons sélectionnée pour faire partie de la scène simulée est lié à une piste. Cette dernière peut être vue comme une séquence temporelle où sont positionnés les différents samples. La piste peut être vue comme la contrepartie simulée du flux auditif.
+Chaque classe de sons, sélectionnée pour faire partie de la scène simulée, est liée à une piste. Cette piste est une séquence temporelle où sont positionnés les différents samples. Elle est la contrepartie simulée du flux auditif.
 
 \begin{mydef}
-Une piste est une séquence temporelle composée de sample appartenant à une même classe de sons.
+Une piste est une séquence temporelle composée de samples appartenant à une même classe de sons.
 \end{mydef}
 
-La construction de la taxonomie (nombre de classes, nombre de niveau d'abstraction), dépend bien évidemment de la tâche considérée. 
+La construction de la taxonomie (nombre de classes, nombre de niveaux d'abstraction), dépend, évidemment, de la tâche considérée. 
 
-L'ensemble des pistes ainsi que leur paramètres forment ce que nous appelons une partition.
+L'ensemble des pistes, ainsi que leurs paramètres, forment ce que nous appelons une partition.
 
 \begin{mydef}
-La partition désigne l'ensemble des propriétés des pistes composant une scène, à savoir, la classe de sons liée à la piste, et les paramètres structurels (niveau, espacement, début et fin).
+La partition désigne l'ensemble des propriétés des pistes composant une scène, à savoir, les classes de sons liées aux pistes, et leurs paramètres structurels (niveau, espacement, début et fin, \cf~Section~\ref{sec:ch4_modelParam}).
 \end{mydef}
 
-\begin{figure}[bth]
+\begin{figure}[t]
         \myfloatalign
         \includegraphics[width=.8\linewidth]{gfx/3}
        \caption{Organisation hiérarchique de la banque de sons isolés utilisée pour la simulation}\label{fig:orgDb}
@@ -149,21 +226,21 @@ La partition désigne l'ensemble des propriétés des pistes composant une scèn
 \subsubsection{Paramètres}
 \label{sec:ch4_modelParam}
 
-En suivant la terminologie précédemment introduite, une scène sonore est vue comme une somme de piste. Chaque piste étant une séquence temporelle, dont la structure est dépend d'une série de paramètres (\cf~figure~\ref{fig:modelSequence}). Ainsi, le modèle ne propose pas d’interagir avec un sample en particulier, mais toujours avec une séquence de samples.
+En suivant la terminologie \jlv{précédemment} \jls{ci-devant} introduite, une scène sonore est vue comme une somme de pistes. Chaque piste est une séquence temporelle, dont la structure dépend d'une série de paramètres (\cf~figure~\ref{fig:modelSequence}). Le modèle ne propose pas d’interagir avec un sample en particulier, mais toujours avec une séquence de samples.
 
-Nous isolons trois attributs permettant de contrôler un piste:
+Nous isolons trois attributs permettant de contrôler une piste:
 
 \begin{itemize}
-\item \emph{Le niveau}: la moyenne/variance des niveaux des samples
-\item \emph{L'espacement}: la moyenne/variance des espacements inter-onsets entre les samples
-\item \emph{La duré}: le débuts et la fin de la piste
+\item \emph{niveau}: la moyenne/variance des niveaux des samples;
+\item \emph{espacement}: la moyenne/variance des espacements inter-\emph{onsets} entre les samples;
+\item \emph{durée}: le début et la fin de la piste.
 \end{itemize}
 
-Le modèle fait une distinction explicite entre la gestion des pistes d'événements et de textures. En effet, la notion de texture ne peut se comprendre que pour un son continue. Une piste de texture est donc composée de samples concaténé les uns aux autres sans espacement. Ce dernier, dans le cas des textures, est un paramètre imposé, fixé à 0 (\cf~figure~\ref{fig:modelSequence}). 
+Le modèle fait une distinction explicite entre la gestion des pistes d'événements, et la gestion des pistes de textures. En effet, la notion de texture ne peut se comprendre que pour un son continu. Une piste de texture est donc composée de samples concaténés les uns aux autres, sans espacement (\cf~figure~\ref{fig:modelSequence}). 
 
-Pour qu'une piste de texture soit ``\,plausible\,'', \ie~qu'on ne détecte pas de discontinuité flagrante, la piste doit être une séquence composée de samples provenant de la même source, et obtenus avec un matériel (et des réglages) identique.
+Pour qu'une piste de texture soit ``\,plausible\,'', \ie~qu'on ne détecte pas de discontinuité flagrante, elle doit être une séquence composée de samples provenant de la même source, et obtenus avec un matériel (et des réglages) identique(s).
 
-\begin{figure}[bth]
+\begin{figure}[t]
         \graphicspath{{gfx/}}
         \myfloatalign
         \def\svgwidth{\linewidth}
@@ -174,25 +251,25 @@ Pour qu'une piste de texture soit ``\,plausible\,'', \ie~qu'on ne détecte pas d
 \subsubsection{Formalisation du modèle}
  \label{sec:ch4_modelForm}
  
- Tout au long de nos travaux, nous avons utilisé plusieurs modèles ainsi que différents paramètres afin de simuler des scènes sonores. Nous formalisons dans cette partie une version générale du modèle proposé. Les divers modifications appliquées au modèle en fonction de son utilisation sont indiquées dans les sections~\ref{sec:ch4_modAnaSo} et~\ref{sec:ch4_modAnaAuto}.
+ Tout au long de nos travaux, nous avons utilisé plusieurs modèles, ainsi que différents paramètres, afin de simuler des scènes sonores. Nous formalisons, dans cette partie, une version générale du modèle proposé. Les diverses modifications appliquées au modèle, en fonction de son utilisation, sont indiquées dans les sections~\ref{sec:ch4_modAnaSo} et~\ref{sec:ch4_modAnaAuto}.
  
 La formalisation présentée vaut uniquement pour les classes d'événements sonores. Nous décrivons par la suite les diverses contraintes qui s'appliquent pour une classe de textures.
  
-En considérant $s$, une scène composée de $C$ classes de sons, le modèle de $s$ se définit  comme suit:
+En considérant $s$, une scène composée de $z$ classes de sons, le modèle de $s$ se définit comme suit:
  
  \begin{equation}
- s(n)=\sum_{i=1}^{C}p_i(n)
+ s(n)=\sum_{i=1}^{z}p_i(n)
  \end{equation}
 
-avec $n$ un indice temporel discret, et $p_i$ la piste correspondant à la classe $c_i$. La classe $c_i$ est composé de $\vert c_i\vert$ samples $c_{i,m}$, $1<m<\vert c_i\vert$. 
+avec $n$ un indice temporel discret, et $p_i$ la piste correspondant à la classe $c_i$. La classe $c_i$ est composée de $\vert c_i\vert$ samples $c_{i,m}$, $1<m<\vert c_i\vert$. 
 
-Une piste $p_i$ est définie comme une séquence de $n_i$ samples d'événement $e^k_i(n)$ ($k=(1,2,\ldots,n_i)$), choisis aléatoirement parmi les $\vert c_i\vert$ samples de la classe $c_i$. Considérant $\mathcal{U}(x,y)$, une distribution uniforme d'entiers allant de $x$ à $y$ ($x<y$), on a alors:
+Une piste $p_i$ est définie comme une séquence de $n_i$ samples d'événements $e^k_i(n)$ ($k=(1,2,\ldots,n_i)$), choisis aléatoirement parmi les $\vert c_i\vert$ samples de la classe $c_i$. Considérant $\mathcal{U}(x,y)$, une distribution uniforme d'entiers allant de $x$ à $y$ ($x<y$), on a alors:
 
  \begin{equation}
  e^k_i=c_{i,\mathcal{U}(1,\vert c_i \vert)}
  \end{equation}
 
- Pour chaque piste $p_i$, un facteur d'amplitude est tiré aléatoirement à partir d'une distribution normale de moyenne $\mu^a_i$ et de variance $\sigma^a_i$. De même, les espacements inter-onsets sont tirés d'un distribution normale de moyenne $\mu^t_i$ et de variance $\sigma^t_i$. Les indices temporelles de début et de fin de chaque piste sont notés $u_i$ et $v_i$ respectivement. Formellement, une piste $p_i$ se définit comme suit:
+ Pour chaque piste $p_i$, un facteur d'amplitude est tiré aléatoirement à partir d'une distribution normale de moyenne $\mu^a_i$ et de variance $\sigma^a_i$. De même, les espacements inter-\emph{onsets} sont tirés d'une distribution normale de moyenne $\mu^t_i$ et de variance $\sigma^t_i$. Les indices temporels de début et de fin de chaque piste sont notés $u_i$ et $v_i$ respectivement. Formellement, une piste $p_i$ se définit comme suit:
  
 \begin{equation}
 \label{eq1}
@@ -203,231 +280,187 @@ p_{i}(n)= \sum_{j=1}^{n_i} \mathcal{N}(\mu^a_{i},\sigma^a_{i})c_{i, \mathcal{U} 
 n_i^j=n_i^{j-1} + \mathcal{N}({\mu^t_{i},\sigma^t_{i}})
 \end{equation}
 
-où $n_i^0=u_i$ par convention. Le signal d'une piste est définit de telle sorte que $p_i(n)=0$ si $n>v_i$. Les paramètres du modèle sont, $\mu^a_i$,  $\sigma^a_i$,   $\mu^t_i$,  $\sigma^t_i$, $u_i$ et $v_i$, et doivent être réglé pour chaque piste $p_i$. La figure~\ref{fig:modelSequence} offre une illustration de l'action des paramètres introduits.
+où $n_i^0=u_i$ par convention. Le signal d'une piste est défini de telle sorte que $p_i(n)=0$ si $n>v_i$. Les paramètres du modèle sont, $\mu^a_i$,  $\sigma^a_i$,   $\mu^t_i$,  $\sigma^t_i$, $u_i$ et $v_i$, et doivent être réglés pour chaque piste $p_i$. La figure~\ref{fig:modelSequence} offre une illustration de l'action des paramètres introduits.
 
 
-Pour les textures, deux distinctions sont à observer avec le modèle comme définit précédemment: 
+Pour les textures, deux distinctions sont à observer avec le modèle défini précédemment: 
 
 \begin{enumerate}
-\item L'amplitude du signal ($\mu^a_i$,  $\sigma^a_i$) n'est seulement tirée qu'une seule fois, et la valeur est appliquée à tous les samples.
-\item Afin d'éviter tout impression de discontinuité, deux samples de texture sont concaténé en considérant un certain recouvrement. Ce recouvrement est choisi afin de pouvoir appliquer un fondu enchaîné (\emph{cross-fade}) à valeur d'énergie constante entre les samples, et ce afin de donner l'illusion de continuité.
+\item l'amplitude du signal ($\mu^a_i$,  $\sigma^a_i$) n'est tirée qu'une seule fois, et la valeur est appliquée à tous les samples;
+\item afin d'éviter toute sensation de discontinuité, deux samples de texture sont concaténés en considérant un recouvrement fixé, sur lequel est appliqué un fondu enchaîné (\emph{cross-fade}) à valeur d'énergie constante entre les samples, \jls{exit:et} afin de donner l'illusion de continuité.
 \end{enumerate}
 
-\gl{a revoir avec mathieu et mathias}
+\gl{TODO: à revoir avec mathieu et mathias}
 
-\section{Du modèle à la simulation dans le cadre de l'analyse sensorielle}
+\section{Du modèle à la simulation: l'analyse sensorielle}
 \label{sec:ch4_modAnaSo}
 
-Dans cette section nous présentons une version du modèle précédemment introduit, afin qu'il puisse servir de base à  un outils de simulation, nommé \emph{SimScene}, utilisable dans le cadre de l'analyse sensorielle des scènes sonores.
+Dans cette section nous présentons une version du modèle précédemment introduit, afin qu'il puisse servir de base à un outils de simulation, nommé \emph{SimScene}, utilisable dans le cadre de l'analyse sensorielle des scènes sonores.
 
-Nous commençons par introduire le paradigme de la simulation, en le comparant aux approches expérimentales classiques  de  l'analyse sensorielle. Nous proposons par la suite un protocole expérimental, décrivant le cadre applicatif des épreuves perceptives basées sur la simulation. Enfin, nous relions ce protocole au modèle de scène sonore, et présentons les fonctionnalité de l'outil \emph{SimScene}.
+Nous commençons par présenter différents outils \jls{exit:déjà} existant, permettant de simuler des environnements sonores. Nous proposons, par la suite, un protocole expérimental, décrivant le cadre applicatif des épreuves perceptives basées sur la simulation. Enfin, nous relions ce protocole au modèle de scènes sonores (\cf~Section~\ref{sec:ch4_modelParam}), et présentons les fonctionnalités de l'outil \emph{SimScene}.
 
-\subsection{Paradigme de la simulation}
+\subsection{Simulation et analyse sensorielle}
 
-Comme nous l'avons vu à la section~\ref{XX}, les approches expérimentales étudiant les paysages sonores peuvent se diviser en deux grande approches:
+Plusieurs outils de simulation de scènes sonores ont déjà été proposés\citep{misra2006new,misra2007musical,valle2009framework,finney2010soundscape,schirosa2010system}. Ils ont souvent pour but de générer automatiquement l'ambiance sonore d'un environnement virtuel. \citep{valle2009framework,finney2010soundscape}. Ils peuvent être vus comme des systèmes semi-autonomes: la simulation pouvant être contrôlée par un utilisateur, mais dépendant aussi, soit d'un environnement visuel à illustrer, soit d'un environnement sonore à reproduire. D'autre outils, entièrement contrôlés par un utilisateur, servent, eux, d'aide à la composition\citep{misra2006new,misra2007musical}. Ces systèmes s'éloignent tous sensiblement du cadre expérimental de l'analyse sensorielle.
 
-\begin{itemize}
-\item Les approches catégorielle: où il s'agit de mettre en évidence des catégories de paysages sonores ou de sources sonores
-\item Les approches dimensionnelle: où il s'agit d'identifier les dimensions perceptifs engagé dans les processus perceptifs, ainsi que les indicateurs dont elles dépendent.
-\end{itemize}
+A notre connaissance, seuls Bruce~\al \citep{bruce2009development,bruce2014effects} se sont servis de la simulation afin d'étudier la perception des paysages sonores. Ils proposent \jls{exit:ainsi} un système permettant au sujet d'agir sur un environnement en ajoutant ou supprimant des sources sonores spécifiques. Celui-ci peut par ailleurs modifier le niveau sonore des sources, et leurs positions spatiales.
 
-Concrètement ces deux approches suivent des objectifs différents: 
+A l'aide de cet outil, les auteurs demandent à leurs sujets de manipuler des sources, afin de recréer un environnement urbain. Les résultats montrent que l'inclusion ou l'exclusion des sources dépend plus de considérations sociales/sémantiques, que des caractéristiques physiques des sources. Ils soulignent néanmoins que le manque d'enregistrements disponibles limite l'analyse. Ils suggèrent \jls{exit:par ailleurs} de regrouper les enregistrements similaires en ``\,groupes sémantiques\,'' afin de faciliter l'analyse. \\
 
-\begin{itemize}
-\item l'approche catégorielle cherche à identifier les objets d'intérêts de l'environnement sonore.
-\item l'approche dimensionnelle cherche à identifier les dimensions caractérisant les qualité affective perçue d'une scènes.
-\end{itemize}
-
-Si l'on  en vient à questionner les influences qu'ont les différents éléments peuplant une scène sur les qualités affectives perçues, ces deux approches se rejoignent alors naturellement. Les approches catégorielle permettent d'établir la liste des éléments d'intérêts, liste qui peut servir de base à une annotation des stimuli utilisés par les approches dimensionnelles afin d'étudier les contributions spécifiques de leurs éléments putatifs.
-
-Nous pensons que la simulation offre un cadre expérimentale élégant permettant de faire le lien entre ces deux approches.
-
-Comme illustré sur la figure~\ref{fig:paradigmeSimu1}, la simulation peut être vue comme l'approche inverse des épreuves catégorielles (\cf~section~\ref{XX}). Ces dernières discrétise l'environnement sonore sur la base d'un tri ou d'une description verbale effectué par un sujet, alors que la simulation recompose se dernier à partir d'une banque de données de sons isolés imposée. Le point de sortie de la première, \ie~les catégorie sonore, est ainsi le point d'entré de la deuxième, \ie~la banque de sons.
-
-Par ailleurs, le but premier de la simulation est de produire un environnement complet, dont la partition, \ie~ses caractéristiques structurelles et compositionnelles, est parfaitement connue. De tels stimuli peuvent alors être utilisés par l'approche dimensionnelle afin d'étudier de manière fine les contributions des différents éléments.
-
-La simulation se pose alors comme un outil intermédiaire, faisant naturellement le lien entre les connaissances issues des études adoptant l'approche catégorielle, et les stimuli requit par l'approche dimensionnelle.
-
-Passer par la simulation présente par ailleurs plusieurs intérêts:
-
-\begin{itemize}
-\item \emph{Intérêt pratique}: Afin d'étudier l'importance relative des différents sources, il est indispensable de disposer de stimuli dont la partition est connue. Une première solution, notamment adoptée par \citep{lavandier2006contribution}, est alors d'annoter les stimuli. L'annotation est une solution cependant limitée: 
-\begin{enumerate}
-\item Cette opération est fastidieuse, très coûteuse en temps, et difficile à réaliser pour de grande banque de données.
-\item Connaître la position des différentes sources dans une mixture sonore ne permet pas  d'isoler leurs caractéristiques physiques respectives, et donc de calculer des indicateurs acoustiques dédiés. En traitement du signal, la séparation de sources reste un problème encore très étudié.
-\end{enumerate}
-\item \emph{Intérêt écologique}: La validité écologique des stimuli est un problème fondamental en analyse sensorielle. Dans le cas de l'analyse des qualités affectives perçues, où l'on demande directement au sujet ``\,que pensez vous de la qualité $Q$ de cet environnement\,'', il s'agit de garantir que les stimuli proposés  fasse sens par rapport à la représentation mentale que le sujet se fait:
-\begin{itemize}
-\item  du monde sonore 
-\item  de $Q$ 
-\end{itemize}
-Il est possible, dans les approches classiques de résoudre ces problèmes en étudiant de manière préalable les stimuli à enregistrer (\cf~section~\ref{sec:ch3_ecologique}). La simulation, en renversant la question posée (``\,générer un environnement qui correspond à une certaine valeur de $Q$ \,''), propose quant à elle une solution élégante à ces problèmes. Le sujet est directement responsable de la nature du stimuli. Ce dernier est ainsi directement connecté à la représentation sonore du sujet.
-
-\item \emph{Représentativité des stimuli}: Nonobstant la validité écologique des stimuli, toute étude sensorielle, quelle soit \emph{in situ} ou en laboratoire, doit sélectionner un nombre restreint d'environnements sonore à évaluer. Il s'agit alors, tant que faire ce peu, de garantir que le substrat de stimuli proposé soit représentatif de l'ensemble des environnements à étudier, un déséquilibre dans la population de stimuli  pouvant provoquer un biais dans l'appréciation de ces derniers. 
-
-Dans le cas des études sur la perception des environnements urbains, il est d'usage d'isoler des zones d’intérêts (parc, rue, place, \cf~section~\ref{sec:ch3_ecologique}), et de répartir équitablement les stimuli parmi ces zones. Cependant, l'environnement d'une même zone urbaine est changeant, il s'agit alors également de contrôler la diversité structurelle des stimuli provenant d'une même zone, et ce particulièrement si l'on cherche à étudier l'influence spécifique des différentes sources. Indiscutablement, cette étape est ardue. 
-
-Si la structure interne des paysages sonores est très variable, la diversité des sources sonores  qui les composent est beaucoup plus contrôlable. Des environnement sonore de parc et de rue peuvent tout deux être composés de voix humaine, de bruit de pas, de sons de voiture. Seuls les caractéristiques physiques ainsi que les patterns d'occurrences de ces sources vont varier.
-
-Ainsi, évaluer des scènes simulées peut se révéler être une solution pratique au problème de diversité des stimuli. Prenons l'exemple de l'étude de l'agrément sonore dans l'environnement urbain. Dans un premier temps, les stimuli sont obtenus via une épreuve de simulation. Dans cette dernière, seule la qualité affective des stimuli est fixée (agréable/désagréable). Les sujets construisent alors les scènes directement en fonction de l'image qu'il se font d'un environnement urbain agréable/désagréable, adaptant ainsi la structure de la scène à la qualité de l'environnement. Dans un deuxième temps, ces scènes peuvent alors servir de stimuli pour une analyse sémantique différentielle de l'agrément. Cette approche est notamment celle utilisée dans nos travaux (\cf~chapitre~\ref{ch:psycho_xp}).
-
-Enfin, la plupart des environnements que nous percevons ne provoquent pas en nous de réaction forte ou particulière. Il peut être donc difficile, d'évaluer des dimensions perceptives comme l'agrément, la gène ou le confort sur la base de ces environnements neutres. Des scènes simulées, sur la base d'une qualité affective imposée (\eg~agréable), propose quant à elle une version stéréotypé de l'environnement portant cette qualité. On peut ainsi les voir comme des ``\,résumé cognitif\,'', offrant une représentation condensée et riche en information d'un environnement donné. Isoler des éléments d'intérêt dans ces scènes peut se révéler plus facile. 
-\end{itemize}
-
-\begin{figure}[bth]
-        \myfloatalign
-        \includegraphics[width=.8\linewidth]{gfx/1}
-       \caption{TODO}\label{fig:paradigmeSimu1}
-\end{figure}
+\gl{TODO G1: compléter Bruce~\al, cf wac} \\
+\gl{TODO G2: \citep{davies2014soundscape} montre que, lorsqu'on demande à des participants de simuler un paysage sonore, les simulations font références à ce que ces derniers s'imaginent être un environnement typique, sans tenir compte de leur propre préférence pour des sons particuliers.}
 
 \subsection{Protocole expérimental basé sur la simulation}
 
-Le protocole proposé ainsi que l'outil de simulation s'appuient sur le modèle décrit à la section~\ref{sec:ch4_model}.
-
 \subsubsection{Organisation des sons isolées}
 
-L'objectif de la simulation est de permettre à un sujet de simuler un environnement sonore cible, à partir d'une banque de sons isolés. Cette banque de données suit l'organisation décrite à la section~\ref{sec:ch4_collecSons} . Les sons isolés sont regroupés en classe hiérarchisées, afin de former un taxonomie. Plus la niveaux d'abstraction de la classe est forte, plus la variabilité des enregistrements appartenant à la classe est élevée (\cf~Figure~\ref{fig:orgDb}). 
+L'objectif de l'expérimentation est de permettre à un sujet de simuler un environnement sonore cible, à partir de sons isolés. La banque de sons suit l'organisation décrite à la section~\ref{sec:ch4_collecSons}. Les éléments sont regroupés en classes hiérarchisées, afin de former une taxonomie. Plus le niveau d'abstraction de la classe est élevé, plus la variabilité des enregistrements appartenant à la classe est importante (\cf~Figure~\ref{fig:orgDb}).
  
-Nous conservons la distinction observée entre les événements et les textures en créant deux taxonomies (\ie~deux banques de sons) séparées.
+Nous conservons la distinction observée entre les événements et les textures, en créant deux taxonomies (\ie~deux banques de sons) séparées.
 
 \subsubsection{Sélection des sons isolées}
 
-L'objectif de la simulation est d'obtenir une image sonore de la représentation mentale que ce fait un sujet d'un environnement donné. Afin que cette image soit la plus ``\,juste\,'' possible, il faut que le protocole limite les biais pouvant influer sur les choix du sujets.
+L'objectif de la simulation est d'obtenir une image sonore de la représentation mentale que ce fait un sujet d'un environnement donné. Afin que cette image soit la plus ``\,juste\,'' possible, il faut que le protocole limite les biais pouvant influer sur les choix du sujet.
 
-Un de ces biais intervient dans le processus de sélection. La grande majorité des outils permettant de parcourir une banque de donnée propose une recherche textuelle sur la base de mots clefs. L’efficacité de ce principe repose avant tout sur la structure typologique et la nomenclature de la base de données. Dans le cadre d'une expérience sensorielle visant à objectiver une représentation interne d'un sujet, cette approche pose trois problèmes majeurs :
+Un de ces biais intervient dans le processus de sélection. La grande majorité des outils permettant de parcourir une banque de données propose une recherche textuelle sur la base de mots clefs. L’efficacité de ce principe repose avant tout sur la structure typologique, et la nomenclature de la base de données. Dans le cadre d'une expérience sensorielle visant à objectiver une représentation interne d'un sujet, cette approche pose trois problèmes majeurs :
 
 \begin{itemize}
-\item Les sons ne peuvent être tagués d'une manière satisfaisante. En effet, sémantiquement, un son peut être décrit de plusieurs façons. Nous pouvons en désigner la source (une portière de voiture), comme nous pouvons désigner l'action de cette source (le claquement d’une portière de voiture) ou encore son environnement (le claquement d’une portière de voiture dans un garage). Concevoir un système de recherche par mots clefs efficace suppose une description à la fois précise de chaque son, qui plus est adaptable à la représentation que s’en fait chaque sujet. Ce qui est difficilement envisageable pour nous.
+\item les sons ne peuvent être tagués d'une manière satisfaisante. En effet, sémantiquement, un son peut être décrit de plusieurs façons. Nous pouvons en désigner la source (une portière de voiture), comme nous pouvons désigner l'action de la source (le claquement d’une portière de voiture) ou encore son environnement (le claquement d’une portière de voiture dans un garage). Concevoir un système de recherche par mots clefs efficace suppose une description précise de chaque son, qui plus est adaptable à la représentation que s’en fait chaque sujet, \jlv{ce qui est difficilement envisageable pour nous} \jls{ce qui est difficilement réalisable};
 
-\item Lors d'une recherche par mots clefs, le sujet doit objectiver un nom décrivant l'objet recherché. Or cette objectivation dépend des connaissances collectives du sujet, connaissances liées à sa sphère socioculturelle et en particulier à sa langue. L'expérience visant une diffusion internationale, cette contrainte pose problème.
+\item lors d'une recherche par mots clefs, le sujet doit objectiver un nom décrivant l'objet recherché. Or cette objectivation dépend des connaissances collectives du sujet, connaissances liées à sa sphère socioculturelle, et en particulier à sa langue. L'expérience visant une diffusion internationale, \jlv{cette contrainte pose problème} \jls{cette contrainte est difficilement surmontable};
 
-\item La description verbale du son, si elle est accessible par le sujet, peut potentiellement influencer sa sélection. Nous voulons éviter les situations biaisées où, par exemple, pour construire une scène environnementale ``\,calme\,'', le sujet sélectionne a priori les sons référencés sous le vocable \emph{parc}.
+\item \jlv{la description verbale du son, si elle est accessible par le sujet, peut potentiellement influencer sa sélection. Nous voulons éviter les situations biaisées où, par exemple, pour construire une scène environnementale ``\,calme\,'', le sujet sélectionne a priori les sons référencés sous le vocable \emph{parc}} \jlc{jusque là nous avons énuméré des problèmes. Il faut rester dans la démarche} \jls{la description verbale du son, si elle est accessible par le sujet, peut potentiellement influencer sa sélection. Dans les faits, pour construire une scène environnementale ``\,calme\,'', le sujet sélectionne a priori les sons référencés sous le vocable \emph{parc}. Cette réalité constitue encore une difficulté} .
 \end{itemize}
 
-Il est de notre avis qu'imposer au sujet une terminologie exprimée à travers les labels décrivant les classes est un risque. Nous pensons que la sélection doit s'éloigner le plus possible d'un ancrage sémantique, et s'effectuer à l'aveugle, \ie sur la base uniquement de l'écoute. Une interface développée spécialement dans ce but est présentée à la section~\ref{sec:ch4_ssf}.
+\jlv{Nous pensons qu'imposer} \jls{Imposer...} au sujet une terminologie exprimée \jlc{"exprimée" n'est pas le bon mot} à travers les labels décrivant les classes est un risque. La sélection doit s'éloigner le plus possible d'un ancrage sémantique, et s'effectuer à l'aveugle, \ie~sur la base uniquement de l'écoute. Une interface développée spécialement dans ce but est présentée à la section~\ref{sec:ch4_ssf}.
 
-Enfin, il est important de noter que le sujet ne peut accéder qu'aux classes du niveau d'abstraction le plus bas, \ie~qui ne possèdent pas de sous-classes et sont directement liées à une collection de samples.
+Enfin, il est important de noter que le sujet ne peut accéder qu'aux classes du niveau d'abstraction le plus bas, classes qui ne possèdent pas de sous-classes, et sont directement liées à une collection de samples.
 
 L’organisation hiérarchique sert alors deux buts:
 
 \begin{itemize}
-\item facilité le parcours, par les sujets, des banques de sons isolées (\cf~section~\ref{sec:ch4_ssf}).
-\item facilité le travaille d'analyse de l'expérimentateur, en lui permettant d'observer la composition en terme de sources sonores des scènes suivant différents niveaux d'abstraction.
+\item faciliter le parcours, par les sujets, des banques de sons isolées (\cf~Section~\ref{sec:ch4_ssf});
+\item faciliter le travail d'analyse de l'expérimentateur, en lui permettant d'observer la composition en terme de sources sonores des scènes, suivant différents niveaux d'abstraction.
 \end{itemize}
 
 \subsubsection{Processus de simulation}
+\label{sec:ch4_processSimu}
 
-Trois étapes composent le processus de simulation (\cf~Figure~\ref{fig:etapeSimu}):
-
-\begin{itemize}
-\item \emph{Sélection} d'une classe de sons. Une fois une classe sélectionnée, une piste est générée. 
-\item \emph{Identification} de la classe de sons sélectionné. Le sujet nomme la classe de sons qu'il a sélectionné.
-\item \emph{Paramétrisation} de la piste liée à la classe de son. Le sujet fixe les paramètres de la piste (pour plus de détails sur les paramètres proposés \cf~section~\ref{sec:ch4_param}).
-\end{itemize}
-
-Ces étapes peuvent être répétées, et ce dans n'importe quel ordre, le sujet pouvant agir rétrospectivement sur les pistes déjà crées. A la fin de la simulation, et afin d'accumuler le maximum de connaissance possible sur la scène simulée, le sujet peut: 
-
-\begin{itemize}
-\item nommer l'environnement simulé
-\item fournir un commentaire libre décrivant son processus de création ainsi que le paysage sonore qu'il a voulu illustrer
-\end{itemize}
-
-\begin{figure}[bth]
+\begin{figure}[t]
         \myfloatalign
         \includegraphics[width=.8\linewidth]{gfx/4}
        \caption{Etape de processus de simulation pour l'analyse sensorielle}\label{fig:etapeSimu}
 \end{figure}
 
+Trois étapes composent le processus de simulation (\cf~Figure~\ref{fig:etapeSimu}):
+
+\begin{itemize}
+\item \emph{sélection} d'une classe de sons. Une fois une classe sélectionnée, une piste est générée; 
+\item \emph{identification} de la classe de sons \jls{exit:sélectionnée}. Le sujet nomme la classe de sons qu'il a sélectionnée;
+\item \emph{paramétrisation} de la piste liée à la classe de sons. Le sujet fixe les paramètres de la piste (pour plus de détails sur les paramètres proposés \cf~Section~\ref{sec:ch4_param}).
+\end{itemize}
+
+Ces étapes peuvent être répétées, et \jls{exit:ce} dans n'importe quel ordre, le sujet pouvant agir rétrospectivement sur les pistes déjà crées. A la fin de la simulation, et afin d'accumuler le maximum de connaissances possible sur la scène simulée, le sujet peut: 
+
+\begin{itemize}
+\item nommer l'environnement simulé;
+\item fournir un commentaire libre décrivant son processus de création, ainsi que le paysage sonore qu'il a voulu illustrer.
+\end{itemize}
+
+
+
 \subsection{Paramètres de contrôle}
 \label{sec:ch4_param}
 
-Les paramètres de contrôle  permettent au sujet de paramétrer chaque piste. Ils agissent toujours sur tout les samples d'une piste, et jamais sur un en particulier.
+Les paramètres permettent au sujet de contrôler la structure de chaque piste. Ils agissent sur tous les samples à la fois, et non sur un en particulier.
 
-Parmi ces paramètres, on retrouve les trois précedemment introduit pour le modèle initial de scène sonore (\cf~section~\ref{sec:ch4_modelParam} et~\ref{sec:ch4_modelForm}), à savoir:
+Parmi ces paramètres, on retrouve \jlv{les trois précédemment} \jls{ceux} introduits pour le modèle initial de scène sonore (\cf~Section~\ref{sec:ch4_modelParam} et~\ref{sec:ch4_modelForm}), à savoir:
 
 \begin{itemize}
-\item \emph{niveau sonore} ($dB$): Pour chaque sample, les niveaux sont tirés aléatoirement à partir d'une distribution normal, paramétré par le sujet en terme de moyenne variance
-\item \emph{espacement inter-onset} (seconde): (piste d'événement seulement) comme pour le niveau, les espacements sont tirés aléatoirement à partir d'une distribution normal, paramétré par le sujet en terme de moyenne variance
+\item \emph{niveau sonore} ($dB$): pour chaque sample, les niveaux sont tirés aléatoirement à partir d'une distribution normale, paramétrée par le sujet en terme de moyenne et variance;
+\item \emph{espacement inter-onset} (seconde): (piste d'événements seulement) comme pour les niveaux, les espacements sont tirés aléatoirement à partir d'une distribution normale, paramétrée par le sujet en terme de moyenne et variance;
 \item \emph{début et fin} (sec): le sujet fixe le début et la fin de chaque piste.
 \end{itemize}
 
-Afin de faciliter la simulation, deux paramètres supplémentaire sont proposés:
+Afin de faciliter la simulation, deux paramètres supplémentaires sont proposés:
 
 \begin{itemize}
-\item \emph{fondu par événement} (seconde): (piste d'événement seulement) le sujet fixe une durée de fondu (entrée et sortie), appliqué à chaque sample d'une piste d'événements.
-\item \emph{fondu globale} (seconde): le sujet fixe les durées de fondu séparément pour l'entré et la sortie de la piste. Ces fondus s'appliquent ainsi à l'ensemble des samples de la piste.
+\item \emph{fondu par événement} (seconde): (piste d'événements seulement) le sujet fixe une durée de fondu (entrée et sortie), appliquée à chaque sample d'une piste d'événements;
+\item \emph{fondu global} (seconde): le sujet fixe les durées de fondus séparément, pour l'entrée et la sortie de la piste. Ces fondus s'appliquent ainsi à l'ensemble des samples de la piste.
 \end{itemize}
 
-Deux de ces paramètres ne s’appliquent que pour les pistes d'événements (\emph{fondu par événement} et \emph{espacement inter-onset}), les samples des textures étant séquencés sans espacement (\cf~section~\ref{sec:ch4_modelParam})
+Deux de ces paramètres ne s’appliquent que pour les pistes d'événements (\emph{fondu par événement} et \emph{espacement inter-onset}), les samples des textures étant séquencés sans espacement (\cf~Section~\ref{sec:ch4_modelParam})
 
 \subsubsection{Données produites par le processus de simulation}
 
-Ce protocole de simulation peut potentiellement produire un grand nombre de données. Ces dernières sont décrites à la figure~\ref{fig:paradigmeSimu2}.  Nous les résumons dans La liste suivante:
-
-\begin{itemize}
-\item Données sémantiques objectives: La banque de données nous permet d'obtenir une information objective quant aux sources sonores présentes dans la scènes. Les données sémantiques objectives sont labels des classes sélectionnées.
-\item Données sémantiques subjective: Il s'agit des noms donnés par le sujet 1) à la scène simulée, 2) au classes de sons sélectionnée
-\item Données quantitatives issues de la partition: Il s'agit de toutes les données relatives à la partition,\ie~pour chaque piste, le positionnement des samples et les paramètres.
-\item Données quantitatives issues du signal: Il s'agit d'indicateur acoustiques extrait du signal,\eg~le niveau sonore globale. Comme nous possédons les samples isolés utilisés pour la synthèse, il est possible de calculer ces descripteurs pour une classe, ou un ensemble de classes en particulier.
-\end{itemize}
-
-Le protocole nous permet de caractériser avec précision une scène simulée, sur la base de données sémantique, subjectives ou objectives, ainsi que quantitatives. Considérant l'ensemble des données générés, les potentiels d'analyse sont vaste.
-
-\begin{figure}[bth]
+\begin{figure}[t]
         \myfloatalign
-        \includegraphics[width=.8\linewidth]{gfx/2}
+        \includegraphics[width=.8\linewidth]{gfx/schemaXP}
        \caption{TODO}\label{fig:paradigmeSimu2}
 \end{figure}
+
+Ce protocole de simulation peut potentiellement produire un grand nombre de données. Ces dernières sont décrites à la figure~\ref{fig:paradigmeSimu2}.  Nous les résumons dans la liste suivante:
+
+\begin{itemize}
+\item données sémantiques objectives: la banque de données nous permet d'obtenir une information objective quant aux sources sonores présentes dans la scène. Les données sémantiques objectives sont les labels des classes sélectionnées;
+\item données sémantiques subjectives: il s'agit des noms donnés par le sujet 1) à la scène simulée, 2) aux classes de sons sélectionnées;
+\item données quantitatives issues de la partition: il s'agit de toutes les données relatives à la partition, \ie~pour chaque piste, le positionnement des samples et les paramètres (\cf~Section~\ref{sec:ch4_seqSample});
+\item données quantitatives issues du signal: il s'agit d'indicateurs acoustiques extraits du signal, \eg~le niveau sonore global. Comme nous possédons les samples isolés utilisés pour la synthèse, il est possible de calculer ces descripteurs pour une classe, ou un ensemble de classes, en particulier.
+\end{itemize}
+
+Le protocole nous permet de caractériser avec précision une scène simulée, sur la base de données sémantiques, subjectives ou objectives, ainsi que quantitatives. Considérant l'ensemble des données générées, les potentiels d'analyse sont vastes.
+
+
 
 \subsection{Interface de sélection aveugle des sons isolés}
 \label{sec:ch4_ssf}
 
-Pour limiter l’influence de l’interface sur le sujet, il nous apparaît nécessaire de libérer sa recherche de toute information textuelle. Nous proposons à l'utilisateur une interface graphique lui permettant d’explorer la banque de sons exclusivement à partir de l’écoute.
-
-Visuellement, les classes du dernier niveau (les seules accessibles par le sujet) sont représentés par des cercles et positionnée sur un plan. La disposition des cercles dans l'espace dépend de l’organisation hiérarchique de la base de données: les sous classes appartenant à la même classe sont proches les unes des autres, et ainsi de suite jusqu'à atteindre les classes des niveaux d'abstraction élevés.
-
-La figure~\ref{fig:ssf} présente l'interface pour la banque de données d'événements sonores. Cette organisation visuelle à été pensée afin de:
-
-\begin{enumerate}
-\item faciliter le parcours de la banque de données, les sons similaire (au sens des classes) étant proches les uns des autres. L'organisation hiérarchique se fonde sur en effet sur des principes cognitifs. Les classes ont été établies à partir de la littérature traitant des catégories de sources sonore (\cf~section~\ref{xx}).
-\item permettre aux sujets de rapidement appréhender toute l'étendue de la banque de données, \ie~l'ensemble des sons disponibles.
-\end{enumerate}
-
-Chaque classe possède un son prototype. Ces sons ont été choisis par les expérimentateurs. Lorsqu’on ``\,clique\,'' sur un cercle, le prototype associé à la classe est joué. Le sujet parcours la banque de sons en cliquant sur les cercles.
-
-Cette interface a fait l'objet d'une étude approfondie dont les résultats sont publiés dans \citep{lafay2016JAES}. \gl{Plus sur les résultats ?}
-
-\begin{figure}[bth]
+\begin{figure}[t]
         \myfloatalign
         \includegraphics[width=.8\linewidth]{gfx/SSF}
        \caption{L'interface de sélection aveugle de l'outil de simulation \emph{Simscene}}\label{fig:ssf}
 \end{figure}
 
+Pour limiter l’influence de l’interface sur le sujet, il nous paraît nécessaire de libérer sa recherche de toute information textuelle. Nous proposons à l'utilisateur une interface graphique lui permettant d’explorer la banque de sons exclusivement à partir de l’écoute.
 
+Visuellement, les classes du dernier niveau (les seules accessibles par le sujet) sont représentées par des cercles, et positionnées sur un plan. La disposition des cercles dans l'espace dépend de l’organisation hiérarchique de la base de données: les sous-classes appartenant à la même classe sont proches les unes des autres, et ainsi de suite jusqu'à atteindre les classes des niveaux d'abstraction élevés.
+
+La figure~\ref{fig:ssf} présente l'interface pour la banque de données d'événements sonores. Cette organisation visuelle à été pensée afin de:
+
+\begin{enumerate}
+\item faciliter le parcours de la banque de données, les sons similaires (au sens des classes) étant proches les uns des autres. L'organisation hiérarchique se fonde, en effet, sur des principes cognitifs. Les classes ont été établies à partir de la littérature traitant des catégories de sources sonores (\cf~Section~\ref{sec:ch4_collecSons}).
+\item permettre aux sujets de rapidement appréhender toute l'étendue de la banque de données, \ie~l'ensemble des sons disponibles.
+\end{enumerate}
+
+Chaque classe possède un son prototype. Ces sons ont été choisis par les expérimentateurs. Lorsqu’on ``\,clique\,'' sur un cercle, le prototype associé à la classe est joué. Le sujet parcours la banque de sons en cliquant sur les cercles.
+
+Cette interface a fait l'objet d'une étude approfondie dont les résultats sont publiés dans \citep{lafay2016JAES}. \\
+
+\gl{TODO: Plus sur les résultats ?}
 
 \subsection{Interface de simulation: l'outil \emph{Simscene}}
 \label{sec:ch4_simscene}
 
-\emph{Simscene} est un environnement de travail audio-numérique, supporté par navigateur internet, et développé dans le cadre du projet HOULE\footnote{Pour plus d’informations sur le Projet HOULE voir \url{http://houle.ircam.fr/wordpress/}}. Il permet de simuler des paysages sonores à partir d'un corpus de sons. Il est prévu pour fonctionner via les navigateurs internet \emph{Chrome} et \emph{Firefox}. L'outil a été développé en javascript à l'aide des librairies \emph{web-audio} \footnote{\emph{web-audio}: \Cf~\url{http://www.w3.org/TR/webaudio/}} et \emph{angular.js} \footnote{\emph{angular.js}: \Cf~\url{https://angularjs.org/}}. L'interface de sélection (\cf~section~\ref{sec:ch4_ssf}) a été développée à l'aide de la librairie \emph{D3.js} \citep{d32011}.
-
-\emph{Simscene} et ses fonctionnalités son présentés en détail dans \citep{rossignol2015simscene}, nous résumons ici ses fonctionnalités. 
-
-Le fonctionnement de \emph{Simscene} se rapproche de celui d'un séquenceur audio. Chaque qu’un utilisateur choisit une classe en de son via l'interface de sélection (\cf~section~\ref{sec:ch4_ssf}). Une fois sélectionné, une piste audio, liée à la classe sélectionnée, est créée. L'utilisateur peut alors modifier certaines propriétés de la piste via un groupe de paramètres de contrôle propre à chaque piste audio (\cf~section~\ref{sec:ch4_param}). Des environnements de texte sont prévu afin de permettre à l'utilisateur de 1) nommer chaque piste, 2) donner un titre à la scène simulée et 3) commenter la scène simulée.
-
-L'interface propose un rendu graphique schématisé de la scène en création (\Cf~Figure~\ref{fig:simscene}). La piste est représentée par une bande possédant un axe temporelle. Sur cette bande, chaque sample est représenté par un rectangle. L'espacement entre les rectangle est relatif à l'espacement entre le sample, de même la hauteur des rectangles est relatif au niveau sonore des samples. Dans le cas d'une piste de texture, un unique rectangle apparaît sur toute la longueur de la piste, un son de texture ne pouvant être entrecoupé de silence. Les caractéristiques des rectangles se modifient en fonction des changements de paramètres de la piste.
-
-L'utilisateur a la possibilité à tout moment d'écouter la scène simulée.
-
-\begin{figure}[bth]
+\begin{figure}[t]
         \myfloatalign
         \includegraphics[width=.8\linewidth]{gfx/simscene}
        \caption{L'outil de simulation \emph{Simscene}}\label{fig:simscene}
 \end{figure}
 
+\emph{Simscene} est un environnement de travail audio-numérique, supporté par navigateur internet, et développé dans le cadre du projet HOULE\footnote{Pour plus d’informations sur le Projet HOULE voir \url{http://houle.ircam.fr/wordpress/}}. Il permet de simuler des paysages sonores à partir d'un corpus de sons. Il est prévu pour fonctionner via les navigateurs internet \emph{Chrome} et \emph{Firefox}. L'outil a été développé en javascript à l'aide de la bibliothèque \emph{angular.js}\footnote{\emph{angular.js}: \cf~\url{https://angularjs.org/}} et du standard \emph{web-audio}\footnote{\emph{web-audio}: \cf~\url{http://www.w3.org/TR/webaudio/}}. L'interface de sélection (\cf~Section~\ref{sec:ch4_ssf}) a été développée à l'aide de la bibliothèque \emph{D3.js} \citep{d32011}.
+
+\emph{Simscene} et ses fonctionnalités sont présentés en détail dans \citep{rossignol2015simscene}. Nous résumons ici ces fonctionnalités. 
+
+Le fonctionnement de \emph{Simscene} se rapproche de celui d'un séquenceur audio. Chaque utilisateur choisit une classe de sons via l'interface de sélection (\cf~Section~\ref{sec:ch4_ssf}). Une fois la classe de sons sélectionnée, une piste audio, liée à cette classe, est créée. L'utilisateur peut alors modifier certaines propriétés de la piste via un groupe de paramètres de contrôle propre à chacune (\cf~Section~\ref{sec:ch4_param}). Des champs de texte sont prévus afin de permettre à l'utilisateur de 1) nommer chaque piste, 2) donner un titre à la scène simulée et 3) commenter la scène simulée.
+
+L'interface propose un rendu graphique schématisé de la scène en cours de création (\cf~Figure~\ref{fig:simscene}). La piste est représentée par une bande possédant un axe temporel. Sur cette bande, chaque sample est représenté par un rectangle. L'espacement entre les rectangles est relatif à l'espacement entre les samples. De même, la hauteur des rectangles est proportionnelle au niveau sonore des samples. Dans le cas d'une piste de texture, un unique rectangle apparaît sur toute la longueur de la piste, un son de texture ne pouvant être entrecoupé de silences. Les caractéristiques des rectangles évoluent en fonction des changements de paramètres de la piste.
+
+L'utilisateur a la possibilité, à tout moment, d'écouter la scène simulée.
+
 L'outil de simulation est accessible via le lien suivant: \url{http://www.irccyn.ec-nantes.fr/~lagrange/
 demonstrations/simScene.html}
 
-\section{Du modèle à la simulation dans le cadre de l'analyse automatique}
+\section{Du modèle à la simulation: l'analyse automatique}
 \label{sec:ch4_modAnaAuto}
 
 %*****************************************
