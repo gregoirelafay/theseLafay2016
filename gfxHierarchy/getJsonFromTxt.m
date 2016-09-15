@@ -14,11 +14,20 @@ for uu=1:length(type)
     %% get Lvl 1
     [tags1,~,classes1,classes0p] = getHierarchy( type{uu},1,hierarchyPath);
     
-    classes0p(cellfun(@(x) isempty(x),classes0p))=classes1(cellfun(@(x) isempty(x),classes0p));
+    %% get Lvl 2
+    [tags2,~,classes2,~] = getHierarchy( type{uu},2,hierarchyPath);
     
+    %% get Lvl 3
+    [tags3,~,classes3,~] = getHierarchy( type{uu},3,hierarchyPath);
+    
+    
+    classes0p(cellfun(@(x) isempty(x),classes0p))=classes1(cellfun(@(x) isempty(x),classes0p));
     classes0=cellfun(@(x) strrep(x,'_',' '),classes0,'UniformOutput',false);
     classes0p=cellfun(@(x) strrep(x,'_',' '),classes0p,'UniformOutput',false);
     classes1=cellfun(@(x) strrep(x,'_',' '),classes1,'UniformOutput',false);
+    classes2=cellfun(@(x) strrep(x,'_',' '),classes2,'UniformOutput',false);
+    classes3=cellfun(@(x) strrep(x,'_',' '),classes3,'UniformOutput',false);
+    
     %% get data
     switch type{uu}
         case 'E'
@@ -30,48 +39,91 @@ for uu=1:length(type)
     data.children=[];
     s=1;
     
-    
-    for jj=1:length(classes0)
-        data.children{jj}.name=classes0{jj};
-        data.children{jj}.children=[];
-        
-        ind1=find(cellfun(@(x) ~isempty(strfind(x,tags0{jj})),tags1));
-        
-        switch type{uu}
-            case 'E'
+    switch type{uu}
+        case 'E'
+            
+            for jj=1:length(classes0)
                 
-                c1Tmp=classes1(ind1);
-                c0pTmp=classes0p(ind1);
-                c0pLabelTmp=unique(c0pTmp);
+                data.children{jj}.name=classes0{jj};
+                data.children{jj}.children=[];
                 
-                for ii=1:length(c0pLabelTmp)
+                ind0p=find(cellfun(@(x) ~isempty(strfind(x,tags0{jj})),tags1));
+                c0pTmp=classes0p(ind0p);
+                
+                c0pTmp2=unique(c0pTmp);
+                
+                for ii=1:length(c0pTmp2)
                     
-                    ind2=find(strcmp(c0pLabelTmp{ii},c0pTmp));
+                    indTmp2=find(strcmp(c0pTmp,c0pTmp2(ii)));
                     
-                    data.children{jj}.children{ii}.children={};
+                    data.children{jj}.children{ii}.name=c0pTmp2{ii};
+                    data.children{jj}.children{ii}.children=[];
                     
-                    if length(ind2)==1
-                        data.children{jj}.children{ii}.children{1}.name=c0pLabelTmp{ii};
-                        data.children{jj}.children{ii}.children{1}.size=s;
-                        %             data.children{jj}.children{ii}.size=s;
-                    else
-                        data.children{jj}.children{ii}.name=c0pLabelTmp{ii};
-                        for gg=1:length(ind2)
-                            data.children{jj}.children{ii}.children{gg}.name=c1Tmp{ind2(gg)};
-                            data.children{jj}.children{ii}.children{gg}.size=s;
+                    ind1=[];
+                    
+                    for rr=1:length(indTmp2)
+                        ind1=[ind1 find(cellfun(@(x) ~isempty(strfind(x,tags1{ind0p(indTmp2(rr))})),tags1))];
+                    end
+                    
+                    c1Tmp=classes1(ind1);
+                    
+                    for aa=1:length(c1Tmp)
+                        
+                        data.children{jj}.children{ii}.children{aa}.name=c1Tmp{aa};
+                        data.children{jj}.children{ii}.children{aa}.children=[];
+                        
+                        ind2=find(cellfun(@(x) ~isempty(strfind(x,tags1{ind1(aa)})),tags2));
+                        c2Tmp=classes2(ind2);
+                        
+                        for bb=1:length(c2Tmp)
+                            
+                            data.children{jj}.children{ii}.children{aa}.children{bb}.name=c2Tmp{bb};
+                            data.children{jj}.children{ii}.children{aa}.children{bb}.children=[];
+                            
+                            ind3=find(cellfun(@(x) ~isempty(strfind(x,tags2{ind2(bb)})),tags3));
+                            c3Tmp=classes3(ind3);
+                            
+                            for cc=1:length(c3Tmp)
+                                
+                                data.children{jj}.children{ii}.children{aa}.children{bb}.children{cc}.name=c3Tmp{cc};
+                                data.children{jj}.children{ii}.children{aa}.children{bb}.children{cc}.size=s;
+                                
+                            end
                         end
                     end
                 end
-            case 'T'
-                for ii=1:length(ind1)
-                    data.children{jj}.children{ii}.name=classes1{ind1(ii)};
-                    data.children{jj}.children{ii}.size=s;
+            end
+            
+        case 'T'
+            for jj=1:length(classes0)
+                
+                data.children{jj}.name=classes0{jj};
+                data.children{jj}.children=[];
+                
+                ind1=find(cellfun(@(x) ~isempty(strfind(x,tags0{jj})),tags1));
+                c1Tmp=classes1(ind1);
+                
+                for ii=1:length(c1Tmp)
+                    
+                    data.children{jj}.children{ii}.name=c1Tmp{ii};
+                    data.children{jj}.children{ii}.children=[];
+                    
+                    ind2=find(cellfun(@(x) ~isempty(strfind(x,tags1{ind1(ii)})),tags2));
+                    c2Tmp=classes2(ind2);
+                    
+                    for cc=1:length(c2Tmp)
+                        
+                        data.children{jj}.children{ii}.children{cc}.name=c2Tmp{cc};
+                        data.children{jj}.children{ii}.children{cc}.size=s;
+                        
+                    end
                 end
-        end
+                
+            end
+            
     end
     
-    
     json.write(data,['json/data_' type{uu} '.js']);
-    % savejson('',data,['json/data_' type '.js']);
+    
 end
 disp('')

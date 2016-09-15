@@ -83,7 +83,7 @@
 % \PassOptionsToPackage{francais,american}{babel}   % change this to your language(s)
 % Spanish languages need extra options in order to work with this template
 %\PassOptionsToPackage{spanish,es-lcroman}{babel}
-	\usepackage{babel}                  
+\usepackage{babel}                  
 
 \usepackage{csquotes}
 \PassOptionsToPackage{%
@@ -100,16 +100,16 @@
     %backref=true,%
     natbib=true % natbib compatibility mode (\citep and \citet still work)
 }{biblatex}
-    \usepackage{biblatex}
+\usepackage{biblatex}
 
 \PassOptionsToPackage{fleqn}{amsmath}       % math environments and more by the AMS 
-    \usepackage{amsmath}
+\usepackage{amsmath}
 
 % ******************************************************************** 
 % General useful packages
 % ******************************************************************** 
 \PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
-    \usepackage{fontenc}   
+\usepackage{fontenc}   
 \usepackage{textcomp} % fix warning with missing font shapes
 \usepackage{scrhack} % fix warnings when using KOMA with listings package          
 \usepackage{xspace} % to get the spacing after macros right  
@@ -117,10 +117,10 @@
 \usepackage{fixltx2e} % fixes some LaTeX stuff --> since 2015 in the LaTeX kernel (see below)
 %\usepackage[latest]{latexrelease} % will be used once available in more distributions (ISSUE #107)
 \PassOptionsToPackage{printonlyused,smaller}{acronym} 
-    \usepackage{acronym} % nice macros for handling all acronyms in the thesis
-    %\renewcommand{\bflabel}[1]{{#1}\hfill} % fix the list of acronyms --> no longer working
-    %\renewcommand*{\acsfont}[1]{\textsc{#1}} 
-    \renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
+\usepackage{acronym} % nice macros for handling all acronyms in the thesis
+%\renewcommand{\bflabel}[1]{{#1}\hfill} % fix the list of acronyms --> no longer working
+%\renewcommand*{\acsfont}[1]{\textsc{#1}} 
+\renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
 % ****************************************************************************************************
 
 
@@ -284,3 +284,10 @@
 %\usepackage[default,osfigures]{opensans} % scale=0.95 
 %\usepackage[sfdefault]{FiraSans}
 % ****************************************************************************************************
+
+% ********************************************************************
+% New package
+% ********************************************************************
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning}

@@ -1,5 +1,5 @@
 %************************************************
-\chapter{Un modèle morphologique de scènes sonores environnementales}\label{ch:psycho_model} % $\mathbb{ZNR}$
+\chapter[Un modèle morphologique]{Un modèle morphologique de scènes sonores environnementales}\label{ch:psycho_model} % $\mathbb{ZNR}$
 %************************************************
 
 \section{Motivations}
@@ -119,6 +119,7 @@ L'association source-action semble être une base sensée sur laquelle bâtir un
 Elle, l'association source-action n'est cependant pas suffisante. Le choix des labels utilisés doit faire l'objet d'une sélection particulière. Ces labels doivent être génériques, compréhensibles, et décrire de manière non ambiguë les objets de la classe considérée. Afin de les choisir, il est possible de se référer aux travaux de Gaver \citep{gaver1993world}, qui propose une taxonomie phénoménologique des sons, aux travaux de Niessen~\al \citep{niessen2010categories} qui, sur la base d'une étude bibliographique de près de 35 publications, établit la liste des catégories sonores les plus utilisées, aux travaux de Salamon~\al \citep{Salamon14}, qui, partant des travaux de \citep{brown2011towards} et reprenant l'association source-action, élabore une taxonomie de sons urbains.
 
 \subsubsection{événements, textures et scènes amorphes}
+\label{sec:ch4_eventTextureAmorphe}
 
 Nous avons montré que l'utilisation de la nomenclature basée sur l’association source-action nous permet de dénombrer et trier l'ensemble des sons présents dans l'environnement.
 
@@ -248,11 +249,11 @@ Une piste $p_i$ est définie comme une séquence de $n_i$ samples d'événements
  Pour chaque piste $p_i$, un facteur d'amplitude est tiré aléatoirement à partir d'une distribution normale de moyenne $\mu^a_i$ et de variance $\sigma^a_i$. De même, les espacements inter-\emph{onsets} sont tirés d'une distribution normale de moyenne $\mu^t_i$ et de variance $\sigma^t_i$. Les indices temporels de début et de fin de chaque piste sont notés $u_i$ et $v_i$ respectivement. Formellement, une piste $p_i$ se définit comme suit:
  
 \begin{equation}
-\label{eq1}
+\label{eq:ch4_eq1}
 p_{i}(n)= \sum_{j=1}^{n_i} \mathcal{N}(\mu^a_{i},\sigma^a_{i})c_{i, \mathcal{U} (1, |c_i|)}(n-n^j_i)
 \end{equation}
 \begin{equation}
-\label{eq2}
+\label{eq:ch4_eq2}
 n_i^j=n_i^{j-1} + \mathcal{N}({\mu^t_{i},\sigma^t_{i}})
 \end{equation}
 
@@ -289,6 +290,7 @@ A l'aide de cet outil, les auteurs demandent à leurs sujets de manipuler des so
 \subsection{Protocole expérimental basé sur la simulation}
 
 \subsubsection{Organisation des sons isolées}
+\label{sec:ch4_dbEventTexture}
 
 L'objectif de l'expérimentation est de permettre à un sujet de simuler un environnement sonore cible, à partir de sons isolés. La banque de sons suit l'organisation décrite à la section~\ref{sec:ch4_collecSons}. Les éléments sont regroupés en classes hiérarchisées, afin de former une taxonomie. Plus le niveau d'abstraction de la classe est élevé, plus la variabilité des enregistrements appartenant à la classe est importante (\cf~Figure~\ref{fig:orgDb}).
  

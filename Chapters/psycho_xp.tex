@@ -1,5 +1,5 @@
 %************************************************
-\chapter[Application à l’étude perceptive des environnements sonores urbains]{Application du modèle morphologique à l’étude perceptive des environnements sonores urbains}\label{ch:psycho_xp}
+\chapter[Application du modèle à l'analyse sensorielle]{Application du modèle morphologique à l'analyse sensorielle des scènes sonores environnementales urbaines}\label{ch:psycho_xp}
 %************************************************
 
 \section{Introduction}
@@ -26,7 +26,7 @@ Tout au long de la présentation de ces expériences et de leurs résultats, nou
 \item \emph{objectif applicatif}: étudier quels sont les éléments qui participent à la perception de l'agrément dans les environnements sonores urbains. 
 \end{itemize}
 
-\section{L'impact de la composition des scènes sur la perception de l'agrément}
+\section[Agrément perçu et composition sémantique]{L'impact de la composition sémantique des scènes sur la perception de l'agrément}
 \label{sec:xp1_2}
 
 \subsection{Objectif}
@@ -57,7 +57,7 @@ Notre analyse s'appuie sur les données produites par les deux expériences.
 
 Dans cette section, nous présentons les processus de sélection et d'acquisition des sons utilisés comme matériau de base lors de la simulation des environnements sonores urbains. La banque de données est identique à celle utilisée dans le cadre de l'expérience pilote \citep{lafay2013atiam,lafay2014new}. 
 
-Pour plus de détails sur l'organisation interne de la banque de données, ainsi que sur l'interface graphique permettant de sélectionner ces dernières, se référer à la section~\ref{sec:db_ui}.
+Pour plus de détails sur l'organisation interne de la banque de données, ainsi que sur l'interface graphique permettant de sélectionner ces dernières, se référer aux sections~\ref{sec:ch4_dbEventTexture} et~\ref{sec:ch4_ssf}.
 
 \subsection{Typologie des sources sonores présentes dans l'environnement urbain}
 
@@ -82,6 +82,7 @@ Pour les événements, les regroupements se font en grande majorité par rapport
 \end{figure}
 
 \subsection{Acquisition des sons isolés}
+\label{sec:ch5_recordDataSet}
 
 Sur la base des typologies précédemment établies, 483 sons ont été collectés, dont 381 événements, et 102 textures.
 
@@ -261,16 +262,16 @@ Pour chaque scène sonore, trois types de descripteurs sont considérés:
 \begin{tabular}{c c c c c} 
 Descripteurs          & Acronymes   &   & Descripteurs            & Acronymes  \\                       
 \cline{1-2} \cline{4-5}
-Densité               & $D$         &   & Niveau                  & $L(T)$    \\
+Densité               & $D$         &   & Diversité               & $DIV$    \\
+                      &             &   &                         &          \\
+Densité               & $D(E)$      &   & Diversité               & $DIV(E)$ \\
+(événements)          &             &   & (événements)            &          \\
+Niveau                & $L$         &   & Diversité               & $DIV(T)$ \\
                       &             &   & (textures)              &          \\
-Densité               & $D(E)$      &   & Diversité               & $DIV$ \\
-(événements)          &             &   &                         &          \\
-Densité               & $D(T)$      &   & Diversité               & $DIV(E)$ \\
-(textures)            &             &   & (événements)            &          \\
-Niveau                & $L$         &   & Agrément moyen          & $\mathcal{A}_{scene}$     \\
-                      &             &   & (par scène)              &         \\
-Niveau                & $L(E)$      &   & Agrément moyen          & $\mathcal{A}_{sujet}$        \\
-(événements)          &             &   & (par sujet)             &      \\
+Niveau                & $L(E)$      &   & Agrément moyen          & $\mathcal{A}_{scene}$     \\
+(événements)          &             &   & (par scène)             &         \\
+Niveau                & $L(T)$      &   & Agrément moyen          & $\mathcal{A}_{sujet}$        \\
+(textures)            &             &   & (par sujet)             &      \\
                       &             &   &                         &      \\
 \multicolumn{3}{c}{Termes} &  \multicolumn{2}{c}{Acronymes} \\ 
 \hline
@@ -292,8 +293,8 @@ Afin d'évaluer l'impact spécifique des différentes sources sonores sur l'agr�
 
 \begin{itemize}
 \item \emph{étude qualitative} : afin de vérifier la validité écologique de 1) la banque de données et 2) l'interface de sélection, nous réalisons une étude qualitative des critiques ergonomiques effectuées par les sujets;
-\item \emph{étude comparative entre les descripteurs structurels} : afin d'évaluer si la distinction affective imposée entre les i- et ni-scènes impacte de manière significative la nature des scènes, \ie~s'il existe des différences significatives entre les descripteurs structurels et/ou l'agrément perçu, nous évaluons cette significativité à partir d'un test de Student à deux échantillons appariés (\cf~Annexe~\ref{app:statuni});
-\item \emph{étude de l'influence des descripteurs structurels sur l'agrément perçu}: afin d'évaluer l'impact potentiel des descripteurs structurels sur l'agrément perçu, nous étudions l'existence de corrélations linéaires entre ces deux types de descripteurs. Pour mesurer la corrélation, nous utilisons le coefficient de Pearson (\cf~Annexe~\ref{app:statuni}). Nous adoptons ici une méthodologie couramment utilisée dans l'approche dimensionnelle;
+\item \emph{étude comparative entre les descripteurs structurels} : afin d'évaluer si la distinction affective imposée entre les i- et ni-scènes impacte de manière significative la nature des scènes, \ie~s'il existe des différences significatives entre les descripteurs structurels et/ou l'agrément perçu, nous évaluons cette significativité à partir d'un test de Student à deux échantillons appariés (\cf~Annexe~\ref{app:student});
+\item \emph{étude de l'influence des descripteurs structurels sur l'agrément perçu}: afin d'évaluer l'impact potentiel des descripteurs structurels sur l'agrément perçu, nous étudions l'existence de corrélations linéaires entre ces deux types de descripteurs. Pour mesurer la corrélation, nous utilisons le coefficient de Pearson (\cf~Annexe~\ref{app:corr}). Nous adoptons ici une méthodologie couramment utilisée dans l'approche dimensionnelle;
 \item \emph{étude comparative entre les descripteurs sémantiques}: afin d'apprécier si la distinction affective imposée a eu un impact sur la composition des scènes en terme de sources sonores, ou, pour être plus précis, s'il existe des classes de sons qui ont été particulièrement utilisées pour simuler un type d'environnement, nous utilisons le V-test. Nous vérifions si la présence d'une classe de sons est typique d'un environnement (i ou ni). Le test est effectué pour chaque niveau d'abstraction, et séparément, pour les classes d'événements et de textures. Pour chaque classe $j$ et chaque type d'environnements $k$ ($k={i,ni}$), la valeur $V_{jk}$ du V-test se calcule comme suit: 
 
 \begin{equation*}
@@ -751,7 +752,7 @@ Nous montrons que les descripteurs à utiliser dépendent de la nature de l'envi
 \gl{TODO, l'utilisation de trafic reprendre les conclusions de \citep{lavandier2006contribution}}
 \gl{TODO, les résultats (2 modes d'obs) concordent avec les observations faites pas \citep{ricciardi2015sound} (\cf~Section~\ref{XX}).}
 
-\section{Agir sur l'agrément perçu en modifiant la composition sémantique}
+\section[Modification de la composition sémantique]{Agir sur l'agrément perçu en modifiant la composition sémantique}
 \label{sec:xp3}
 
 \subsection{Objectif}
@@ -1030,7 +1031,7 @@ $DIV(E)$ 3     & \textbf{-0.39} ($p<0.01$)    & -0.20 ($p=0.25$)           & -0.
 
 \gl{TODO}
 
-\section{L'impact de la composition sur les processus de catégorisation des scènes}
+\section[Composition sémantique et catégorisation]{Influence de la composition sémantique sur les processus de catégorisation des scènes}
 \label{sec:xp4}
 
 \subsection{Objectif de l'expérience}
@@ -1039,6 +1040,131 @@ $DIV(E)$ 3     & \textbf{-0.39} ($p<0.01$)    & -0.20 ($p=0.25$)           & -0.
 
 \subsection{Données et méthodes d'analyses}
 
+\subsection{Stratégie de catégorisation}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lccccc}
+subject & source  & location & quality & volume & frequency  \\
+\hline
+    $1^*$&        &          &    x    &        &           \\
+    2    &   x    &          &         &        &           \\
+    $3^*$&        &          &         &    x   &     x     \\
+    4    &   x    &          &    x    &        &           \\
+    5    &   x    &    x     &    x    &        &           \\        
+    $6^*$&        &          &    x    &        &           \\
+    7    &   x    &          &         &    x   &           \\
+    $8^*$&        &          &    x    &        &           \\
+    9    &   x    &    x     &         &        &           \\
+    10   &   x    &          &         &        &           \\
+\hline
+\end{tabular}
+\vspace{0.5mm}
+\caption{\label{tab:StratSate} Strategies adopted by the subjects to categorize the scenes. Subjects removed from the data are indicated by $*$.}
+\end{table}
+
+\subsection{Du verbe à la classe}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{ccc}
+labels                & categories         & classes\\
+                      & (merging)          &        \\
+\hline
+alarm (2)             & alarm              &  \textit{car\_fire\_alarm} (sl-1) \\
+                      & (alarm/siren/horn) &                                   \\
+horn  (2)             & horn               &  \textit{horn} (sl-1)             \\
+                      & (alarm/siren/horn) &                                    \\
+siren (3)             & siren              &  \textit{siren} (sl-1)            \\
+                      & (alarm/siren/horn) &                                    \\
+birds (4)             & birds              &  \textit{birds} (sl-2)             \\
+\hline
+church bell (4)       & church bell        &  \textit{church bell} (sl-1)      \\
+church (2)            &                    &                                   \\
+\hline
+mechanical            & construction       &  \textit{construction} (sl-0)       \\
+public work  (4)      &                    &  \textit{construction}$^T$  (sl-0)    \\
+tools                 &                    &                                  \\
+\hline			                                                             
+human (4)             & human              &   \textit{voice} (sl-0)           \\      
+people, crowd         &                    &   \textit{footstep} (sl-1)       \\      
+footstep (2)          &                    &   \textit{human}$^T$ (sl-0)       \\  
+\hline
+traffic (2)           & traffic            & \textit{traffic} (sl-$0^{+}$)  \\
+car (2)               &                    & \textit{traffic}$^T$ (sl-0)     \\                   
+\hline
+water, rain (2)       & water              &   \textit{water}$^T$ (sl-1)          \\ 
+bad weather           &                    &                                  \\ 
+\hline
+market                & market             &   \textit{market}$^T$ (sl-1)          \\ 
+                      & (human)            &                                    \\
+park                  & park               &   \textit{park}$^T$ (sl-1)           \\ 
+                      & (nature)           &                                    \\
+nature (3)            & nature             &   \textit{nature}$^T$ (sl-0)          \\  
+background$*$         & ---                &    ---                              \\ 
+noise$*$ (2)          & ---                &    ---                              \\               
+\hline
+\end{tabular}
+\vspace{0.5mm}
+\caption{\label{tab:association}  Associations made between labels, categories and classes of the class taxonomy taken at specific semantic levels (sl). Numbers in parentheses indicate the number of subjects who use this label. ($*$) indicates labels not taken into account in this study. ($^T$) indicates texture classes}
+\end{table}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{crr}
+                      & \multicolumn{2}{c}{Marqueurs sonores événements}      \\ 
+n/a                   &      cluster   1   & cluster      2   \\
+\hline
+0                     &                    &                  \\
+\hline
+1                     & animal  (3.3)      & footstep  (3.3)  \\
+                      & bell bike (3.2)    &                  \\
+\hline
+2                     & bird (3.8)         &                  \\
+                      & bell bike (3.1)    &                  \\                             
+\hline
+3                     & singing bird (4.2) &                  \\
+                      & raven (3.4)        &                  \\                                               
+\hline
+                      &                    &                  \\ 
+n/a                   &   cluster 3        & cluster 5  \\                      
+\hline
+0                     &                    & construction (2.5) \\
+\hline
+                      & church bell (4.9)  & siren (3.5) \\
+                      &                    & horn  (3.0) \\
+1                     &                    & bell bike  (-3.3) \\
+                      &                    & animal (-3.4)  \\
+                      &                    & church bell (-3.7) \\
+\hline
+                      & church bell (5.0)  & siren (3.7)  \\
+                      & child talk  (3.3)  & horn  (3.2)\\        
+2                     &                    & bell bike (-3.3) \\
+                      &                    & church bell (-3.6) \\                        
+                      &                    & bird (-3.6) \\                           
+\hline
+                      & church bell (5.0)  & siren (3.7)  \\
+                      & child talk (3.4)   & horn (3.2) \\  
+3                     &                    & bell bike (-3.2) \\  
+                      &                    & church bell (-3.6) \\  
+                      &                    & singing bird (-3.7) \\                                              
+\hline                      
+                      &                    &                   \\                       
+                      & \multicolumn{2}{c}{Marqueurs sonores textures}  \\ 
+n/a                   &      cluster   2        & cluster      5        \\                      
+\hline
+0                     &                         & construction (2.8)    \\
+                      &                         & courtyard/park (-3.4) \\
+\hline
+1                     &                         & crossroad (2.7)           \\
+                      &                         & park (-2.9)           \\
+\hline
+2                     & crowd foreigners (3.6)  & park (-2.9)           \\     
+\hline
+\end{tabular}
+\vspace{0.5mm}
+\caption{\label{tab:markerHac}  \gl{TODO: $\alpha=0.1$}}
+\end{table}
 \subsection{Discussions}
 %*****************************************
 %*****************************************
