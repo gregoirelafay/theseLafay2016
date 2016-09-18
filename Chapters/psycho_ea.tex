@@ -1,5 +1,5 @@
 %*****************************************
-\chapter{La perception de l'environnement sonore}\label{ch:psycho_ea}
+\chapter{État de l'art sur la perception de l'environnement sonore}\label{ch:psycho_ea}
 %*****************************************
 
 
@@ -13,17 +13,84 @@ Au cours de la troisième, nous nous intéressons aux processus dits d'Analyse d
 
 Au cours de la quatrième, nous introduisons la notion de paysage sonore, et examinons l'impact que cette notion a sur les recherches en matière de perception des environnements. Nos travaux s'inscrivant largement dans cette approche, nous dressons un état de l'art des connaissances en matière de perception des paysages sonores, et tentons de dégager les grands axes méthodologiques suivis par ces études.
 
-Au cours de la cinquième et dernière partie de cet état des lieux, sont précisées les concepts d'événement et de texture sonore, notions clefs qui interviennent par la suite dans le modèle de scène sonore proposé.
+Au cours de la cinquième et dernière partie de cet état des lieux, sont précisés les concepts d'événement et de texture sonore, notions clefs qui interviennent par la suite dans le modèle de scène sonore proposé.
 
 \gl{TODO: moins de "nous"}
+
 \section{Le traitement de l'information auditive}
 
-\gl{TODO: Réorganiser les sections de cette partie afin de ne pas introduire trop brutalement Perception et Cognition}
+\subsection{La chaîne de traitement de l'information auditive}
+\label{sec:chaineTaite}
+
+Le son est une vibration émise par une source d'excitation, et transmise à l'air. Cette vibration se propage ensuite jusqu'à atteindre un récepteur, le tympan, qui va capter le différentiel de pression résultant de cette vibration. C'est le point de départ du processus de traitement de l'information auditive. 
+
+Si on adopte une approche \emph{traitement de l'information}, on peut décomposer ce processus en plusieurs systèmes interconnectés. Ces systèmes forment une chaîne qui, au fur et à mesure des traitements, interprète le signal acoustique afin d'en extraire l'information sémantique. Plus on se place loin dans la chaîne de traitement, plus on a accès à une information abstraite, potentiellement utilisable par d'autres processus de haut niveau. La figure \ref{fig:traitementSonMcAdamsBigand} extraite de \citep{mcadams1994penser} nous donne un aperçu des principales fonctionnalités du système de traitement auditif.
+
+\begin{figure}[t]
+        \myfloatalign
+        \includegraphics[width=.6\linewidth]{gfx/traitementSonMcAdamsBigand}
+        \caption[Principaux processus de traitement de l'information auditive et leurs interactions]{Principaux processus de traitement de l'information auditive et leurs interactions, d'après \citep{mcadams1994penser}}\label{fig:traitementSonMcAdamsBigand}
+\end{figure}
+
+Lors de l'étape de \emph{transduction}, les vibrations sonores parvenant au tympan, sont analysées puis traduites en impulsions nerveuses transmises au cerveau. Ces impulsions rendent compte des attributs spectraux et temporels de l'onde. L'extraction des composantes fréquentielles intervient dans la cochlée. C'est à l'intérieur de cette dernière que les différentes parties de la membrane basilaire vont être excitées, en fonction des fréquences composant le signal, suivant un axe tonotopique. Les vibrations, captées à chaque point d’excitation de la membrane basilaire, sont transmises au cerveau via les nerfs auditifs, chaque point codant une information correspondant à une bande fréquentielle limitée. 
+
+Vient ensuite le \emph{processus de groupement auditif}. C'est une étape d'intégration temporelle au cours de laquelle l'information est analysée en images auditives cohérentes. Contrairement à ce que pensaient les Grecs anciens, nous ne possédons pas de "canaux" séparés pour chaque objet sonore présent dans l'environnement \citep{yost1994fundamentals}. C'est notre cerveau qui se charge de fusionner et de discrétiser les éléments sonores simultanés, afin de créer un flux auditif structuré. En d'autres termes, il détermine le nombre d'objets présents, identifie leur provenance, et en définit le sens. 
+
+Afin d'illustrer notre propos, mettons nous dans la peau du mélomane écoutant cette fois un Choral de Bach. C'est le \emph{processus de groupement auditif} qui, sur la base des paramètres spectro-temporels du signal, nous permet de distinguer les voix de basse, ténor, alto et soprano. Les travaux menés au titre de l'Analyse de Scènes Auditives (ASA), dont le sujet est abordé plus bas (\cf~Section~\ref{sec:ch3_ASA}), ont largement porté sur ces processus de groupement.
+
+Ces processus de groupement précèdent généralement la phase dite \emph{d'extraction/calcul des propriétés/attributs}. C'est lors de cette phase que sont extraites les qualités perceptives des objets groupés, ces qualités pouvant être vues comme des propriétés cognitives de haut niveau. Pour revenir au choral, c'est à partir d'une analyse des attributs perceptifs que nous sommes capables de percevoir les mélodies comme des objets unitaires, même si celles-ci sont développées entre les différentes voix.
+
+Les phases de groupement et d'extraction concernent l'élaboration et l'analyse d'entités mentales. Une fois représentées dans le cerveau, ces entités sont interprétées pendant l'étape de \emph{structure des connaissances abstraites}. C'est lors de cette étape qu'elles sont identifiées, et qu'un sens interprétatif leur est donné. En pratique, il s'agit de déterminer si le Choral est plaisant ou non.
+
+L'étape suivante, nommée \emph{Traitement des structures d'événements}, permet d'intégrer dans le processus cognitif différents contextes, comme par exemple le contexte fonctionnel (dans quel cadre ce son est-il entendu ?), ou encore le contexte sensoriel (l'information visuelle, ou la mémoire des événements sonores précédemment entendus). Pour revenir à notre mélomane, c'est cette étape qui lui permet d'envisager un morceau dans son ensemble, et, dans le cas d'une fugue, d'entendre que la strette finale est un résumé condensé des sujets précédemment exposés.
+
+La dernière étape du processus de traitement est l'élaboration d'une représentation mentale de l'environnement perçu. C'est au cours de cette étape que nous organisons et conservons les différentes informations extraites. La nature et la formation des représentations mentales sont abordées à la section~\ref{sec:ch3_representationMentale}.
+
+\subsection{Processus \emph{Bottom-up} et processus \emph{Top-down}}
+\label{sec:ch3_butd}
+
+L'interaction entre l'homme et son environnement est fonction d'une part de l'information sensorielle captée par un individu, d'autre part de la rétroaction exercée par lui sur ces données. 
+
+\gl{Typiquement, si nous reprenons la figure~\ref{sec:ch3_representationMentale}, les étapes de \emph{transduction} et de \emph{groupement auditif}, dépendent, entre autre, de la nature du signal perçu. À ce titre, ils mobilisent des mécanismes innés, qui opèrent sur l'information sensorielle à partir de la présence de régularités physiques. Ces régularités sont universelles, elles apparaissent quelque soit la nature de l'environnement et sont expérimentées par l'ensemble des individus. Par exemple, si la fréquence fondamentale d'un son harmonique change au cours du temps, toutes ses harmoniques changeront également afin de maintenir la structure harmonique du son [p. 38]\citep{bregman1994auditory} (\cf~Section~\ref{sec:ch3_regularitesEtProcessusPrimitifs}).}
+
+\gl{La rétroaction, quant à elle, dépend de la mémoire de l'individu, \ie~sa représentation mentale interne des réalités externes du monde (\cf~Section~\ref{sec:ch3_representationMentale} et Figure~\ref{sec:ch3_representationMentale}). Cette mémoire est à la fois : }
+
+\begin{itemize}
+\item individuelle : déterminée par son expérience sensible, \ie~la mémoire des interactions sensorielles passées;
+\item collective : déterminée par des connaissances transmises, connaissances qui dépendent de sa sphère d'appartenance socio-culturelle, ainsi que de sa langue maternelle.
+\end{itemize}
+
+\gl{C'est par l'interaction que se manifeste l'expérience de l'individu, autrement dit, qu'il optimise l'analyse des stimuli, et intègre les effets de contexte dus à l'environnement. Cette rétroaction est également l'expression de son l'individualité, individualité qui explique que deux personnes, ayant des capacités sensorielles semblables, peuvent percevoir différemment un même environnement.} 
+
+Le système auditif mobilise ainsi deux formes de traitements (\cf~Figure~\ref{fig:processusPercepAndCo}) :
+
+\begin{itemize}
+\item les traitements dits ascendants (\emph{bottom-up}), \gl{processus innés} et dirigés par les données;
+\item les traitements dits descendants (\emph{top-down}) dirigés par les concepts ou les représentations.
+\end{itemize}
+
+Un exemple concret, emprunté au domaine de la vision, est celui du phénomène dit de bi-stabilité, \ie~la faculté, chez un sujet, de tirer d'un même stimulus deux analyses différentes, mais jamais simultanément \citep{schwartz2012multistability} (\cf~Figure~\ref{fig:bistabilite}). \\
+
+\begin{figure}[t]
+        \myfloatalign
+        \includegraphics[width=.6\linewidth]{gfx/canard_lapin}
+        \caption[Le phénomène de bistabilité: l'illusion du canard-lapin]{Le phénomène de bistabilité: l'illusion du canard-lapin. Première publication dans \emph{Fliegende Blätter}, 23 octobre 1892, p. 147}\label{fig:bistabilite}
+\end{figure}
+
+Un autre exemple, emprunté cette fois au domaine de l'audition, nous semble illustrer encore le caractère dual de l'analyse de l'information sensorielle. Il est donné par McAdams et Bigand \citep[p. 2]{mcadams1994penser}:
+
+\begin{quote}
+``\,...Imaginez vous un instant en pleine forêt amazonienne : vous entendriez exactement les mêmes bruits que le guide qui vous accompagne, mais, étant donné votre manque de connaissance du milieu, vous seriez incapable d'extraire du fond sonore les sons correspondant aux cris de l'iguane, aux singes macaques, aux chants des ouistitis ou aux bruissements des arbres tropicaux. De ce fait vous seriez dans l'incapacité d'attribuer une signification à l'ensemble de la structure sonore, ce qui pourrait être important pour votre survie dans l'environnement.\,''
+\end{quote}
+
+Étudier le système auditif demande de prendre en compte aussi bien l'information externe (processus ascendant) que l'information interne (processus descendant). \gl{Réduire la perception à une simple association de sensations établies à partir du signal capté, ne permet pas de rendre compte de l'éventail des processus cognitifs entrant dans le décodage de l'environnement. Cette distinction entre perception et cognition est approfondie à la section suivante (\cf~Section~\ref{sec:ch3_perceptionCognition})}. \\
+
+\gl{TODO: plus de liens avec la figure~\ref{sec:ch3_representationMentale} ?}
 
 \subsection{Perception et cognition}
+\label{sec:ch3_perceptionCognition}
 
-Perception. Le mot désigne l'ensemble des processus de traitement de l'information sensorielle. 
-La perception du monde sonore qui nous entoure est un phénomène complexe, aujourd'hui encore mal connu. 
+Perception. Le mot désigne l'ensemble des processus de traitement de l'information sensorielle. La perception du monde sonore qui nous entoure est un phénomène complexe, aujourd'hui encore mal connu. 
 
 Cette perception est à l'origine de l'interaction que nous créons avec notre environnement. Elle détermine notre capacité d'adaptation à ce dernier. Cette relation au monde \emph{réel} ne se rompt jamais. Nous percevons des sons en permanence, et ce, même si aucune source sonore n'est présente. 
 
@@ -40,6 +107,7 @@ Le mot désigne l'ensemble des processus d'acquisition et de développement d'un
 Selon la théorie classique, perception et cognition dépendent de deux groupes de systèmes fonctionnels du cerveau distincts. La perception mobilise les systèmes de traitement dits modaux, c'est à dire supportés par les organes sensoriels (oreilles, yeux etc $\ldots$), tandis que la cognition s'appuie sur des représentations mentales des réalités externes, par essence amodales.
  
 Cette dichotomie entre perception et cognition est aujourd'hui remise en question. Dans une approche ``\,incarnée\,'' de la cognition (\emph{Grounded Cognition}), Barsalou nie le caractère amodal des représentations mentales prônant que ces dernières dépendent également des modalités sensorielles \citep{barsalou2010grounded}. Il tente ainsi de réunir les processus perceptifs et cognitifs \citep{goldstone1998reuniting, barsalou1999perceptions}.
+
 Les deux approches sont illustrées sur la Figure~\ref{fig:processusPercepAndCo}.
 
 \begin{figure}[t]
@@ -85,54 +153,13 @@ Au regard du paradigme classique de la psychologie cognitive, Maffiolo met en é
 \item le caractère subjectif du jugement humain en comparaison à l'objectivité d'un appareil de mesure.
 \end{itemize}
 
-\gl{TODO: commenter} \\
+\gl{TODO: commenter, on ne comprend pas bien en quoi les points sont discutables} \\
 
 \begin{figure}[t]
         \myfloatalign
         \includegraphics[width=\linewidth]{gfx/Shema_maffiolo}
-        \caption[Paradigme de la psychologie cognititve]{Paradigme de la psychologie cognititve, d'après \citep{maffiolo_caracterisation_1999}}\label{fig:paradigmePsychoCo}
+        \caption[Paradigme de la psychologie cognititve]{Paradigme de la psychologie cognititve, d'après \citep{maffiolo_caracterisation_1999} \gl{a quoi réfèrent les adjectifs individuels et collectifs ?}}\label{fig:paradigmePsychoCo}
 \end{figure}
-
-\subsection{Processus \emph{Bottom-up} et processus \emph{Top-down}}
-\label{sec:ch3_butd}
-
-L'interaction entre l'homme et son environnement est fonction d'une part de l'information sensorielle captée par le sujet, d'autre part de la rétroaction exercée par lui sur ces données. Cette rétroaction est déterminée par son expérience sensible du monde. Par "expérience sensible", nous entendons la mémoire interne des interactions passées, mémoire grâce à laquelle nous optimisons l'analyse des stimuli, et intégrons les effets de contexte dus à l'environnement.
-
-Cette mémoire est à la fois :
-
-\begin{itemize}
-\item individuelle : dépendant de notre expérience propre;
-\item collective : dépendant des connaissances que nous avons acquises sur le monde.
-\end{itemize}
-
-La rétroaction est l'expression de l'individualité du sujet, individualité qui explique que deux personnes, ayant des capacités sensorielles semblables, peuvent percevoir différemment un même environnement.
-
-Ainsi la perception mobilise deux formes de traitements (\cf~Figure~\ref{fig:processusPercepAndCo}) :
-
-\begin{itemize}
-\item les traitements dits ascendants (\emph{bottom-up}) dirigés par les données;
-\item les traitements dits descendants (\emph{top-down}) dirigés par les concepts ou les représentations.
-\end{itemize}
-
-Étudier la perception demande de prendre en compte aussi bien l'information externe (processus ascendant) que l'information interne (processus descendant). Réduire la perception à une simple association de sensations ne permet pas de rendre compte de l'éventail des processus cognitifs entrant dans le décodage de l'environnement. Un exemple concret, emprunté au domaine de la vision, est celui du phénomène dit de bi-stabilité, \ie~la faculté, chez un sujet, de tirer d'un même stimulus deux analyses différentes, mais jamais simultanément \citep{schwartz2012multistability} (\cf~Figure~\ref{fig:bistabilite}). \\
-
-\begin{figure}[t]
-        \myfloatalign
-        \includegraphics[width=.6\linewidth]{gfx/canard_lapin}
-        \caption[Le phénomène de bistabilité: l'illusion du canard-lapin]{Le phénomène de bistabilité: l'illusion du canard-lapin. Première publication dans \emph{Fliegende Blätter}, 23 octobre 1892, p. 147}\label{fig:bistabilite}
-\end{figure}
-
-Un autre exemple, emprunté cette fois au domaine de l'audition, nous semble illustrer encore le caractère dual de la perception. Il est donné par McAdams et Bigand \citep[p. 2]{mcadams1994penser}:
-
-\begin{quote}
-``\,...Imaginez vous un instant en pleine forêt amazonienne : vous entendriez exactement les mêmes bruits que le guide qui vous accompagne, mais, étant donné votre manque de connaissance du milieu, vous seriez incapable d'extraire du fond sonore les sons correspondant aux cris de l'iguane, aux singes macaques, aux chants des ouistitis ou aux bruissements des arbres tropicaux. De ce fait vous seriez dans l'incapacité d'attribuer une signification à l'ensemble de la structure sonore, ce qui pourrait être important pour votre survie dans l'environnement.\,''
-\end{quote}
-
-\subsection{L'écoute}
-\label{sec:ch3_ecoute}
-
-\gl{TODO: G0: \citep{gaver1993world}}\\
-
 
 \subsection{L'approche écologique}
 \label{sec:ch3_ecologique}
@@ -166,32 +193,10 @@ Cependant des différences apparaissent au niveau de la description des fonds so
 
 \gl{TODO: sélection des stimuli} \\
 
-\subsection{La chaîne de traitement de l'information auditive}
-\label{sec:chaineTaite}
+\subsection{L'écoute}
+\label{sec:ch3_ecoute}
 
-Le son est une vibration émise par une source d'excitation, et transmise à l'air. Cette vibration se propage ensuite jusqu'à atteindre un récepteur, le tympan, qui va capter le différentiel de pression résultant de cette vibration. C'est le point de départ du processus de traitement de l'information auditive. 
-
-Si on adopte une approche \emph{traitement de l'information}, on peut décomposer ce processus en plusieurs systèmes interconnectés. Ces systèmes forment une chaîne qui, au fur et à mesure des traitements, interprète le signal acoustique afin d'en extraire l'information sémantique. Plus on se place loin dans la chaîne de traitement, plus on a accès à une information abstraite, potentiellement utilisable par d'autres processus de haut niveau. La figure \ref{fig:traitementSonMcAdamsBigand} extraite de \citep{mcadams1994penser} nous donne un aperçu des principales fonctionnalités du système de traitement auditif.
-
-\begin{figure}[t]
-        \myfloatalign
-        \includegraphics[width=.6\linewidth]{gfx/traitementSonMcAdamsBigand}
-        \caption[Principaux processus de traitement de l'information auditive et leurs interactions]{Principaux processus de traitement de l'information auditive et leurs interactions, d'après \citep{mcadams1994penser}}\label{fig:traitementSonMcAdamsBigand}
-\end{figure}
-
-Lors de l'étape de \emph{transduction}, les vibrations sonores parvenant au tympan, sont analysées puis traduites en impulsions nerveuses transmises au cerveau. Ces impulsions rendent compte des attributs spectraux et temporels de l'onde. L'extraction des composantes fréquentielles intervient dans la cochlée. C'est à l'intérieur de cette dernière que les différentes parties de la membrane basilaire vont être excitées, en fonction des fréquences composant le signal, suivant un axe tonotopique. Les vibrations, captées à chaque point d’excitation de la membrane basilaire, sont transmises au cerveau via les nerfs auditifs, chaque point codant une information correspondant à une bande fréquentielle limitée. 
-
-Vient ensuite le \emph{processus de groupement auditif}. C'est une étape d'intégration temporelle au cours de laquelle l'information est analysée en images auditives cohérentes. Contrairement à ce que pensaient les Grecs anciens, nous ne possédons pas de "canaux" séparés pour chaque objet sonore présent dans l'environnement \citep{yost1994fundamentals}. C'est notre cerveau qui se charge de fusionner et de discrétiser les éléments sonores simultanés, afin de créer un flux auditif structuré. En d'autres termes, il détermine le nombre d'objets présents, identifie leur provenance, et en définit le sens. 
-
-Afin d'illustrer notre propos, mettons nous dans la peau du mélomane écoutant cette fois un Choral de Bach. C'est le \emph{processus de groupement auditif} qui, sur la base des paramètres spectro-temporels du signal, nous permet de distinguer les voix de basse, ténor, alto et soprano. Les travaux menés au titre de l'Analyse de Scènes Auditives (ASA), dont le sujet est abordé plus bas (\cf~Section~\ref{sec:ch3_ASA}), ont largement porté sur ces processus de groupement.
-
-Ces processus de groupement précèdent généralement la phase dite \emph{d'extraction/calcul des propriétés/attributs}. C'est lors de cette phase que sont extraites les qualités perceptives des objets groupés, ces qualités pouvant être vues comme des propriétés cognitives de haut niveau. pour revenir au choral, c'est à partir d'une analyse des attributs perceptifs que nous sommes capables de percevoir les mélodies comme des objets unitaires, même si celles-ci sont développées entre les différentes voix.
-
-Les phases de groupement et d'extraction concernent l'élaboration et l'analyse d'entités mentales. Une fois représentées dans le cerveau, ces entités sont interprétées pendant l'étape de \emph{structure des connaissances abstraites}. C'est lors de cette étape qu'elles sont identifiées, et qu'un sens interprétatif leur est donné. En pratique, il s'agit de déterminer si le Choral est plaisant ou non.
-
-L'étape suivante, nommée \emph{Traitement des structures d'événements}, permet d'intégrer dans le processus cognitif différents contextes, comme par exemple le contexte fonctionnel (dans quel cadre ce son est-il entendu ?), ou encore le contexte sensoriel (l'information visuelle, ou la mémoire des événements sonores précédemment entendus). Pour revenir à notre mélomane, c'est cette étape qui lui permet d'envisager un morceau dans son ensemble, et, dans le cas d'une fugue, d'entendre que la strette finale est un résumé condensé des sujets précédemment exposés.
-
-La dernière étape du processus de traitement est l'élaboration d'une représentation mentale de l'environnement perçu. C'est au cours de cette étape que nous organisons et conservons les différentes informations extraites. La nature et la formation des représentations mentales sont abordées à la section suivante.
+\gl{TODO: G0: \citep{gaver1993world}}\\
 
 \section{Représentation mentale de l'environnement sonore}
 \label{sec:ch3_representationMentale}
@@ -217,7 +222,7 @@ Une des vérités de tout être humain est de segmenter son environnement, \ie~d
 D'un point de vue écologique, la catégorisation est un processus essentiel. Nous sommes constamment en train de catégoriser l'environnement, et devons être à même, à tout moment, de prendre une décision sur l'appartenance catégorielle d'un objet. Ce processus est adaptatif. La prise de décision est toujours fonction du sujet, d'une situation et d'un contexte. Ainsi, un même objet, perçu à deux moments distincts, pourra être affecté à des catégories différentes. 
 
 
-\gl{\citep{anderson1991adaptive} propose trois exemples de manifestations quotidiennes des catégories:}
+\citep{anderson1991adaptive} propose trois exemples de manifestations quotidiennes des catégories:
 
 \begin{itemize}
 
@@ -236,7 +241,7 @@ Toute opération permettant de ``\,voir un objet comme étant $\ldots$\,'' plut�
 \item catégories de concepts:  Regroupe des objets abstraits qui ne sont ancrés dans une réalité physique (art, stratégie, sentiments).
 \end{itemize}
 
-Ces trois types de catégories groupent des objets sur la base de leurs similarités. Pour les catégories d'objets naturels et artificiels, ces similarités s'établissent majoritairement à partir de leurs caractéristiques physiques. Pour les catégories de concepts, ces similarités relèvent d'attributs cognitives plus haut niveau. De plus, qu'ils soient abstraits ou concrets, ces objets ont une existence avérée,\ie~indépendante du contexte.
+Ces trois types de catégories groupent des objets sur la base de leurs similarités. Pour les catégories d'objets naturels et artificiels, ces similarités s'établissent majoritairement à partir de leurs caractéristiques physiques. Pour les catégories de concepts, ces similarités relèvent d'attributs cognitives plus haut niveau. De plus, qu'ils soient abstraits ou concrets, ces objets ont une existence avérée, \ie~indépendante du contexte.
 
 Cependant, certaines situations particulières poussent à grouper des objets parfaitement dissimilaires, \eg~la liste de courses. Les catégories inhérentes à de tels groupements sont nommées \emph{ad hoc} \citep{barsalou1983ad}:
 
@@ -341,7 +346,7 @@ Cette approche, qui sous-tend que tous les objets d'une catégorie doivent parta
 
 \begin{itemize}
 \item l'appartenance catégorielle n'est pas figée: deux personnes peuvent catégoriser un même objet de deux manières. Qui plus est, une même personne peut modifier sa stratégie de catégorisation \citep{mccloskey1978natural};
-\item les objets ne partagent pas le même degré d'appartenance: comme vu précédemment (\cf~Section~\ref{sec:ch3_typicité}, tous les objets à l'intérieur d'une catégorie ne sont pas égaux, certains étant plus typiques que d'autres.
+\item les objets ne partagent pas le même degré d'appartenance: comme vu précédemment (\cf~Section~\ref{sec:ch3_typicité}), tous les objets à l'intérieur d'une catégorie ne sont pas égaux, certains étant plus typiques que d'autres.
 \item il est difficile de définir des règles d'appartenance: définir des catégories comme ``\,célibataire\,'' nécessite d'élaborer des stratégies afin d'isoler les cas ``\,enfants\,'', ``\,veuf\,'' ou encore ``\,pape\,'' qui, intuitivement, n'ont rien à voir avec ``\,célibataire\,'' \gl{TODO: peu clair ?}. 
 \end{itemize}
 
@@ -365,7 +370,7 @@ Cette théorie prototypique de la catégorisation, bien que se basant sur des fa
 
 La théorie des exemplaires nie l'existence d'un prototype. Au contraire, elle propose que la catégorie soit représentée sur la base de tous les objets (exemplaires) la constituant, en tenant compte de leurs degrés de typicalité respectifs \citep{medin1978context,nosofsky1986attention,nosofsky1992similarity}. Ainsi, les mécanismes déductifs (\cf~Section~\ref{sec:ch3_categoPred}) peuvent profiter de tout les exemplaires de la catégorie afin d'inférer les propriétés des objets perçus. En analyse automatique, la philosophie de l'approche par les exemplaires est proche de celle des cartes auto-organisées (\emph{Self organized map}) \citep{kohonen1995som}, l’organisation du réseau et de ses nœuds étant réactualisée en fonction des propriétés de tous les items.
 
-Plusieurs versions de cette théorie existent, entre autres, le modèle de contexte \citep{medin1978context}, et le modèle de contexte généralisé \citep{nosofsky1986attention}. Dans le modèle de contexte, les objets sont représentés suivant leurs attributs, la dimension de l'espace de représentation étant alors égale aux nombres d'attributs, choisis dans un contexte particulier \citep{hitzman1986schema}. Dans le modèle généralisé, les objets sont représentés dans un espace psychologique aux dimensions réduites, espace établi sur la base des distances inter-objets \citep{nosofsky1992similarity}. Typiquement, le positionnement dimensionnel (\cf~annexe~\ref{app:mds}) est utilisé afin de recouvrir de tels espaces.
+Plusieurs versions de cette théorie existent, entre autres, le modèle de contexte \citep{medin1978context}, et le modèle de contexte généralisé \citep{nosofsky1986attention}. Dans le modèle de contexte, les objets sont représentés suivant leurs attributs, la dimension de l'espace de représentation étant alors égale aux nombres d'attributs, choisis dans un contexte particulier \citep{hitzman1986schema}. Dans le modèle généralisé, les objets sont représentés dans un espace psychologique aux dimensions réduites, espace établi sur la base des distances inter-objets \citep{nosofsky1992similarity}. Typiquement, le positionnement multidimensionnel (\emph{multidimensional scaling}: \cf~annexe~\ref{app:mds}) est utilisé afin de reconstruire de tels espaces.
 
 Dans la théorie des exemplaires, l'appartenance catégorielle se fait sur la base de la somme pondérée des similarités entre l'objet à catégoriser, et les exemplaires de la catégorie. Dans le modèle de contexte, la pondération s'effectue sur les propriétés des objets, et rend compte d'un poids attentionnel, favorisant les propriétés saillantes dans un contexte donné. Dans le modèle généralisé, la pondération se fait en fonction de la distance entre les exemplaires et l’objet, et ce afin de favoriser les exemplaires proches de l'objet à catégoriser.
 
@@ -382,7 +387,7 @@ Bien qu'on puisse montrer, dans le cas d'un bruit blanc, que le cerveau peut sto
 
 \subsubsection{Théorie des frontières}
 
-En opposition directe avec le modèle prototypique, la théorie des frontières représente les catégories par leur périphérie. L'importance des frontières est un fait expérimental mis en avant par plusieurs études. Notamment \citep{davis2010memory} qui montre que, dans le cas de deux catégories proches, l'objet représentatif putatif n'est pas le prototype, mais une caricature de ce dernier. La caricature du prototype est une entité dont les propriétés ont été distordues afin qu'elle s'éloigne de la frontière séparant les deux catégories, distorsion qui peut substantiellement éloigner la caricature des objets de sa catégorie (\cf~Section~\ref{fig:prototypeCaricature}).
+En opposition directe avec le modèle prototypique, la théorie des frontières représente les catégories par leur périphérie. L'importance des frontières est un fait expérimental mis en avant par plusieurs études. Notamment \citep{davis2010memory} qui montre que, dans le cas de deux catégories proches, l'objet représentatif putatif n'est pas le prototype, mais une caricature de ce dernier. La caricature du prototype est une entité dont les propriétés ont été distordues afin qu'elle s'éloigne de la frontière séparant les deux catégories, distorsion qui peut substantiellement éloigner la caricature des objets de sa catégorie (\cf~Figure~\ref{fig:prototypeCaricature}).
 
 \citep{goldstone2003concepts} souligne que les théories du prototype et des frontières peuvent se compléter: pour des catégories très éloignées, la distance au prototype (représentant moyen des objets d'une catégorie) est une information suffisante pour associer l'objet à une catégorie. Pour des catégories très similaires, l’appartenance catégorielle, afin d'être efficace, doit s'appuyer sur une information plus spécifique, à savoir la frontière.
 
@@ -401,8 +406,19 @@ G0: \citep{gygi2007similarity}
 \subsection{Catégorisation et contexte sensoriel}
 \label{sec:ch3_identification et Contexte}
 
-G1: \citep{ballas1987interpreting,niessen2008disambiguating,gygi2011incongruency} \\
+\gl{La catégorisation d'un objet est dépendant de l'environnement dans lequel ce dernier est entendu, autrement dit des autres sons co-occurrant. Cependant la manière dont ce contexte environnemental influe sur l'identification reste méconnu.}
 
+\gl{\citep{ballas1987interpreting} propose de voir l'environnement sonore comme une forme de langage à part entière. Comme pour la parole, les propriétés sémantiques des sons, à savoir la nature perçue de la source émettrice (\emph{trafic}, \emph{humain}, \etc), mais aussi la manière avec laquelle cette source s'accorde avec les autres sons présents, influent significativement sur leur perception. Pour la parole, il est connu que le contexte grammatical ainsi que le contexte sémantique (ici le sens de la phrase) a un effet bénéfique sur la reconnaissance d'un mot \citep{bilger1984standardization}. En allant au bout du parallèle entre environnement et parole, les auteurs concluent que la source d'un son est plus facilement identifiable, si ce dernier est en adéquation avec son contexte environnemental (\eg~identifier un \emph{oiseau} dans un environnement de \emph{parc}).}
+
+\gl{Dans \citep{ballas1991effects}, les auteurs montrent que l'effet du contexte est suppressif, à savoir qu'un contexte inadéquate a tendance à diminuer la capacité d'un individu à identifier un son, comparé au cas où le son est entendu de manière isolée. Aucun effet bénéfique n'est cependant observé pour un contexte adéquate.}
+
+\gl{En appliquant ces idées à la détection automatique d'événements sonores, \citep{niessen2008disambiguating} montrent que la modélisation du contexte environnemental, \ie~la probabilité d'entendre un événement dans un type d'environnement donné et \emph{a fortiori} la probabilité de co-occurrence des événements, permet d'améliorer les performances de détection.} 
+
+\gl{Cependant, il existe aussi des preuves montrant le phénomène inverse, \ie~que le caractère incongrue d'un son par rapport à son environnement peut faciliter son identification. Dans une étude approfondie, \citep{gygi2011incongruency} montrent que la source d'un événement est plus facilement identifiable, si ce dernier apparaît dans un environnement où il n'est pas ``\,censé\,'' apparaître. Il est ainsi plus facile d'isoler et identifier un son de canard dans un aéroport qu'un son d'avion. Les auteurs appelle ce phénomène : ``\,l'Avantage de l'Incongrue\,'' (AI). Ils montrent par ailleurs que l'AI dépend du rapport entre le niveau de l'événement et celui du fond sonore (\emph{background}). Il n'opère pas pour des rapports inférieurs à -7.5$dB$, et son effet est constant pour des rapports supérieurs à ce seuil.}
+
+\gl{L'effet de l'AI a aussi été mis en évidence dans une étude pilote, menée dans le cadre de cette thèse, et présentée en annexe~\ref{app:xp_congruence}. Cette étude tend à montrer que l'AI dépend également de la structure temporelle de l'environnement.}
+
+\gl{TODO: a compléter, notamment sur le lien entre environnement et parole.}
 
 \section{Analyse de scènes acoustiques}
 \label{sec:ch3_ASA}
@@ -416,7 +432,7 @@ L'analyse de scène est un procédé issu de la recherche dans le domaine de la 
 
 L'ASA désigne l'ensemble des traitements perceptifs permettant d'isoler, dans une mixture sonore, les informations émanant de sources distinctes, et de les ``\,organiser\,'' en un tout cohérent. Ces regroupements sont nécessaires au cerveau, et donc au sujet, pour comprendre, pour donner sens à l'environnement. On parle de processus de ségrégation ou de processus de groupement \citep{winkler2009modeling}. Comme vu précédemment à la section~\ref{sec:chaineTaite}, ces processus mobilisent à la fois les traitements ascendants ou \emph{bottom-up}, intervenant au niveau de l'information auditive transduite, et les traitements descendants ou \emph{top-down}, intervenant au niveau du bagage mémoriel. Les processus \emph{bottom-up} sont appelés ``\,processus primitifs\,'', et les processus  \emph{top-down}, ``\,processus basés sur des schémas\,''. 
 
-Les processus primitifs sont innés, et opèrent à partir des régularités du signal, afin d'en regrouper les composantes fréquentielles produites par une même source. Le mot régularité désigne ici les propriétés constantes de l'environnement, perçues par tous les individus, et en tous lieux. Par exemple, si la fréquence fondamentale d'un son harmonique change au cours du temps, toutes ses harmoniques changeront également afin de maintenir la structure harmonique du son [p. 38]\citep{bregman1994auditory}.
+Les processus primitifs sont innés, et opèrent à partir des régularités du signal, afin d'en regrouper les composantes fréquentielles produites par une même source. Le mot régularité désigne ici les propriétés constantes de l'environnement, perçues par tous les individus, et en tous lieux.
 
 Les processus basés sur des schémas sont, eux, conditionnés, et opèrent sur la base de connaissances, ou schémas, partie intégrante de notre représentation mentale du monde, représentation construite à partir des écoutes antérieures. 
  
@@ -424,11 +440,12 @@ Les processus basés sur des schémas sont, eux, conditionnés, et opèrent sur 
 
 Si la plupart des recherches sur l'ASA adoptent une approche cognitiviste, se concentrant sur l'étude des \emph{processus primitifs}, elles suivent généralement une méthodologie expérimentale très inspirée de la psychoacoustique. De fait, les sujets sont soumis à des stimuli décrits analytiquement dans un espace multidimensionnel de dimensions physiques (fréquence, intensité, \etc) \citep{dubois2006cognitive}. Dans la majorité des cas, ces stimuli, ou sons, qu'ils soient purs ou qu'ils soient complexes,\footnote{Un son pur est un son composé d'une seule sinusoïde, \ie~possédant une seule fréquence. Un son complexe est, lui, composé de plusieurs composantes fréquentielles} sont synthétisés en laboratoire.
 
-Ces sons sont émis de manière séquentielle. Au cours de l'expérience, les paramètres d'écoute sont modifiés (intensité, hauteur fréquentielle, espace entre les séquences...) afin d'évaluer le seuil à partir duquel la capacité du sujet à distinguer les sources sonores est altérée.
+Ces sons sont émis de manière séquentielle. Au cours de l'expérience, les paramètres d'écoute sont modifiés (intensité, fréquence, espace entre les séquences...) afin d'évaluer le seuil à partir duquel la capacité du sujet à distinguer les sources sonores est altérée.
 
 L'ASA \gl{se focalise donc sur} l'analyse de l'effet de descripteurs ``\,bas niveau\,'' dans le processus d'intégration, sans tenir compte d'attributs perceptifs ``\,haut niveau\,'', comme la valeur sémantique attribuée aux sons, sans tenir compte non plus de considérations écologiques (\cf~Section~\ref{sec:ch3_ecologique}). Il est difficile de faire un parallèle entre la notion de source sonore utilisée dans le domaine de la psychoacoustique, et celle admise dans le domaine de la psychologie cognitive. Dans l'une et l'autre approche, a priori, le terme source sonore s'applique à l'objet source (\eg~voiture). C'est évident en psychologie cognitive, où le stimulus est le plus souvent un enregistrement de ladite source. Cela l'est moins en psychoacoustique, où le stimulus, synthétisé, est un objet abstrait (agglomérat de sinusoïdes), éloigné de la réalité des phénomènes acoustiques, et dont l'existence n'est avérée que dans la mesure où il est interprété par le sujet comme un tout, une entité. Les résultats obtenus à partir de ces stimuli sont difficiles à généraliser à des applications plus incarnées.
 
 \subsection{Régularités et processus primitifs}
+\label{sec:ch3_regularitesEtProcessusPrimitifs}
 
 \begin{figure}[t]
         \myfloatalign
@@ -570,7 +587,7 @@ La notion de paysage sonore (\emph{soundscape}) a été introduite par Schafer d
 ``\,Quelle est la relation entre l'homme et les sons de l'environnement qui est le sien, et que se produit-il lorsque ces sons viennent à changer ?\,''
 \end{quote}
 
-Une première définition du paysage sonore a été donnée par \citep{truax1978handbook}
+Une première définition du paysage sonore a été donnée par \citep{truax1978handbook}:
 
 \begin{quote}
 ``\,[a]n environment of sound (or sonic environment) with emphasis on the way it is perceived and understood by the individual, or by a society.\,'' 
@@ -599,7 +616,7 @@ Mais le problème persiste, le bruit demeurant un phénomène subjectif, autreme
 
 Corriger l'environnement sonore uniquement suivant des paramètres acoustiques, par définition objectifs, ne suffit donc pas. Il est aujourd'hui communément admis que des mesures objectives de niveaux sonores (\eg~$L_{Aeq}$) ne peuvent, seules, rendre compte du confort sonore, et que de \gl{vouloir influer sur l'environnement} uniquement sur la base de paramètres acoustiques, par définition objectifs, ne suffit pas \citep{yang2005acoustic,schulte2006soundscape,kang2010semantic,aletta2016soundscape}. Il faut désormais envisager le bruit non plus seulement comme un objet physique, mais encore comme un objet cognitif \citep{guastavino_etude_2003}. Le problème n'est plus de savoir à partir de quand un son est gênant, mais pourquoi il est perçu comme tel, et par tel individu. Les recherches se sont ainsi portées sur la notion de paysage sonore, envisageant la nuisance sonore et à travers les aspects qualitatifs, et à travers les aspects sémantiques des phénomènes acoustiques.
 
-De plus, si beaucoup d’efforts sont faits afin de réguler les niveaux bruits des sons non-désirés,  l'approche inverse, \ie~ ajouter des sons positivement connotés, reste très peu considérée. Cette approche, consistant à identifier et agir sur les sons acceptés, ou plaisants, afin d'améliorer la qualité d'un environnement, est nommée l'approche positive par Schafer. De récentes études ont donné des résultats prometteurs, notamment \citep{hong2013designing} qui montre que l'ajout de sons d'oiseaux ou d'eau à des sons de trafics urbain permet de significativement améliorer l'appréciation de ces derniers. \citep{galbrun2012perceptual} montre qu'un son d'eau ayant un niveau sonore similaire ou inférieur de -3$dB$ à celui du trafic permet de correctement masquer ce dernier. L'étude indique également que des sons de cours d'eau possédant un contenu fréquentiel basse-fréquence sont préférés aux sons de fontaines et de chutes d'eaux.\\
+De plus, si beaucoup d’efforts sont faits afin de réguler les niveaux de bruits des sons non-désirés,  l'approche inverse, \ie~ ajouter des sons positivement connotés, reste très peu considérée. Cette approche, consistant à identifier et agir sur les sons acceptés, ou plaisants, afin d'améliorer la qualité d'un environnement, est nommée l'approche positive par Schafer. De récentes études ont donné des résultats prometteurs, notamment \citep{hong2013designing} qui montre que l'ajout de sons d'oiseaux ou d'eau à des sons de trafics urbain permet de significativement améliorer l'appréciation de ces derniers. \citep{galbrun2012perceptual} montre qu'un son d'eau ayant un niveau sonore similaire ou inférieur de -3$dB$ à celui du trafic permet de correctement masquer ce dernier. L'étude indique également que des sons de cours d'eau possédant un contenu fréquentiel basse-fréquence sont préférés aux sons de fontaines et de chutes d'eaux.\\
 
 Depuis vingt ans, l'approche par les paysages sonores a permis de développer une base de descripteurs qualitatifs et acoustiques grâce auxquels nous jugeons mieux, et sommes mieux à même d'améliorer l'environnement sonore urbain.  \citep{kang2006urban,schulte2007soundscape}
 
@@ -633,9 +650,9 @@ Développons. Les descripteurs perceptifs caractérisent les dimensions selon le
 Un des enjeux de l'approche dimensionnelle est de trouver les indicateurs qui influent sur ces descripteurs perceptifs. On distingue quatre types d'indicateurs.
 
 \begin{itemize}
-\item \emph{indicateurs acoustiques/physiques}: il s'agit d'indicateurs objectifs, obtenus via des mesures. Parmi ces indicateurs, certains caractérisent le niveau sonore par une approche holistique ($L_{Aeq}$), d'autres par une approche statistique ($L_{A10-90}$), d'autres encore en considérant séparément les différents canaux fréquentiels. On inclue, d'autre part, dans les indicateurs acoustiques/physiques, des indicateurs permettant de décrire les caractéristiques spectrales du son (\cf~tableau~\ref{tab:acousIndi}).
+\item \emph{indicateurs acoustiques/physiques}: il s'agit d'indicateurs objectifs, obtenus via des mesures. Parmi ces indicateurs, certains caractérisent le niveau sonore par une approche holistique ($L_{Aeq}$), d'autres par une approche statistique ($L_{A10-90}$), d'autres encore en considérant séparément les différents canaux fréquentiels. On inclut, d'autre part, dans les indicateurs acoustiques/physiques, des indicateurs permettant de décrire les caractéristiques spectrales du son (\cf~tableau~\ref{tab:acousIndi}).
 
-\item \emph{indicateurs perceptifs}: les dimensions affectives suivant lesquelles nous percevons l'environnement sonore ne sont pas indépendantes. Ainsi certains descripteurs, comme l'agrément ou le confort, peuvent eux-mêmes servir d'indicateurs pour d'autres descripteurs plus généraux comme la qualité sonore. On inclue, d'autre part, dans les indicateurs perceptifs, des indicateurs procédant d'une évaluation subjective d'un attribut physique (\eg~niveau sonore perçue).
+\item \emph{indicateurs perceptifs}: les dimensions affectives suivant lesquelles nous percevons l'environnement sonore ne sont pas indépendantes. Ainsi certains descripteurs, comme l'agrément ou le confort, peuvent eux-mêmes servir d'indicateurs pour d'autres descripteurs plus généraux comme la qualité sonore. On inclut, d'autre part, dans les indicateurs perceptifs, des indicateurs procédant d'une évaluation subjective d'un attribut physique (\eg~niveau sonore perçu).
 
 \item \emph{indicateurs psychoacoustiques}: ces indicateurs sont à mi-chemin entre les indicateurs acoustiques et les indicateurs perceptifs. Comme les premiers, ils sont objectifs, calculés sur le signal sonore. Comme les seconds, ils sont perceptivement inspirés, \ie~construits afin de rendre compte d'une réalité perceptive. Pour exemple on cite la \emph{loudness} de Zwicker \citep{zwicker2013psychoacoustics} qui rend compte du niveau sonore perçu. Le tableau~\ref{tab:psychoAcousIndi} présente quelques uns des indicateurs les plus utilisés.
 
@@ -733,7 +750,7 @@ L'avantage de ces pratiques expérimentales est double:
         \caption{Tâche de description et tâche de tri ou de catégorisation}\label{fig:descat}
 \end{figure}
 
-\gl{TODO: ajouter: discussion sur les outils d'analyse mds et analyse discriminante, ajouter les comparaisons par pairs} \\
+\gl{TODO: ajouter: discussion sur les outils d'analyse mds et analyse discriminante, ajouter les comparaisons par paires} \\
 
 \subsubsection{Méthodologie de l'approche dimensionnelle}
 \label{sec:appDimensionelle}
@@ -744,7 +761,7 @@ Pour élaborer ces descripteurs, l'approche dimensionnelle a communément recour
 
 La valeur sémantique des échelles tient au fait que les extrémités en sont bornées par des mots. Pour exemple, \citep{ricciardi2015sound} évalue la qualité d'un environnement ainsi que la présence de voitures à partir de deux échelles de 11 points chacune, et délimitées, l'une, par les termes désagréable (1) / plaisant (11) (\emph{unpleasant}/\emph{pleasant}), l'autre, par les termes rare (1) / fréquent (11) (\emph{rarely}/\emph{frequently}). Ces termes cadrent les réponses des sujets afin de s'assurer que tous interprètent l'échelle de la même manière, \ie~en attribuant  peu ou prou la même valeur à chacune des graduations. Ce fait est néanmoins difficilement vérifiable en pratique, les termes extrêmes pouvant revêtir un sens différent en fonction des sujets.
 
-L'évaluation à partir d'échelles sémantiques peut être réalisée en laboratoire, via une interface machine, ou dans un cadre \emph{in situ}, par le biais de questionnaires papiers \citep{jeon2013soundwalk,torija2013application}, ou, comme c'est de plus en plus le cas, au moyen d'une application sur téléphone portable \citep{kardous2014evaluation,ricciardi2015sound}. L'outil présente plusieurs avantages. Il permet une collecte des données sur serveur directement, et il offre la possibilité d'enregistrer les environnements entrain d'être évalués, ce qui répond en partie aux problèmes inhérents aux études \emph{in situ}, notamment en ce qui concerne la reproductibilité des stimuli (\cf~Section~\ref{sec:ch3_ecologique}).
+L'évaluation à partir d'échelles sémantiques peut être réalisée en laboratoire, via une interface machine, ou dans un cadre \emph{in situ}, par le biais de questionnaires papiers \citep{jeon2013soundwalk,torija2013application}, ou, comme c'est de plus en plus le cas, au moyen d'une application sur téléphone portable \citep{kardous2014evaluation,ricciardi2015sound}. L'outil présente plusieurs avantages. Il permet une collecte des données sur serveur directement, et il offre la possibilité d'enregistrer les environnements en train d'être évalués, ce qui répond en partie aux problèmes inhérents aux études \emph{in situ}, notamment en ce qui concerne la reproductibilité des stimuli (\cf~Section~\ref{sec:ch3_ecologique}).
 
 L'intérêt que suscite l'approche dimensionnelle réside dans le fait que les résultats obtenus sont facilement analysables et interprétables. Évaluer un environnement sonore au moyen d'échelles sémantiques et d'indicateurs objectifs permet d'obtenir une description sous la forme de descripteurs quantitatifs. Or il existe nombre de tests statistiques (\cf~Annexe~\ref{app:statuni}) ou d'outils d'analyse dimensionnelle (\cf~Annexe~\ref{app:statmulti}) directement applicables à ces données.
 
@@ -752,12 +769,12 @@ En fonction des objectifs de l'étude, on peut distinguer trois approches métho
 
 \begin{itemize}
 
-\item \emph{identification des descripteurs perceptifs}: sans cette approche, on distingue déjà deux méthodes:
+\item \emph{identification des descripteurs perceptifs}: dans cette approche, on distingue déjà deux méthodes:
 
 \begin{itemize}
 \item dans la première, l'expérimentateur identifie des descripteurs perceptifs pertinents, sans avoir d'idée pré-établie sur leur nature. Ces descripteurs sont habituellement détectés à partir de l'analyse lexicale des descriptions verbales fournies par les sujets;
 
-\item dans la seconde, l'expérimentateur, au sein d'un groupe de descripteurs perceptifs et/ou objectifs donné, sélectionne ceux qui rendent compte au mieux de l'évaluation des paysages sonores. Les descripteurs objectifs sont calculés à partir du signal sonore, les descripteurs perceptifs sont évalués sur des échelles sémantiques. Différentes techniques d'analyse statistique multidimensionnelle, comme l'analyse par composantes principales ou le positionnement multidimensionnel (\emph{Multidimensional scaling}, \cf~Annexe~\ref{app:statmulti}), permettent de faire émerger des dimensions linéairement non-corrélées qui rendent compte au mieux de la variabilité des données \citep{cain2013development,torija2013application}. Ces nouvelles dimensions n'ayant pas de valeurs physiques ou perceptives a priori, une inspection qualitative des scènes sonores est alors nécessaire afin de les caractériser. Il est par ailleurs possible de tester d'éventuelles corrélations entre les descripteurs perceptifs et/ou entre les descripteurs objectifs. Par exemple, \citep{torija2013application} évalue les corrélations entre 15 descripteurs perceptifs et 49 indicateurs acoustiques via l'utilisation du coefficient de Pearson.
+\item dans la seconde, l'expérimentateur, au sein d'un groupe de descripteurs perceptifs et/ou objectifs donné, sélectionne ceux qui rendent compte au mieux de l'évaluation des paysages sonores. Les descripteurs objectifs sont calculés à partir du signal sonore, les descripteurs perceptifs sont évalués sur des échelles sémantiques. Différentes techniques d'analyse statistique multidimensionnelle, comme l'analyse en composantes principales ou le positionnement multidimensionnel (\emph{Multidimensional scaling}, \cf~Annexe~\ref{app:statmulti}), permettent de faire émerger des dimensions linéairement non-corrélées qui rendent compte au mieux de la variabilité des données \citep{cain2013development,torija2013application}. Ces nouvelles dimensions n'ayant pas de valeurs physiques ou perceptives a priori, une inspection qualitative des scènes sonores est alors nécessaire afin de les caractériser. Il est par ailleurs possible de tester d'éventuelles corrélations entre les descripteurs perceptifs et/ou entre les descripteurs objectifs. Par exemple, \citep{torija2013application} évalue les corrélations entre 15 descripteurs perceptifs et 49 indicateurs acoustiques via l'utilisation du coefficient de Pearson.
 \end{itemize}
 
 \item \emph{étude de l'influence des indicateurs sur le descripteur}: l'expérimentateur, à partir d'un descripteur perceptif et d'une série d'indicateurs objectifs ou perceptifs donnés, évalue dans quelle mesure l'évolution du descripteur est contrainte par les indicateurs, l'objectif à terme étant de d'obtenir un modèle prédictif de la variation du descripteur. Dans ce but, \citep{lavandier2006contribution,ricciardi2015sound} se servent tous les deux de la régression linéaire multiple (\cf~Annexe~\ref{app:statmulti}) afin de modéliser la variation de la qualité sonore en fonction d'indicateurs perceptifs (niveau sonore perçu, familiarité avec l'environnement, présence des sources sonores de voix) et objectifs ($L_{Aeq}$, $L_{A10}$-$L_{A90}$);
@@ -766,7 +783,7 @@ En fonction des objectifs de l'étude, on peut distinguer trois approches métho
 
 \begin{itemize}
 \item dans la première, l'expérimentateur, considérant des classes de paysages sonores données (\eg~parc, rue, marché), vérifie si les descripteurs varient d'un type d'environnement à l'autre. Il dispose d'outils statistiques (\cf~Annexe~\ref{app:statuni}) permettant de tester l'existence de différences significatives entre différents types d'environnements sonores \citep{hong2013designing};
-\item dans la seconde, l'expérimentateur, considérant un ensemble de paysages sonores, analyse directement l'espace décrit par l'ensemble des descripteurs afin de faire émerger des groupes de scènes sonores similaires, au sens des descripteurs. Il peut avoir recours à des techniques de clustering, comme par exemple le clustering hiérarchique ascendant \citep{torija2013application} ou encore à d'autres méthodes non-supervisées, inspirées des réseaux de neurones, comme les cartes auto-organisées (\emph{Self Organized Map}, \emph{SOM}) \citep{ricciardi2015sound}. Les différents descripteurs pouvant être corrélés entre eux, il lui est également possible d'utiliser des outils d'analyse dimensionnelle, comme l'analyse par composante principale, permettant de générer de nouvelles dimensions décorrélées, et de sélectionner celles qui expliquent le mieux la variance des données.
+\item dans la seconde, l'expérimentateur, considérant un ensemble de paysages sonores, analyse directement l'espace décrit par l'ensemble des descripteurs afin de faire émerger des groupes de scènes sonores similaires, au sens des descripteurs. Il peut avoir recours à des techniques de clustering, comme par exemple le clustering hiérarchique ascendant \citep{torija2013application} ou encore à d'autres méthodes non-supervisées, inspirées des réseaux de neurones, comme les cartes auto-organisées (\emph{Self Organized Map}, \emph{SOM}) \citep{ricciardi2015sound}. Les différents descripteurs pouvant être corrélés entre eux, il lui est également possible d'utiliser des outils d'analyse dimensionnelle, comme l'analyse en composante principale, permettant de générer de nouvelles dimensions décorrélées, et de sélectionner celles qui expliquent le mieux la variance des données.
 \end{itemize}
 
 \end{itemize}
@@ -891,7 +908,7 @@ Considérant un milieu rural, \citep{de2006quiet} ont montré que le calme perç
 
 Au lieu de ne considérer qu'un descripteur, il est également possible d'évaluer l'environnement sur la base d'une combinaison de descripteurs.
 
-Dans une première étude, \citep{kang2006urban} montre que les dimensions liées à la relaxation et au dynamisme, entre autres, sont pertinentes dans l'évaluation des paysages sonores. En demandant à des sujets de noter 116 descripteurs perceptifs sur des échelles sémantiques unidirectionnelles, et en appliquant une analyse par composante principale, \citep{axelsson2010principal} montrent que 3 d'entre ces descripteurs permettent d'expliquer 74\% de la variance des données, en particulier l'agrément (50\%), la présence d'événements (18\%, \emph{eventfulness})  et la familiarité (6\%). Enfin,  Cain~\al \citep{cain2013development} proposent de caractériser l'environnement urbain suivant deux dimensions orthogonales (\cf~Figure~\ref{fig:calmVibran}), l'une caractérisant le calme et l'autre le dynamisme (\emph{vibrancy}).
+Dans une première étude, \citep{kang2006urban} montre que les dimensions liées à la relaxation et au dynamisme, entre autres, sont pertinentes dans l'évaluation des paysages sonores. En demandant à des sujets de noter 116 descripteurs perceptifs sur des échelles sémantiques unidirectionnelles, et en appliquant une analyse en composante principale, \citep{axelsson2010principal} montrent que 3 d'entre ces descripteurs permettent d'expliquer 74\% de la variance des données, en particulier l'agrément (50\%), la présence d'événements (18\%, \emph{eventfulness})  et la familiarité (6\%). Enfin,  Cain~\al \citep{cain2013development} proposent de caractériser l'environnement urbain suivant deux dimensions orthogonales (\cf~Figure~\ref{fig:calmVibran}), l'une caractérisant le calme et l'autre le dynamisme (\emph{vibrancy}).
 
 Si l'on admet que les descripteurs d'agrément, de relaxation et de calme sont proches, ces trois études présentent des résultats consistants \citep{davies2013perception}. Le paysage sonore est majoritairement perçu suivant son caractère agréable/calme ainsi que suivant son dynamisme/son nombre d'événements.
  
@@ -1016,7 +1033,7 @@ Un des buts premiers des études sur les classes sonores est d'établir la typol
 
 Sur la base de l'étude de \citep{raimbault2005urban}, et dans l'idée de proposer une nomenclature générique pour décrire les sources sonores présentes en milieu urbain, \citep{brown2011towards} propose une taxonomie reprise à la figure~\ref{fig:catSoundscapeBrown}. Cette classification est centrée sur l'objet. En partant de la taxonomie proposée par \citep{brown2011towards}, \citep{Salamon14} propose une nouvelle taxonomie, plus détaillée, centrée, elle, à la fois sur l'objet et sur l'action (\cf~Figure~\ref{fig:catSoundscapeSalamon}). Les auteurs partent de l'idée que la réalité sonore d'un objet diffère en fonction de son utilisation (\emph{passage de voiture}~\vs~\emph{freinage de voiture}~\vs~\emph{klaxon de voiture}). Pour rendre compte de ce fait,  certaines classes d'objets du plus bas niveau sont subdivisées en classes d'actions, labellisées par des verbes.
 
-Outre organiser les sources, il est aussi utile de comprendre quelles sont les différences acoustiques qui peuvent se manifester entre plusieurs classes de sons. \citep{yang2013psychoacoustical}, sur la base d'indicateurs acoustiques et psychoacoustiques, compare des classes de sons provenant d'environnements urbains (\emph{musique}, \emph{mécaniques} et \emph{trafic}) et d'environnements naturels (\emph{eau}, \emph{vent} et \emph{oiseaux}). Chaque indicateur est calculé sur le signal, à l'aide d'une fenêtre glissante, et moyenné. En réalisant une analyse par composante principale sur ces indicateurs, les auteurs montrent que l'intensité (\emph{loudness  de Zwicker}), le contenu spectral \emph{sharpness} et la structure temporelle \emph{fluctuation} sont les trois principaux indicateurs permettant d'expliquer la variance entre ces différents types de sons. Ce fait avait déjà été observé dans d'autres études mêlant différents stimuli \citep{de2006quiet,botteldooren2006temporal}.
+Outre organiser les sources, il est aussi utile de comprendre quelles sont les différences acoustiques qui peuvent se manifester entre plusieurs classes de sons. \citep{yang2013psychoacoustical}, sur la base d'indicateurs acoustiques et psychoacoustiques, compare des classes de sons provenant d'environnements urbains (\emph{musique}, \emph{mécaniques} et \emph{trafic}) et d'environnements naturels (\emph{eau}, \emph{vent} et \emph{oiseaux}). Chaque indicateur est calculé sur le signal, à l'aide d'une fenêtre glissante, et moyenné. En réalisant une analyse en composante principale sur ces indicateurs, les auteurs montrent que l'intensité (\emph{loudness  de Zwicker}), le contenu spectral \emph{sharpness} et la structure temporelle \emph{fluctuation} sont les trois principaux indicateurs permettant d'expliquer la variance entre ces différents types de sons. Ce fait avait déjà été observé dans d'autres études mêlant différents stimuli \citep{de2006quiet,botteldooren2006temporal}.
 
 
 \begin{figure}[t]
@@ -1069,6 +1086,7 @@ En recalculant des modèles pour chacune des classes, les auteurs montrent que l
 \label{sec:ch3_eventTexture}
 
 \subsection{Définition}
+\label{sec:ch3_textureDef}
 
 S'éloignant de l'approche des paysages sonores, plusieurs études se sont concentrées sur l'analyse perceptive d'un certain type de sons, appelés texture sonore.
 
@@ -1094,6 +1112,7 @@ Cette dimension événement/texture est orthogonale à celle de ``\,bruit de fon
 \end{figure}
 
 \subsection{Percevoir les textures}
+\label{sec:ch3_texturePerception}
 
 Contrairement aux événements sonores, la texture est un objet simple, dont le traitement cognitif ne requiert pas une analyse poussée. 
 
@@ -1116,35 +1135,17 @@ Une des avancés majeures de ces études est qu'elles apportent de nouvelles ré
 
 Il a été montré que le cerveau peut stocker bien plus que des statistiques. \citep{agus2010rapid} a mis en évidence qu'un bruit blanc, écouté de manière répétée, pouvait être reconnu encore plusieurs semaines après l'écoute, et ce parmi d'autres bruits blancs. Dans ce cas le cerveau emmagasine bien la totalité du signal acoustique.
 
-\subsection{Période d'attention}
+\subsection{Discussions}
+\label{sec:ch3_textureDiscussion}
 
 \gl{TODO: déplacer l'expérience en annexe. terminer sur une discussion "texture, un groupe d'evt qui ont perdu leur signification individuelle" + "importance de l'attention span" (dire que ce point a été étudié: introduire l'expérience) + "problème avec le bruit blanc\citep{agus2010rapid}, texture non informatif mais pourtant stockée en totalité par le cerveau"}
 
-\begin{figure}[t]
-        \myfloatalign
-        \subfloat[]
-        {\includegraphics[width=.5\linewidth]{gfx/xpTexture1}\label{fig:xptexturea}}
-        \subfloat[]
-        {\includegraphics[width=.5\linewidth]{gfx/xpTexture3}\label{fig:xptextureb}}
-        \caption[Événement ou texture sonore: influence de la période d'attention]{Événement ou texture sonore: influence de la période d'attention. (a) la nature des stimuli utilisés. (b) le seuil d'espacement moyen permettant de faire la distinction entre une séquence d'événements et une texture}\label{fig:xptexture}
-\end{figure}
-
-Nous nous permettons ici de présenter les résultats d'une étude menée dans le cadre de cette thèse, mais déconnectée du sujet principal. 
-
-Nos travaux ont également porté sur cette notion de période d'attention. Comme nous l'avons vu, la texture est un objet composite. En poussant cette vision à l’extrême, une texture peut être vue comme un empilement d’événements sonores, ayant cessés d'être perçus de manière distincte, dès lors qu'ils forment un tout homogène et stable. 
-
-Nous avons suivi cette idée, afin de bâtir un protocole permettant d'analyser la période d'attention. En considérant comme stimuli une mixture d'événements du même type, nous faisons l'hypothèse qu'à partir du moment où le cerveau parvient à isoler un événement de cette mixture, il ne perçoit plus la mixture comme une texture, mais comme une succession d'événements. Inversement, s'il ne parvient pas à distinguer un événement isolé, alors la mixture est perçue comme une texture.
-
-Sur la base de cette hypothèse, une expérience de reconnaissance de type oui/non (\cf~Annexe~\ref{app:xp_texture} pour une description exhaustive de l'expérience) a été montée. Dans cette expérience, chaque stimuli est composé d'un son cible, suivi d'une séquence d'événements enchevêtrés. Tous les événements sont des sons isolés ayant une durée de $1$ seconde. La séquence dure 6 secondes (\cf~Figure~\ref{fig:xptexturea}). L'objectif pour le sujet est d'indiquer si oui ou non il a entendu le son cible dans la séquence d’événements.
-
-Les séquences donnent à entendre des scènes de trafic. Ces scènes sont simulées en agglomérant des sons de voiture isolés. La simulation est contrôlée par un paramètre réglant l'espacement temporel inter-onset moyen entre les événements. Cinq valeurs d'espacement sont considérées: $0.1$, $0.3$, $0.5$, $0.7$ et $0.9$ secondes. Pour chaque espacement, nous simulons 20 séquences de trafics, chaque sujet devant alors écouter 100 stimuli. La moitié de ces stimuli sont des pièges (\emph{catch trial}), le son cible y étant absent. Nous mesurons les performances des sujets en utilisant la mesure de sensitivité $d'$ (\cf~Annexe~\ref{app:sdt}). Les résultats sont très encourageants. Ils montrent qu'il existe bien un espacement limite à partir duquel la mixture cesse d'être perçue comme une texture. Pour des sons isolés d'une seconde, cet espacement limite est de 0.42 secondes, soit la moitié de la durée des événements utilisés (\cf~Figure~\ref{fig:xptextureb}).
 
 \begin{figure}[t]
         \myfloatalign
         \includegraphics[width=\linewidth]{gfx/categoSalamon}
         \caption{Taxonomie des sources sonores urbaines, d'après \citep{Salamon14}}\label{fig:catSoundscapeSalamon}
 \end{figure}
-
 
 
 
