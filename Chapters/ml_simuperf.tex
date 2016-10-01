@@ -37,7 +37,7 @@
 \end{tabular}
 \end{center}
 \label{tab:eventDCASE2013}
-\caption{Les 16 classes de sons utilisées dans le challenge DCASE 2013}
+\caption{Classes d'événements sonores utilisées dans le cadre du challenge DCASE 2013}
 \end{table}
 
 Cette section décrit les différents corpus de scènes simulées utilisées lors de l'expérience. Tous les corpus  de scènes simulées sont générées à partir des scènes enregistrées du corpus \emph{test-QMUL} : le corpus de \emph{test} de la tâche de détection d'événement (AED) du challenge DCASE 2013  \citep{giannoulis2013detection} (\cf~Section~\ref{sec:ch6_dcase2013AED}). 
@@ -51,7 +51,7 @@ Cette section décrit les différents corpus de scènes simulées utilisées lor
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics[width=1\textwidth]{gfxML/databasesTasslp.pdf}
+\includegraphics[width=1\textwidth]{gfx/ch_7/databasesTasslp.pdf}
 \label{fig:databasesDCASE2013Simu}
 \caption{Generation process of the corpora considered in this evaluation. As part of the DCASE challenge, systems were trained on QMUL Train and tested on QMUL Test during the DCASE challenge.} 
 \end{center}
@@ -94,7 +94,6 @@ X_{rms}=\sqrt{\dfrac{1}{N} \sum_{n=1}^{N} x(n)^2}
 
 $x(n)$ peut être remplacé par $e(n)$ ou $b(n)$, respectivement les valeurs des signaux de l'événement et du \emph{background} en volt à l'échantillon $n$. 
 \end{itemize}
-
 
 Pour chaque événement et chaque couple scène-annotateur du corpus \emph{test-QMUL}, nous extrayons les positions d'\emph{onsets} et d'{offsets} et calculons une approximation de l'$EBR$. Comme il n'est pas possible d'isoler le signal du \emph{background} des scènes de \emph{test-QMUL}, $B_{rms}$ est obtenu à partir des périodes dénuées d'événements. \\
  
@@ -142,7 +141,7 @@ Tous les corpus sont disponibles en ligne\footnote{Dataset URLs: \begin{itemize}
 \item \emph{instance-QMUL}, \emph{abstract-QMUL}: \url{https://archive.org/details/dcase_replicate_qmul};
 \item \emph{instance-IRCCYN}, \emph{abstract-IRCCYN}: \url{https://archive.org/details/dcase_replicate.
 irccyn}
-\end{itemize}}.
+\end{itemize}} et ont été simulée à l'aide de l'outil de simulation MATLAB développé dans le cadre de cette thèse (\cf~Section~\ref{sec:ch4_modAnaAuto}).
 
 \subsubsection{Analyse du réalisme des scènes simulées}
 
@@ -166,34 +165,35 @@ L'audio est diffusé en monophonique. Au début de l'expérience, il est demand�
 
 \textbf{Résultats} \\
 
-\gl{TODO: Average ratings for the recorded scenes and simulated ones are respectively 4.4 and 3.3. From subject comments, it appears that the recorded scenes are not rated as very realistic because event occurrences are scripted and sometimes not well acted. Concerning the simulated ones, subjects reported that 1) the background is percieved as synthetic even though it was actually recorded in a quiet environment and 2) some events are trimmed. The latter issue is due to a design choice discussed in Section IV-A, taken to minimize the discrepancy between the simulated scene and the reference one. It should be noted that for many participants, some synthetic scenes were given a higher realism rating than some of the natural ones, which shows that while some noticeable differences can be made, they do not influence acoustic realism by a large margin.}
+Nous considérons $\mathcal{R}_{sujet}$ les notes de réalisme par sujet, moyennée en considérant séparément les scènes de \emph{test-QMUL} et celles de \emph{instance-IRCCYN}.
+
+Les $\mathcal{R}_{sujet}$ les scènes enregistrées et celles simulées sont respectivement de $4.4$ et $3.3$ (\cf~Figure~\ref{fig:xpRealism}), et présente une différence significative (t-test appariées: $p<0.01$). D'après les commentaires des sujets, il semble que les scènes enregistrées n'ait pas été perçues comme très réaliste à cause de leur caractère scriptée, les sujets ayant reconnu le fait qu'il s'agit de scènes jouées. 
+
+En ce qui concerne les scènes simulées, les sujets ont rapporté que: 
+
+\begin{itemize}
+\item ``\,le fond sonore semble synthétique/artificiel\,'',  bien que ce dernier ait été enregistré;
+\item ``\,certains événements sont coupés\,''. Ce dernier point est en effet avéré. La coupe de certains événements est due à un choix de conception du corpus \emph{instance-IRCCYN} discuté à la section~\ref{sec:ch7_simuProcessInstance}. Ce choix est pris dans le but de minimiser la différence entre la scène simulée et celle de référence. 
+\end{itemize}
+
+Il convient de noter que, pour de nombreux participants, certaines scènes simulées ont reçu une note de réalisme plus élevée que certaines des scènes naturelles, ce qui montre que, bien que des différences notables peuvent être faites, ils n'influencent pas le réalisme acoustique par une grande marge.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=.33\textwidth]{gfx/ch_7/xp_realism_2}
+\caption{Distribution des notes de réalisme $\mathcal{R}_{sujet}$ pour les scènes enregistrés \emph{test-QMUL} et les scènes simulées \emph{instance-IRCCYN}}
+\label{fig:xpRealism} 
+\end{center}
+\end{figure}
 
 \subsection{Métrique}
 
-Les performances des algorithme en AED sont évaluées suivant différentes métriques. Quatre d'entre elles sont considérées dans le challenge DCASE 2013 \citep{Giannoulis:2013a,Stowell15}, nommément, l'AEER (\emph{Acoustic Event Error Rate}), la précision, le rappel et la F-mesure (\cf~Section~\ref{sec:ch6_metriqueAED}). Cette dernière étant facilement interprétable, et ayant été la métrique principale du challenge, nous l'utilisons dans le cadre de cette étude.
-
-La F-mesure, et \emph{a fortiori} la précision et le rappel, peuvent être calculées de deux manières suivant que l'on tienne compte: 
+La métrique considérée dans cette analyse est $Fcw_{eb}$ (\cf~Section~\ref{sec:ch6_metriqueAED}), \ie~la moyenne  des F-mesures calculées séparément pour chaque classe, en tenant compte des \emph{onsets} des événements et avec une fenêtre de tolérance de 100 ms. Cette dernière a l'avantage: 
 
 \begin{itemize}
-\item du nombre de trames correctement identifiées;
-\item du nombre d'événements correctement identifiées.
+\item d'être  facilement interprétable;
+\item de ne favoriser aucune classe.
 \end{itemize}
-
-Considéré le nombre d'événements plutôt que les trames permets entre autres d'obtenir une mesure de performance indépendante de la durée des événements. Dans ce cas, on considère usuellement qu'un événement est correctement identifié si son \emph{onset} a été correctement identifié, ou si à la fois son \emph{onset} et son \emph{offset} ont été correctement identifiés. La détection d'une frontière (\emph{onset} ou \emph{offset}), est toujours considérée avec un seuil de tolérance.
-
-La détection de l'offset d'un événement sonore étant est un tâche compliquée, que ce soit pour des algorithmes ou des humains, nous ne considérons dans cette étude que la F-mesure calculée en fonction du nombre d'événements dont les \emph{onsets} ont été correctement identifiés. Comme pour le challenge DCASE 2013, nous considérons une fenêtre de tolérance de $\pm100$ms \citep{Giannoulis:2013a}.
-
-
-La F-mesure, calculée directement sur l’ensemble des frontières (\emph{onsets}) détectés, est susceptible de donner des poids distincts dans l'évaluation entre les classes bien représentées dans la scène, et celles n'ayant que peu de samples présent. Afin de parer à ce biais, nous considérons une version alternative  (également utilisée dans le challenge DCASE 2013) de la F-mesure ou les performances sont normalisées par classe: 
-
-\begin{equation}
-\label{eq:ch7_eq3}
-f_c=\dfrac{1}{C}\sum_{i=1}^C f_i
-\end{equation}
-
-avec $f_c$ la F-mesure normalisée par classe, $f_i$ la F-measure obtenu par un système en ne considérant que la classe d'événements $i$. \\
-
-\gl{TODO: il est possible que cette partie soit modifiée suivant le chapitre 6 section~\ref{sec:ch6_metriqueAED}}
 
 \subsection{Système de détection}
 
@@ -215,47 +215,53 @@ node[pos=0.85, below=10pt] {\footnotesize lissage};
 
 \begin{table}[t]
 \begin{center}
-\begin{tabular}{lc}
-\textbf{Système}  & \textbf{Méthode}  \\ 
+\tiny
+\begin{tabular}{lcccc}
+\textbf{Système}                    & \textbf{Descripteur} & \textbf{Classifieur}         & \multicolumn{2}{c}{Gestion du bruit}  \\ 
+                                    &                      &                              & réduction & apprentissage  \\ 
 \hline
-CPS \hfill \citep{CPS}                        & Segmentation - Likelihood \\ 
-                                              & ratio test classification  \\ 
+CPS                                 & fusion               & Seuil \hfill (D)             &           &             \\ 
+\citep{CPS}                         &                      & Likelihood ratio \hfill (C)  &           &             \\ 
 \hline        
-DHV \hfill \citep{diment2013sound,DHV}        & MFCCs (features)      \\ 
-                                              & HMMs (detection)      \\
+DHV                                 & MFCC                 & HMM (D, C)                   &           &              \\ 
+\citep{diment2013sound,DHV}         &                      &                              &           &             \\ 
 \hline 
-GVV \hfill \citep{gemmeke2013exemplar,GVV}    & NMF (detection)       \\
-                                              & HMMs (postprocessing) \\
+GVV                                 & mel                  & NMF (D, C)                   &           &              \\
+\citep{gemmeke2013exemplar,GVV}     &                      & HMM (P)                      &           &             \\                      
 \hline
-NVM \hfill \citep{roma2013recurrence}         & Hierarchical HMMs               \\     
-\hfill \citep{NVM}                            & Random Forests (classification) \\    
+NR \hfill                           & MFCC                 & SVMs (classification)        &           &             \\
+\citep{roma2013recurrence,NR2}      &                      &                              &    x      &             \\    
 \hline
-NR \hfill \citep{niessen2013hierarchical,NR2} & MFCCs (features)  \\
-                                              & SVMs (classification) \\
+NVM                                 & \gl{TODO}            & HMM (detection)              &           &            \\     
+\citep{niessen2013hierarchical,NVM}                        & RF (classification)     &           &            \\     
 \hline
-SCS \hfill \citep{schroder2013use,SCS}        & Gabor filterbank (features) \\  
-                                              & HMMs (classification) \\    
+SCS \hfill                          & Gabor filterbank     & HMMs (classification)        & x         &               \\  
+\citep{schroder2013use,SCS}         &                      &                              &           &             \\    
 \hline  
-VVK \hfill \citep{VVK}                        & MFCCs (features)  \\ 
-\hfill \citep{gemmeke2013exemplar}            & GMMs (detection)  \\ 
+VVK \hfill                          & MFCC                 & GMMs (detection)             &           &                  \\ 
+\citep{VVK,gemmeke2013exemplar}     &                      &                              &           &             \\    
 \hline
-Baseline \hfill \citep{Giannoulis:2013a}      & NMF with learned  \\ 
-                                              & bases (detection) \\ 
+Baseline \hfill                     &                      & NMF (detection)              &           &             \\ 
+\citep{Giannoulis:2013a}            &                      &                              &           &             \\  
 \hline      
 \end{tabular}
 \end{center}
-\caption{Summary of submitted event detection systems.}
-\label{tab:systems}
+\caption[Description synthétique des systèmes soumis dans le cadre de la tâche 2 de challenge DCASE 2013]{Description synthétique des systèmes soumis dans le cadre de la tâche 2 de challenge DCASE 2013; (D) indique une étape de détection, (C) de classification et (P) de post-traitement}
+\label{tab:systemsDcase2013}
 \end{table}
 
-Tous les algorithmes ayant été évalués lors de la tâche 2 (AED) du challenge DCASE 2013 sont considérés dans cette étude (\cf~Tableau~\ref{tab:systems}). Un total de 8 algorithmes ont été soumis, auxquels nous rajoutons la \emph{baseline} fournie par les organisateurs du challenge.
+Tous les algorithmes ayant été évalués lors de la tâche 2 (AED) du challenge DCASE 2013 sont considérés dans cette étude (\cf~Tableau~\ref{tab:systemsDcase2013}). Un total de 8 algorithmes ont été soumis, auxquels nous rajoutons la \emph{baseline} fournie par les organisateurs du challenge.
 
 La majorité des systèmes suivent la chaîne de traitement illustrée à la figure~\ref{fig:schematicSys}. Les descripteurs les plus utilisés sont les MFCCs (\cf~Section~\ref{sec:ch6_mfcc}), mais d'autres descripteurs spectraux sont également considérés comme les filtres de Gabor (\cf~Section~\ref{sec:ch6_gabor}), incluant parfois une étape de prétraitement de dé-bruitage.
 
-Le classifieur de choix est un HMM (\cf~Section~\ref{sec:ch6_hmm})  à 2 couches, où la première modélise l'événement et la seconde la transition entre les événements. D'autres classifieurs incluant les forêts d’arbres décisionnels (RF: \emph{Random Forests}, \cf~Section~\ref{sec:ch6_autresAlgo}), les machines à vecteurs de support (SVM: \emph{Support Vector Machines}, \cf~Section~\ref{sec:ch6_svm}) la factorisation de matrice non-négative (NMF: \emph{Non-negative Matrix Factorization}, \cf~Section~\ref{sec:ch6_nmf}) sont également utilisés. Nous invitons le lecteur à se référer à \citep{Stowell15} ou/et aux publications indiquées dans le tableau~\ref{tab:systems} pour une description détaillée des algorithmes.
+Le classifieur de choix est un HMM (\cf~Section~\ref{sec:ch6_hmm})  à 2 couches, où la première modélise l'événement et la seconde la transition entre les événements. D'autres classifieurs incluant les forêts d'arbres décisionnels (RF: \emph{Random Forests}, \cf~Section~\ref{sec:ch6_autresAlgo}), les machines à vecteurs de support (SVM: \emph{Support Vector Machines}, \cf~Section~\ref{sec:ch6_svm}) la factorisation de matrice non-négative (NMF: \emph{Non-negative Matrix Factorization}, \cf~Section~\ref{sec:ch6_nmf}), ainsi que des modèle de mélanges gaussiens (GMM: \emph{Gaussian mixture model}, \cf~Section~\ref{sec:ch6_autresAlgo}) sont également utilisés. Nous invitons le lecteur à se référer à \citep{Stowell15} ou/et aux publications indiquées dans le tableau~\ref{tab:systemsDcase2013} pour une description détaillée des algorithmes.
 
-Tous les algorithmes ont été entraînés et paramétrés sur les corpus de \emph{train} et de \emph{development} fournis par les organisateurs du challenge DCASE 2013.
 
+Au niveau des descripteurs on distingue \gl{TODO: cf dcase 2016}.
+
+Tous les algorithmes ont été entraînés et paramétrés sur les corpus de \emph{train} et de \emph{development} fournis par les organisateurs du challenge DCASE 2013. \\
+
+\gl{TODO: harmoniser avec le Tableau}
 \subsection{Données et analyses}
 
 \gl{TODO: deux analyse séparé QMUL et IRCCYN, moyenne par réplication et par sample, et paired ttest}
@@ -287,7 +293,7 @@ VVK      & \textbf{24.6$\pm$6.8$^*$} & \textbf{19.7$\pm$8.7}       & \textbf{19.
 \begin{table}
 \begin{center} 
 \begin{tabular}{lllllll}  
-   System &   testQ            &  insQ 0                                  &   absQ          \\
+  Système &   testQ                  &  insQ 0                            &   absQ          \\
  \hline
  Baseline & 3.14 \hfill (drawer)     &  8.63 \hfill (drawer)              &  7.40 \hfill  (drawer) \\
       CPS & 2.66 \hfill (door knock) &  9.04 \hfill (door slam)           &  7.84 \hfill (door slam) \\
@@ -304,7 +310,7 @@ VVK      & \textbf{24.6$\pm$6.8$^*$} & \textbf{19.7$\pm$8.7}       & \textbf{19.
 \label{tab:fp}
 \end{table}
 
-Avec l'aimable permission des auteurs des différents systèmes proposés (\cf~Tableau~\ref{tab:systems}), ces derniers sont testés sur les corpus de scènes simulées, en utilisant les mêmes serveurs de calculs que ceux utilisés pour la tache 2 (AED) du challenge DCASE 2013. Les systèmes ont par ailleurs été re-testés sur le corpus \emph{test-QMUL} (corpus de \emph{test} du challenge AED DCASE 2013), afin de vérifier la réplicabilité des résultats précédemment publiés \citep{Stowell15}.
+Avec la permission des auteurs des différents systèmes proposés (\cf~Tableau~\ref{tab:systemsDcase2013}), ces derniers sont testés sur les corpus de scènes simulées, en utilisant les mêmes serveurs de calculs que ceux utilisés pour la tache 2 (AED) du challenge DCASE 2013. Les systèmes ont par ailleurs été re-testés sur le corpus \emph{test-QMUL} (corpus de \emph{test} du challenge AED DCASE 2013), afin de vérifier la réplicabilité des résultats précédemment publiés \citep{Stowell15}.
 
 Le Tableau~\ref{tab:qmul} affiche les $f_c$ en pourcentage pour les corpus \emph{test-QMUL}, \emph{instance-QMUL 0} et \emph{abstract-QMUL}. Les performances pour \emph{baseline}, CPS, DHV, GVV, SCS et VVK ne présentent pas de différences significatives entre les trois corpus. Les résultats de NVM et NR décroissent significativement entre \emph{test-QMUL} et les deux corpus \emph{instance-QMUL 0} et abstract-QMUL ($p<0.01$).
 
@@ -337,7 +343,7 @@ L'ensemble de ces résultats montrent l'utilité des processus de simulation pro
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics[width=1\textwidth]{gfxML/ebr}
+\includegraphics[width=1\textwidth]{gfx/ch_7/ebr}
 \caption{Class wise event based F-measure (in percent) achieved by the systems on the QMUL instance datasets with varying EBR.}
 \label{fig:ebr} 
 \end{center}
@@ -381,36 +387,217 @@ Comme on peut clairement le voir sur la figure~\ref{fig:irccyn}, seul le systèm
 \end{itemize}
 
 \begin{figure}[t]
-\includegraphics[width=1\textwidth]{gfxML/irccyn}
-\caption{ Class-wise event based F-measure achived by the different systems on the QMUL and IRCCYN datasets.}
+\includegraphics[width=1\textwidth]{gfx/ch_7/irccyn}
+\caption{Class-wise event based F-measure achived by the different systems on the QMUL and IRCCYN datasets.}
 \label{fig:irccyn}
 \end{figure}
 
 \subsection{Discussion}
 
-\gl{TODO:  To summarize the results discussed above, the use of the proposed model allows us to:}
+
+Pour résumer les résultats présentés précédemment, l'utilisation des scènes simulées à partir du modèle de scènes sonores proposé nous a permis de:
 
 \begin{enumerate}
-\item Replicate the ranking of systems in the same recording conditions for 5 systems among 7. The two problematic systems have their performance degraded most probably because of an overfit of the discriminative classifier they used.
-\item Evaluate the generalization properties of the systems in new recording conditions. In this respect, the SCS system is the only one to generalize correctly.
-\item Evaluate the robustness of the systems while facing different levels of background noise. Notably, once again, the SCS system exhibits good and stable performance across the EBR range, most probably because of an effective noise removal pre-processing step.
+\item reproduire le classement des systèmes dans les mêmes conditions d'enregistrement pour les 5 d'entre eux. Les deux systèmes posant problèmes (NR et NVM) présentent des performances dégradées. Nous montrons que cette dégradation est probablement due à un sur apprentissage de leurs  classifieurs discriminants respectifs;
+\item évaluer les capacités de généralisation des systèmes dans de nouvelles conditions d'enregistrement. A cet égard, le système SCS est le seul à généraliser correctement;
+\item évaluer la robustesse des systèmes lorsque devant traiter des niveaux de bruits de fond différents. Une nouvelle fois, le système SCS est le seul a présenter des performances stables pour les différents $EBR$ considérés, et ce probablement en raison d'une étape efficace de pré-traitement du bruit .
 \end{enumerate}
 
-\gl{TODO:In light of those results, we believe that considering carefully designed simulated data is useful for gaining knowledge about the properties and behaviors of the systems under evaluation, thus helping designers in their algorithmic choices and their evaluation. Important factors influencing the performance such as the noise level, the level of polyphony, the intra-class diversity (acoustical difference between training and testing data) can be evaluated independently, without the burden of experimentally recording data with the desired properties and manually annotating them.}
+À la lumière de ces résultats, nous pensons que, tenir compte de données soigneusement simulées est utile afin acquérir plus de connaissances sur les propriétés et les comportements des systèmes en cours d'évaluation, connaissance pouvant ainsi aider les chercheurs dans leurs choix algorithmiques. 
 
-\gl{Even though the sole use of synthetic data for validating a computational approach is clearly not sufficient, we believe that the sole use of real data may not be sufficient either, should one wish to gain knowledge about the impact of some design and parametrization issues involved in the implementation of an engineering system. Indeed, real data is most of the time a scarce resource as the careful design of a large evaluation dataset is a very demanding task. Moreover, an a posteriori annotation of the presence of the events has to be performed by several humans whose agreement is not perfect and has to be mitigated.}
+Les facteurs influant sur les performances tels que le niveau de bruit, le niveau de la polyphonie, la diversité intra-classe (différence acoustique entre la formation et les données d'essai) peuvent ainsi être évalués de façon indépendante, sans avoir la charge 
 
-\gl{We thus believe that considering simulated data is an in between approach, that together with final validation using real data is useful to get a better understanding about the systems under evaluation. The simulated sound scene datasets have been generated using a dedicated set of Matlab functions, which are publicly available\footnote{https://bitbucket.org/mlagrange/simscene/downloads}.}
+\begin{enumerate}
+\item d'enregistrer des scènes présentant les propriétés désirées;
+\item d'annoter manuellement les données.
+\end{enumerate}
+
+Même si l'usage exclusif de données simulées pour valider une approche de algorithmique est insuffisant, nous pensons que la seule utilisation de données réelles ne permet pas non plus d'acquérir des connaissances sur l'impact de certains problèmes de conception et de paramétrisation impliqués dans la mise en œuvre d'un système d'ingénierie. Les données réelles sont, la plupart du temps, des ressources rares, la conception minutieuse d'un grand ensemble de données d'évaluation étant une tâche très exigeante. En outre,  l'annotation a posteriori de la présence des événements doit être effectuée par plusieurs humains, dont le consensus n'est pas garanti. L'utilisation de données de simulation est un entre deux, qui, combiné à une validation sur données réelles, permet d'obtenir une meilleure compréhension des systèmes en cours d'évaluation. 
 
 \section{Le challenge DCASE  2016}
 
 \subsection{Objectifs}
 
+Nous présentons dans cette section les résultats de la tâche 2 du challenge DCASE 2016\footnote{\cf~\url{http://www.cs.tut.fi/sgn/arg/dcase2016/}}, la seconde édition du challenge DCASE 2013. La tâche 2 est nommée ``\,détection d'événements sonores dans des environnements simulées\,''\footnote{\cf~\url{http://www.cs.tut.fi/sgn/arg/dcase2016/task-sound-event-detection-in-synthetic-audio}}. L'organisation de cette tâche a été une partie intégrante du travail thèse. 
+
+L'objectif est ici d'évaluer les performances d'algorithme en AED sur des corpus de scènes simulées, scènes dont nous contrôlons:
+
+\begin{itemize}
+\item l'intensité des événements sonores;
+\item le nombre d'événements sonores par scènes.
+\end{itemize}
+
+Par ailleurs nous faisons la distinction entre deux types de scènes, à savoir:
+
+\begin{itemize}
+\item les scènes autorisant le recouvrement entre les événements de classes différentes;
+\item les scènes n'autorisant pas le recouvrement.
+\end{itemize}
 \subsection{Génération des corpus}
 
-\subsection{Planification expérimentale}
+\subsubsection{Banque de sons isolés}
+
+La banque de données de sons isolés \emph{IRCCYN} (\cf~Section~\ref{sec:ch7_eventDataset}) a été utilisée pour simuler les scènes.
+
+11 classes d'événements sont considérés dans le cadre de cette tâche. Les classes sont décrites dans le tableau~\ref{tab:eventDCASE2016}.
+
+\begin{table}[t]
+\begin{center}
+\begin{tabular}{lcc}
+\textbf{Index} & \textbf{Nom}  & \textbf{Description}  \\ 
+\hline
+1   & porte-frapper & Frapper à la porte \\
+2   & porte-claquer & Claquer la porte \\
+3   & parole        & Personne  prononçant une phrase \\
+4   & rire          & Personne riant  \\    
+5   & gorge         & Personne se raclant la gorge  \\
+6   & toux          & Personne toussant \\
+7   & tiroir        & Ouverture/fermeture d'un tiroir \\
+8   & clavier       & Bruit des touches d'un clavier \\
+9   & clefs         & Poser un jeu de clefs sur une table \\    
+10  & téléphone     & Sonnerie de téléphone \\
+11  & page          & Tourner une page \\     
+\hline      
+\end{tabular}
+\end{center}
+\caption{Classes d'événements sonores utilisées dans le cadre du challenge DCASE 2016}
+\label{tab:eventDCASE2016}
+\end{table}
+
+Comparé au challenge DCASE 2013, 5 classes ont été supprimées:
+
+\begin{itemize}
+\item alerte: la classe a été supprimée dû à sa définition trop ``\,vague\,''. En effet la diversité des sons pouvant  appartenir à la classe alerte électronique est importante;
+
+\item bouton, souris, stylo: ces classes ont été supprimées après analyse des résultats du challenge DCASE 2013. En effet, lors de ce derniers, ces classes:
+
+\begin{enumerate}
+\item ont souvent été confondues entre elles;
+\item ont souvent été très mal détectées. 
+\end{enumerate}
+
+\item imprimante: cette classe a été supprimée dû à son aspect singulier par rapport aux autres classes. En effet la classe imprimante est composée de sons significativement plus long que ceux des autres classes. Un tel déséquilibre rend difficile un contrôle équitable du nombre d'événements par classe pour chaque scène, particulièrement dans le cas où le recouvrement entre les événements est interdit.
+
+\end{itemize}
+
+\subsubsection{Simulation des scènes sonores}
+
+\subsubsection{Banque d'entraînement}
+
+\subsubsection{Banque de développement}
+
+\subsubsection{Banque de test}
+
+\subsection{Métrique}
+
+\subsection{Système de détection}
+
+\begin{table}[t]
+\begin{center}
+\scriptsize
+\begin{tabular}{lcccc}
+\textbf{Système}             & \textbf{Descripteur}         & \textbf{Classifieur} &   \multicolumn{2}{c}{Gestion du bruit} \\ 
+                             &                              &                      & réduction & apprentissage   \\ 
+\hline
+\emph{Komatsu}               &     VQT                      & NMF-MLD              &           & x \\ 
+\citep{Komatsu2016}          &                              &                      &           &   \\ 
+\hline
+\emph{Choi}                  &     mel                      & DNN                  & x         & x \\ 
+\citep{Choi2016}             &                              &                      &           & \\ 
+\hline
+\emph{Hayashi 1}             &     mel                      & BLSTM-PP             &           & x \\ 
+\citep{Hayashi2016}          &                              &                      &           & \\ 
+\hline
+\emph{Hayashi 2}             &     mel                      & BLSTM-HMM            &           & x \\ 
+\citep{Hayashi2016}          &                              &                      &           & \\ 
+\hline
+\emph{Phan}                  &     Cesptre                  & RF       &           & x\\ 
+\citep{Phan2016}             &     Gammatone                &                      &           & \\ 
+\hline
+\emph{Giannoulis}            &     VQT, mel,                & CNMF                 &           & x\\ 
+\citep{Giannoulis2016}       &     spectrogramme            &                      &           & \\ 
+\hline
+\emph{Pikrakis}              &     Bark                     & Template             & x         & \\ 
+\citep{Pikrakis2016}         &                              & matching             &           & \\ 
+\hline
+\emph{baseline}              &     VQT                      & NMF                  &           & \\ 
+\citep{Benetos2016}          &                              &                      &           & \\ 
+\hline
+\emph{Vu}                    &     CQT                      & RNN                  &           & \\ 
+\citep{Vu2016}               &                              &                      &           & \\ 
+\hline
+\emph{Gutierrez}             &     MFCC                     & Knn                  &           & x \\ 
+\citep{GutierrezArriola2016} &                              &                      &           & \\ 
+\hline
+\emph{Kong}                  &     mel                      & DNN                  &           &  \\ 
+\citep{Kong2016}             &                              &                      &           & \\ 
+\hline   
+\end{tabular}
+\end{center}
+\caption{Description synthétique des systèmes soumis dans le cadre de la tâche 2 de challenge DCASE 2016}
+\label{tab:systemsDcase2016}
+\end{table}
+
+Cette section décrit les systèmes soumis à la tâche 2 du challenge DCASE 2013. 10 algorithmes sont proposés, auxquels nous rajoutons la \emph{baseline}. Une description synthétique de ces systèmes est donnée au tableau~\ref{tab:systemsDcase2016}. 
+
+Concernant les descripteurs ont peut regrouper les algorithmes en 5 groupes:
+
+\begin{itemize}
+\item \emph{mel/bark}: les algorithmes utilisant une représentation temps-fréquence où l'axe fréquentiel à été projeté sur une échelle particulière, soit de Bark (\emph{Pikrakis}) soit de Mel (\emph{Choi}, \emph{Hayashi 1}, \emph{Hayashi 2} et \emph{Kong}), échelles établies à partir de la perception humaine des fréquences. Nous invitons le lecteur à se référer aux sections~\ref{sec:ch6_Bark} et~\ref{sec:ch6_Mel} pour une description synthétique des échelles de Bark et de mel.
+\item \emph{VQT/CQT}: les algorithmes utilisant une représentation temps-fréquence calculée en \gl{TODO}. Nous invitons le lecteur à se référer à la section~\ref{sec:ch6_VQT_CQT} pour une description des représentations CQT et VQT.
+\item \emph{MFCC}: les algorithmes utilisant une représentation temps-fréquence calculée en \gl{TODO}. Nous invitons le lecteur à se référer à la section~\ref{sec:ch6_mfcc} pour une description des MFCCs.
+\item \emph{Cesptre Gammatone}: les algorithmes utilisant une représentation temps-fréquence calculée en \gl{TODO}.
+\item \emph{Fusion}: les algorithmes utilisant simultanément plusieurs features. le système \emph{Giannoulis}  fait un usage simultané de représentations de types spectrogramme (\cf~Section~\ref{sec:ch6_spec}), mel, et VQT.
+\end{itemize}
+
+Concernant les classifieurs utilisés on distingue 6 groupes:
+
+\begin{itemize}
+\item \emph{Réseaux de neurones}:
+\item \emph{Factorisation de matrices non négatives}:
+\item \emph{BLSTM}:
+\item \emph{Arbre de décision}:
+\item \emph{Plus proches voisins}:
+\item \emph{Template matching}:
+\end{itemize}
+
+\gl{TODO: finir}
+
+\subsection{Données et analyses}
 
 \subsection{Résultats}
+
+\subsubsection{Résultats globaux}
+
+Le système affichant résultats les moins bons est \emph{Kong}. Ce dernier est le seul a présenter des résultats systématiquement en deçà de la \emph{baseline}. Une explication possible vient de la phase d'apprentissage du DNN utilisé \citep{Kong2016}. En effet, l’entraînement d'un tel classifieur nécessite un grand nombre de données d'apprentissage afin d'être robuste \ie~capable de généraliser. Or la banque d'entraînement proposée dans le cadre de cette tâche est loin d'être suffisante. 
+
+L'autre système faisant usage d'un DNN (\emph{Choi}) applique ainsi une étape d'augmentation de données, visant à artificiellement augmenter le nombre d'items sur lesquels entraîner l'algorithme \citep{Choi2016}. L'absence de cette étape dans l'apprentissage de \emph{Kong} est probablement la cause des faibles performances. Ceci ayant été dit, nous ne considérerons pas plus avant les résultats de ce système dans la suite de l'analyse
+
+\subsubsection{Influence du niveau de bruit}
+
+\subsubsection{Influence du nombre d'événements}
+
+\subsubsection{Influence de la polyphonie}
+
+
+
+\begin{figure}[t]
+        \myfloatalign
+        \subfloat[]
+        {\includegraphics[width=1\linewidth]{gfx/ch_7/results_ebr_poly1_eb_class_wise_average_F_6}\label{fig:dcase2016_poly1_fc_eb_a}}\par
+        \subfloat[]
+        {\includegraphics[width=1\linewidth]{gfx/ch_7/results_dens_poly1_eb_class_wise_average_F_14}\label{fig:dcase2016_poly1_fc_eb_b}}\par
+       \caption[TODO]{TODO}\label{fig:dcase2016_poly1_eb_fc}
+\end{figure}
+
+\begin{figure}[t]
+        \myfloatalign
+        \subfloat[]
+        {\includegraphics[width=1\linewidth]{gfx/ch_7/results_ebr_poly0_eb_class_wise_average_F_2}\label{fig:dcase2016_poly0_fc_a}}\par
+        \subfloat[]
+        {\includegraphics[width=1\linewidth]{gfx/ch_7/results_dens_poly0_eb_class_wise_average_F_10}\label{fig:dcase2016_poly0_fc_b}}\par
+       \caption[TODO]{TODO}\label{fig:dcase2016_poly0_eb_fc}
+\end{figure}
 
 \subsection{Discussion}
 %*****************************************

@@ -2,19 +2,36 @@
 \chapter[État de l'art]{L'analyse automatique des scènes sonores environnementales, un état de l'art}\label{ch:ml_ea}
 %************************************************
 
-\section{Historique et applications}
+\gl{annonce de plan}
+
+\section{Introduction}
+
+\subsection{Historique, communauté et application}
 
 \gl{TODO: bioacoustique}
+\gl{TODO: introduire AED, ASC et ASSR}
+
+\subsection{Campagnes d'évaluation: présentation du challenge DCASE}
 
 \section{Descripteurs}
 
 \subsection{Spectrogramme}
 \label{sec:ch6_spec}
 
-\subsection{\emph{Mel-Frequency Cepstral Coefficient}}
-\label{sec:ch6_mfcc}
+\subsection{Échelle de Bark, de Mel et \emph{Mel-Frequency Cepstral Coefficient}}
 
+\subsubsection{Bark}
+\label{sec:ch6_Bark}
+
+\subsubsection{Mel}
+\label{sec:ch6_Mel}
+
+\subsubsection{\emph{Mel-Frequency Cepstral Coefficient}}
+\label{sec:ch6_mfcc}
 \gl{TODO: \citep{Davis80a}}
+ 
+\subsection{Transformation à Q-constant et Q-variable}
+ \label{sec:ch6_VQT_CQT}
  
 \subsection{Filtre de Gabor}
 \label{sec:ch6_gabor}
@@ -51,12 +68,64 @@
 \subsection{Métrique}
 \label{sec:ch6_metriqueAED}
 
-\gl{TODO: le taux d'erreur d'événement acoustiques (AEER) \citep{clear}}
+Les performances des algorithme en AED sont évaluées suivant différentes métriques. Deux d'entre elles sont particulièrement utilisées, et notamment dans les challenges DCASE 2013 (\cf~Section~\ref{sec:ch6_dcase2013AED}) et 2016 (\cf~Section~\ref{sec:ch6_dcase2016AED}). Nous les détaillons dans cette section.
 
-\subsection{Challenge \emph{IEEE AASP} DCASE 2013}
+La première métrique est la F-mesure \citep{Giannoulis:2013a,Stowell15}, que l'on note $F$ dans ce document. Cette dernière ce calcule comme suit:
+
+\begin{equation}
+F=\dfrac{2\times P \times R}{P+R}
+\end{equation}
+
+Où $P$ et $R$ représente respectivement la précision et le rappel. La precision rend compte du rapport entre le nombre d'événements correctement détectés $c$ et le nombre d'événements effectivement détectés par l'algorithme $e$, tandis que le rappel rend lui compte du rapport entre le nombre d'événements correctement détectés $c$ sur le nombre d'événement à détecter $r$ (le nombre d'événement présent dans la scène):
+
+\begin{equation}
+P=\dfrac{c}{e}  \quad \textrm{, } \quad R=\dfrac{c}{r} \quad \textrm{, } \quad  e=c+fp \quad \textrm{, } \quad  r=c+fn
+\end{equation}
+
+avec $fp$ le nombre de faux positives, et $fn$ le nombre de faux négatifs.
+
+
+La deuxième métrique est le taux d'erreur acoustique \citep{poliner2007discriminative,clear}, que l'on note $ER$ dans ce document. Ce dernier ce calcul comme suit:
+
+\begin{equation}
+ER=\dfrac{D+I+S}{N}
+\end{equation}
+
+avec $N$ le nombre d'événement à détecter \gl{TODO: vérifier}, $D$ le nombre d'événements manqué ($fn$), $I$ le nombre d'événement faussement détecté ($fp$), et $S$ le nombre d'événements substitués, que l'on défini comm $S=min\lbrace D,I\rbrace$.
+
+$F$ et $ER$ peuvent être calculées de deux manières suivant que l'on tienne compte: 
+
+\begin{itemize}
+\item du nombre de trames correctement identifiées ($sb$: \emph{segment based});
+\item du nombre d'événements correctement identifiées ($eb$: \emph{event based}).
+\end{itemize}
+
+Considéré le nombre d'événements plutôt que les trames permets entre autres d'obtenir une mesure de performance indépendante de la durée des événements. Dans ce cas, on considère usuellement qu'un événement est correctement identifié si son \emph{onset} a été correctement identifié, ou si à la fois son \emph{onset} et son \emph{offset} ont été correctement identifiés. La détection d'une frontière (\emph{onset} ou \emph{offset}), est toujours considérée avec un seuil de tolérance.
+
+Ainsi nous notons $F_{sb}$ et $ER_{sb}$, les F-mesures et taux d'erreur acoustiques calculés en tenant compte des trames, et $F_{eb}$ et $ER_{eb}$ les F-mesures et taux d'erreur acoustiques calculés en tenant compte des événements.
+
+La détection de l'offset d'un événement sonore étant est un tâche compliquée, que ce soit pour des algorithmes ou des humains, nous ne considérons dans ce document des mesures de $F_{sb}$ et $ER_{sb}$ calculés en fonction du nombre d'événements dont les \emph{onsets} ont été correctement identifiés.
+
+Enfin, il est possible de calculer ces métriques en 
+
+Ces métriques, si elles sont calculés sans faire de distinction entre les classes, sont susceptible de donner des poids distincts dans l'évaluation entre les classes bien représentées dans la scène, et celles présentant que peu d'événement. Afin de parer à ce biais, il est possible de calculer les métriques séparément pour chaque classe, avant de les moyenner. On note ainsi $Fcw$ et $ERcw$, les versions alternatives de $F$ et $ER$ normalisée par classe:
+
+\begin{equation}
+\label{eq:ch7_eq3}
+Fcw=\dfrac{1}{C}\sum_{i=1}^C F^i \quad \textrm{, } \quad ERcw=\dfrac{1}{C}\sum_{i=1}^C ER^i
+\end{equation}
+
+avec $C$ le nombre de classes à détecter et $F^i$ et $ER^i$, la F-measure et le taux d'erreur acoustique obtenus par un système en ne considérant que la classe d'événements $i$. 
+
+Au final, 8 métriques sont donc disponibles pour évaluer les algorithmes en AED:, nommément $F_{sb}$, $F_{eb}$,$Fcw_{sb}$, $Fcw_{eb}$, $ER_{sb}$, $ER_{eb}$, $ERcw_{sb}$ et $ERcw_{eb}$.
+
+\subsection{Tâche 3 du Challenge \emph{IEEE AASP} DCASE 2013}
 \label{sec:ch6_dcase2013AED}
 
-\subsection{Challenge \emph{IEEE AASP} DCASE 2016}
+\citep{Giannoulis:2013a,Stowell15}
+\gl{TODO: DCASE 2013, fenêtre de tolérance de $\pm100$ms \citep{Giannoulis:2013a,Stowell15} }
+
+\subsection{Tâche 3 du Challenge \emph{IEEE AASP} DCASE 2016}
 \label{sec:ch6_dcase2016AED}
 
 \section{Classification des scènes sonores environnementales}
@@ -70,10 +139,10 @@
 \subsection{Métrique}
 \label{sec:ch6_metriqueASC}
 
-\subsection{Challenge \emph{IEEE AASP} DCASE 2013}
+\subsection{Tâche 1 du challenge \emph{IEEE AASP} DCASE 2013}
 \label{sec:ch6_dcase2013ASC}
 
-\subsection{Challenge \emph{IEEE AASP} DCASE 2016}
+\subsection{Tâche 1 du challenge \emph{IEEE AASP} DCASE 2016}
 \label{sec:ch6_dcase2016ASC}
 
 \section{Recouvrement des similarités des scènes sonores environnementales}
