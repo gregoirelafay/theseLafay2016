@@ -46,8 +46,10 @@
   }
   \strng{namehash}{LG+1}
   \strng{fullhash}{LGRMMNLMPJF1}
+  \field{labelyear}{2014}
   \field{sortinit}{L}
-  \field{booktitle}{International Symposium on Musical Acoustics}
+  \field{booktitle}{Proceedings of the International Symposium on Musical
+  Acoustics}
   \field{title}{A new experimental approach for urban soundscape
   characterization based on sound manipulation: A pilot study}
   \field{year}{2014}
@@ -83,11 +85,12 @@
   }
   \strng{namehash}{LG+1}
   \strng{fullhash}{LGLMPJFRMMN1}
+  \field{labelyear}{2016}
+  \field{extrayear}{1}
   \field{sortinit}{L}
   \field{title}{Investigating soundscapes perception through acoustic scenes
   simulation. Part I: simulation protocol presentation and case study}
-  \field{journaltitle}{The Journal of the Acoustical Society of America, (under
-  revision)}
+  \field{journaltitle}{Acta acustica, (under revision)}
   \field{year}{2016}
 \endentry
 
@@ -121,11 +124,12 @@
   }
   \strng{namehash}{LG+1}
   \strng{fullhash}{LGLMPJFRMMN1}
+  \field{labelyear}{2016}
+  \field{extrayear}{2}
   \field{sortinit}{L}
   \field{title}{Investigating soundscapes perception through acoustic scenes
   simulation. Part II: complementary experiments}
-  \field{journaltitle}{The Journal of the Acoustical Society of America, (under
-  revision)}
+  \field{journaltitle}{Acta acustica, (under revision)}
   \field{year}{2016}
 \endentry
 
@@ -154,50 +158,13 @@
   }
   \strng{namehash}{LG+1}
   \strng{fullhash}{LGMNLMRM1}
+  \field{labelyear}{2016}
+  \field{extrayear}{3}
   \field{sortinit}{L}
   \field{title}{Semantic browsing of sound databases without keywords}
   \field{journaltitle}{Journal of the Audio Engineering Society}
   \field{year}{2016}
   \warn{\item Invalid format of field 'month'}
-\endentry
-
-\entry{lagrange2015bag}{article}{}
-  \name{author}{4}{}{%
-    {{}%
-     {Lagrange}{L.}%
-     {Mathieu}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lafay}{L.}%
-     {Gr{\'e}goire}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Defreville}{D.}%
-     {Boris}{B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Aucouturier}{A.}%
-     {Jean-Julien}{J.-J.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {Acoustical Society of America}%
-  }
-  \strng{namehash}{LM+1}
-  \strng{fullhash}{LMLGDBAJJ1}
-  \field{sortinit}{L}
-  \field{number}{5}
-  \field{pages}{EL487\bibrangedash EL492}
-  \field{title}{The bag-of-frames approach: a not so sufficient model for urban
-  soundscapes}
-  \field{volume}{138}
-  \field{journaltitle}{The Journal of the Acoustical Society of America,
-  express letter}
-  \field{year}{2015}
 \endentry
 
 \lossort

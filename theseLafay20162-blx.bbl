@@ -16,6 +16,46 @@
   {}
 \endgroup
 
+\entry{lagrange2015bag}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Lagrange}{L.}%
+     {Mathieu}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lafay}{L.}%
+     {Gr{\'e}goire}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Defreville}{D.}%
+     {Boris}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Aucouturier}{A.}%
+     {Jean-Julien}{J.-J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Acoustical Society of America}%
+  }
+  \strng{namehash}{LM+1}
+  \strng{fullhash}{LMLGDBAJJ1}
+  \field{labelyear}{2015}
+  \field{sortinit}{L}
+  \field{number}{5}
+  \field{pages}{EL487\bibrangedash EL492}
+  \field{title}{The bag-of-frames approach: a not so sufficient model for urban
+  soundscapes}
+  \field{volume}{138}
+  \field{journaltitle}{The Journal of the Acoustical Society of America,
+  express letter}
+  \field{year}{2015}
+\endentry
+
 \entry{Lostenlen2016ScatteringObjet}{unpublished}{}
   \name{author}{4}{}{%
     {{}%
@@ -41,6 +81,7 @@
   }
   \strng{namehash}{LV+1}
   \strng{fullhash}{LVLGAJLM1}
+  \field{labelyear}{2016}
   \field{sortinit}{L}
   \field{title}{Object-based Auditory Scenes Similarity Retrieval and
   Classification With Wavelet Scattering}

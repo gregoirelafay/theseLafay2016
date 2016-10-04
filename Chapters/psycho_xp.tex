@@ -61,7 +61,7 @@ Dans cette section, nous présentons les processus de sélection et d'acquisitio
 
 Pour plus de détails sur l'organisation interne de la banque de données, ainsi que sur l'interface graphique permettant de sélectionner ces dernières, se référer aux sections~\ref{sec:ch4_dbEventTexture} et~\ref{sec:ch4_ssf}.
 
-\subsection{Typologie des sources sonores présentes dans l'environnement urbain}
+\subsection[Typologie des sources sonores]{Typologie des sources sonores présentes dans l'environnement urbain}
 
 Afin de créer un corpus de sons isolés de référence pour la simulation, nous avons réalisé une typologie des sons environnementaux urbains. 
 
@@ -73,7 +73,7 @@ Pour ce faire, une étude bibliographique est effectuée, afin d'identifier les 
 \item 2 articles répertorient et classifient les sources sonores d’un point de vue expert : \cite{leobon_analyse_1986,brown2011towards}
 \end{itemize}
 
-La nature des classes est établie par rapport aux catégories perceptives, ou classes de sons, les plus souvent citées dans ces publications. À partir des éléments relevés, nous établissons deux taxonomies : une pour les événements (\cf~Figure~\ref{fig:taxonomie}.a), une autre pour les textures (\cf~Figure~\ref{fig:taxonomie}.b). Comme évoqué à la section~\ref{sec:db_ui}, la structure taxonomique de ces deux ensembles s'inspire grandement de l'axe vertical de l'organisation catégorielle proposée par E. Rosch (\cf~Section~\ref{sec:ch3_categoEtAbstract}), \ie~plus le niveau d'abstraction de la classe est élevé, plus la description de la classe est précise, et plus les sources sonores incluses dans cette classe sont semblables (\cf~Figure~\ref{fig:orgDb}). Pour les événements, nous considérons quatre niveaux d'abstraction allant des classes les plus globalisantes (niveau d'abstraction 0), aux classes les plus spécifiques (niveau d'abstraction 3). Pour les textures, nous ne considérons que trois niveaux d'abstraction.
+La nature des classes est établie par rapport aux catégories perceptives, ou classes de sons, les plus souvent citées dans ces publications. À partir des éléments relevés, nous établissons deux taxonomies : une pour les événements (\cf~Figure~\ref{fig:taxonomieEvent}), une autre pour les textures (\cf~Figure~\ref{fig:taxonomieTexture}). Comme évoqué à la section~\ref{sec:db_ui}, la structure taxonomique de ces deux ensembles s'inspire grandement de l'axe vertical de l'organisation catégorielle proposée par E. Rosch (\cf~Section~\ref{sec:ch3_categoEtAbstract}), \ie~plus le niveau d'abstraction de la classe est élevé, plus la description de la classe est précise, et plus les sources sonores incluses dans cette classe sont semblables (\cf~Figure~\ref{fig:orgDb}). Pour les événements, nous considérons quatre niveaux d'abstraction allant des classes les plus globalisantes (niveau d'abstraction 0), aux classes les plus spécifiques (niveau d'abstraction 3). Pour les textures, nous ne considérons que trois niveaux d'abstraction.
 
 Pour les événements, les regroupements se font en grande majorité par rapport à la source, et sont d’ordre sémantique. Pour les textures, nous considérons également la nature des lieux hébergeant ces dernières (\eg~\emph{parc}, \emph{rue}). La typologie des classes d'événements suit la nomenclature source-action introduite à la section (\cf~Section~\ref{sec:ch4_sourceAction}). En ce sens, elle est très similaire à cette autre typologie de sources sonores urbaines, effectuée postérieurement \citep{Salamon14}.
 
@@ -81,7 +81,10 @@ Pour les événements, les regroupements se font en grande majorité par rapport
  
 \begin{figure}[t]
         \myfloatalign
-        \includegraphics[width=.5\linewidth]{gfx/ch_5/hierarchy/taxonomy}
+        \subfloat[]
+        {\includegraphics[width=.5\columnwidth]{gfx/ch_5/event}\label{fig:taxonomieEvent}}
+        \subfloat[]
+        {\includegraphics[width=.5\columnwidth]{gfx/ch_5/texture}\label{fig:taxonomieTexture}}
        \caption[Taxonomies des classes de sons utilisées pour la simulation des environnements sonores urbains]{Taxonomies des classes de sons utilisées pour la simulation des environnements sonores urbains pour (a) les événements sonores, et (b) les textures sonores. Nous présentons ici uniquement les niveaux d'abstraction 0 et 1. Un niveau intermédiare, nommé $0+$, et utilisé pour l'analyse, est également introduit.}\label{fig:taxonomie}
 \end{figure}
 
@@ -108,7 +111,7 @@ Parmi les textures:
 
 Tous les enregistrements ont été effectués à l’aide d'un micro canon \emph{AT8035}\footnote{\cf~\url{http://eu.audio-technica.com/fr/products/product.asp?catID=1&subID=6&prodID=1845}} relié à un enregistreur \emph{ZOOM H4n}\footnote{\cf~\url{http://www.zoom.co.jp/english/products/h4n/}}. L’utilisation du micro canon nous permet d’isoler les événements sonores du brouhaha urbain. Pour les textures, il nous permet d’éviter les événements sonores proches du preneur de son. Nous pouvons ainsi pointer des "zones sonores", en nous tenant à une certaine distance de ces dernières, afin de capter uniquement le brouhaha émanant de la zone ciblée.
 
-Tous les sons ont été normalisés au même niveau $RMS$ \footnote{Le niveau $RMS$, de l'anglais \emph{Root Mean Square} qui désigne la valeur efficace d'un signal. Formellement, le niveau $RMS$ $x_{RMS}$ d'un signal $x=(x_1,x_2,\ldots,x_n)$ s'obtient en calculant la moyenne quadratique de ce dernier $x_{RMS}=\sqrt{\dfrac{1}{n}\sum\limits_{i} x_i^2}$} de $-12$ $dB$ (FS) \footnote{$dB$ (FS) est le sigle anglais désignant une valeur en décibels relative à la pleine échelle (\emph{relative to Full Scale}), \ie~le rapport entre le niveau du signal et sa valeur maximale. Dans notre cas, ce niveau pleine échelle est de 1 Volt.}.
+Tous les sons ont été normalisés au même niveau $RMS$ \footnote{Le niveau $RMS$, de l'anglais \emph{Root Mean Square} qui désigne la valeur efficace d'un signal. Formellement, le niveau $RMS$ $x_{RMS}$ d'un signal $x=(x_1,x_2,\ldots,x_n)$ s'obtient en calculant la moyenne quadratique de ce dernier $x_{RMS}=\sqrt{\dfrac{1}{n}\sum\limits_{i} x_i^2}$.} de $-12$ $dB$ (FS) \footnote{$dB$ (FS) est le sigle anglais désignant une valeur en décibels relative à la pleine échelle (\emph{relative to Full Scale}), \ie~le rapport entre le niveau du signal et sa valeur maximale. Dans notre cas, ce niveau pleine échelle est de 1 Volt.}.
 
 \subsection{Planification expérimentale}
 
@@ -286,9 +289,10 @@ Niveau                & $L(T)$      &   & Agrément moyen          & $\mathcal{A
 \hline
 \end{tabular}
 \vspace{0.5mm}
-\caption{TODO}
+\caption{Acronyme des variables utilisées dans le cadre des expériences sensorielles.}
 \label{tab:acronyme}
 \end{table}
+
 
 \subsubsection{Méthodologie et Outils statistiques}
 \label{sec:ch5_methodoEtStat1}
@@ -362,7 +366,7 @@ Dans un deuxième temps, nous voulons tester si les sujets ont bien perçu une d
         {\includegraphics[width=.4\linewidth]{gfx/ch_5/xp2_1}\label{fig:xp2_Aa}}
         \subfloat[]
         {\includegraphics[width=.4\linewidth]{gfx/ch_5/xp2_2}\label{fig:xp2_Ab}}
-       \caption[TODO]{TODO}\label{fig:xp2_A}
+       \caption{Dispersion des notes données par les sujets lors de l'expérience 1.b moyennées suivant les sujets ($\mathcal{A}_{sujet}$: a), et suivant les scènes ($\mathcal{A}_{scene}$: b), en fonction du type de scènes (i ou ni).}\label{fig:xp2_A}
 \end{figure}
  
 \subsection{Étude comparative entre les descripteurs structurels}
@@ -397,8 +401,9 @@ Les tendances globales observées montrent, d'une part, qu'un environnement sono
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_soundlevel_4}\label{fig:soundlevele}}
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_soundlevel_6}\label{fig:soundlevelf}}
-       \caption[TODO]{TODO}\label{fig:soundlevel}
+       \caption{Dispersions des descripteurs structurels de niveaux sonores $L$ (a, d), $L(E)$ (b, e) et $L(T)$ (c, f), en fonction du type de scènes (a, b, c) et de l'agrément perçu $\mathcal{A}_{scene}$ de l'expérience 1.b (d, e, f).}\label{fig:soundlevel}
 \end{figure}
+
 
 \begin{figure}[t]
         \myfloatalign
@@ -410,13 +415,13 @@ Les tendances globales observées montrent, d'une part, qu'un environnement sono
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_density_2}\label{fig:densityc}}
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_density_4}\label{fig:densityd}}
-       \caption[TODO]{TODO}\label{fig:density}
+       \caption{Dispersions des descripteurs structurels de densité $D$ (a, c) et $D(E)$ (b, d), en fonction du type de scènes (a, b) et de l'agrément perçu $\mathcal{A}_{scene}$ de l'expérience 1.b (c, d).}\label{fig:density}
 \end{figure}
 
 \begin{figure}[t]
         \myfloatalign
         \includegraphics[width=.8\linewidth]{gfx/ch_5/xp1_div_1}
-       \caption[TODO]{TODO}\label{fig:diversity}
+       \caption{Moyenne et écart type de la diversité des classes utilisées en considérant l'ensemble des classes ($DIV$), les classes d'événements ($DIV(E)$) et les classes de textures ($DIV(T)$), en considérant séparément les i- et ni-scènes ainsi que les différents niveaux d'abstraction.}\label{fig:diversity}
 \end{figure}
 
 \subsection{Influence des descripteurs structurels sur l'agrément perçu}
@@ -452,7 +457,7 @@ Le fait qu'aucun des descripteurs globaux ne permettent de caractériser l'agré
 \begin{table}[t]
 \centering
 \begin{tabular}{l c c c} 
-            & ensemble                     & i-scènes                   & ni-scènes    \\
+               & ensemble                     & i-scènes                   & ni-scènes    \\
 \hline
 $L$            & \textbf{-0.77} ($p<0.01$)    & -0.32 ($p=0.06$)           & \textbf{-0.78} ($p<0.01$)\\
 $L(E)$         & \textbf{-0.75} ($p<0.01$)    & -0.20 ($p=0.24$)           & \textbf{-0.75} ($p<0.01$)\\
@@ -466,7 +471,7 @@ $DIV(E)$ 3     & \textbf{-0.37} ($p<0.01$)    & -0.18 ($p=0.30$)           & -0.
 \hline
 \end{tabular}
 \vspace{0.5mm}
-\caption{Coefficients de corrélation linéaire calculés entre l'agrément perçu moyen $\mathcal{A}_{scene}$ \vs~TODO}
+\caption{Coefficients de corrélation linéaire calculés entre l'agrément perçu moyen $\mathcal{A}_{scene}$ de l'expérience 1.b et les descripteurs structurels.}
 \label{tab:corrStructA}
 \end{table}
 
@@ -490,17 +495,17 @@ Cette différence peut s'expliquer par la nature des deux protocoles expériment
 \begin{figure}[t]
         \myfloatalign
         \subfloat[]
-        {\includegraphics[width=.8\linewidth]{gfx/ch_5/xp1_class_1}\label{fig:soundsourcea}} \par
+        {\includegraphics[width=1\linewidth]{gfx/ch_5/xp1_class_1}\label{fig:soundsourcea}} \par
         \subfloat[]
         {\includegraphics[width=.4\linewidth]{gfx/ch_5/xp1_class_2}\label{fig:soundsourceb}} 
         \subfloat[]
         {\includegraphics[width=.4\linewidth]{gfx/ch_5/xp1_class_3}\label{fig:soundsourcec}} 
-       \caption[TODO]{TODO}\label{fig:soundsource}
+       \caption[Pourcentage de scènes simulées comportant une classe de son particulière.]{Pourcentage de scènes simulées (i ou ni) comportant une classe de son particulière: (a) classes d'événements du niveau d'abstraction $0+$, (b) classes de textures du niveau d'abstraction $0$, (c) sous classes d'événements du niveau d'abstraction 1 des classes \emph{trafic} et \emph{transport public} du niveau d'abstraction 0.}\label{fig:soundsource}
 \end{figure}
 
 \subsubsection{Marqueurs sonores}
 \label{sec:ch5_marqueurXp1}
-
+Pourcentage de scènes simulées comportant une classe de son particulière
 Nous avons mis en évidence que, qualitativement, la composition des sources sonores des scènes diffère selon les types d'environnements (i ou ni). Nous essayons de voir maintenant si, parmi ces classes, certaines sont typiques d'un environnement en particulier. Pour ce faire, nous utilisons le V-test (\cf~Section~\ref{sec:ch5_methodoEtStat1}), en considérant séparément chaque niveau d'abstraction. Les résultats sont présentés dans le tableau~\ref{tab:markers}.
 
 Concernant les événements sonores, 9 marqueurs sont identifiés sur l'ensemble des niveaux d'abstraction. Comme la figure~\ref{fig:soundsource} le laissait présager, les classes relatives à l'activité humaine (\emph{pas homme béton}, \emph{sonnette vélo}), et à la nature (\emph{animaux, oiseaux}, \emph{chants d'oiseaux}) sont des marqueurs de i-scènes. Nous notons également la présence de la classe \emph{cloche} dans les marqueurs d'un environnement idéal. Ce fait est possiblement dû au \emph{background} socio-culturel des sujets, dans leur grande majorité, des citoyens européens. En effet, selon Schafer, un son reconnu par un individu comme faisant partie intégrante de son environnement est bien accepté. Les marqueurs de ni-scènes sont des classes faisant référence à des sons de travaux (\emph{travaux}), ou suggérant un trafic dense (\emph{klaxon}, \emph{sirène}).
@@ -550,13 +555,13 @@ d'abstraction & i-scènes & ni-scènes \\
 \end{tabular}
 }
 \vspace{0.5mm}
-\caption[Classes d'événements identifiées comme étant des marqueurs sonores]{Classes d'événements identifiées comme étant des marqueurs sonores. Dans chaque cellule, les marqueurs sont ordonnés par ordre décroissant de valeur $V$.}
+\caption[Classes d'événements et de textures identifiées comme étant des marqueurs sonores]{Classes d'événements et de textures identifiées comme étant des marqueurs sonores. Dans chaque cellule, les marqueurs sont ordonnés par ordre décroissant de valeur $V$.}
 \label{tab:markers}
 \end{table}
 
 \subsection{Étude des espaces de représentation induits par les descripteurs sémantiques}
 
-Dans cette partie, nous évaluons la capacité d'une représentation sémantique à séparer les deux types d'environnements. Pour ce faire, nous calculons une précision au rang 5 ($p@5$) sur l'espace induit par les descripteurs sémantiques $S$, et ce pour chaque niveau d'abstraction (\cf~Section~\ref{sec:ch5_methodoEtStat1}). Les vecteurs $S$ sont construits en utilisant toutes les classes ($ET$), les classes d'événements ($E$), les classes de textures ($T$), les classes d'événements ne considérant que les marqueurs sonores ($E_m$), les classes d'événements ne considérant pas les marqueurs sonores $E_{w/o,m}$. Les résultats sont affichés sur la figure~\ref{fig:pa5}.
+Dans cette partie, nous évaluons la capacité d'une représentation sémantique à séparer les deux types d'environnements. Pour ce faire, nous calculons une précision au rang 5 ($p@5$) sur l'espace induit par les descripteurs sémantiques $S$, et ce pour chaque niveau d'abstraction (\cf~Section~\ref{sec:ch5_methodoEtStat1}). Les vecteurs $S$ sont construits en utilisant toutes les classes ($ET$), les classes d'événements ($E$), les classes de textures ($T$), les classes d'événements ne considérant que les marqueurs sonores ($E_m$), les classes d'événements ne considérant pas les marqueurs sonores $E_{w/o,m}$. Nous ne considérons pas les classes de marqueurs de textures, ces dernières étant trop peu nombreuses. Pour les mêmes raisons nous ne considérons pas les classes de marqueurs d'événements du niveau d'abstraction 0. Les résultats sont affichés sur la figure~\ref{fig:pa5}.
 
 En ce qui concerne $ET$, la $p@5$ est de $76\%$ pour le niveau d'abstraction 0, et reste supérieure à $86\%$ à partir du niveau d'abstraction 1. Ces résultats confirment qu'il est possible de clairement distinguer les deux types d'environnements en se basant seulement sur la présence ou l'absence des classes de sons. Nous notons également que, plus le niveau d'abstraction est élevé, plus la capacité de séparer les environnements est importante. En d'autres termes, plus nous sommes précis dans notre description de la composition des scènes, plus nous sommes à même d'établir une distinction claire entre les i- et ni-scènes.
 
@@ -574,14 +579,15 @@ En résumé, nous déduisons de cette analyse les points suivants:
 
 Maintenant que nous avons isolé les classes typiques des i- et ni-scènes, et vérifié que la distinction entre ces environnements dépendait de la présence de ces classes, il reste à voir si une description structurelle des scènes, basée uniquement sur ces marqueurs sonores, permet de caractériser l'agrément perçu, mieux qu'une description structurelle globale. \\
 
-\gl{analyse marqueur texture ?}\\
-\gl{HCA sur $S$, + ANOVA sur $\mathcal{A}_{scene}$}
+%\gl{analyse marqueur texture ?}\\
+%\gl{HCA sur $S$, + ANOVA sur $\mathcal{A}_{scene}$}
 
 \begin{figure}[t]
         \myfloatalign
         \includegraphics[width=.8\linewidth]{gfx/ch_5/pa5_1}
-       \caption[TODO]{TODO}\label{fig:pa5}
+       \caption[$P@5$ obtenues en considérant la matrice de dissimilarité résultant des distances par paires de Hamming calculées entre les vecteurs des descripteurs sémantiques des scènes.]{$P@5$ obtenues en considérant la matrice de dissimilarité résultant des distances par paires de Hamming calculées entre les vecteurs des descripteurs sémantiques des scènes. Les vecteurs sont construits en utilisant toutes les classes ($ET$), les classes d'événements ($E$), les classes de textures ($T$), les classes d'événements ne considérant que les marqueurs sonores ($E_m$), les classes d'événements ne considérant pas les marqueurs sonores $E_{w/o,m}$.}\label{fig:pa5}
 \end{figure}
+
 
 \subsection{L'influence spécifique des marqueurs sonores sur l'agrément perçu}
 
@@ -604,7 +610,7 @@ $D(E)_m$           & 0.14 ($p=0.41$)            & \textbf{-0.44} ($p<0.01$) \\
 \hline
 \end{tabular}
 \vspace{0.5mm}
-\caption{Coefficients de corrélation linéaire calculés entre l'agrément perçu moyen $\mathcal{A}_{scene}$ \vs~TODO.}
+\caption{Coefficients de corrélation linéaire calculés entre l'agrément perçu moyen $\mathcal{A}_{scene}$ de l'expérience 1.b et les descripteurs structurels relatifs à la présence des marqueurs sonores.}
 \label{tab:corrMarkers}
 \end{table}
 
@@ -650,7 +656,7 @@ Pour les ni-scènes, le fait que nous observions des corrélations pour $L_m$ et
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_density_8}\label{fig:densityMarkerc}}
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_density_10}\label{fig:densityMarkerd}}
-       \caption[TODO]{TODO}\label{fig:densityMarker}
+       \caption{Dispersions des descripteurs structurels de densité relatif à la présence des marqueurs $D_m$ (a, c) et $D(E)_m$ (b, d), en fonction du type de scènes (a, b) et de l'agrément perçu $\mathcal{A}_{scene}$ de l'expérience 1.b (c, d).}\label{fig:densityMarker}
 \end{figure}
 
 \begin{figure}[t]
@@ -667,7 +673,7 @@ Pour les ni-scènes, le fait que nous observions des corrélations pour $L_m$ et
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_soundlevel_12}\label{fig:soundlevelMarkere}}
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_soundlevel_16}\label{fig:soundlevelMarkerf}}       
-        \caption[TODO]{TODO}\label{fig:soundlevelMarker}
+        \caption{Dispersions des descripteurs structurels de niveaux sonores relatifs à la présence des marqueurs $L_m$ (a, d), $L(E)_m$ (b, e) et $L(T)_m$ (c, f), en fonction du type de scènes (a, b, c) et de l'agrément perçu $\mathcal{A}_{scene}$ de l'expérience 1.b (d, e, f).}\label{fig:soundlevelMarker}
 \end{figure}
 
 \begin{figure}[t]
@@ -684,7 +690,7 @@ Pour les ni-scènes, le fait que nous observions des corrélations pour $L_m$ et
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_soundlevel_14}\label{fig:soundlevelNoisee}}
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_soundlevel_18}\label{fig:soundlevelNoisef}}
-       \caption[TODO]{TODO}\label{fig:soundlevelNoise}
+       \caption{Dispersions des descripteurs structurels de niveaux sonores relatifs à la présence des marqueurs $L_b$ (a, d), $L(E)_b$ (b, e) et $L(T)_b$ (c, f), en fonction du type de scènes (a, b, c) et de l'agrément perçu $\mathcal{A}_{scene}$ de l'expérience 1.b (d, e, f).}\label{fig:soundlevelNoise}
 \end{figure}
 
 \begin{figure}[t]
@@ -701,7 +707,7 @@ Pour les ni-scènes, le fait que nous observions des corrélations pour $L_m$ et
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_soundlevel_22}\label{fig:soundlevelMarkerDiffe}}
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_soundlevel_24}\label{fig:soundlevelMarkerDifff}}
-       \caption[TODO]{TODO}\label{fig:soundlevelMarkerDiff}
+       \caption{Dispersions des descripteurs structurels de niveaux sonores relatifs à la présence des marqueurs $L_m-L_b$ (a, d), $L(E)_m-L(E)_b$ (b, e) et $L(T)_m-L(T)_b$ (c, f), en fonction du type de scènes (a, b, c) et de l'agrément perçu $\mathcal{A}_{scene}$ de l'expérience 1.b (d, e, f).}\label{fig:soundlevelMarkerDiff}
 \end{figure}
 
 
@@ -756,12 +762,14 @@ Nous montrons que les descripteurs à utiliser dépendent de la nature de l'envi
 
 \gl{TODO: Reprendre la conclusion de l'article et Proposer un modèle perceptif sur la base du modèle prédictif}
 \gl{TODO, l'utilisation de trafic reprendre les conclusions de \citep{lavandier2006contribution}}
-\gl{TODO, les résultats (2 modes d'obs) concordent avec les observations faites pas \citep{ricciardi2015sound} (\cf~Section~\ref{XX}).}
+\gl{TODO, les résultats (2 modes d'obs) concordent avec les observations faites pas \citep{ricciardi2015sound}.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% XP 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section[Modification de la composition sémantique]{Agir sur l'agrément perçu en modifiant la composition sémantique}
 \label{sec:xp3}
-
-\gl{TODO: ATTENTION, correction de bonferroni à remettre}
 
 \subsection{Objectif}
 
@@ -840,15 +848,15 @@ L'expérience aborde trois problématiques:
 
 \begin{itemize}
 \item \emph{influence des descripteurs structurels des scènes avec marqueurs sur l'agrément perçu: une analyse comparative}: les 72 am-scènes utilisées par l'expérience 1.b étant ré-évaluées lors de cette expérience, il est donc possible de réaliser une étude comparative entre les expériences 1.b et 2, afin de vérifier la cohérence des résultats obtenus lors de l'expérience 1.b. Les méthodes d'analyse appliquées sont identiques à celles de l'expérience 1.b (\cf~Section~\ref{sec:ch5_methodoEtStat1});
-\item \emph{influence de la présence des marqueurs sur l'agrément perçu}: il s'agit ici de vérifier que la suppression des i- et ni-marqueurs impacte l'agrément perçu. Pour ce faire, nous utilisons l'analyse de variance (\cf~Annexe~\ref{app:anova}). Nous considérons, comme variable dépendante,  $\mathcal{A}_{sujet}$, et, comme variables indépendantes, le type d'environnement (i/ni), et la présence/absence de marqueurs (am/sm). Chaque sujet devant évaluer la totalité des stimuli, une ANOVA à mesures répétées à deux facteurs (\cf~Annexe~\ref{app:anova}) est utilisée afin vérifier s'il existe des différences significatives d'agrément perçu. Les deux variables indépendantes sont considérées comme des facteurs \emph{within-subject} (\cf~Annexe~\ref{app:anova}). Les facteurs n'étant composés que de deux niveaux chacun (type: i/ni; marqueur: am/sm), l'hypothèse de sphéricité n'a pas besoin d'être vérifiée. Les analyses \emph{post hoc} sont conduites en appliquant la procédure de Bonferroni;
-\item \emph{influence des descripteurs structurels des sm-scènes sur l'agrément perçu}: il s'agit là d'étudier l'agrément en fonction des indicateurs structurels des scènes. Dans un premier temps, nous vérifions que l'agrément moyen de chaque type de scènes (i, ni, am et sm) varie significativement. Une analyse de variance est pratiquée, avec, comme variable dépendante,  $\mathcal{A}_{scene}$, et, comme variables indépendantes, le type d'environnement (i/ni), et la présence/absence de marqueurs (am/sm). Dans cette analyse, les observations considérées sont les scènes. Comme il existe une dépendance entre les am et sm-scènes, une ANOVA mixte est utilisée, comprenant, comme facteur \emph{within-subject}, la présence/absence de marqueurs, et comme facteur \emph{between-subject}, le type d'environnement. Les analyses \emph{post hoc} sont conduites en appliquant la procédure de Bonferroni. Dans un second temps, comme pour l'expérience 1.b, nous étudions l'existence de relations linéaires entre les descripteurs structurels des sm-scènes et $\mathcal{A}_{scene}$. Pour mesurer la corrélation, nous utilisons le coefficient de Pearson (\cf~Annexe~\ref{app:statuni}).
+\item \emph{influence de la présence des marqueurs sur l'agrément perçu}: il s'agit ici de vérifier que la suppression des i- et ni-marqueurs impacte l'agrément perçu. Pour ce faire, nous utilisons l'analyse de variance (\cf~Annexe~\ref{app:anova}). Nous considérons, comme variable dépendante,  $\mathcal{A}_{sujet}$, et, comme variables indépendantes, le type d'environnement (i/ni), et la présence/absence de marqueurs (am/sm). Chaque sujet devant évaluer la totalité des stimuli, une ANOVA à mesures répétées à deux facteurs (\cf~Annexe~\ref{app:anova}) est utilisée afin vérifier s'il existe des différences significatives d'agrément perçu. Les deux variables indépendantes sont considérées comme des facteurs intra-sujet (\emph{within-subject}, \cf~Annexe~\ref{app:anova}). Les facteurs n'étant composés que de deux niveaux chacun (type: i/ni; marqueur: am/sm), l'hypothèse de sphéricité n'a pas besoin d'être vérifiée. Les analyses \emph{post hoc} sont conduites en appliquant la procédure de Tukey-Kramer;
+\item \emph{influence des descripteurs structurels des sm-scènes sur l'agrément perçu}: il s'agit là d'étudier l'agrément en fonction des indicateurs structurels des scènes. Dans un premier temps, nous vérifions que l'agrément moyen de chaque type de scènes (i, ni, am et sm) varie significativement. Une analyse de variance est pratiquée, avec, comme variable dépendante,  $\mathcal{A}_{scene}$, et, comme variables indépendantes, le type d'environnement (i/ni), et la présence/absence de marqueurs (am/sm). Dans cette analyse, les observations considérées sont les scènes. Comme il existe une dépendance entre les am et sm-scènes, une ANOVA à mesure répétée est utilisée, comprenant, comme facteur intra-sujet (\emph{within-subject}), la présence/absence de marqueurs, et comme facteur inter-sujet (\emph{between-subject}), le type d'environnement. Les analyses \emph{post hoc} sont conduites en appliquant la procédure de Tukey-Kramer. Dans un second temps, comme pour l'expérience 1.b, nous étudions l'existence de relations linéaires entre les descripteurs structurels des sm-scènes et $\mathcal{A}_{scene}$. Pour mesurer la corrélation, nous utilisons le coefficient de Pearson (\cf~Annexe~\ref{app:statuni}).
 \end{itemize}
 
 Tous les tests de significativité sont effectués avec un seuil critique $\alpha=0.05$.
 
 \subsection{Détection de valeurs extrêmes}
 
-Considérons $\mathcal{A}_{sujet}$ pour les am-scènes (\cf~Figure~\ref{fig:xp4_note_2}). Il apparaît que les réponses du sujet 7 diffèrent des autres. Comme observé sur la figure~\ref{fig:xp4_note_1} (\cf~Figure~\ref{fig:xp4_note_1g} pour le sujet 7), ce dernier à évalué positivement les ni/am-scènes. Le sujet 7 a donné à 58\% des ni/am-scènes une note supérieure à 0,  contre une moyenne de 11\% pour les autres sujets. De plus, le sujet 7 a utilisé l'ambitus maximal (-5 à 5) pour noter à la fois les i/ et ni/am-scènes. Ces faits n'ayant pas été observés pour les autres sujets, que l'on considère les expériences 2 ou 1.b, le sujet 7 est éliminé de l'analyse. 
+Considérons $\mathcal{A}_{sujet}$ pour les am-scènes (\cf~Figure~\ref{fig:xp4_note_2}). Il apparaît que les réponses du sujet 7 diffèrent des autres. Comme observé sur la figure~\ref{fig:xp4_note_1} (\cf~Figure~\ref{fig:xp4_note_1g} pour le sujet 7), ce dernier a évalué positivement près de la moitié des ni/am-scènes. Le sujet 7 a donné à 58\% des ni/am-scènes une note supérieure à 0, contre une moyenne de 11\% pour les autres sujets. De plus, le sujet 7 a utilisé l'ambitus maximal (-5 à 5) pour noter à la fois les i/ et ni/am-scènes. Ces faits n'ayant pas été observés pour les autres sujets, que l'on considère les expériences 2 ou 1.b, le sujet 7 est éliminé de l'analyse. 
 
 \begin{figure}[t]
         \myfloatalign
@@ -876,7 +884,7 @@ Considérons $\mathcal{A}_{sujet}$ pour les am-scènes (\cf~Figure~\ref{fig:xp4_
         {\includegraphics[width=.16\linewidth]{gfx/ch_5/xp4_note_11}\label{fig:xp4_note_1h}}
         \subfloat[sujet 12]
         {\includegraphics[width=.16\linewidth]{gfx/ch_5/xp4_note_12}\label{fig:xp4_note_1l}}       
-        \caption[TODO]{TODO}\label{fig:xp4_note_1}
+        \caption{Dispersion des notes données par les sujets lors de l'expérience 2 aux i/am-scènes (vert) et ni/am-scènes (rouge).}\label{fig:xp4_note_1}
 \end{figure}
 
 
@@ -888,41 +896,15 @@ Considérons $\mathcal{A}_{sujet}$ pour les am-scènes (\cf~Figure~\ref{fig:xp4_
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp4_note_15}\label{fig:xp4_note_4}}
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp4_note_16}\label{fig:xp4_note_5}}
-       \caption[TODO]{TODO}\label{fig:xp4_note_245}
+       \caption{Dispersion des notes données par les sujets lors de l'expérience 2 moyennées suivant les sujets ($\mathcal{A}_{sujet}$: a), suivant les scènes ($\mathcal{A}_{scene}$: b et c), en fonction du type de scènes (a et b) et des $\mathcal{A}_{scene}$ relevés à l'expérience 1.b.}\label{fig:xp4_note_245}
 \end{figure}
 
-
 \subsection{Influence des descripteurs structurels des scènes avec marqueurs sur l'agrément perçu: une analyse comparative}
-
-Cette section présente une étude comparative entre les résultats de l'expérience 1.b, et ceux obtenus, pour les am-scènes,dans l'expérience ci-après. 
-
-Nous commençons par évaluer la corrélation entre les $\mathcal{A}_{scene}$ obtenues par les deux études. Les résultats sont affichés sur la figure~\ref{fig:xp4_note_5}. La corrélation est élevée, que l'on considère l'ensemble des scènes ($r=0.98$, $p<0.01$), ou les i- ($r=0.82$, $p<0.01$), ou encore les ni-scènes  ($r=0.91$, $p<0.01$).
-
-Concernant les différences de $\mathcal{A}_{sujet}$ entre les i/am- et ni/am-scènes, nous observons un delta net et significatif ($p<0.01$), avec une différence moyenne des écarts de 4.5. Ces résultats sont en accord avec ceux de l'expérience 1.b.
-
-Comme pour l'expérience 1.b, une analyse des relations entre les descripteurs structurels et $\mathcal{A}_{scene}$ est réalisée. Les résultats sont affichés dans le tableau~\ref{tab:corrAmXP4}. Ce tableau fait apparaître des différences: 
-
-Considérons les niveaux ($L$, $L(E)$ et $L(T)$) pour les i-scènes. Une corrélation modérée négative est observée entre ces descripteurs et $\mathcal{A}_{scene}$, alors qu'aucune n'était observée pour l'expérience 1.b. Il apparaît, dans l'expérience 2, que ces descripteurs ont joué un rôle (négatif) plus important dans l'évaluation des qualités affectives des scènes, que dans l'expérience 1.b. Cependant, l'observation précédemment faite, sur le fait que ces descripteurs n'impactent pas de la même manière la perception des i et ni-scènes, se maintient. En effet les corrélations pour les niveaux restent modérées pour les i-scènes ($r<-0.46$), alors que celles observées pour les ni-scènes sont toutes élevées ($r>-0.81$). Le niveau est donc bien pris en compte dans l'évaluation des i-scènes, mais moins que dans l'évaluation des ni-scènes. Cette recrudescence de l'importance du niveau est également observée sur $L_b$ pour les ni-scènes ($r=-0.40$, $p<0.05$), ainsi que sur $L(T)_b$ ($r=-0.46$, $p<0.01$) pour les i-scènes, mais là encore les corrélations reste modérées voire faibles.
-
-Deux différences concernant les densités sont relevées. Nous observons une corrélation modérée sur $D$ pour les i-scènes ($r=-0.42$, $p<0.05$) et une corrélation faible pour $D(E)$ ($r=-0.42$, $p<0.05$). Comme pour le niveau, la densité semble avoir une influence plus importante dans l'expérience 2. 
-
-La majorité des différences concerne les descripteurs des i-scènes. Pour tous ces descripteurs, les corrélations observées pour les ni-scènes sont plus importantes pour l'expérience 2 que pour l'expérience 1.b. Considérant les différences d'appréciation entre les i- et ni-scènes, les résultats restent donc consistant. Il apparaît que les descripteurs structurels de niveaux et de densités ont globalement plus influé sur l'agrément perçu dans l'expérience 2 que dans l'expérience 1.b.
-
-Excepté ces points, tous les résultats observés dans les deux études concordent, notamment:
-
-\begin{itemize}
-\item l'effet bénéfique de l'émergence des i-marqueurs d'événements pour les i-scènes ($L_m-L_b$: $r=0.60$, $p<0.01$; $L(E)_m-L(E)_b$: $r=0.56$, $p<0.01$);
-\item l'effet négatif des ni-marqueurs d'événements pour les ni-scènes ($L_m$: $r=0.75$, $p<0.01$; $L(E)_m$: $r=0.73$, $p<0.01$);
-\item l'impact nul des marqueurs de textures pour les i- ($L(T)_m$: $r=-0.05$, $p=0.86$) et ni-scènes ($L(T)_m$: $r=-0.06$, $p=0.76$).
-\end{itemize}
-
-
-\gl{TODO: compléter}
 
 \begin{table}[t]
 \centering
 \begin{tabular}{l r r} 
-                   &   i-scènes                      & ni-scènes \\
+                   &   i/am-scènes                   & ni/am-scènes \\
 \hline
 $L$                & \textbf{-0.46$^{*}$} ($p<0.01$) & \textbf{-0.83} ($p<0.01$)\\
 $L(E)$             & -0.33 ($p=0.05$)                & \textbf{-0.84} ($p<0.01$)\\
@@ -947,12 +929,57 @@ $D(E)_m$           & -0.25 ($p=0.15$)                & \textbf{-0.53} ($p<0.01$)
 \hline
 \end{tabular}
 \vspace{0.5mm}
-\caption{\gl{TODO: i/am-scenes et ni/am-scenes}}
+\caption{Coefficients de corrélation linéaire calculés entre l'agrément perçu moyen $\mathcal{A}_{scene}$ de l'expérience 2 et les descripteurs structurels globaux et relatifs à la présence des marqueurs sonores pour les i/am-scenes et ni/am-scenes.}
 \label{tab:corrAmXP4}
 \end{table}
 
+Cette section présente une étude comparative entre les résultats de l'expérience 1.b, et ceux obtenus, pour les am-scènes,dans l'expérience ci-après. 
+
+Nous commençons par évaluer la corrélation entre les $\mathcal{A}_{scene}$ obtenues par les deux études. Les résultats sont affichés sur la figure~\ref{fig:xp4_note_5}. La corrélation est élevée, que l'on considère l'ensemble des scènes ($r=0.98$, $p<0.01$), ou les i- ($r=0.82$, $p<0.01$), ou encore les ni-scènes  ($r=0.91$, $p<0.01$).
+
+Concernant les différences de $\mathcal{A}_{sujet}$ entre les i/am- et ni/am-scènes, nous observons un delta net et significatif ($p<0.01$), avec une différence moyenne des écarts de 4.5. Ces résultats sont en accord avec ceux de l'expérience 1.b.
+
+Comme pour l'expérience 1.b, une analyse des relations entre les descripteurs structurels et $\mathcal{A}_{scene}$ est réalisée. Les résultats sont affichés dans le tableau~\ref{tab:corrAmXP4}. Ce tableau fait apparaître des différences: 
+
+Considérons les niveaux ($L$, $L(E)$ et $L(T)$) pour les i-scènes. Une corrélation modérée négative est observée entre ces descripteurs et $\mathcal{A}_{scene}$, alors qu'aucune n'était observée pour l'expérience 1.b. Il apparaît, dans l'expérience 2, que ces descripteurs ont joué un rôle (négatif) plus important dans l'évaluation des qualités affectives des scènes, que dans l'expérience 1.b. Cependant, l'observation précédemment faite, sur le fait que ces descripteurs n'impactent pas de la même manière la perception des i et ni-scènes, se maintient. En effet les corrélations pour les niveaux restent modérées pour les i-scènes ($r<-0.46$), alors que celles observées pour les ni-scènes sont toutes élevées ($r>-0.81$). Le niveau est donc bien pris en compte dans l'évaluation des i-scènes, mais moins que dans l'évaluation des ni-scènes. Cette recrudescence de l'importance du niveau est également observée sur $L_b$ pour les ni-scènes ($r=-0.40$, $p<0.05$), ainsi que sur $L(T)_b$ ($r=-0.46$, $p<0.01$) pour les i-scènes, mais là encore les corrélations reste modérées voire faibles.
+
+Deux différences concernant les densités sont relevées. Nous observons une corrélation modérée sur $D$ pour les i-scènes ($r=-0.42$, $p<0.05$) et une corrélation faible pour $D(E)$ ($r=-0.42$, $p<0.05$). Comme pour le niveau, la densité semble avoir une influence plus importante dans l'expérience 2. 
+
+La majorité des différences concerne les descripteurs des i-scènes. Pour tous ces descripteurs, les corrélations observées pour les ni-scènes sont plus importantes pour l'expérience 2 que pour l'expérience 1.b. Considérant les différences d'appréciation entre les i- et ni-scènes, les résultats restent donc consistant. Il apparaît que les descripteurs structurels de niveaux et de densités ont globalement plus influé sur l'agrément perçu dans l'expérience 2 que dans l'expérience 1.b.
+
+Excepté ces points, tous les résultats observés dans les deux études concordent, notamment:
+
+\begin{itemize}
+\item l'effet bénéfique de l'émergence des i-marqueurs d'événements pour les i-scènes ($L_m-L_b$: $r=0.60$, $p<0.01$; $L(E)_m-L(E)_b$: $r=0.56$, $p<0.01$);
+\item l'effet négatif des ni-marqueurs d'événements pour les ni-scènes ($L_m$: $r=0.75$, $p<0.01$; $L(E)_m$: $r=0.73$, $p<0.01$);
+\item l'impact nul des marqueurs de textures pour les i- ($L(T)_m$: $r=-0.05$, $p=0.86$) et ni-scènes ($L(T)_m$: $r=-0.06$, $p=0.76$).
+\end{itemize}
+
+\gl{TODO: compléter}
+
 \subsection{Influence de la présence des marqueurs sur l'agrément perçu}
 \label{sec:ch5_Asujet}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{l c c c} 
+               & sm-scènes                    & i/sm-scènes                & ni/sm-scènes    \\
+\hline
+$L$            & \textbf{-0.79} ($p<0.01$)    & \textbf{-0.49} ($p<0.01$)  & \textbf{-0.74} ($p<0.01$)\\
+$L(E)$         & \textbf{-0.76} ($p<0.01$)    & \textbf{-0.44} ($p<0.01$)  & \textbf{-0.70} ($p<0.01$)\\
+$L(T)$         & \textbf{-0.41} ($p<0.01$)    & -0.17 ($p=0.36$)           & -0.44 ($p=0.80$) \\
+$D$            & \textbf{-0.49} ($p<0.01$)    & -0.31 ($p=0.07$)           & -0.29 ($p=0.08$)\\
+$D(E)$         & \textbf{-0.45} ($p<0.01$)    & -0.29 ($p=0.09$)           & \textbf{-0.39} ($p<0.05$)\\
+$DIV(E)$ 0     &         -0.10  ($p=0.40$)    & -0.26 ($p=0.13$)           & -0.32 ($p=0.06$)\\
+$DIV(E)$ 1     & \textbf{-0.49} ($p<0.01$)    & -0.29 ($p=0.09$)           & -0.31 ($p=0.06$)\\
+$DIV(E)$ 2     & \textbf{-0.43} ($p<0.01$)    & -0.24 ($p=0.17$)           & -0.32 ($p=0.06$)\\
+$DIV(E)$ 3     & \textbf{-0.39} ($p<0.01$)    & -0.20 ($p=0.25$)           & -0.32 ($p=0.06$)\\
+\hline
+\end{tabular}
+\vspace{0.5mm}
+\caption{Coefficients de corrélation linéaire calculés entre l'agrément perçu moyen $\mathcal{A}_{scene}$ de l'expérience 2 et les descripteurs structurels pour les i/sm-scènes et ni/sm-scènes.}
+\label{tab:corrSmXP4}
+\end{table}
 
 Dans cette section nous étudions comment les sujets ont perçu les différents types de scènes, nommément: i/am-, ni/am-, i/sm- et ni/sm-scène. L'ANOVA à mesures répétées pratiquée sur $\mathcal{A}_{sujet}$ (\cf~Figure~\ref{fig:xp4_note_2}) montre un effet significatif du type d'environnements (i/ni: $F[1,10]=175$, $p<0.01$), de la présence/absence des marqueurs (am/sm: $F[1,10]=7$, $p<0.05$) , ainsi que de l'interaction entre les deux facteurs ($F[1,10]=67$, $p<0.01$).
 
@@ -974,37 +1001,18 @@ Les i-marqueurs ont donc bien un effet bénéfique sur la perception d'un enviro
 
 \subsection{Influence des descripteurs structurels des scènes sans marqueurs sur l'agrément perçu}
 
-L'ANOVA mixte pratiquée sur $\mathcal{A}_{scene}$ (\cf~Figure~\ref{fig:xp4_note_4}) montre un effet significatif du type d'environnements (i/ni: $F[1,70]=222$, $p<0.01$), de la présence/absence des marqueurs (am/sm: $F[1,70]=5$, $p<0.05$) , ainsi que de l'interaction entre les deux facteurs ($F[1,70]=35$, $p<0.01$).
+L'ANOVA à mesures répétées pratiquée sur $\mathcal{A}_{scene}$ (\cf~Figure~\ref{fig:xp4_note_4}) montre un effet significatif du type d'environnements (i/ni: $F[1,70]=222$, $p<0.01$), de la présence/absence des marqueurs (am/sm: $F[1,70]=5$, $p<0.05$) , ainsi que de l'interaction entre les deux facteurs ($F[1,70]=35$, $p<0.01$).
 
 L'analyse \emph{post hoc} montre des différences significatives entre tous les groupes d'observations, notamment, là encore, entre les i/am- et i/sm-scenes ($p<0.05$) et les ni/am- et ni/sm-scenes ($p<0.01$).
 
-Ainsi, les quatre types de scènes, considérant $\mathcal{A}_{scene}$ comme indicateur, forment bien quatre groupes distincts. L'interaction montre que le type d'environnement impacte l'effet provoqué par la suppression des marqueurs, les moyennes d'écart étant identiques à celles de l'analyse de la section précédente (ni-scènes: 1.1,  i-scènes: 0.5, \cf~Section~\ref{sec:ch5_Asujet}).
+Ainsi, les quatre types de scènes, considérant $\mathcal{A}_{scene}$ comme indicateur, forment bien quatre groupes distincts. L'interaction montre que le type d'environnement impacte l'effet provoqué par la suppression des marqueurs, les moyennes d'écart étant identiques à celles de l'analyse de la section précédente (ni-scènes: 1.1,  i-scènes: 0.5, \cf~Section~\ref{sec:ch5_Asujet}). \\
  
-\begin{table}[t]
-\centering
-\begin{tabular}{l c c c} 
-               & ensemble                     & i-scènes                   & ni-scènes    \\
-\hline
-$L$            & \textbf{-0.79} ($p<0.01$)    & \textbf{-0.49} ($p<0.01$)  & \textbf{-0.74} ($p<0.01$)\\
-$L(E)$         & \textbf{-0.76} ($p<0.01$)    & \textbf{-0.44} ($p<0.01$)  & \textbf{-0.70} ($p<0.01$)\\
-$L(T)$         & \textbf{-0.41} ($p<0.01$)    & -0.17 ($p=0.36$)           & -0.44 ($p=0.80$) \\
-$D$            & \textbf{-0.49} ($p<0.01$)    & -0.31 ($p=0.07$)           & -0.29 ($p=0.08$)\\
-$D(E)$         & \textbf{-0.45} ($p<0.01$)    & -0.29 ($p=0.09$)           & \textbf{-0.39} ($p<0.05$)\\
-$DIV(E)$ 0     &         -0.10  ($p=0.40$)    & -0.26 ($p=0.13$)           & -0.32 ($p=0.06$)\\
-$DIV(E)$ 1     & \textbf{-0.49} ($p<0.01$)    & -0.29 ($p=0.09$)           & -0.31 ($p=0.06$)\\
-$DIV(E)$ 2     & \textbf{-0.43} ($p<0.01$)    & -0.24 ($p=0.17$)           & -0.32 ($p=0.06$)\\
-$DIV(E)$ 3     & \textbf{-0.39} ($p<0.01$)    & -0.20 ($p=0.25$)           & -0.32 ($p=0.06$)\\
-\hline
-\end{tabular}
-\vspace{0.5mm}
-\caption{\gl{TODO: i/sm-scenes et ni/sm-scenes}}
-\label{tab:corrSmXP4}
-\end{table}
+\gl{TODO: corrélation analyse tableau~\ref{tab:corrSmXP4} + MANOVA ?} 
 
 \begin{figure}[t]
         \myfloatalign
         \includegraphics[width=.8\linewidth]{gfx/ch_5/xp4_div_1}
-        \caption[TODO]{TODO}\label{fig:diversitySansMarker}
+        \caption{Moyenne et écart type de la diversité des classes utilisées en considérant l'ensemble des classes ($DIV$), les classes d'événements ($DIV(E)$) et les classes de textures ($DIV(T)$), en considérant séparément les i/sm- et ni/sm-scènes ainsi que les différents niveaux d'abstraction.}\label{fig:diversitySansMarker}
 \end{figure}
 
 \begin{figure}[t]
@@ -1017,7 +1025,7 @@ $DIV(E)$ 3     & \textbf{-0.39} ($p<0.01$)    & -0.20 ($p=0.25$)           & -0.
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp4_density_14}\label{fig:densitySansMarkerc}}
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp4_density_16}\label{fig:densitySansMarkerd}}
-       \caption[TODO]{TODO}\label{fig:densitySansMarker}
+       \caption{Dispersions des descripteurs structurels de densité $D$ (a, c) et $D(E)$ (b, d), relevés sur les i/sm- et ni/sm-scènes, en fonction du type de scènes (a, b) et de l'agrément perçu $\mathcal{A}_{scene}$ de l'expérience 2 (c, d).}\label{fig:densitySansMarker}
 \end{figure}
 
 \begin{figure}[t]
@@ -1034,12 +1042,16 @@ $DIV(E)$ 3     & \textbf{-0.39} ($p<0.01$)    & -0.20 ($p=0.25$)           & -0.
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp4_soundlevel_28}\label{fig:soundlevelSansMarkere}}
         \subfloat[]
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp4_soundlevel_30}\label{fig:soundlevelSansMarkerf}}       
-        \caption[TODO]{TODO}\label{fig:soundlevelSansMarker}
+        \caption{Dispersions des descripteurs structurels de niveaux sonores $L$ (a, d), $L(E)$ (b, e) et $L(T)$ (c, f), relevés sur les i/sm- et ni/sm-scènes, en fonction du type de scènes (a, b, c) et de l'agrément perçu $\mathcal{A}_{scene}$ de l'expérience 2 (d, e, f).}\label{fig:soundlevelSansMarker}
 \end{figure}
 
 \subsection{Discussions}
 
 \gl{TODO}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% XP 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section[Composition sémantique et catégorisation]{Influence de la composition sémantique sur les processus de catégorisation des scènes}
 \label{sec:xp4}
@@ -1065,11 +1077,11 @@ Notant que la catégorisation est un processus dépendant du contexte sensoriel,
 
 Nous nommons cette expérience: \emph{expérience 3}. \\
 
-\textbf{Banque de données}
+\textbf{Banque de données} \\ 
 
-La banque de données de stimuli est composée des 72 scènes simulés (36 i-scènes et 36 ni-scènes) lors de l'expérience 1.a.
+La banque de données de stimuli est composée des 72 scènes simulés (36 i-scènes et 36 ni-scènes) lors de l'expérience 1.a. \\ 
 
-\textbf{Procédure}
+\textbf{Procédure} \\
 
 Les sujets doivent catégoriser les 72 scènes en fonction de la consigne suivante:
 
@@ -1083,15 +1095,15 @@ Pour faciliter l'épreuve de catégorisation, une interface à été développé
 
 Les sujets peuvent bouger les points, et leur affecter des couleurs afin de former des groupes. Le positionnement initial des points sur le plan est aléatoire et différent pour chaque sujet.
 
-À la fin de l'expérience, il est demandé au sujet de décrire les groupes ainsi formés. Afin de faciliter l'analyse lexicale des descriptions, il est demandé aux sujets se limiter à une liste de mots isolés où à des phrases simples et courtes. \\
+À la fin de l'expérience, il est demandé au sujet de décrire les groupes ainsi formés. Afin de faciliter l'analyse lexicale des descriptions, il est demandé aux sujets se limiter à une liste de mots isolés où à des phrases simples et courtes.
 
 L'expérience est prévue pour durer entre 1h et 1h30. \\
 
-\textbf{Apparatus}
+\textbf{Apparatus} \\
 
 L'Apparatus est identique à celui de l'expérience 1.b (\cf~Section~\ref{sec:ch5_planExpEvaA}) \\
 
-\textbf{Participant}
+\textbf{Participant} \\
 
 Les 10 sujets réalisant cette expérience sont les mêmes que ceux ayant participé à l'expérience 1.b (\cf~Section~\ref{sec:ch5_planExpEvaA}). L'expérience 3 a été réalisée une semaine après l'expérience 1.b. 
 
@@ -1108,7 +1120,7 @@ Le fait que les sujets soient déjà familiarisés avec les scènes à catégori
 
 Dans un premier temps nous considérons de manière qualitative les stratégies de groupement suivies par les sujets. Ces stratégies sont objectivées en analysant les descriptions des groupes faites par les sujets.
 
-Pour décrire chaque scène, nous considérons les trois descripteurs utilisés pour les expériences 1 et 2 (\cf~Section~\ref{sec:ch5_dataType1})à savoir:
+Pour décrire chaque scène, nous considérons les trois descripteurs utilisés pour les expériences 1 et 2 (\cf~Section~\ref{sec:ch5_dataType1}) à savoir:
 
 \begin{itemize}
 \item \emph{descripteur perceptif};
@@ -1116,26 +1128,28 @@ Pour décrire chaque scène, nous considérons les trois descripteurs utilisés 
 \item \emph{descripteur structurel}.
 \end{itemize}
 
-Un dernier descripteur est utilisé, obtenu à partir des termes verbaux utilisés spontanément par les sujets pour décrire les groupes:
+A partir des descriptions verbales utilisées spontanément par les sujets pour décrire les groupes, nous isolons 2 nouveaux descripteurs, appelé descripteurs subjectifs, en opposition à ceux (objectif), relatif à la composition des scènes:
 
 \begin{itemize}
-\item \emph{descripteur sémantique subjectif}: chaque sujet peut avoir utilisé un vocabulaire différents pour décrire les groupes. Afin d'établir un vocable de labels génériques, une analyse lexicale est pratiquée dans un premier sur l'ensemble des labels données par les sujets afin de 
+\item \emph{descripteur sémantique subjectif}: relatif aux termes faisant références à des sources sonores;
+\item \emph{descripteur de qualité subjectif}: relatif aux termes faisant références aux qualités affectives des scènes (\eg~calme, plaisant).
+\end{itemize}
+
+chaque sujet peut avoir utilisé un vocabulaire différents pour décrire les groupes. Afin d'établir un vocable de labels génériques, une analyse lexicale est pratiquée dans un premier sur l'ensemble des labels données par les sujets afin de 
 
 \begin{enumerate}
 \item identifier les différents types de descriptions (\eg~sources, qualité affective, intensité sonore $\ldots$);
-\item rassembler les labels dont le sens est proche sous une seule appellation (\eg~\emph{trafic} et \emph{car} $\Longrightarrow$ \emph{trafic}; \cf~Section~\ref{sec:ch5_xp3AnalyseLexicale}).
+\item rassembler les labels dont le sens est proche sous une seule appellation (\eg~\emph{trafic} et \emph{car} $\Longrightarrow$ \emph{trafic} \cf~Section~\ref{sec:ch5_xp3AnalyseLexicale}).
 \end{enumerate}
 
-La liste des labels liés à une scène forme le descripteur sémantique subjectif de cette dernière. Afin d'affecter un label à une scène, chaque scène hérite des labels génériques des groupes auxquels elle a été affectée, en considérant l'ensemble des sujets. 
-
-\end{itemize}
+La liste des labels liés à une scène forme le descripteur subjectif de cette dernière. Afin d'affecter un label à une scène, chaque scène hérite des labels génériques des groupes auxquels elle a été affectée, en considérant l'ensemble des sujets. 
 
 \subsubsection{Méthodologie et outils statistiques}
 
 \begin{figure}[t]
         \myfloatalign
         \includegraphics[width=.8\linewidth]{gfx/ch_5/dendrogram}
-        \caption[TODO]{TODO}\label{fig:dendrogram}
+        \caption{Paritions $P$ établies suivant la classification ascendante hiérarchique pratiquée sur la matrice de similarité $\Theta$ en utilisant un critère de Ward.}\label{fig:dendrogram}
 \end{figure}
 
 Dans un premier temps, il s'agit d'obtenir une vision globale des groupements effectués par les sujets. Pour ce faire, pour chaque sujet $n$ une matrice de cooccurrence $\delta^n_{i,j}$ est obtenue comme suit:
@@ -1197,12 +1211,9 @@ Avant d'aller plus loin dans l'analyse, nous notons que la stratégie de groupem
 \subsection{Analyse lexicale des descriptions}
 \label{sec:ch5_xp3AnalyseLexicale}
 
-L'intensité n'ayant été considérée que par un seul sujet (sujet 6), seul les stratégies basées sur les sources et les qualités affectives perçues sont considérées plus avant.
-
-Pour chacune de ces stratégies, nous relevons les termes utilisés par les sujets pour décrire les groupes. En ce qui concerne les sources, plusieurs termes semblent faire référence à une même entité. Ces termes sont regroupés sous une seule appellation. Les termes relevées, ainsi que les groupements effectués suite à l'analyse des champs lexicaux des sources sonores identifiées, sont affichés sur le tableau~\ref{tab:association}.
-
 \begin{table}[t]
 \centering
+\tiny
 \begin{tabular}{cc|cc}
 \multicolumn{2}{c|}{labels des sources}         & \multicolumn{2}{c}{labels des qualités}      \\
 originaux             & génériques              & originaux & génériques       \\
@@ -1238,17 +1249,9 @@ water                 & water                   &                        & \\
 rain (2)              &                         &                        & \\
 \end{tabular}
 \vspace{0.5mm}
-\caption{\label{tab:association}\gl{TODO}}
+\caption{Labels relevés sur les descriptions verbales des groupements effectués par les sujets en considérant séparément ceux relatifs aux descripteurs de qualité subjectifs et ceux relatifs aux descripteurs sémantiques subjectifs.}
+\label{tab:association}
 \end{table}
-
-Comme évoqué à la section~\ref{sec:ch5_dataXp3}, chaque scène hérite des labels utilisés pour décrire le groupe auquel elle appartient. La liste de l'ensemble des labels attachés à une scène en considérant l'ensemble des sujets forme un descripteur sémantique subjectif. Au vu des stratégies de catégorisation utilisées par les sujets, 2 descripteurs sémantiques subjectives sont considérées:
-
-\begin{itemize}
-\item les sources ($S$);
-\item les qualités affectives perçues ($Q$).
-\end{itemize}
-
-La figure~\ref{fig:countLabel} affiche le nombre de scènes étant décrites par chaque label, en considérant respectivement $S$ (\cf~Figure~\ref{fig:countLabelSourceTot} et~\ref{fig:countLabelSourceIni}) et $Q$ (\cf~Figure~\ref{fig:countLabelQualiTot} et~\ref{fig:countLabelQualiIni}).
 
 \begin{figure}[t]
         \myfloatalign
@@ -1260,8 +1263,21 @@ La figure~\ref{fig:countLabel} affiche le nombre de scènes étant décrites par
         {\includegraphics[width=.45\linewidth]{gfx/ch_5/xp3_categorie_4}\label{fig:countLabelSourceIni}}
         \subfloat[]
         {\includegraphics[width=.45\linewidth]{gfx/ch_5/xp3_categorie_5}\label{fig:countLabelQualiIni}} 
-       \caption[TODO]{TODO}\label{fig:countLabel}
+       \caption{Pourcentage de scènes étant décrites par un label sémantique subjectif donné (a, c), un label de qualité subjectif donné (b, d), en considérant l'ensemble des scènes (a, b) ou les i- et ni-scènes séparemment (c, d).}\label{fig:countLabel}
 \end{figure}
+
+L'intensité n'ayant été considérée que par un seul sujet (sujet 6), seul les stratégies basées sur les sources et les qualités affectives perçues sont considérées plus avant.
+
+Pour chacune de ces stratégies, nous relevons les termes utilisés par les sujets pour décrire les groupes. En ce qui concerne les sources, plusieurs termes semblent faire référence à une même entité. Ces termes sont regroupés sous une seule appellation. Les termes relevées, ainsi que les groupements effectués suite à l'analyse des champs lexicaux des sources sonores identifiées, sont affichés sur le tableau~\ref{tab:association}.
+
+Comme évoqué à la section~\ref{sec:ch5_dataXp3}, chaque scène hérite des labels utilisés pour décrire le groupe auquel elle appartient. La liste de l'ensemble des labels attachés à une scène en considérant l'ensemble des sujets forme un descripteur subjectif. Au vu des stratégies de catégorisation utilisées par les sujets, 2 descripteurs subjectifs sont considérées:
+
+\begin{itemize}
+\item descripteurs sémantiques subjectifs ($S$): les sources;
+\item descripteurs de qualité subjectifs ($Q$): les qualités affectives perçues.
+\end{itemize}
+
+La figure~\ref{fig:countLabel} affiche le nombre de scènes étant décrites par chaque label, en considérant respectivement $S$ (\cf~Figure~\ref{fig:countLabelSourceTot} et~\ref{fig:countLabelSourceIni}) et $Q$ (\cf~Figure~\ref{fig:countLabelQualiTot} et~\ref{fig:countLabelQualiIni}).
 
 Considérons en premier lieu les labels des sources sonores (\cf~Figure~\ref{fig:countLabelSourceTot}). Les sujets décrivent les sources en considérant plusieurs niveaux d'abstractions, allant de plus concret (footstep, bird) au plus abstrait (``\,human\,'', ``\,nature\,''). 2 labels font référence à des classes de sons ambiguës, ne pouvant être directement liées à une source en particulier: bruit et fond sonore. 2 labels ont été utilisés pour décrire plus de 50\% du corpus: ``\,traffic\,'' et ``\,construction\,''. 
 
@@ -1282,16 +1298,6 @@ Deux derniers groupes de termes enfin semblent faire référence à la nature pr
 Nous notons que les labels liés à l'agrément, au calme et à la gêne font clairement la distinction entre les i- et ni-scènes (\cf~Figure~\ref{fig:countLabelQualiIni}). Cette distinction est moins marquée en ce qui concerne les labels usual (5.5\% de ni-scènes~\vs 11\% de i-scènes) et unpredictitable (33\% de ni-scènes~\vs 53\% de i-scènes).
 
 \subsection{Partitions et descripteurs sémantiques subjectifs}
-
-Les résultats de la CAH pratiquée sur $\Theta$ sont affichés à la figure~\ref{fig:dendrogram}. Pour chaque partition ($P(1)$,$P(2)$ $\ldots$ $P(6)$) un V-test est pratiqué en considérant séparément les deux descripteurs sémantiques subjectifs ($S$ et $Q$). Les résultats sont affichés sur le tableau~\ref{tab:markerHacSource} pour $S$ et le tableau~\ref{tab:markerHacQualite} pour $Q$.
-
-Concernant les groupements effectués, on constate que $P(1)$ correspond largement à la distinction entre les i et ni-scènes. Comme nous l'avions évoqué, ce fait était prévisible, la catégorisation étant un phénomène soumis à un contexte sensoriel.
-
-Considérons le descripteur $S$ (\cf~Tableau~\ref{tab:markerHacSource}). La première partition $P(1)$ fait la distinction entre d'un coté les sons humains, naturels et de cloches ($1_{P(1)}$) et de l'autre les sons de construction, de trafics et les alarmes ($2_{P(1)}$). Dans $P(2)$, le groupe des scènes idéales $1_{P(1)}$ est subdivisé suivant d'un coté les sons humains et de cloches ($1_{P(2)}$), et de l'autre les sons naturels ($2_{P(2)}$).  Dans $P(3)$, c'est le groupe des ni-scènes $3_{P(2)}$ (similaire à $2_{P(1)}$) qui est subdivisé suivant d'un coté les sons de construction et de trafic ($3_{P(3)}$), et de l'autre les sons de sirène et d'alarme ($3_{P(4)}$). Dans $P(4)$, le groupe $1_{P(3)}$ (similaire à $1_{P(2)}$) est subdivisé en distinguant entre les sons de cloches et les sons humains.
-
-Pour $P(5)$ et $P(6)$, seuls le groupe $4_{P(4)}$, relatifs au ni-scènes et représenté par les labels ``\,construction\,'' et ``\,traffic\,'' est subdivisé. Cependant, aucune de ces subdivisions ne semble s'appuyer sur un label en particulier. En effet, aucun label n'est reconnu par le V-test comme étant caractéristique des groupes $5_{P(5)}$, $5_{P(6)}$ et $5_{P(6)}$. Seul le groupe $4_{P(6)}$ semble dépendre du label ``\,horn\,''. 
-
-Ainsi, le descripteur sémantique subjectif relatif aux sources ne rend compte du partitionnement que jusqu'à $P(4)$. Les partitions plus profondes doivent dépendre d'autres descripteurs.
 
 \begin{table}[t]
 \centering
@@ -1344,29 +1350,6 @@ church bell          & footstep    & parc   & horn       &      &     & alarm \\
 \label{tab:markerHacSource}
 \end{table}
 
-
-
-Considérons maintenant le descripteur $Q$ (\cf~Tableau~\ref{tab:markerHacSource}). $P(1)$ fait la distinction entre d'un coté les qualités positives, dominées par les labels ``\,calm\,'' et ``\,relaxing\,'' ($1_{P(1)}$), et de l'autre les qualités négatives, dominées par les labels ``\,annoying\,'' et ``\,unpleasant\,'' ($2_{P(1)}$). La partition $P(2)$ subdivise les qualités positives ($1_{P(1)}$) en faisant la distinction entre celles relatives au calme et à la tranquillité ($1_{P(2)}$), et celles relatives à l'aspect régénératif (relaxant, reposant) des scènes ($2_{P(2)}$). Par ailleurs le terme bucolique de $2_{P(2)}$ fait directement écho aux labels de sources de ce même groupes, labels décrivant des sons d'origines naturels.  La distinction opérée à la partition $P(3)$ est principalement fonction de l'agrément: les scènes de $3_{P(3)}$ étant caractérisées par ``\,unpleasant\,'' et celles de  $3_{P(4)}$ par ``\,very unpleasant\,''.  $3_{P(4)}$ conserve par ailleurs les qualités  ``\,unbearable\,'',``\,tiresome\,'' et ``\,oppressant\,''. Enfin, c'est à ce niveau que l'impression de la structure temporelle des scènes fait son apparition,  ``\,agitated\,'' étant caractéristique de $3_{P(3)}$. Au niveau $P(4)$, la qualité ``\,calm\,'' des scènes de $1_{P(3)}$ (similaire à $1_{P(2)}$) se subdivise entre d'un coté les scènes moyennement calmes/calmes ($1_{P(4)}$), et de l'autre les scènes calmes/très calmes ($2_{P(4)}$). Le label relaxant est également associé au groupe $2_{P(5)}$.
-
-Au niveau $P(5)$, le groupe $4_{P(4)}$ se subdivise entre le groupe $4_{P(5)}$ et $5_{P(5)}$. Les qualités de $4_{P(4)}$  (``\,unpleasant\,'' et ``\,agitated\,'') sont cependant entièrement conservées par $4_{P(5)}$,  $5_{P(5)}$ étant caractérisé par ``\,oppressant\,''.
-
-Nous pouvons synthétisés ces résultats comme suit:
-
-\begin{itemize}
-\item $P(1)$ fait la distinction entre les qualités positives et celles négatives;
-\item les qualités positives se séparent ensuite suivant l'aspect régénérative des scènes et enfin suivant la notion de calme;
-\item les qualités négatives se séparent d'abord  en fonction de l'agrément entre d'un coté les scènes ``\,déplaisantes\,'' et celles ``\,très déplaisantes\,''. Une distinction est enfin opérée sur les scènes ``\,déplaisantes\,'' suivant qu'elles soient ``\,supportables\,'', ``\,usuelles\,'' ou ``\,oppressantes\,''. Notons enfin que la notion d'agitation co-occure avec celle de ``\,déplaisant\,'' plutôt que celle de ``\,très déplaisant\,'', alors que les qualités ``\,insupportable\,'' et ``\,fatigante\,'' sont toute deux attachée à ``\,très déplaisant\,''.
-\end{itemize}
-
-Comparons maintenant $Q$ et $S$. Contrairement à $S$, le descripteur $Q$ permet de caractériser l'ensemble des groupes,  $5_{P(5)}$,  $5_{P(6)}$ et  $6_{P(6)}$ n'étant décrits que par les qualités perçues \gl{TODO: citation de résultats similaires}. Au vu de la co-occurence des labels, il est possible de faire des liens entre les qualités perçues, et les sources sonores utilisées pour décrire les scènes:
-
-\begin{itemize}
-\item ``\,calm\,'' ($1_{P(2)}$)~\vs ``\,relaxing\,'' ($2_{P(2)}$): la qualité ``\,relaxing\,'' est liée au sons d'origine naturels, la qualité ``\,calm\,'' au son d'origine humain et de cloche. Notons que la qualité ``\,relaxing\,'' appairait également dans $2_{P(4)}$, simultanément à l'apparition du label ``\,nature\,'';
-\item ``\,medium calm\,''/``\,calm\,'' ($1_{P(4)}$)~\vs ``\,calm\,''/``\,very calm\,'' ($2_{P(4)}$): la qualité ``\,medium calm\,''/``\,calm\,'' est liée aux sons de cloches, et la qualité ``\,calm\,''/``\,very calm\,'' aux sons d'origine humaine;
-\item ``\,unpleasant\,'' ($3_{P(3)}$)~\vs ``\,very unpleasant\,'' ($4_{P(3)}$): les sources ``\,construction\,'' et ``\,traffic\,'' sont liés à ``\,unpleasant\,'' alors que ceux sont les sons ``\,alarm\,'' et ``\,siren\,'' qui correspondent à ``\,unpleasant\,''. Notons cependant que les sons ``\,horn\,'' et ``\,alarm\,'' ($4_{P(6)}$) sont également liés aux qualités ``\,unpleasant\,'' et ``\,bearable\,''.
-\end{itemize}
-
-
 \begin{table}[t]
 \centering
 \tiny
@@ -1416,40 +1399,37 @@ calm                 & relaxing  & relaxing & unpleasant  & usual       &       
 \label{tab:markerHacQualite}
 \end{table}
 
-\subsection{Partitions et descripteurs sémantiques objectifs}
+Les résultats de la CAH pratiquée sur $\Theta$ sont affichés à la figure~\ref{fig:dendrogram}. Pour chaque partition ($P(1)$,$P(2)$ $\ldots$ $P(6)$) un V-test est pratiqué en considérant séparément les deux descripteurs sémantiques subjectifs ($S$ et $Q$). Les résultats sont affichés sur le tableau~\ref{tab:markerHacSource} pour $S$ et le tableau~\ref{tab:markerHacQualite} pour $Q$.
 
-Nous analysons les descripteurs sémantiques objectifs, \ie~les classes utilisées pour simuler les scènes. Le tableau~\ref{tab:markerHacClass} affiche les résultats des V-tests pratiqués sur les descripteurs sémantiques objectifs pour chaque partition.
+Concernant les groupements effectués, on constate que $P(1)$ correspond largement à la distinction entre les i et ni-scènes. Comme nous l'avions évoqué, ce fait était prévisible, la catégorisation étant un phénomène soumis à un contexte sensoriel.
 
-Sans surprise, la distinction opérée par $P(1)$ dépend des i et ni-marqueurs relevées à l'expérience 1 (\cf~Section~\ref{sec:ch5_marqueurXp1}), exception faite de la classe d'événement \emph{male footsteps concrete}. Notons par ailleurs la présence de la classe d'événement \emph{bike} dans le groupe $1_{P(1)}$, classe n'étant pas un marqueur.
+Considérons le descripteur $S$ (\cf~Tableau~\ref{tab:markerHacSource}). La première partition $P(1)$ fait la distinction entre d'un coté les sons humains, naturels et de cloches ($1_{P(1)}$) et de l'autre les sons de construction, de trafics et les alarmes ($2_{P(1)}$). Dans $P(2)$, le groupe des scènes idéales $1_{P(1)}$ est subdivisé suivant d'un coté les sons humains et de cloches ($1_{P(2)}$), et de l'autre les sons naturels ($2_{P(2)}$).  Dans $P(3)$, c'est le groupe des ni-scènes $3_{P(2)}$ (similaire à $2_{P(1)}$) qui est subdivisé suivant d'un coté les sons de construction et de trafic ($3_{P(3)}$), et de l'autre les sons de sirène et d'alarme ($3_{P(4)}$). Dans $P(4)$, le groupe $1_{P(3)}$ (similaire à $1_{P(2)}$) est subdivisé en distinguant entre les sons de cloches et les sons humains.
 
-Considérons en premier les groupes relatif aux i-scènes. Considérant les classes d'événements, la partitionnement entre $1_{P(2)}$ et $2_{P(2)}$ sépare d'un coté  ($1_{P(2)}$) les classes de sons de cloches et d'origine humaine, et de l'autre ($2_{P(2)}$) les classes de sons d'origine naturel, de \emph{boats} et de \emph{bell bike}. Notons l'apparition du marqueur \emph{male footsteps concrete} dans $1_{P(2)}$. Au niveau des textures, les classes \emph{park} (sons d'origine naturel)  et \emph{courtyard}  sont caractéristiques de $1_{P(2)}$. Le partitionnement entre  $1_{P(4)}$ et $2_{P(4)}$ sépare lui les classes d'événements de cloches des classes d'événements d'origine humaine.  Les classes textures \emph{courtyard park} et \emph{crowd foreigners} sont caractéristiques de $2_{P(4)}$.
+Pour $P(5)$ et $P(6)$, seuls le groupe $4_{P(4)}$, relatifs au ni-scènes et représenté par les labels ``\,construction\,'' et ``\,traffic\,'' est subdivisé. Cependant, aucune de ces subdivisions ne semble s'appuyer sur un label en particulier. En effet, aucun label n'est reconnu par le V-test comme étant caractéristique des groupes $5_{P(5)}$, $5_{P(6)}$ et $5_{P(6)}$. Seul le groupe $4_{P(6)}$ semble dépendre du label ``\,horn\,''. 
 
-Considérons maintenant les groupes relatifs aux ni-scènes. Seule la classe de texture \emph{works} semble déterminer les partitionnements $P(3)$ et $P(4)$, les autres classes étant équitablement réparties entre les deux groupes ($3_{P(3)}$/$4_{P(3)}$ ou $4_{P(4)}$/$5_{P(4)}$). Considérant les partitionnement  $P(5)$ et $P(6)$, seuls les groupes $5_{P(5)}$ et $6_{P(6)}$ semblent être caractérisés par la présence de classes, ces dernières étant relatives à des outils mécaniques (\emph{power tools} et \emph{power drill}) pour les événements et \emph{cafe} pour les textures.
+Ainsi, le descripteur sémantique subjectif relatif aux sources ne rend compte du partitionnement que jusqu'à $P(4)$. Les partitions plus profondes doivent dépendre d'autres descripteurs.
 
+Considérons maintenant le descripteur $Q$ (\cf~Tableau~\ref{tab:markerHacSource}). $P(1)$ fait la distinction entre d'un coté les qualités positives, dominées par les labels ``\,calm\,'' et ``\,relaxing\,'' ($1_{P(1)}$), et de l'autre les qualités négatives, dominées par les labels ``\,annoying\,'' et ``\,unpleasant\,'' ($2_{P(1)}$). La partition $P(2)$ subdivise les qualités positives ($1_{P(1)}$) en faisant la distinction entre celles relatives au calme et à la tranquillité ($1_{P(2)}$), et celles relatives à l'aspect régénératif (relaxant, reposant) des scènes ($2_{P(2)}$). Par ailleurs le terme bucolique de $2_{P(2)}$ fait directement écho aux labels de sources de ce même groupes, labels décrivant des sons d'origines naturels.  La distinction opérée à la partition $P(3)$ est principalement fonction de l'agrément: les scènes de $3_{P(3)}$ étant caractérisées par ``\,unpleasant\,'' et celles de  $3_{P(4)}$ par ``\,very unpleasant\,''.  $3_{P(4)}$ conserve par ailleurs les qualités  ``\,unbearable\,'',``\,tiresome\,'' et ``\,oppressant\,''. Enfin, c'est à ce niveau que l'impression de la structure temporelle des scènes fait son apparition,  ``\,agitated\,'' étant caractéristique de $3_{P(3)}$. Au niveau $P(4)$, la qualité ``\,calm\,'' des scènes de $1_{P(3)}$ (similaire à $1_{P(2)}$) se subdivise entre d'un coté les scènes moyennement calmes/calmes ($1_{P(4)}$), et de l'autre les scènes calmes/très calmes ($2_{P(4)}$). Le label relaxant est également associé au groupe $2_{P(5)}$.
 
-Comparant maintenant ces résultats à ceux obtenus par les descripteurs sémantiques subjectifs. Pour les groupes relatifs aux i-scènes, il existe une correspondance remarquable entre les labels données par les sujets et les classes utilisées pour simuler les scènes. Les différences sont:
+Au niveau $P(5)$, le groupe $4_{P(4)}$ se subdivise entre le groupe $4_{P(5)}$ et $5_{P(5)}$. Les qualités de $4_{P(4)}$  (``\,unpleasant\,'' et ``\,agitated\,'') sont cependant entièrement conservées par $4_{P(5)}$,  $5_{P(5)}$ étant caractérisé par ``\,oppressant\,''.
+
+Nous pouvons synthétisés ces résultats comme suit:
 
 \begin{itemize}
-\item les classes \emph{boats} et \emph{bell bike} ($2_{P(2,3)}$ et $3_{P(4,5,6)}$) qui n’apparaissent pas dans les labels;
-\item le label ``\,market\,'' ($1_{P(1,2,3)}$ et $2_{P(4,5,6)}$) qui n’apparaissent pas dans les classes.
-\end{itemize} 
+\item $P(1)$ fait la distinction entre les qualités positives et celles négatives;
+\item les qualités positives se séparent ensuite suivant l'aspect régénérative des scènes et enfin suivant la notion de calme;
+\item les qualités négatives se séparent d'abord  en fonction de l'agrément entre d'un coté les scènes ``\,déplaisantes\,'' et celles ``\,très déplaisantes\,''. Une distinction est enfin opérée sur les scènes ``\,déplaisantes\,'' suivant qu'elles soient ``\,supportables\,'', ``\,usuelles\,'' ou ``\,oppressantes\,''. Notons enfin que la notion d'agitation co-occure avec celle de ``\,déplaisant\,'' plutôt que celle de ``\,très déplaisant\,'', alors que les qualités ``\,insupportable\,'' et ``\,fatigante\,'' sont toute deux attachée à ``\,très déplaisant\,''.
+\end{itemize}
 
-Notons que si le label ``\,nature\,'' ($2_{P(4,5,6)}$) peut faire référence aux classes de texture \emph{courtyard park} et \emph{park},  la classe correspondant au label ``\,park\,'' ($2_{P(2,3)}$, $3_{P(4,5,6)}$) est moins évidente. On peut penser que ce label est le résultat de l'interprétation de la présence de la classe \emph{birds}.
+Comparons maintenant $Q$ et $S$. Contrairement à $S$, le descripteur $Q$ permet de caractériser l'ensemble des groupes,  $5_{P(5)}$,  $5_{P(6)}$ et  $6_{P(6)}$ n'étant décrits que par les qualités perçues \gl{TODO: citation de résultats similaires}. Au vu de la co-occurence des labels, il est possible de faire des liens entre les qualités perçues, et les sources sonores utilisées pour décrire les scènes:
 
-Pour les groupes relatifs aux ni-scènes, les correspondances sont évidentes pour les partitions $P(1)$ et $P(2)$. Cependant à partir de la partition $P(3)$, les relations entre classes et labels sont plus ténues. Pour les labels ``\,alarm\,'' et ``\,siren\,'' ($4_{P(3)}$, $5_{P(4)}$, $6_{P(5)}$ et $7_{P(6)}$), aucune classe n'est présente. A l'inverse, aucun label n'est présent  pour les classes ``\,power tools\,'', ``\,power drill\,'' et  ``\,cafe\,'' ($5_{P(5)}$ et $6_{P(6)}$). Cependant, il possible maintenant de faire le lien entre ces classes et la qualité ``\,oppressive\,'' ($5_{P(5)}$ et $6_{P(6)}$).
+\begin{itemize}
+\item ``\,calm\,'' ($1_{P(2)}$)~\vs ``\,relaxing\,'' ($2_{P(2)}$): la qualité ``\,relaxing\,'' est liée au sons d'origine naturels, la qualité ``\,calm\,'' au son d'origine humain et de cloche. Notons que la qualité ``\,relaxing\,'' appairait également dans $2_{P(4)}$, simultanément à l'apparition du label ``\,nature\,'';
+\item ``\,medium calm\,''/``\,calm\,'' ($1_{P(4)}$)~\vs ``\,calm\,''/``\,very calm\,'' ($2_{P(4)}$): la qualité ``\,medium calm\,''/``\,calm\,'' est liée aux sons de cloches, et la qualité ``\,calm\,''/``\,very calm\,'' aux sons d'origine humaine;
+\item ``\,unpleasant\,'' ($3_{P(3)}$)~\vs ``\,very unpleasant\,'' ($4_{P(3)}$): les sources ``\,construction\,'' et ``\,traffic\,'' sont liés à ``\,unpleasant\,'' alors que ceux sont les sons ``\,alarm\,'' et ``\,siren\,'' qui correspondent à ``\,unpleasant\,''. Notons cependant que les sons ``\,horn\,'' et ``\,alarm\,'' ($4_{P(6)}$) sont également liés aux qualités ``\,unpleasant\,'' et ``\,bearable\,''.
+\end{itemize}
 
-Notons enfin le groupe $5_{P(6)}$ où aucune classe et aucun label n'est relevé, le groupe étant seulement caractérisé par les qualités ``\,unpleasant\,'' et ``\,usual\,''.
-
-Le fait que les labels et les classes concordent jusqu'à la partition $P(2)$ nous permets de conclure que les premiers groupement s'opèrent bien suivant la présence des sources. Cette stratégie perdure pour les groupes relatif aux i-scènes. Pour ces dernières, les qualités affectives ne semblent qu'être une conséquence de la présence des classes (sons naturel $\Rightarrow$ environnement relaxant et bucolique). Pour les groupes relatifs aux ni-scènes, les résultats obtenus soulèvent trois questions:
-
-\begin{enumerate}
-\item Présence de labels et absences de classes ($4_{P(3)}$, $5_{P(4)}$, $6_{P(5)}$ et $7_{P(6)}$): Pourquoi les sujets ont-ils relevé des classes ne sont pas caractéristiques des scènes à décrire, \ie~des classes qui sont également présentes sur d'autres scènes ? Une hypothèse est que les caractéristiques structurels de ces classes (intensité sonore, densité d'événements), sont saillante pour les scènes du groupe décrit.
-\item Présence de classes et absences de labels ($5_{P(5)}$ et $6_{P(6)}$): Pourquoi les sujets n'ont-ils pas relevé des classes caractéristiques des scènes à décrire, \ie~majoritairement présente sur ces dernières ? Ce cas n’appairait que pour les classes ``\,power tools\,'', ``\,power drill\,'' et  ``\,cafe\,''. Pour les deux premières on peut supposer que le niveau d'abstraction des classes est trop précis, les sujets interprétant ``\,power tools\,'' et ``\,power drill\,'' comme appartenant à la classe construction, sans faire de distinction particulière. Cette classe n'étant plus caractéristique des groupes relatifs aux ni-scènes à partir de la partition $P(3)$, il est normal que les sujets ne s'appuie plus sur la présence de ces classes pour décrire des groupes.
-\item Présence des qualités et absences de labels et de classes ($5_{P(6)}$): A partir de quels descripteurs les sujets ont pu reconnaître des qualités affectives particulières aux scènes du groupe $5_{P(6)}$ ? Comme pour la question 1, on peut supposer que cette distinction s'opère suivant les descripteurs structurels de ces scènes. Cependant, notons que parmi les deux qualités affectées au groupe $5_{P(6)}$, la première, ``\,unplesant\,'', est également caractéristique des classes des partitions supérieures de $5_{P(6)}$ ($4_{P(5)}$ et $4_{P(4)}$) ainsi que d'une des classes du même niveau ($4_{P(6)}$), soulignant \emph{de facto} la faible capacité de ce descripteur à particulariser $5_{P(6)}$. La deuxième, ``\,usual\,'' illustre l'aspect normal, voire standard des scènes urbaines du groupe $5_{P(6)}$. Il est potentiellement difficile de rendre compte d'une telle qualité neutre à partir de descripteurs structurels.
-\end{enumerate}
-
-
-Enfin, nous relevons que, comme observé pour les expériences 1 et 2, la perception des scènes est fonction de leur qualité (i/ni).
+\subsection{Partitions et descripteurs sémantiques objectifs}
 
 \begin{table}[t]
 \centering
@@ -1527,7 +1507,40 @@ church bell$_{1,2,3}^E$  & footstep$_{1}^E$        & bell bike$_{1,2,3}^E$ &    
 \label{tab:markerHacClass}
 \end{table}
 
+Nous analysons les descripteurs sémantiques objectifs, \ie~les classes utilisées pour simuler les scènes. Le tableau~\ref{tab:markerHacClass} affiche les résultats des V-tests pratiqués sur les descripteurs sémantiques objectifs pour chaque partition.
+
+Sans surprise, la distinction opérée par $P(1)$ dépend des i et ni-marqueurs relevées à l'expérience 1 (\cf~Section~\ref{sec:ch5_marqueurXp1}), exception faite de la classe d'événement \emph{male footsteps concrete}. Notons par ailleurs la présence de la classe d'événement \emph{bike} dans le groupe $1_{P(1)}$, classe n'étant pas un marqueur.
+
+Considérons en premier les groupes relatif aux i-scènes. Considérant les classes d'événements, la partitionnement entre $1_{P(2)}$ et $2_{P(2)}$ sépare d'un coté  ($1_{P(2)}$) les classes de sons de cloches et d'origine humaine, et de l'autre ($2_{P(2)}$) les classes de sons d'origine naturel, de \emph{boats} et de \emph{bell bike}. Notons l'apparition du marqueur \emph{male footsteps concrete} dans $1_{P(2)}$. Au niveau des textures, les classes \emph{park} (sons d'origine naturel)  et \emph{courtyard}  sont caractéristiques de $1_{P(2)}$. Le partitionnement entre  $1_{P(4)}$ et $2_{P(4)}$ sépare lui les classes d'événements de cloches des classes d'événements d'origine humaine.  Les classes textures \emph{courtyard park} et \emph{crowd foreigners} sont caractéristiques de $2_{P(4)}$.
+
+Considérons maintenant les groupes relatifs aux ni-scènes. Seule la classe de texture \emph{works} semble déterminer les partitionnements $P(3)$ et $P(4)$, les autres classes étant équitablement réparties entre les deux groupes ($3_{P(3)}$/$4_{P(3)}$ ou $4_{P(4)}$/$5_{P(4)}$). Considérant les partitionnement  $P(5)$ et $P(6)$, seuls les groupes $5_{P(5)}$ et $6_{P(6)}$ semblent être caractérisés par la présence de classes, ces dernières étant relatives à des outils mécaniques (\emph{power tools} et \emph{power drill}) pour les événements et \emph{cafe} pour les textures.
+
+Comparant maintenant ces résultats à ceux obtenus par les descripteurs sémantiques subjectifs. Pour les groupes relatifs aux i-scènes, il existe une correspondance remarquable entre les labels données par les sujets et les classes utilisées pour simuler les scènes. Les différences sont:
+
+\begin{itemize}
+\item les classes \emph{boats} et \emph{bell bike} ($2_{P(2,3)}$ et $3_{P(4,5,6)}$) qui n’apparaissent pas dans les labels;
+\item le label ``\,market\,'' ($1_{P(1,2,3)}$ et $2_{P(4,5,6)}$) qui n’apparaissent pas dans les classes.
+\end{itemize} 
+
+Notons que si le label ``\,nature\,'' ($2_{P(4,5,6)}$) peut faire référence aux classes de texture \emph{courtyard park} et \emph{park},  la classe correspondant au label ``\,park\,'' ($2_{P(2,3)}$, $3_{P(4,5,6)}$) est moins évidente. On peut penser que ce label est le résultat de l'interprétation de la présence de la classe \emph{birds}.
+
+Pour les groupes relatifs aux ni-scènes, les correspondances sont évidentes pour les partitions $P(1)$ et $P(2)$. Cependant à partir de la partition $P(3)$, les relations entre classes et labels sont plus ténues. Pour les labels ``\,alarm\,'' et ``\,siren\,'' ($4_{P(3)}$, $5_{P(4)}$, $6_{P(5)}$ et $7_{P(6)}$), aucune classe n'est présente. A l'inverse, aucun label n'est présent  pour les classes ``\,power tools\,'', ``\,power drill\,'' et  ``\,cafe\,'' ($5_{P(5)}$ et $6_{P(6)}$). Cependant, il possible maintenant de faire le lien entre ces classes et la qualité ``\,oppressive\,'' ($5_{P(5)}$ et $6_{P(6)}$).
+
+Notons enfin le groupe $5_{P(6)}$ où aucune classe et aucun label n'est relevé, le groupe étant seulement caractérisé par les qualités ``\,unpleasant\,'' et ``\,usual\,''.
+
+Le fait que les labels et les classes concordent jusqu'à la partition $P(2)$ nous permets de conclure que les premiers groupement s'opèrent bien suivant la présence des sources. Cette stratégie perdure pour les groupes relatif aux i-scènes. Pour ces dernières, les qualités affectives ne semblent qu'être une conséquence de la présence des classes (sons naturel $\Rightarrow$ environnement relaxant et bucolique). Pour les groupes relatifs aux ni-scènes, les résultats obtenus soulèvent trois questions:
+
+\begin{enumerate}
+\item Présence de labels et absences de classes ($4_{P(3)}$, $5_{P(4)}$, $6_{P(5)}$ et $7_{P(6)}$): Pourquoi les sujets ont-ils relevé des classes ne sont pas caractéristiques des scènes à décrire, \ie~des classes qui sont également présentes sur d'autres scènes ? Une hypothèse est que les caractéristiques structurels de ces classes (intensité sonore, densité d'événements), sont saillante pour les scènes du groupe décrit.
+\item Présence de classes et absences de labels ($5_{P(5)}$ et $6_{P(6)}$): Pourquoi les sujets n'ont-ils pas relevé des classes caractéristiques des scènes à décrire, \ie~majoritairement présente sur ces dernières ? Ce cas n’appairait que pour les classes ``\,power tools\,'', ``\,power drill\,'' et  ``\,cafe\,''. Pour les deux premières on peut supposer que le niveau d'abstraction des classes est trop précis, les sujets interprétant ``\,power tools\,'' et ``\,power drill\,'' comme appartenant à la classe construction, sans faire de distinction particulière. Cette classe n'étant plus caractéristique des groupes relatifs aux ni-scènes à partir de la partition $P(3)$, il est normal que les sujets ne s'appuie plus sur la présence de ces classes pour décrire des groupes.
+\item Présence des qualités et absences de labels et de classes ($5_{P(6)}$): A partir de quels descripteurs les sujets ont pu reconnaître des qualités affectives particulières aux scènes du groupe $5_{P(6)}$ ? Comme pour la question 1, on peut supposer que cette distinction s'opère suivant les descripteurs structurels de ces scènes. Cependant, notons que parmi les deux qualités affectées au groupe $5_{P(6)}$, la première, ``\,unplesant\,'', est également caractéristique des classes des partitions supérieures de $5_{P(6)}$ ($4_{P(5)}$ et $4_{P(4)}$) ainsi que d'une des classes du même niveau ($4_{P(6)}$), soulignant \emph{de facto} la faible capacité de ce descripteur à particulariser $5_{P(6)}$. La deuxième, ``\,usual\,'' illustre l'aspect normal, voire standard des scènes urbaines du groupe $5_{P(6)}$. Il est potentiellement difficile de rendre compte d'une telle qualité neutre à partir de descripteurs structurels.
+\end{enumerate}
+
+Enfin, nous relevons que, comme observé pour les expériences 1 et 2, la perception des scènes est fonction de leur qualité (i/ni).
+
 \subsection{Descripteurs perceptifs et structurels}
+
+\subsubsection{Descripteur perceptif}
 
 \begin{table}[t]
 \centering
@@ -1553,8 +1566,6 @@ $D(E)$                & $F[3,68]=2$  & $F[4,67]=2.5$ & $F[5,66]=2.1$ & $F[6,65]=
 \label{tab:ANOVAhac}
 \end{table}
 
-\subsubsection{Descripteur perceptif}
-
 Nous considérons dans un premier temps le descripteur perceptif $\mathcal{A}_{scene}$. Les résultats des ANOVA pratiquées les différentes partitions sont affichées sur le tableau~\ref{tab:ANOVAhac}. Nous ne considérons que les groupements effectués à partir de la partition $P(3)$, les partitions supérieurs étant entièrement déterminé par les descripteurs subjectifs sémantiques $S$ et $Q$. 
 
 Pour les partitions $P(3)$, $P(4)$, $P(5)$ et $P(6)$ l'ANOVA montre un effet significatif des groupes sur $\mathcal{A}_{scene}$. Concernant l'analyse \emph{post hoc}:
@@ -1575,6 +1586,8 @@ Concernant l'analyse \emph{post hoc}, si nous considérons séparément les comp
 
 \subsubsection{Contributions des sources sonores}
 
+\gl{TODO}
+
 \subsection{Discussions}
 
 L'expérience permet de valider l'utilisation de scènes simulées comme stimuli. Plusieurs résultats notables présent dans la littérature sont retrouvés, nommément:
@@ -1582,6 +1595,8 @@ L'expérience permet de valider l'utilisation de scènes simulées comme stimuli
 \begin{itemize}
 \item \gl{TODO}
 \end{itemize}
+
+
 %*****************************************
 %*****************************************
 %*****************************************

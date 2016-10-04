@@ -51,6 +51,7 @@ Scattering transforms are time-shift invariant representations of audio signals 
 This section highlights the importance of invariance to time-shifts and stability to time-warping in the representation of acoustic scenes, and explains how the scattering transform is designed to satisfy these properties while having a high discriminative power.
 
 \subsubsection{Invariance and stability in acoustic scenes}
+
 The notion of invariance to time shifts plays an essential role in acoustic scene similarity retrieval as well as acoustic scene classification.
 Indeed, recordings may be shifted locally without affecting their perception and therefore such shifts do not convey any information about the class.
 To discard this superfluous source of variability, signals can be mapped to a time-shift invariant feature space before training the classifier, eliminating the need for this classifier to explicitly learn this invariance.
@@ -71,6 +72,7 @@ However, to achieve invariance to translation up to $T = 372\,\mathrm{ms}$, \ie 
 The next subsection describes the operations involved in the scattering transform, and in particular the construction of wavelet filter banks.
 
 \subsubsection{Wavelet scalogram}
+
 Our convention for the Fourier transform of a continuous-time signal $\boldsymbol{x}(t)$ is $\boldsymbol{\hat{x}}(\omega) = \int x(t) \exp(\mathrm{i} 2\pi t \omega) \; \mathrm{d}\omega$. Note that the frequency variable $\omega$ is expressed in Hertz, not in radians per second.
 
 Let $\boldsymbol{\psi}(t)$ a complex-valued band-pass filter of
@@ -143,7 +145,7 @@ As such, they can be discovered automatically by unsupervised encoding of natura
 This suggests that, despite being hand-crafted and not learned, Gammatone wavelets provide a sparse time-frequency representation of acoustic scenes.
 
 \subsubsection{Logarithmic compression}
-\label{sec:logcomp}
+\label{sec:ch6_LogComp}
 
 Many algorithms in pattern recognition, including nearest-neighbor classifiers and SVMs, tend to work best when all features follow a standard normal distribution across all training instances \cite{Hsu2003}.
 Yet the distribution of the scattering coefficients is skewed towards larger values. We can reduce this skewness by applying a pointwise concave transformation, such as a logarithm, to all coefficients.
@@ -213,22 +215,22 @@ La première métrique est la F-mesure \citep{Giannoulis:2013a,Stowell15}, que l
 F=\dfrac{2\times P \times R}{P+R}
 \end{equation}
 
-Où $P$ et $R$ représente respectivement la précision et le rappel. La precision rend compte du rapport entre le nombre d'événements correctement détectés $c$ et le nombre d'événements effectivement détectés par l'algorithme $e$, tandis que le rappel rend lui compte du rapport entre le nombre d'événements correctement détectés $c$ sur le nombre d'événement à détecter $r$ (le nombre d'événement présent dans la scène):
+Où $P$ et $R$ représentent respectivement la précision et le rappel. La precision rend compte du rapport entre le nombre d'événements correctement détectés $c$ et le nombre d'événements effectivement détectés par l'algorithme $e$, tandis que le rappel rend lui compte du rapport entre le nombre d'événements correctement détectés $c$ sur le nombre d'événements à détecter $r$ (le nombre d'événements présents dans la scène):
 
 \begin{equation}
 P=\dfrac{c}{e}  \quad \textrm{, } \quad R=\dfrac{c}{r} \quad \textrm{, } \quad  e=c+fp \quad \textrm{, } \quad  r=c+fn
 \end{equation}
 
-avec $fp$ le nombre de faux positives, et $fn$ le nombre de faux négatifs.
+avec $fp$ le nombre de faux positifs, et $fn$ le nombre de faux négatifs.
 
 
-La deuxième métrique est le taux d'erreur acoustique \citep{poliner2007discriminative,clear}, que l'on note $ER$ dans ce document. Ce dernier ce calcul comme suit:
+La deuxième métrique est le taux d'erreur acoustique \citep{poliner2007discriminative,clear}, que l'on note $ER$ dans ce document. Ce dernier ce calcule comme suit:
 
 \begin{equation}
 ER=\dfrac{D+I+S}{N}
 \end{equation}
 
-avec $N$ le nombre d'événement à détecter \gl{TODO: vérifier}, $D$ le nombre d'événements manqué ($fn$), $I$ le nombre d'événement faussement détecté ($fp$), et $S$ le nombre d'événements substitués, que l'on défini comm $S=min\lbrace D,I\rbrace$.
+avec $N$ le nombre d'événements à détecter \gl{TODO: vérifier}, $D$ le nombre d'événements manqués ($fn$), $I$ le nombre d'événements faussement détectés ($fp$), et $S$ le nombre d'événements substitués, que l'on définit comme $S=min\lbrace D,I\rbrace$.
 
 $F$ et $ER$ peuvent être calculées de deux manières suivant que l'on tienne compte: 
 
@@ -292,6 +294,8 @@ Au final, 8 métriques sont donc disponibles pour évaluer les algorithmes en AE
 
 \subsection{Métrique}
 \label{sec:ch6_metriqueASSR}
+
+The metric used is the precision at rank $k$ ($p@k$), which is computed by taking a query item and counting the number of items of the same class within the $k$ closest neighbors, and then averaging over all query items. 
 
 \subsection{Méthodes et algorithmes}
 \label{sec:ch6_algoASSR}

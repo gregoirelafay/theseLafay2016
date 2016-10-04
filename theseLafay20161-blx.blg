@@ -18,44 +18,44 @@ Database file #2: lafay_publications_psycho.bib
 Biblatex version: 3.3
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-You've used 6 entries,
+You've used 5 entries,
             6047 wiz_defined-function locations,
-            1157 strings with 9428 characters,
-and the built_in function-call counts, 18609 in all, are:
-= -- 721
-> -- 656
-< -- 153
-+ -- 243
-- -- 242
-* -- 1518
-:= -- 1335
+            1149 strings with 9118 characters,
+and the built_in function-call counts, 14723 in all, are:
+= -- 499
+> -- 524
+< -- 102
++ -- 186
+- -- 203
+* -- 1298
+:= -- 1124
 add.period$ -- 0
-call.type$ -- 6
-change.case$ -- 5
+call.type$ -- 5
+change.case$ -- 4
 chr.to.int$ -- 35
-cite$ -- 10
-duplicate$ -- 2075
-empty$ -- 1880
-format.name$ -- 473
-if$ -- 4107
+cite$ -- 8
+duplicate$ -- 1637
+empty$ -- 1523
+format.name$ -- 388
+if$ -- 3221
 int.to.chr$ -- 0
-int.to.str$ -- 15
+int.to.str$ -- 14
 missing$ -- 0
-newline$ -- 199
-num.names$ -- 249
-pop$ -- 1736
+newline$ -- 169
+num.names$ -- 176
+pop$ -- 1411
 preamble$ -- 1
-purify$ -- 99
+purify$ -- 59
 quote$ -- 0
-skip$ -- 1094
+skip$ -- 807
 stack$ -- 0
-substring$ -- 385
-swap$ -- 664
-text.length$ -- 156
-text.prefix$ -- 5
+substring$ -- 193
+swap$ -- 540
+text.length$ -- 131
+text.prefix$ -- 4
 top$ -- 1
-type$ -- 216
+type$ -- 178
 warning$ -- 0
-while$ -- 138
+while$ -- 119
 width$ -- 0
-write$ -- 192
+write$ -- 163

@@ -39,18 +39,10 @@
      {}{}%
      {}{}}%
   }
-  \keyw{acoustic signal processing;hidden Markov models;ERB
-  spectrogram;HMM;Hidden Markov Models;acoustic scene simulator;equivalent
-  rectangular bandwidth;event density;input time-frequency
-  representation;overlapping acoustic event detection;polyphonic
-  datasets;probabilistic latent component analysis;sound event dictionary;sound
-  events;spectral templates;synthesized monophonic datasets;temporally
-  constrained probabilistic model;Acoustics;Computational modeling;Event
-  detection;Hidden Markov models;Indexes;Spectrogram;Time-frequency
-  analysis;Acoustic event detection;hidden Markov models;probabilistic latent
-  component analysis}
   \strng{namehash}{BE+1}
   \strng{fullhash}{BELGLMPMD1}
+  \field{labelyear}{2016}
+  \field{extrayear}{1}
   \field{sortinit}{B}
   \field{booktitle}{2016 IEEE International Conference on Acoustics, Speech and
   Signal Processing (ICASSP)}
@@ -82,8 +74,10 @@
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{BELGLM1}
+  \strng{namehash}{BE+2}
   \strng{fullhash}{BELGLM1}
+  \field{labelyear}{2016}
+  \field{extrayear}{2}
   \field{sortinit}{B}
   \field{title}{Polyphonic Sound Event Tracking using LDS}
   \field{journaltitle}{IEEE Transactions on audio, speech and language
@@ -119,12 +113,9 @@
      {}{}%
      {}{}}%
   }
-  \keyw{Acoustics;Computational modeling;Event detection;IEEE
-  transactions;Image analysis;Speech;Speech processing;Sound event
-  detection;acoustic scene analysis;computational auditory scene
-  analysis;experimental validation}
   \strng{namehash}{LG+1}
   \strng{fullhash}{LGLMBERMRA1}
+  \field{labelyear}{2016}
   \field{sortinit}{L}
   \verb{doi}
   \verb 10.1109/TASLP.2016.2587218
@@ -155,6 +146,7 @@
   }
   \strng{namehash}{LMLG1}
   \strng{fullhash}{LMLG1}
+  \field{labelyear}{2016}
   \field{sortinit}{L}
   \field{title}{Results of the DCASE 2016 challenge}
   \field{journaltitle}{IEEE Transactions on audio, speech and language
@@ -190,6 +182,8 @@
   }
   \strng{namehash}{RM+1}
   \strng{fullhash}{RMLMLGBE1}
+  \field{labelyear}{2015}
+  \field{extrayear}{1}
   \field{sortinit}{R}
   \field{booktitle}{Signal Processing Conference (EUSIPCO), 2015 23rd European}
   \field{pages}{2023\bibrangedash 2027}
@@ -222,6 +216,8 @@
   }
   \strng{namehash}{RM+1}
   \strng{fullhash}{RMLGLMMN1}
+  \field{labelyear}{2015}
+  \field{extrayear}{2}
   \field{sortinit}{R}
   \field{booktitle}{1st Web Audio Conference (WAC)}
   \field{title}{SimScene: a web-based acoustic scenes simulator}
