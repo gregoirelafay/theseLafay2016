@@ -53,8 +53,6 @@ Notre analyse s'appuie sur les données produites par les deux expériences.
         \caption{Planification expérimentale des éxperiences de simulation et d'évaluation de l'agrément}\label{fig:xp1_2}
 \end{figure}
 
-
-
 \subsection{Banque de données de sons isolés}
 
 Dans cette section, nous présentons les processus de sélection et d'acquisition des sons utilisés comme matériau de base lors de la simulation des environnements sonores urbains. La banque de données est identique à celle utilisée dans le cadre de l'expérience pilote \citep{lafay2013atiam,lafay2014new}. 
@@ -205,8 +203,6 @@ Trois expérimentateurs, un dans chaque pièce, sont présents durant la totalit
 
 Sur les 44 sujets, 40 réalisent l'expérience avec succès, produisant au final 80 scènes sonores simulées, dont 40 scènes idéales, et 40 scènes non idéales. 4 sont éliminés pour non respect et/ou incompréhension des consignes, d'une part, dépassement du temps, d'autre part.
 
-
-
 \subsubsection{Épreuve d'évaluation de l'agrément}
 \label{sec:ch5_planExpEvaA}
 
@@ -346,9 +342,7 @@ Concernant ces dernières, nous observons qu'il s'agit de classes très spécifi
 
 Nous voulons vérifier l'efficience de l'interface de sélection. Nous analysons les retours des sujets. $32.5\%$ d'entre eux indiquent spontanément que l'interface est un moyen ``\,simple et efficace\,'' de sélectionner des sons sans l'aide de texte. $57.5\%$ ne font pas mention de difficultés particulières, $10\%$ signalent enfin avoir rencontré des difficultés avec l'interface, sans toutefois que la simulation en ait été affectée.
 
-Nous en concluons que l'interface de sélection, sans texte, ne perturbe pas les sujets outre mesure. Un même constat avait été tiré de l'expérience pilote \citep{lafay2013atiam,lafay2014new}. \\
-
-\gl{TODO: vérifier une dernière fois}
+Nous en concluons que l'interface de sélection, sans texte, ne perturbe pas les sujets outre mesure. Un même constat avait été tiré de l'expérience pilote \citep{lafay2013atiam,lafay2014new}. 
 
 \subsubsection{Ergonomie de l'interface de simulation}
 
@@ -512,7 +506,6 @@ Concernant les événements sonores, 9 marqueurs sont identifiés sur l'ensemble
 
 Concernant les textures sonores, 5 marqueurs sont identifiés. Pour les i-scènes, il s'agit de classes faisant référence à des ambiances amorphes, calmes, (\emph{cour-intérieur/parc} et \emph{parc}). Pour les ni-scènes, il s'agit, comme pour les événements, de classes faisant référence à des bruits de travaux (\emph{travaux} et \emph{véhicule de travaux}), ainsi que d'une classe faisant référence au trafic (\emph{carrefour}).
 
-
 \gl{Bien que l'ensemble des marqueurs identifiés soient intuitifs, aucune des classes d'événements faisant directement référence aux bruits de véhicules motorisés n'est un marqueur, exception faite de la classe de texture \emph{carrefour}}. Pour représenter un trafic désagréable, les sujets ont porté leurs choix sur les classes \emph{klaxon} et \emph{sirène}. On peut supposer que les sons isolés de véhicules sont compris comme faisant partie intégrante de l'environnement urbain, et ne sont donc pas particulièrement associés à un environnement désagréable. \\ 
 
 \gl{TODO: ici analyse des caractéristiques des classes trafics} \\
@@ -577,17 +570,13 @@ En résumé, nous déduisons de cette analyse les points suivants:
 \item parmi les classes d'événements, seule une partie, \ie~les marqueurs sonores, sont nécessaires afin de faire la distinction entre les i- et ni-scènes.
 \end{enumerate}
 
-Maintenant que nous avons isolé les classes typiques des i- et ni-scènes, et vérifié que la distinction entre ces environnements dépendait de la présence de ces classes, il reste à voir si une description structurelle des scènes, basée uniquement sur ces marqueurs sonores, permet de caractériser l'agrément perçu, mieux qu'une description structurelle globale. \\
-
-%\gl{analyse marqueur texture ?}\\
-%\gl{HCA sur $S$, + ANOVA sur $\mathcal{A}_{scene}$}
+Maintenant que nous avons isolé les classes typiques des i- et ni-scènes, et vérifié que la distinction entre ces environnements dépendait de la présence de ces classes, il reste à voir si une description structurelle des scènes, basée uniquement sur ces marqueurs sonores, permet de caractériser l'agrément perçu, mieux qu'une description structurelle globale. 
 
 \begin{figure}[t]
         \myfloatalign
         \includegraphics[width=.8\linewidth]{gfx/ch_5/pa5_1}
        \caption[$P@5$ obtenues en considérant la matrice de dissimilarité résultant des distances par paires de Hamming calculées entre les vecteurs des descripteurs sémantiques des scènes.]{$P@5$ obtenues en considérant la matrice de dissimilarité résultant des distances par paires de Hamming calculées entre les vecteurs des descripteurs sémantiques des scènes. Les vecteurs sont construits en utilisant toutes les classes ($ET$), les classes d'événements ($E$), les classes de textures ($T$), les classes d'événements ne considérant que les marqueurs sonores ($E_m$), les classes d'événements ne considérant pas les marqueurs sonores $E_{w/o,m}$.}\label{fig:pa5}
 \end{figure}
-
 
 \subsection{L'influence spécifique des marqueurs sonores sur l'agrément perçu}
 
@@ -623,10 +612,10 @@ Considérons dans un premier temps les densités (\cf~Figures~\ref{fig:densityMa
 Concernant les niveaux sonores (\cf~Figures~\ref{fig:soundlevelMarker}), là encore les mêmes tendances sont observées entre $L_m$, $L(E)_m$ et $L(T)_m$, d'une part, et $L$, $L(E)$ et $L(T)$, d'autre part. Que l'on considère uniquement les marqueurs, ou l'ensemble des classes, il s'avère que :
 
 \begin{enumerate}
-\item Il existe une différence significative entre les niveaux des i- et ni-scènes ($L_m$, $L(E)_m$ et $L(T)_m$: $p<0.01$) 
-\item Le niveau sonore des scènes est majoritairement porté par les événements sonores, comparé aux textures sonores.
-\item Le niveau sonore des événements a une influence sur la perception de l'agrément pour les ni-scènes, mais pas pour les i-scènes.
-\item Le niveau sonore des textures ne joue aucun rôle dans la perception de l'agrément
+\item il existe une différence significative entre les niveaux des i- et ni-scènes ($L_m$, $L(E)_m$ et $L(T)_m$: $p<0.01$) ;
+\item le niveau sonore des scènes est majoritairement porté par les événements sonores, comparé aux textures sonores;
+\item le niveau sonore des événements a une influence sur la perception de l'agrément pour les ni-scènes, mais pas pour les i-scènes;
+\item le niveau sonore des textures ne joue aucun rôle dans la perception de l'agrément.
 \end{enumerate}
 
 En conclusion, le niveau des ni-marqueurs a une influence négative sur l'agrément pour les ni-scènes, en revanche le niveau des i-marqueurs n’impacte pas l'agrément perçu pour les i-scènes.
@@ -637,7 +626,7 @@ Par ailleurs, alors que $L(T)$ ne présentait pas de corrélation pour les ni-sc
 
 Pour finir, nous considérons un dernier groupe de descripteurs, nommément $L_m-L_b$, $L(E)_m-L(E)_b$ et $L(T)_m-L(T)_b$ (\cf~Figures~\ref{fig:soundlevelMarkerDiff}). Ces descripteurs expriment la différence entre les niveaux des marqueurs, et ceux des autres classes de sons. Ils traduisent l'émergence des marqueurs par rapport à la mixture sonore.
 
-Pour les i-scènes, une corrélation modéré et positive est observée pour $L_m-L_b$ ($r=0.67$, $p<0.01$) et $L(E)_m-L(E)_b$ ($r=0.66$, $p<0.01$). Pour les ni-scènes, aucune corrélation n'est observée. Dans le cas des i-scènes, ce n'est donc pas le niveau absolu des marqueurs qui importe, mais leur niveau relatif, par rapport aux autres sons qui composent la scène. On observe donc pour les environnements idéaux un double mécanisme perceptif: 
+Pour les i-scènes, une corrélation modérée et positive est observée pour $L_m-L_b$ ($r=0.67$, $p<0.01$) et $L(E)_m-L(E)_b$ ($r=0.66$, $p<0.01$). Pour les ni-scènes, aucune corrélation n'est observée. Dans le cas des i-scènes, ce n'est donc pas le niveau absolu des marqueurs qui importe, mais leur niveau relatif, par rapport aux autres sons qui composent la scène. On observe donc pour les environnements idéaux un double mécanisme perceptif: 
 
 \begin{itemize}
 \item plus le niveau absolu des sons n'étant pas des i-marqueurs est élevé, plus l'agrément est faible,
@@ -709,9 +698,6 @@ Pour les ni-scènes, le fait que nous observions des corrélations pour $L_m$ et
         {\includegraphics[width=.33\linewidth]{gfx/ch_5/xp_soundlevel_24}\label{fig:soundlevelMarkerDifff}}
        \caption{Dispersions des descripteurs structurels de niveaux sonores relatifs à la présence des marqueurs $L_m-L_b$ (a, d), $L(E)_m-L(E)_b$ (b, e) et $L(T)_m-L(T)_b$ (c, f), en fonction du type de scènes (a, b, c) et de l'agrément perçu $\mathcal{A}_{scene}$ de l'expérience 1.b (d, e, f).}\label{fig:soundlevelMarkerDiff}
 \end{figure}
-
-
-
 
 \subsection{Discussions}
 
@@ -800,7 +786,6 @@ La banque de données de stimuli compte 144 séquences de 30 secondes. Ces 144 s
 \item \emph{72 am-scènes}: les 72 scènes précédemment simulées, incluant les classes de marqueurs (am). Nous notons i/am-scenes, les 36 scènes idéales comprenant les marqueurs, et ni/am-scènes les 36 scènes non-idéales comprenant les marqueurs;
 \item \emph{72 sm-scènes}: les 72 scènes précédemment simulées, régénérées sans les classes de marqueurs (sm). Nous notons i/sm-scenes, les 36 scènes idéales générées sans les marqueurs, et ni/sm-scènes les 36 scènes non-idéales générées sans les marqueurs.
 \end{itemize}
-
 
 Nonobstant l'absence des marqueurs, les am- et sm-scènes sont en tout point semblables. 
 
@@ -1063,7 +1048,7 @@ Cette  expérience s'éloigne de la problématique de l'agrément perçu pour co
 
 L'objectif principal est entre autre de montrer que l’utilisation de scènes simulées permet d'aboutir à des résultats similaires que ceux obtenus avec des scènes enregistrées.
 
-Nous considérons notamment les résultats obtenus par \citep{maffiolo_caracterisation_1999} (\cf~Section~\ref{sec:ch3_catsoundscape}), qui montre que des scènes événementielles\footnote{Les scènes simulées de l'expérience 1.a peuvent être toutes considérées comme des scènes événementielles et non scènes amorphes} sont catégorisés suivant:
+Nous considérons notamment les résultats obtenus par \citep{maffiolo_caracterisation_1999} (\cf~Section~\ref{sec:ch3_catsoundscape}), qui montre que des scènes événementielles\footnote{Les scènes simulées de l'expérience 1.a peuvent être toutes considérées comme des scènes événementielles et non scènes amorphes} sont catégorisées suivant:
 
 \begin{itemize}
 \item les sources sonores présentes;
@@ -1086,7 +1071,7 @@ La banque de données de stimuli est composée des 72 scènes simulés (36 i-sc�
 Les sujets doivent catégoriser les 72 scènes en fonction de la consigne suivante:
 
 \begin{quote}
-``\,Regrouper les scènes qui vous semblent similaires entre elles.\,''
+``\,Regrouper entre elles les scènes qui vous semblent similaires.\,''
 \end{quote}
 
 La catégorisation est libre, les sujets peuvent former autant de groupes qu'ils le souhaitent, avec un minimum de deux. 
@@ -1116,8 +1101,6 @@ Le fait que les sujets soient déjà familiarisés avec les scènes à catégori
 \subsubsection{Nature des données analysées}
 \label{sec:ch5_dataXp3}
 
-\gl{TODO: normaliser cette histoire de descripteurs subjectifs}
-
 Dans un premier temps nous considérons de manière qualitative les stratégies de groupement suivies par les sujets. Ces stratégies sont objectivées en analysant les descriptions des groupes faites par les sujets.
 
 Pour décrire chaque scène, nous considérons les trois descripteurs utilisés pour les expériences 1 et 2 (\cf~Section~\ref{sec:ch5_dataType1}) à savoir:
@@ -1128,14 +1111,14 @@ Pour décrire chaque scène, nous considérons les trois descripteurs utilisés 
 \item \emph{descripteur structurel}.
 \end{itemize}
 
-A partir des descriptions verbales utilisées spontanément par les sujets pour décrire les groupes, nous isolons 2 nouveaux descripteurs, appelé descripteurs subjectifs, en opposition à ceux (objectif), relatif à la composition des scènes:
+A partir des descriptions verbales utilisées spontanément par les sujets pour décrire les groupes, nous isolons 2 nouveaux descripteurs, appelés descripteurs subjectifs, en opposition à ceux (objectifs), relatifs à la composition des scènes:
 
 \begin{itemize}
-\item \emph{descripteur sémantique subjectif}: relatif aux termes faisant références à des sources sonores;
-\item \emph{descripteur de qualité subjectif}: relatif aux termes faisant références aux qualités affectives des scènes (\eg~calme, plaisant).
+\item \emph{descripteur sémantique subjectif}: relatif aux termes faisant référence à des sources sonores;
+\item \emph{descripteur de qualité subjectif}: relatif aux termes faisant référence aux qualités affectives des scènes (\eg~calme, plaisant).
 \end{itemize}
 
-chaque sujet peut avoir utilisé un vocabulaire différents pour décrire les groupes. Afin d'établir un vocable de labels génériques, une analyse lexicale est pratiquée dans un premier sur l'ensemble des labels données par les sujets afin de 
+Chaque sujet peut avoir utilisé un vocabulaire différent pour décrire les groupes. Afin d'établir un vocable de labels génériques, une analyse lexicale est pratiquée dans un premier sur l'ensemble des labels données par les sujets afin de :
 
 \begin{enumerate}
 \item identifier les différents types de descriptions (\eg~sources, qualité affective, intensité sonore $\ldots$);
@@ -1169,13 +1152,13 @@ avec $N$ le nombre total de sujets. Il est a noter que les dissimilarités conte
 
 Une représentation arborée est utilisée afin de représenter les dissimilarités ainsi obtenues. Une Classification Ascendante Hiérarchique (CAH), utilisant la méthode d’agrégation de Ward est pratiquée sur $\Theta$  afin de faire émerger les tendances de groupement globales. Le dendrogramme résultant est affiché sur la Figure~\ref{fig:dendrogram}. 
 
-Plusieurs partitionnement peuvent être effectués à partir du dendrogramme. Au lieu de considérer une partition particulière, 6  partitions distinctes sont analysées. Ces partitions sont nommées respectivement $P(1)$,$P(2)$ $\ldots$ $P(6)$ et sont composées respectivement de 2,3 $\ldots$ 7 groupes. Nous notons $X_{P(Y)}$ le groupe $X$ de la partition $Y$ (\cf~Figure~\ref{fig:dendrogram}).
+Plusieurs partitionnements peuvent être effectués à partir du dendrogramme. Au lieu de considérer une partition particulière, 6  partitions distinctes sont analysées. Ces partitions sont nommées respectivement $P(1)$,$P(2)$ $\ldots$ $P(6)$ et sont composées respectivement de 2,3 $\ldots$ 7 groupes. Nous notons $X_{P(Y)}$ le groupe $X$ de la partition $Y$ (\cf~Figure~\ref{fig:dendrogram}).
 
 Pour chaque partition, il s'agit d'observer les descripteurs rendant compte des groupements effectués. 
 
-La capacité des classes (respectivement labels) des descripteurs sémantiques objectifs (respectivement subjectifs) à caractériser un groupe est évaluée via un V-test en appliquant une correction de Bonferroni pour tenir compte du nombre de classes (respectivement labels) élevé (\cf~Section~\ref{sec:ch5_methodoEtStat1}). Contrairement à l'expérience 1, le seuil de significativité est fixé à $\alpha=10\%$.
+La capacité des classes (respectivement labels) des descripteurs sémantiques objectifs (respectivement subjectifs) à caractériser un groupe est évaluée via un V-test en appliquant une correction de Bonferroni pour tenir compte du nombre de classes (respectivement labels) élevé (\cf~Section~\ref{sec:ch5_methodoEtStat1}). Contrairement à l'expérience 1, le seuil de significativité est fixé à $\alpha=0.01$.
 
-Pour les descripteurs structurels et perceptifs, l'existence de différences significatives entre les groupes est testée à l'aide d'une ANOVA à un facteur (\cf~Annexe~\ref{app:anova}), le nombre de niveaux du facteur étant égale au nombre de groupes. Le seuil de significativité est fixé à $\alpha=5\%$. L'analyse \emph{post hoc} est effectuée en suivant la procédure de Bonferroni. Notons que pour la partition 1, composée de 2 groupes ($1_{P(1)}$ et $2_{P(1)}$), le test se ramène à un test de Student à deux populations(\cf~Annexe~\ref{app:student}).
+Pour les descripteurs structurels et perceptifs, l'existence de différences significatives entre les groupes est testée à l'aide d'une ANOVA à un facteur (\cf~Annexe~\ref{app:anova}), le nombre de niveaux du facteur étant égale au nombre de groupes. Le seuil de significativité est fixé à $\alpha=0.01\%$. L'analyse \emph{post hoc} est effectuée en suivant la procédure de Tukey-Kramer. Notons que pour la partition 1, composée de 2 groupes ($1_{P(1)}$ et $2_{P(1)}$), le test se ramène à un test de Student à deux populations(\cf~Annexe~\ref{app:student}).
 
 \subsection{Stratégie de catégorisation}
 
@@ -1200,7 +1183,7 @@ sujet    & source & qualité & intensité & fréquence & \# Groupes \\
 \label{tab:StratSate}
 \end{table}
 
-En fonction des descriptions des sujets, nous relevons 5 stratégies de catégorisation (\cf~Tableau~\ref{tab:StratSate}), opérant respectivement suivant les sources, les qualités affectives, l'intensité sonore (``\,fort\,''/``\,faible\,'' ou ``\,silence\,'') et enfin le contenu fréquentielle (``\,haute fréquence\,'' / ``\,basse fréquence\,''). 
+En fonction des descriptions des sujets, nous relevons 5 stratégies de catégorisation (\cf~Tableau~\ref{tab:StratSate}), opérant respectivement suivant les sources, les qualités affectives, l'intensité sonore (``\,fort\,''/``\,faible\,'' ou ``\,silence\,'') et enfin le contenu fréquentiel (``\,haute fréquence\,'' / ``\,basse fréquence\,''). 
 
 Les termes ``\,parc\,'' et ``\,marché\,'' ont également été utilisés. Ces derniers font références à des lieux plutôt qu'à des sources. Néanmoins, ils sont les seuls dans ce cas. De plus, il est possible de les relier à un groupe de sources. Enfin, ils correspondent directement à deux classes de sons de textures des scènes simulées. Ainsi, nous considérons ici ces termes comme des descriptions de sources sonores.
 
@@ -1268,7 +1251,7 @@ rain (2)              &                         &                        & \\
 
 L'intensité n'ayant été considérée que par un seul sujet (sujet 6), seul les stratégies basées sur les sources et les qualités affectives perçues sont considérées plus avant.
 
-Pour chacune de ces stratégies, nous relevons les termes utilisés par les sujets pour décrire les groupes. En ce qui concerne les sources, plusieurs termes semblent faire référence à une même entité. Ces termes sont regroupés sous une seule appellation. Les termes relevées, ainsi que les groupements effectués suite à l'analyse des champs lexicaux des sources sonores identifiées, sont affichés sur le tableau~\ref{tab:association}.
+Pour chacune de ces stratégies, nous relevons les termes utilisés par les sujets pour décrire les groupes. En ce qui concerne les sources, plusieurs termes semblent faire référence à une même entité. Ces termes sont regroupés sous une seule appellation. Les termes relevés, ainsi que les groupements effectués suite à l'analyse des champs lexicaux des sources sonores identifiées, sont affichés sur le tableau~\ref{tab:association}.
 
 Comme évoqué à la section~\ref{sec:ch5_dataXp3}, chaque scène hérite des labels utilisés pour décrire le groupe auquel elle appartient. La liste de l'ensemble des labels attachés à une scène en considérant l'ensemble des sujets forme un descripteur subjectif. Au vu des stratégies de catégorisation utilisées par les sujets, 2 descripteurs subjectifs sont considérées:
 
@@ -1279,13 +1262,13 @@ Comme évoqué à la section~\ref{sec:ch5_dataXp3}, chaque scène hérite des la
 
 La figure~\ref{fig:countLabel} affiche le nombre de scènes étant décrites par chaque label, en considérant respectivement $S$ (\cf~Figure~\ref{fig:countLabelSourceTot} et~\ref{fig:countLabelSourceIni}) et $Q$ (\cf~Figure~\ref{fig:countLabelQualiTot} et~\ref{fig:countLabelQualiIni}).
 
-Considérons en premier lieu les labels des sources sonores (\cf~Figure~\ref{fig:countLabelSourceTot}). Les sujets décrivent les sources en considérant plusieurs niveaux d'abstractions, allant de plus concret (footstep, bird) au plus abstrait (``\,human\,'', ``\,nature\,''). 2 labels font référence à des classes de sons ambiguës, ne pouvant être directement liées à une source en particulier: bruit et fond sonore. 2 labels ont été utilisés pour décrire plus de 50\% du corpus: ``\,traffic\,'' et ``\,construction\,''. 
+Considérons en premier lieu les labels des sources sonores (\cf~Figure~\ref{fig:countLabelSourceTot}). Les sujets décrivent les sources en considérant plusieurs niveaux d'abstractions, allant de plus concret (``\,footstep\,'', ``\,bird\,'') au plus abstrait (``\,human\,'', ``\,nature\,''). 2 labels font référence à des classes de sons ambiguës, ne pouvant être directement liées à une source en particulier: ``\,bruit\,'' et ``\,fond sonore\,''. 2 labels sont utilisés pour décrire plus de 50\% du corpus: ``\,traffic\,'' et ``\,construction\,''. 
 
-Les labels de sources font clairement la distinction entre les i- et ni-scènes (\cf~Figure~\ref{fig:countLabelQualiIni}). Nous notons cependant quelques différences entre ces labels et la répartition des classes de sons utilisées pour simuler les scènes (\cf~Figure~\ref{fig:soundsource}).  En effet les labels ``\,human\,'' et ``\,footstep\,'' ont majoritairement été utilisés pour décrire les i-scènes, alors les classes \emph{footstep} et \emph{voice} sont bien présentes dans les ni-scènes, et que ces dernières ne présentent pas de différences notables entre les i- et ni- scènes au niveau de leurs descripteurs structurels (\gl{TODO: chiffre}). 
+Les labels de sources font clairement la distinction entre les i- et ni-scènes (\cf~Figure~\ref{fig:countLabelQualiIni}). Nous notons cependant quelques différences entre ces labels et la répartition des classes de sons utilisées pour simuler les scènes (\cf~Figure~\ref{fig:soundsource}).  En effet les labels ``\,human\,'' et ``\,footstep\,'' sont majoritairement utilisés pour décrire les i-scènes, alors les classes \emph{footstep} et \emph{voice} sont bien présentes dans les ni-scènes, et que ces dernières ne présentent pas de différences notables entre les i- et ni- scènes au niveau de leurs descripteurs structurels (\gl{TODO: chiffre}). 
  
-Il est remarquable de constater que 44\% des labels utilisé (50\% si l'on fait l'association entre le label ``\,traffic\,'' et la classe \emph{crossroad}) font directement références aux marqueurs sonores établi dans l'expérience 1 (\cf~Section~\ref{sec:ch5_marqueurXp1}). Les marqueurs étant les classes de sons les plus représentées dans les i- et ni-scènes, ce fait était prévisible.
+Il est remarquable de constater que 44\% des labels utilisés (50\% si l'on fait l'association entre le label ``\,traffic\,'' et la classe \emph{crossroad}) font directement référence aux marqueurs sonores établis dans l'expérience 1 (\cf~Section~\ref{sec:ch5_marqueurXp1}). Les marqueurs étant les classes de sons les plus représentées dans les i- et ni-scènes, ce fait était prévisible.
 
-Considérons maintenant les labels des qualités affectives perçues (\cf~Figure~\ref{fig:countLabelQualiTot}). Ces derniers font directement  références aux indicateurs perceptifs habituellement utilisés par la communauté travaillant sur les paysages sonores pour caractériser les environnements sonores (\cf~Section~\ref{sec:descripteursPercetifs}), à savoir:
+Considérons maintenant les labels des qualités affectives perçues (\cf~Figure~\ref{fig:countLabelQualiTot}). Ces derniers font directement  référence aux indicateurs perceptifs habituellement utilisés par la communauté travaillant sur les paysages sonores pour caractériser les environnements sonores (\cf~Section~\ref{sec:descripteursPercetifs}), à savoir:
 
 \begin{itemize}
 \item l'agrément (unpleasant, very unpleasant)
@@ -1293,9 +1276,9 @@ Considérons maintenant les labels des qualités affectives perçues (\cf~Figure
 \item la gêne (bearable, annoying, tiresome, oppressive, unbearable)
 \end{itemize}
 
-Deux derniers groupes de termes enfin semblent faire référence à la nature prédictible de l'environnement (usual, unpredictitable), ainsi qu'à la structure temporelle de ce dernier (agitated). 
+Deux derniers groupes de termes semblent faire référence à la nature prédictible de l'environnement (``\,usual\,'', ``\,unpredictitable\,''), ainsi qu'à la structure temporelle de ce dernier (``\,agitated\,''). 
 
-Nous notons que les labels liés à l'agrément, au calme et à la gêne font clairement la distinction entre les i- et ni-scènes (\cf~Figure~\ref{fig:countLabelQualiIni}). Cette distinction est moins marquée en ce qui concerne les labels usual (5.5\% de ni-scènes~\vs 11\% de i-scènes) et unpredictitable (33\% de ni-scènes~\vs 53\% de i-scènes).
+Nous notons que les labels liés à l'agrément, au calme et à la gêne font clairement la distinction entre les i- et ni-scènes (\cf~Figure~\ref{fig:countLabelQualiIni}). Cette distinction est moins marquée en ce qui concerne les labels ``\,usual\,'' (5.5\% de ni-scènes~\vs 11\% de i-scènes) et ``\,unpredictitable\,'' (33\% de ni-scènes~\vs 53\% de i-scènes).
 
 \subsection{Partitions et descripteurs sémantiques subjectifs}
 
@@ -1401,19 +1384,19 @@ calm                 & relaxing  & relaxing & unpleasant  & usual       &       
 
 Les résultats de la CAH pratiquée sur $\Theta$ sont affichés à la figure~\ref{fig:dendrogram}. Pour chaque partition ($P(1)$,$P(2)$ $\ldots$ $P(6)$) un V-test est pratiqué en considérant séparément les deux descripteurs sémantiques subjectifs ($S$ et $Q$). Les résultats sont affichés sur le tableau~\ref{tab:markerHacSource} pour $S$ et le tableau~\ref{tab:markerHacQualite} pour $Q$.
 
-Concernant les groupements effectués, on constate que $P(1)$ correspond largement à la distinction entre les i et ni-scènes. Comme nous l'avions évoqué, ce fait était prévisible, la catégorisation étant un phénomène soumis à un contexte sensoriel.
+Concernant les groupements effectués, on constate que $P(1)$ correspond largement à la distinction entre les i et ni-scènes: $1_{P(1)}$ ne comporte que des i-scènes, tandis que $2_{P(1)}$ est majoritairement composé de ni-scènes.
 
-Considérons le descripteur $S$ (\cf~Tableau~\ref{tab:markerHacSource}). La première partition $P(1)$ fait la distinction entre d'un coté les sons humains, naturels et de cloches ($1_{P(1)}$) et de l'autre les sons de construction, de trafics et les alarmes ($2_{P(1)}$). Dans $P(2)$, le groupe des scènes idéales $1_{P(1)}$ est subdivisé suivant d'un coté les sons humains et de cloches ($1_{P(2)}$), et de l'autre les sons naturels ($2_{P(2)}$).  Dans $P(3)$, c'est le groupe des ni-scènes $3_{P(2)}$ (similaire à $2_{P(1)}$) qui est subdivisé suivant d'un coté les sons de construction et de trafic ($3_{P(3)}$), et de l'autre les sons de sirène et d'alarme ($3_{P(4)}$). Dans $P(4)$, le groupe $1_{P(3)}$ (similaire à $1_{P(2)}$) est subdivisé en distinguant entre les sons de cloches et les sons humains.
+Considérons le descripteur $S$ (\cf~Tableau~\ref{tab:markerHacSource}). La première partition $P(1)$ fait la distinction entre d'un coté les sons humains, naturels et de cloches ($1_{P(1)}$) et de l'autre les sons de construction, de trafics et les alarmes ($2_{P(1)}$). Dans $P(2)$, le groupe des i-scènes $1_{P(1)}$ est subdivisé suivant d'un coté les sons humains et de cloches ($1_{P(2)}$), et de l'autre les sons naturels ($2_{P(2)}$).  Dans $P(3)$, c'est le groupe des ni-scènes $3_{P(2)}$ (similaire à $2_{P(1)}$) qui est subdivisé suivant d'un coté les sons de construction et de trafic ($3_{P(3)}$), et de l'autre les sons de sirène et d'alarme ($3_{P(4)}$). Dans $P(4)$, le groupe $1_{P(3)}$ (similaire à $1_{P(2)}$) est subdivisé en distinguant entre les sons de cloches et les sons humains.
 
-Pour $P(5)$ et $P(6)$, seuls le groupe $4_{P(4)}$, relatifs au ni-scènes et représenté par les labels ``\,construction\,'' et ``\,traffic\,'' est subdivisé. Cependant, aucune de ces subdivisions ne semble s'appuyer sur un label en particulier. En effet, aucun label n'est reconnu par le V-test comme étant caractéristique des groupes $5_{P(5)}$, $5_{P(6)}$ et $5_{P(6)}$. Seul le groupe $4_{P(6)}$ semble dépendre du label ``\,horn\,''. 
+Pour $P(5)$ et $P(6)$, seul le groupe $4_{P(4)}$, relatif aux ni-scènes et représenté par les labels ``\,construction\,'' et ``\,traffic\,'' est subdivisé. Cependant, aucune de ces subdivisions ne semblent s'appuyer sur un label en particulier. En effet, aucun label n'est reconnu par le V-test comme étant caractéristique des groupes $5_{P(5)}$, $5_{P(6)}$ et $5_{P(6)}$. Seul le groupe $4_{P(6)}$ semble dépendre du label ``\,horn\,''. 
 
-Ainsi, le descripteur sémantique subjectif relatif aux sources ne rend compte du partitionnement que jusqu'à $P(4)$. Les partitions plus profondes doivent dépendre d'autres descripteurs.
+Le descripteur sémantique subjectif relatif aux sources ne rend ainsi compte du partitionnement que jusqu'à $P(4)$.
 
 Considérons maintenant le descripteur $Q$ (\cf~Tableau~\ref{tab:markerHacSource}). $P(1)$ fait la distinction entre d'un coté les qualités positives, dominées par les labels ``\,calm\,'' et ``\,relaxing\,'' ($1_{P(1)}$), et de l'autre les qualités négatives, dominées par les labels ``\,annoying\,'' et ``\,unpleasant\,'' ($2_{P(1)}$). La partition $P(2)$ subdivise les qualités positives ($1_{P(1)}$) en faisant la distinction entre celles relatives au calme et à la tranquillité ($1_{P(2)}$), et celles relatives à l'aspect régénératif (relaxant, reposant) des scènes ($2_{P(2)}$). Par ailleurs le terme bucolique de $2_{P(2)}$ fait directement écho aux labels de sources de ce même groupes, labels décrivant des sons d'origines naturels.  La distinction opérée à la partition $P(3)$ est principalement fonction de l'agrément: les scènes de $3_{P(3)}$ étant caractérisées par ``\,unpleasant\,'' et celles de  $3_{P(4)}$ par ``\,very unpleasant\,''.  $3_{P(4)}$ conserve par ailleurs les qualités  ``\,unbearable\,'',``\,tiresome\,'' et ``\,oppressant\,''. Enfin, c'est à ce niveau que l'impression de la structure temporelle des scènes fait son apparition,  ``\,agitated\,'' étant caractéristique de $3_{P(3)}$. Au niveau $P(4)$, la qualité ``\,calm\,'' des scènes de $1_{P(3)}$ (similaire à $1_{P(2)}$) se subdivise entre d'un coté les scènes moyennement calmes/calmes ($1_{P(4)}$), et de l'autre les scènes calmes/très calmes ($2_{P(4)}$). Le label relaxant est également associé au groupe $2_{P(5)}$.
 
 Au niveau $P(5)$, le groupe $4_{P(4)}$ se subdivise entre le groupe $4_{P(5)}$ et $5_{P(5)}$. Les qualités de $4_{P(4)}$  (``\,unpleasant\,'' et ``\,agitated\,'') sont cependant entièrement conservées par $4_{P(5)}$,  $5_{P(5)}$ étant caractérisé par ``\,oppressant\,''.
 
-Nous pouvons synthétisés ces résultats comme suit:
+Nous pouvons synthétiser ces résultats comme suit:
 
 \begin{itemize}
 \item $P(1)$ fait la distinction entre les qualités positives et celles négatives;
@@ -1424,9 +1407,9 @@ Nous pouvons synthétisés ces résultats comme suit:
 Comparons maintenant $Q$ et $S$. Contrairement à $S$, le descripteur $Q$ permet de caractériser l'ensemble des groupes,  $5_{P(5)}$,  $5_{P(6)}$ et  $6_{P(6)}$ n'étant décrits que par les qualités perçues \gl{TODO: citation de résultats similaires}. Au vu de la co-occurence des labels, il est possible de faire des liens entre les qualités perçues, et les sources sonores utilisées pour décrire les scènes:
 
 \begin{itemize}
-\item ``\,calm\,'' ($1_{P(2)}$)~\vs ``\,relaxing\,'' ($2_{P(2)}$): la qualité ``\,relaxing\,'' est liée au sons d'origine naturels, la qualité ``\,calm\,'' au son d'origine humain et de cloche. Notons que la qualité ``\,relaxing\,'' appairait également dans $2_{P(4)}$, simultanément à l'apparition du label ``\,nature\,'';
-\item ``\,medium calm\,''/``\,calm\,'' ($1_{P(4)}$)~\vs ``\,calm\,''/``\,very calm\,'' ($2_{P(4)}$): la qualité ``\,medium calm\,''/``\,calm\,'' est liée aux sons de cloches, et la qualité ``\,calm\,''/``\,very calm\,'' aux sons d'origine humaine;
-\item ``\,unpleasant\,'' ($3_{P(3)}$)~\vs ``\,very unpleasant\,'' ($4_{P(3)}$): les sources ``\,construction\,'' et ``\,traffic\,'' sont liés à ``\,unpleasant\,'' alors que ceux sont les sons ``\,alarm\,'' et ``\,siren\,'' qui correspondent à ``\,unpleasant\,''. Notons cependant que les sons ``\,horn\,'' et ``\,alarm\,'' ($4_{P(6)}$) sont également liés aux qualités ``\,unpleasant\,'' et ``\,bearable\,''.
+\item ``\,calm\,'' ($1_{P(2)}$)~\vs ``\,relaxing\,'' ($2_{P(2)}$): la qualité ``\,relaxing\,'' semble liée aux sons d'origine naturels et la qualité ``\,calm\,'' aux sons d'origine humaine et de cloche. Notons que la qualité ``\,relaxing\,'' appairait également dans $2_{P(4)}$, simultanément à l'apparition du label ``\,nature\,'';
+\item ``\,medium calm\,''/``\,calm\,'' ($1_{P(4)}$)~\vs ``\,calm\,''/``\,very calm\,'' ($2_{P(4)}$): la qualité ``\,medium calm\,''/``\,calm\,'' semble liée aux sons de cloches, et la qualité ``\,calm\,''/``\,very calm\,'' aux sons d'origine humaine;
+\item ``\,unpleasant\,'' ($3_{P(3)}$)~\vs ``\,very unpleasant\,'' ($4_{P(3)}$): les sources ``\,construction\,'' et ``\,traffic\,'' semblent liées à ``\,unpleasant\,'', alors que les sources ``\,alarm\,'' et ``\,siren\,'' semblent correspondre à ``\,unpleasant\,''. Notons cependant que les sons ``\,horn\,'' et ``\,alarm\,'' ($4_{P(6)}$) sont également liés aux qualités ``\,unpleasant\,'' et ``\,bearable\,''.
 \end{itemize}
 
 \subsection{Partitions et descripteurs sémantiques objectifs}
@@ -1509,31 +1492,31 @@ church bell$_{1,2,3}^E$  & footstep$_{1}^E$        & bell bike$_{1,2,3}^E$ &    
 
 Nous analysons les descripteurs sémantiques objectifs, \ie~les classes utilisées pour simuler les scènes. Le tableau~\ref{tab:markerHacClass} affiche les résultats des V-tests pratiqués sur les descripteurs sémantiques objectifs pour chaque partition.
 
-Sans surprise, la distinction opérée par $P(1)$ dépend des i et ni-marqueurs relevées à l'expérience 1 (\cf~Section~\ref{sec:ch5_marqueurXp1}), exception faite de la classe d'événement \emph{male footsteps concrete}. Notons par ailleurs la présence de la classe d'événement \emph{bike} dans le groupe $1_{P(1)}$, classe n'étant pas un marqueur.
+Sans surprise, la distinction opérée par $P(1)$ dépend des i et ni-marqueurs relevées à l'expérience 1 (\cf~Section~\ref{sec:ch5_marqueurXp1}), exception faite de la classe marquer d'événement \emph{male footsteps concrete} qui n'apparaît dans aucun groupe. Notons par ailleurs la présence de la classe d'événement \emph{bike} dans le groupe $1_{P(1)}$, classe n'étant pas un marqueur.
 
-Considérons en premier les groupes relatif aux i-scènes. Considérant les classes d'événements, la partitionnement entre $1_{P(2)}$ et $2_{P(2)}$ sépare d'un coté  ($1_{P(2)}$) les classes de sons de cloches et d'origine humaine, et de l'autre ($2_{P(2)}$) les classes de sons d'origine naturel, de \emph{boats} et de \emph{bell bike}. Notons l'apparition du marqueur \emph{male footsteps concrete} dans $1_{P(2)}$. Au niveau des textures, les classes \emph{park} (sons d'origine naturel)  et \emph{courtyard}  sont caractéristiques de $1_{P(2)}$. Le partitionnement entre  $1_{P(4)}$ et $2_{P(4)}$ sépare lui les classes d'événements de cloches des classes d'événements d'origine humaine.  Les classes textures \emph{courtyard park} et \emph{crowd foreigners} sont caractéristiques de $2_{P(4)}$.
+Considérons en premier les groupes relatifs aux i-scènes. Considérant les classes d'événements, la partitionnement entre $1_{P(2)}$ et $2_{P(2)}$ sépare d'un coté  les classes de sons de cloches et d'origine humaine ($1_{P(2)}$), et de l'autre les classes de sons d'origine naturelle, de \emph{boats} et de \emph{bell bike} ($2_{P(2)}$). Notons l'apparition du marqueur \emph{male footsteps concrete} dans $1_{P(2)}$. Au niveau des textures, les classes \emph{park} (sons d'origine naturelle)  et \emph{courtyard}  sont caractéristiques de $1_{P(2)}$. Le partitionnement entre  $1_{P(4)}$ et $2_{P(4)}$ sépare lui les classes d'événements de cloches des classes d'événements d'origine humaine.  Les classes textures \emph{courtyard park} et \emph{crowd foreigners} sont caractéristiques de $2_{P(4)}$.
 
-Considérons maintenant les groupes relatifs aux ni-scènes. Seule la classe de texture \emph{works} semble déterminer les partitionnements $P(3)$ et $P(4)$, les autres classes étant équitablement réparties entre les deux groupes ($3_{P(3)}$/$4_{P(3)}$ ou $4_{P(4)}$/$5_{P(4)}$). Considérant les partitionnement  $P(5)$ et $P(6)$, seuls les groupes $5_{P(5)}$ et $6_{P(6)}$ semblent être caractérisés par la présence de classes, ces dernières étant relatives à des outils mécaniques (\emph{power tools} et \emph{power drill}) pour les événements et \emph{cafe} pour les textures.
+Considérons maintenant les groupes relatifs aux ni-scènes. Seule la classe de texture \emph{works} semble déterminer les partitionnements $P(3)$ et $P(4)$, les autres classes étant équitablement réparties entre les deux groupes ($3_{P(3)}$/$4_{P(3)}$ ou $4_{P(4)}$/$5_{P(4)}$). Considérant les partitionnements  $P(5)$ et $P(6)$, seuls les groupes $5_{P(5)}$ et $6_{P(6)}$ semblent être caractérisés par la présence de classes, ces dernières étant relatives à des outils mécaniques (\emph{power tools} et \emph{power drill}) pour les événements et \emph{cafe} pour les textures.
 
-Comparant maintenant ces résultats à ceux obtenus par les descripteurs sémantiques subjectifs. Pour les groupes relatifs aux i-scènes, il existe une correspondance remarquable entre les labels données par les sujets et les classes utilisées pour simuler les scènes. Les différences sont:
+Comparant maintenant ces résultats à ceux obtenus par les descripteurs sémantiques subjectifs. Pour les groupes relatifs aux i-scènes, il existe une correspondance remarquable entre les labels donnés par les sujets et les classes utilisées pour simuler les scènes. Les différences sont:
 
 \begin{itemize}
 \item les classes \emph{boats} et \emph{bell bike} ($2_{P(2,3)}$ et $3_{P(4,5,6)}$) qui n’apparaissent pas dans les labels;
-\item le label ``\,market\,'' ($1_{P(1,2,3)}$ et $2_{P(4,5,6)}$) qui n’apparaissent pas dans les classes.
+\item le label ``\,market\,'' ($1_{P(1,2,3)}$ et $2_{P(4,5,6)}$) qui n'apparaît pas dans les classes.
 \end{itemize} 
 
 Notons que si le label ``\,nature\,'' ($2_{P(4,5,6)}$) peut faire référence aux classes de texture \emph{courtyard park} et \emph{park},  la classe correspondant au label ``\,park\,'' ($2_{P(2,3)}$, $3_{P(4,5,6)}$) est moins évidente. On peut penser que ce label est le résultat de l'interprétation de la présence de la classe \emph{birds}.
 
-Pour les groupes relatifs aux ni-scènes, les correspondances sont évidentes pour les partitions $P(1)$ et $P(2)$. Cependant à partir de la partition $P(3)$, les relations entre classes et labels sont plus ténues. Pour les labels ``\,alarm\,'' et ``\,siren\,'' ($4_{P(3)}$, $5_{P(4)}$, $6_{P(5)}$ et $7_{P(6)}$), aucune classe n'est présente. A l'inverse, aucun label n'est présent  pour les classes ``\,power tools\,'', ``\,power drill\,'' et  ``\,cafe\,'' ($5_{P(5)}$ et $6_{P(6)}$). Cependant, il possible maintenant de faire le lien entre ces classes et la qualité ``\,oppressive\,'' ($5_{P(5)}$ et $6_{P(6)}$).
+Pour les groupes relatifs aux ni-scènes, les correspondances sont évidentes pour les partitions $P(1)$ et $P(2)$. Cependant à partir de la partition $P(3)$, les relations entre classes et labels sont plus ténues. Pour les labels ``\,alarm\,'' et ``\,siren\,'' ($4_{P(3)}$, $5_{P(4)}$, $6_{P(5)}$ et $7_{P(6)}$), aucune classe n'est présente. A l'inverse, aucun label n'est présent  pour les classes ``\,power tools\,'', ``\,power drill\,'' et  ``\,cafe\,'' ($5_{P(5)}$ et $6_{P(6)}$). Cependant, il est possible maintenant de faire le lien entre ces classes et la qualité ``\,oppressive\,'' ($5_{P(5)}$ et $6_{P(6)}$).
 
 Notons enfin le groupe $5_{P(6)}$ où aucune classe et aucun label n'est relevé, le groupe étant seulement caractérisé par les qualités ``\,unpleasant\,'' et ``\,usual\,''.
 
-Le fait que les labels et les classes concordent jusqu'à la partition $P(2)$ nous permets de conclure que les premiers groupement s'opèrent bien suivant la présence des sources. Cette stratégie perdure pour les groupes relatif aux i-scènes. Pour ces dernières, les qualités affectives ne semblent qu'être une conséquence de la présence des classes (sons naturel $\Rightarrow$ environnement relaxant et bucolique). Pour les groupes relatifs aux ni-scènes, les résultats obtenus soulèvent trois questions:
+Le fait que les labels et les classes concordent jusqu'à la partition $P(2)$ nous permets de conclure que les premiers groupement s'opèrent bien suivant la présence des sources. Cette stratégie perdure pour les groupes relatifs aux i-scènes. Pour ces dernières, les qualités affectives ne semblent qu'être une conséquence de la présence des classes (sons naturel $\Rightarrow$ environnement relaxant et bucolique). Pour les groupes relatifs aux ni-scènes, les résultats obtenus soulèvent trois questions:
 
 \begin{enumerate}
-\item Présence de labels et absences de classes ($4_{P(3)}$, $5_{P(4)}$, $6_{P(5)}$ et $7_{P(6)}$): Pourquoi les sujets ont-ils relevé des classes ne sont pas caractéristiques des scènes à décrire, \ie~des classes qui sont également présentes sur d'autres scènes ? Une hypothèse est que les caractéristiques structurels de ces classes (intensité sonore, densité d'événements), sont saillante pour les scènes du groupe décrit.
-\item Présence de classes et absences de labels ($5_{P(5)}$ et $6_{P(6)}$): Pourquoi les sujets n'ont-ils pas relevé des classes caractéristiques des scènes à décrire, \ie~majoritairement présente sur ces dernières ? Ce cas n’appairait que pour les classes ``\,power tools\,'', ``\,power drill\,'' et  ``\,cafe\,''. Pour les deux premières on peut supposer que le niveau d'abstraction des classes est trop précis, les sujets interprétant ``\,power tools\,'' et ``\,power drill\,'' comme appartenant à la classe construction, sans faire de distinction particulière. Cette classe n'étant plus caractéristique des groupes relatifs aux ni-scènes à partir de la partition $P(3)$, il est normal que les sujets ne s'appuie plus sur la présence de ces classes pour décrire des groupes.
-\item Présence des qualités et absences de labels et de classes ($5_{P(6)}$): A partir de quels descripteurs les sujets ont pu reconnaître des qualités affectives particulières aux scènes du groupe $5_{P(6)}$ ? Comme pour la question 1, on peut supposer que cette distinction s'opère suivant les descripteurs structurels de ces scènes. Cependant, notons que parmi les deux qualités affectées au groupe $5_{P(6)}$, la première, ``\,unplesant\,'', est également caractéristique des classes des partitions supérieures de $5_{P(6)}$ ($4_{P(5)}$ et $4_{P(4)}$) ainsi que d'une des classes du même niveau ($4_{P(6)}$), soulignant \emph{de facto} la faible capacité de ce descripteur à particulariser $5_{P(6)}$. La deuxième, ``\,usual\,'' illustre l'aspect normal, voire standard des scènes urbaines du groupe $5_{P(6)}$. Il est potentiellement difficile de rendre compte d'une telle qualité neutre à partir de descripteurs structurels.
+\item présence des labels et absences des classes ($4_{P(3)}$, $5_{P(4)}$, $6_{P(5)}$ et $7_{P(6)}$): Pourquoi les sujets ont-ils relevé des classes qui ne sont pas caractéristiques des scènes à décrire, \ie~des classes qui sont également présentes sur d'autres scènes ? Une hypothèse est que les caractéristiques structurels de ces classes (intensité sonore, densité d'événements), sont saillantes pour les scènes du groupe décrit.
+\item présence des classes et absences des labels ($5_{P(5)}$ et $6_{P(6)}$): Pourquoi les sujets n'ont-ils pas relevé les classes caractéristiques des scènes à décrire, \ie~majoritairement présente sur ces dernières ? Ce cas n’appairait que pour les classes ``\,power tools\,'', ``\,power drill\,'' et  ``\,cafe\,''. Pour les deux premières on peut supposer que le niveau d'abstraction des classes est trop précis, les sujets interprétant ``\,power tools\,'' et ``\,power drill\,'' comme appartenant à la classe construction, sans faire de distinction particulière. Cette classe n'étant plus caractéristique des groupes relatifs aux ni-scènes à partir de la partition $P(3)$, il est normal que les sujets ne s'appuie plus sur la présence des classes ``\,power tools\,'', ``\,power drill\,'' pour décrire des groupes.
+\item présence des qualités et absences des labels et des classes ($5_{P(6)}$): A partir de quels descripteurs les sujets ont pu reconnaître des qualités affectives particulières aux scènes du groupe $5_{P(6)}$ ? Comme pour la question 1, on peut supposer que cette distinction s'opère suivant les descripteurs structurels de ces scènes. Cependant, notons que parmi les deux qualités affectées au groupe $5_{P(6)}$, la première, ``\,unplesant\,'', est également caractéristique des classes des partitions supérieures de $5_{P(6)}$ ($4_{P(5)}$ et $4_{P(4)}$) ainsi que d'une des classes du même niveau ($4_{P(6)}$), soulignant \emph{de facto} la faible capacité de ce descripteur à particulariser $5_{P(6)}$. La deuxième, ``\,usual\,'' illustre l'aspect normal, voire standard des scènes urbaines du groupe $5_{P(6)}$. Il est potentiellement difficile de rendre compte d'une telle qualité neutre à partir de descripteurs structurels.
 \end{enumerate}
 
 Enfin, nous relevons que, comme observé pour les expériences 1 et 2, la perception des scènes est fonction de leur qualité (i/ni).
@@ -1566,27 +1549,30 @@ $D(E)$                & $F[3,68]=2$  & $F[4,67]=2.5$ & $F[5,66]=2.1$ & $F[6,65]=
 \label{tab:ANOVAhac}
 \end{table}
 
-Nous considérons dans un premier temps le descripteur perceptif $\mathcal{A}_{scene}$. Les résultats des ANOVA pratiquées les différentes partitions sont affichées sur le tableau~\ref{tab:ANOVAhac}. Nous ne considérons que les groupements effectués à partir de la partition $P(3)$, les partitions supérieurs étant entièrement déterminé par les descripteurs subjectifs sémantiques $S$ et $Q$. 
+Nous considérons dans un premier temps le descripteur perceptif $\mathcal{A}_{scene}$. Les résultats des ANOVA pratiquées sur les différentes partitions sont affichés sur le tableau~\ref{tab:ANOVAhac}. Nous ne considérons que les groupements effectués à partir de la partition $P(3)$, les partitions supérieures étant entièrement déterminées par les descripteurs subjectifs sémantiques $S$ et $Q$. 
 
-Pour les partitions $P(3)$, $P(4)$, $P(5)$ et $P(6)$ l'ANOVA montre un effet significatif des groupes sur $\mathcal{A}_{scene}$. Concernant l'analyse \emph{post hoc}:
+Pour les partitions $P(3)$, $P(4)$, $P(5)$ et $P(6)$ les ANOVA montrent un effet significatif des groupes sur $\mathcal{A}_{scene}$. Concernant l'analyse \emph{post hoc}:
 
 \begin{itemize}
-\item groupes relatifs aux i-scènes: aucune différence significatives n'est relevée entre ces groupes pour toutes les partitions;
+\item groupes relatifs aux i-scènes: aucune différence significative n'est relevée entre ces groupes pour toutes les partitions;
 \item groupes relatifs aux ni-scènes: une différence significative est relevée entre $3_{P(3)}$~\vs $4_{P(3)}$ (\emph{idem} pour $P(4)$: $4_{P(4)}$~\vs $5_{P(4)}$); 
 \item groupes relatifs aux i- et ni-scènes: toutes les comparaisons entre les groupes relatifs aux i- et ni-scènes sont significatives, et ce pour toutes les partitions. 
 \end{itemize}
 
-Les résultats montrent que la distinction observée sur $Q$ pour les partitions $P(3)$ et $P(4)$ entre les qualités ``\,unpleasant\,'' ($3_{P(3)}$ et $4_{P(4)}$) et ``\,very unpleasant\,'' ($4_{P(3)}$ et $5_{P(4)}$) se retrouvent si l'on considère l'agrément perçu.
+Les résultats montrent que la distinction observée sur $Q$ pour les partitions $P(3)$ et $P(4)$ entre les qualités ``\,unpleasant\,'' ($3_{P(3)}$ et $4_{P(4)}$) et ``\,very unpleasant\,'' ($4_{P(3)}$ et $5_{P(4)}$) se retrouvent si l'on considère l'agrément perçu. \\
+
+\gl{TODO: vérifier tukey-Kramer}
 
 \subsubsection{Descripteurs structurels}
 
-Nous considérons 5 descripteurs structurels, respectivement $L$, $L(E)$, $L(T)$, $D$ et $D(E)$. Les résultats des ANOVA sont présentés sur le tableau~\ref{tab:ANOVAhac}. Pour les niveaux sonores ($L$, $L(E)$ et $L(T)$), l'ANOVA montre un effet significatif des groupes sur les variables considérées. Pour $D$, on observe un effet significatif jusqu’à la partition $P(6)$. Pour $D(E)$, seul un effet significatif est relevé pour la partition $P(4)$
+Nous considérons 5 descripteurs structurels, respectivement $L$, $L(E)$, $L(T)$, $D$ et $D(E)$. Les résultats des ANOVA sont présentés sur le tableau~\ref{tab:ANOVAhac}. Pour les niveaux sonores ($L$, $L(E)$ et $L(T)$), les ANOVA montrent un effet significatif des groupes sur les variables considérées. Pour $D$, on observe un effet significatif jusqu’à la partition $P(6)$. Pour $D(E)$, seul un effet significatif est relevé pour la partition $P(4)$
 
 Concernant l'analyse \emph{post hoc}, si nous considérons séparément les comparaisons faites entre les groupes relatifs aux i-scènes, aucune différence significative n'est relevée, et ce quelque soit la partition considérée. Il en est de même pour les groupes relatifs aux ni-scènes. Les effets significatives des groupements obtenus par l'ANOVA rende uniquement compte des différences entre les i- et ni-scènes.
 
 \subsubsection{Contributions des sources sonores}
 
 \gl{TODO}
+
 
 \subsection{Discussions}
 
@@ -1596,7 +1582,7 @@ L'expérience permet de valider l'utilisation de scènes simulées comme stimuli
 \item \gl{TODO}
 \end{itemize}
 
-
+\gl{HCA sur $S$, et F-mesure des groupes sur ceux établis par la catégorisation}
 %*****************************************
 %*****************************************
 %*****************************************

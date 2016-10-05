@@ -253,7 +253,7 @@ L'analyse s'effectue en deux temps, suivant le corpus de sons isolés considér�
 
 \end{itemize}
 
-Le seuil de significativité est fixé à $\alpha=0.05$ pour toutes les analyses.
+Pour les ANOVA à mesures répétées, la sphéricité est évaluée à l'aide d'un test de Mauchly. Si l'hypothèse de sphéricité est violée, la valeur $p$ est calculée à l'aide d'une correction de Greenhouse-Geisser (\cf~Annexe~\ref{app:anova}). Dans ce cas, nous notons $p_{gg}$ la valeur $p$ ainsi corrigée. L'analyse \emph{post hoc} est conduite en suivant la procédure de Tukey-Kramer, celle de Bonferroni étant jugée trop sévère pour le cadre de notre étude. Le seuil de significativité est fixé à $\alpha=0.05$ pour toutes les analyses.
 
 \subsection{Système de détection}
 
@@ -281,16 +281,16 @@ node[pos=0.85, below=10pt] {\footnotesize lissage};
                                     &                      &                              & réduction & apprentissage  \\ 
 \hline
 CPS                                 & fusion               & Seuil \hfill (D)             &           &             \\ 
-\citep{CPS}                         &                      & rapport de vraisemblance \hfill (C)  &           &             \\ 
+\citep{CPS}                         &                      & vraisemblance \hfill (C)     &           &             \\ 
 \hline         
 DHV                                 & MFCC                 & HMM \hfill  (D, C)           &           &              \\ 
-\citep{diment2013sound,DHV}         &                      &                              &           &             \\ 
+\citep{diment2013sound,DHV}         &                      &                              &           & x            \\ 
 \hline 
 GVV                                 & mel                  & NMF \hfill  (D, C)           &           &              \\
 \citep{gemmeke2013exemplar,GVV}     &                      & HMM \hfill  (P)              &           &             \\                      
 \hline
-NR                                  & MFCC                 & SVM \hfill   (C)             &           &             \\
-\citep{roma2013recurrence,NR2}      &                      &                              & x         &             \\    
+NR                                  & MFCC                 & SVM \hfill   (C)             & x         &             \\
+\citep{roma2013recurrence,NR2}      &                      &                              &           &             \\    
 \hline
 NVM                                 & fusion               & HMM hiérarchique \hfill  (C) &           &            \\     
 \citep{niessen2013hierarchical,NVM} &                      & RF  \hfill (C)               &           &            \\     
@@ -339,27 +339,42 @@ Tous les algorithmes sont entraînés et paramétrés sur les corpus d'entraîne
 
 \subsubsection{Corpus QMUL}
 
-\begin{table} 
+\begin{table}[t] 
 \begin{center}  
 \begin{tabular}{lccc}  
 Système  & testQ & insQ-EBR(0) & absQ \\ 
 \hline 
-Baseline & \textbf{ 9.0$\pm$4.8}     & \textbf{10.5$\pm$3.0$^*$}   & \textbf{ 9.9$\pm$3.5} \\ 
-CPS      & \textbf{0.7$\pm$0.8}      & \textbf{0.8$\pm$1.3}        & \textbf{0.8$\pm$1.4$^*$} \\ 
-DHV      & \textbf{30.7$\pm$8.4}     & \textbf{34.5$\pm$7.5$^*$}   & \textbf{34.0$\pm$7.9} \\ 
-GVV      & \textbf{13.2$\pm$8.0}     & \textbf{15.0$\pm$6.4$^*$}   & \textbf{14.6$\pm$6.2} \\ 
-NR       & \textbf{21.5$\pm$6.5$^*$} &  6.8$\pm$5.7                &  7.4$\pm$5.8 \\ 
-NVM      & \textbf{28.2$\pm$5.9$^*$} &  9.7$\pm$9.6                & 10.8$\pm$9.9 \\ 
-SCS      & \textbf{41.5$\pm$7.6$^*$} & \textbf{39.3$\pm$8.2}       & \textbf{39.4$\pm$8.2} \\ 
-VVK      & \textbf{24.6$\pm$6.8$^*$} & \textbf{19.7$\pm$8.7}       & \textbf{19.2$\pm$9.2} \\  
+Baseline & 9.0$\pm$4.8      & 10.5$\pm$3.0$^*$     & 9.9$\pm$3.5 \\ 
+CPS      & 0.7$\pm$0.8      & 0.8$\pm$1.3          & 0.8$\pm$1.4$^*$ \\ 
+DHV      & 30.7$\pm$8.4     & 34.5$\pm$7.5$^*$     & 34.0$\pm$7.9 \\ 
+GVV      & 13.2$\pm$8.0     & 15.0$\pm$6.4$^*$     & 14.6$\pm$6.2 \\ 
+NR       & 21.5$\pm$6.5$^*$ & \textbf{6.8$\pm$5.7} & \textbf{7.4$\pm$5.8} \\ 
+NVM      & 28.2$\pm$5.9$^*$ & \textbf{9.7$\pm$9.6} & \textbf{10.8$\pm$9.9} \\ 
+SCS      & 41.5$\pm$7.6$^*$ & 39.3$\pm$8.2         & 39.4$\pm$8.2 \\ 
+VVK      & 24.6$\pm$6.8$^*$ & 19.7$\pm$8.7         & 19.2$\pm$9.2 \\  
 \hline
 \end{tabular} 
 \end{center} 
-\caption[Résultats en considérant $Fcw_{eb}$ pour chacun des systèmes évalués et chaque corpus considéré dans le cadre du challenge DCASE 2013]{Résultats en considérant $Fcw_{eb}$ pour chacun des systèmes évalués et chaque corpus considéré dans le cadre du challenge DCASE 2013. Les résultats en gras ne présentent pas de différences significatives (t-test à deux populations appariées) avec le meilleur résultat de la ligne (indiqué par $^*$).} 
+\caption[Résultats mesurés par $Fcw_{eb}$ pour chacun des systèmes évalués dans le cadre du challenge DCASE 2013 en considérant les corpus \emph{test-QMUL}, \emph{insQ-EBR(0)} et \emph{abstract-QMUL}.]{Résultats mesurés par $Fcw_{eb}$ pour chacun des systèmes évalués dans le cadre du challenge DCASE 2013 en considérant les corpus \emph{test-QMUL}, \emph{insQ-EBR(0)} et \emph{abstract-QMUL}. Les résultats en gras présentent des différences significatives par ligne (procédure de Tukey-Kramer) avec le résultat obtenu pour \emph{test-QMUL}. Le meilleur résultat de la ligne est indiqué par ($^*$).} 
 \label{tab:qmul} 
 \end{table} 
 
-\begin{table}
+Avec la permission des auteurs des différents systèmes proposés (\cf~Tableau~\ref{tab:systemsDcase2013}), ces derniers sont testés sur les corpus de scènes simulées, en utilisant les mêmes serveurs de calculs que ceux utilisés pour la tache 2 (AED) du challenge DCASE 2013. Les systèmes ont par ailleurs été re-testés sur le corpus \emph{test-QMUL} (corpus de \emph{test} du challenge AED DCASE 2013), afin de vérifier la réplicabilité des résultats précédemment publiés \citep{Stowell15}.
+
+Le Tableau~\ref{tab:qmul} affiche les $Fcw_{eb}$ en pourcentages pour les corpus \emph{test-QMUL}, \emph{insQ-EBR(0)} et \emph{abstract-QMUL}. Le système CPS, tel que soumis au challenge DCASE 2013, présente un problème d'implémentation l'empêchant de fonctionner correctement. Ce problème est à l'origine des faibles résultats obtenus pour \emph{test-QMUL}, résultats qui se retrouvent sur \emph{insQ-EBR(0)} et \emph{abstract-QMUL}. Pour ces raisons nous ne considérons pas plus avant ce système.
+
+\gl{L'ANOVA montre un effet significatif du corpus  ($F[2,30]=6$, $p<0.01$), des systèmes  ($F[6,180]=173$, $p_{gg}<0.01$) et de l'interaction  ($F[12,180]=10$, $p_{gg}<0.01$). Il semble ainsi au premier abord que le changement de corpus a bien provoqué une modification des performances, et ce bien que les sons utilisés pour simuler les corpus \emph{abstract-QMUL} et \emph{insQ-EBR(0)} soient similaires à ceux que l'on trouve dans \emph{test-QMUL}.}
+
+\gl{Cependant, l'analyse \emph{post hoc} au niveau des corpus révèle que la \emph{Baseline}, DHV, GVV, SCS et VVK ne présentent pas de différences significatives entre les performances observées pour \emph{test-QMUL} d'une part, et celles relevées pour \emph{abstract-QMUL} et \emph{insQ-EBR(0)} d'autre part. Seules les résultats de NVM et NR décroissent significativement entre \emph{test-QMUL} et les deux corpus simulés.}
+
+Ainsi, exception faite de NR et NVM, les classements des systèmes établis par rapport à leur performances sont égaux pour les 3 corpus. Ces résultats permettent de conclure deux points quant aux performances de DHV, GVV, SCS et VVK:
+
+\begin{itemize}
+\item comparaison entre \emph{test-QMUL} et \emph{insQ-EBR(0)}: les performances comparables montrent que les algorithmes sont robustes au changement d'événements. À noter que les samples proviennent tous des enregistrements de QMUL, \ie~ont été enregistrés dans les mêmes conditions;
+\item comparaison entre \emph{test-QMUL} et \emph{abstract-QMUL}: les performances comparables montrent que les algorithmes sont robustes à un changement de positions temporelles des samples, si les paramètres structuraux des scènes ($EBRs$ et espacements inter-\emph{onsets}) sont conservés.
+\end{itemize}
+  
+\begin{table}[t]
 \begin{center} 
 \begin{tabular}{lllllll}  
   Système &   testQ         &  insQ-EBR(0)      &   absQ          \\
@@ -387,24 +402,11 @@ VVK      & \textbf{24.6$\pm$6.8$^*$} & \textbf{19.7$\pm$8.7}       & \textbf{19.
 \label{tab:fp}
 \end{table}
 
-Avec la permission des auteurs des différents systèmes proposés (\cf~Tableau~\ref{tab:systemsDcase2013}), ces derniers sont testés sur les corpus de scènes simulées, en utilisant les mêmes serveurs de calculs que ceux utilisés pour la tache 2 (AED) du challenge DCASE 2013. Les systèmes ont par ailleurs été re-testés sur le corpus \emph{test-QMUL} (corpus de \emph{test} du challenge AED DCASE 2013), afin de vérifier la réplicabilité des résultats précédemment publiés \citep{Stowell15}.
-
-Le Tableau~\ref{tab:qmul} affiche les $f_c$ en pourcentages pour les corpus \emph{test-QMUL}, \emph{insQ-EBR(0)} et \emph{abstract-QMUL}. Les performances pour \emph{baseline}, CPS, DHV, GVV, SCS et VVK ne présentent pas de différences significatives entre les trois corpus. Les résultats de NVM et NR décroissent significativement entre \emph{test-QMUL} et les deux corpus \emph{insQ-EBR(0)} et abstract-QMUL ($p<0.01$).
-
-Le système CPS, tel que soumis au challenge DCASE 2013, présente un problème d'implémentation l'empêchant de fonctionner correctement. Ce problème est à l'origine des faibles résultats obtenus pour \emph{test-QMUL}, résultats qui se retrouvent sur \emph{insQ-EBR(0)} et \emph{abstract-QMUL}. Pour ces raisons nous ne considérons pas plus avant ce système.
-
-Exception faite de NR et NVM, les classements des systèmes établis par rapport à leur performances sont égaux pour les 3 corpus. Ces résultats permettent de conclure deux points quant aux performances de DHV, GVV, SCS et VVK:
-
-\begin{itemize}
-\item comparaison entre \emph{test-QMUL} et \emph{insQ-EBR(0)}: les performances comparables montrent que les algorithmes sont robustes au changement d'événements. À noter que les samples proviennent tous des enregistrements de QMUL, \ie~ont été enregistrés dans les mêmes conditions;
-\item comparaison entre \emph{test-QMUL} et \emph{abstract-QMUL}: les performances comparables montrent que les algorithmes sont robustes à un changement de positions temporelles des samples, si les paramètres structuraux des scènes ($EBRs$ et espacements inter-\emph{onsets}) sont conservés.
-\end{itemize}
-  
 Nous examinons maintenant les raisons pouvant expliquer les chutent de performances des systèmes NVM et NR dans le cas des scènes simulées. En effet, la chute peut être due soit à l'incapacité des algorithmes à généraliser sur d'autres corpus, soit à un artefact produit par les processus de simulation.
 
 Pour chacun des algorithmes, la première étape consiste à extraire des descripteurs sur l'ensemble des trames du signal, la seconde consiste à classifier ces trames.
 
-Considérons dans un premier temps les descripteurs extraits. Les valeurs minimales et maximales ne varient pas entre \emph{test-QMUL} et les corpus de scènes simulées. Les distributions des valeurs des descripteurs entre les deux types de corpus présentent certes une différence, mais cette dernière se révèle faible et non-significative. \gl{TODO: test ?} 
+Considérons dans un premier temps les descripteurs extraits. Les valeurs minimales et maximales ne varient pas entre \emph{test-QMUL} et les corpus de scènes simulées. Les distributions des valeurs des descripteurs entre les deux types de corpus présentent certes une différence, mais cette dernière se révèle faible et non-significative. 
 
 Une inspection des matrices de confusion inter-classes révèle que c'est, pour les deux systèmes, l'étape de classification qui serait responsable de la dégradation des performances. Le tableau~\ref{tab:fp} affiche, pour tous les systèmes, le plus grand nombre de faux positifs moyennés sur l'ensemble des scènes pour les trois corpus, ainsi que la classe correspondante. Pour NVM et NR, une classe en particulier (NVM: toux, NR: porte-claquer) semble être détectée de manière abusive, augmentant drastiquement le nombre de faux positifs, et diminuant \emph{de facto} les résultats.
 
@@ -415,7 +417,7 @@ Nous concluons que, pour ces deux systèmes, la diminution des performances n'es
 \begin{figure}[t]
 \begin{center}
 \includegraphics[width=1\columnwidth]{gfx/ch_7/dcase2013_2}
-\caption{Performances des systèmes évaluées dans le cadre du challenge DCASE 2013 sur les corpus \emph{instance-QMUL} simulés avec différents $EBR$ ($6$, $0$, $-6$$ et $-12dB$).}
+\caption{Performances des systèmes évaluées dans le cadre du challenge DCASE 2013 sur les corpus \emph{instance-QMUL} simulés avec différents $EBR$ ($6$, $0$, $-6$ et $-12dB$).}
 \label{fig:ebr} 
 \end{center}
 \end{figure}
@@ -438,27 +440,31 @@ Nous considérons maintenant l'influence de l'$EBR$ sur les performances des alg
 \begin{table}
 \begin{center} 
 \begin{tabular}{lccc}
-système  & testQ                     & insI         & absI \\ 
+Système  & testQ            & insI                   & absI \\ 
 \hline 
-Baseline & \textbf{9.0$\pm$4.8$^*$}  &  5.9$\pm$2.9 &  5.6$\pm$2.9 \\ 
-DHV      & \textbf{30.7$\pm$8.4$^*$} & 10.0$\pm$5.8 &  9.5$\pm$5.6 \\ 
-GVV      & \textbf{13.2$\pm$8.0$^*$} &  5.6$\pm$3.7 &  5.5$\pm$3.6 \\
-NR       & \textbf{21.5$\pm$6.5$^*$} &  4.6$\pm$3.4 &  5.4$\pm$4.5 \\ 
-NVM      & \textbf{28.2$\pm$5.9$^*$} &  3.1$\pm$3.1 &  3.2$\pm$3.0 \\ 
-SCS      & \textbf{41.5$\pm$7.6$^*$} & 35.4$\pm$7.2 & 34.0$\pm$6.7 \\ 
-VVK      & \textbf{24.6$\pm$6.8$^*$} &  6.6$\pm$5.7 &  7.3$\pm$6.3 \\ 
+Baseline & 9.0$\pm$4.8$^*$  &  \textbf{5.9$\pm$2.9}  &  \textbf{5.6$\pm$2.9} \\ 
+DHV      & 30.7$\pm$8.4$^*$ &  \textbf{10.0$\pm$5.8} &  \textbf{9.5$\pm$5.6} \\ 
+GVV      & 13.2$\pm$8.0$^*$ &  \textbf{5.6$\pm$3.7}  &  \textbf{5.5$\pm$3.6} \\
+NR       & 21.5$\pm$6.5$^*$ &  \textbf{4.6$\pm$3.4}  &  \textbf{5.4$\pm$4.5} \\ 
+NVM      & 28.2$\pm$5.9$^*$ &  \textbf{3.1$\pm$3.1}  &  \textbf{3.2$\pm$3.0} \\ 
+SCS      & 41.5$\pm$7.6$^*$ &  \textbf{35.4$\pm$7.2} & \textbf{34.0$\pm$6.7} \\ 
+VVK      & 24.6$\pm$6.8$^*$ &  \textbf{6.6$\pm$5.7}  &  \textbf{7.3$\pm$6.3} \\ 
 \hline
 \end{tabular} 
 \end{center}  
-\caption{Results of the evaluated systems on the IRCCYN datasets, compared with the \emph{test-QMUL} dataset. Results in bold are equivalent (t-test per row at 0.05 significance level) to the best performance (depicted with a $^*$).}
+\caption[Résultats mesurés par $Fcw_{eb}$ pour chacun des systèmes évalués dans le cadre du challenge DCASE 2013 en considérant les corpus \emph{test-QMUL}, \emph{instance-IRCCYN} et \emph{abstract-IRCCYN}.]{Résultats mesurés par $Fcw_{eb}$ pour chacun des systèmes évalués dans le cadre du challenge DCASE 2013 en considérant les corpus \emph{test-QMUL}, \emph{instance-IRCCYN} et \emph{abstract-IRCCYN}. Les résultats en gras présentent des différences significatives par ligne (procédure de Tukey-Kramer) avec le résultat obtenu pour \emph{test-QMUL}. Le meilleur résultat de la ligne est indiqué par ($^*$).}
 \label{tab:irccyn} 
 \end{table} 
 
-Les résultats sont affichés sur le tableau~\ref{tab:irccyn} et la figure~\ref{fig:irccyn}. Alors que la plupart des systèmes ont obtenu des performances comparables entre \emph{test-QMUL} et les corpus \emph{abstract-} et \emph{instance-QMUL}, tous algorithmes voient leurs résultats diminuer de manière significative pour les corpus  \emph{abstract-} et \emph{instance-IRCCYN}. De plus, à l'exception du système SCS, tous les systèmes ont des résultats équivalents à la \emph{baseline} pour les corpus \emph{IRCCYN}, en particulier le système DHV, qui pourtant montre de bons résultats pour les corpus \emph{QMUL}.
+\gl{Les résultats sont affichés sur le tableau~\ref{tab:irccyn} et la figure~\ref{fig:irccyn}. L'ANOVA montre un effet significatif du corpus  ($F[2,30]=89$, $p<0.01$), des systèmes  ($F[6,180]=249$, $p_{gg}<0.01$) et de l'interaction  ($F[12,180]=17$, $p_{gg}<0.01$).}
 
-L'ensemble de ces résultats nous permet de conclure que, pour les systèmes DHV, GVV, NR, NVM et VVK, le gain de performance par rapport à la baseline observé sur le corpus \emph{test-QMUL} n'est dû qu'à une sur-adaptation des systèmes aux données d'entraînement (corpus \emph{train}). 
+\gl{Concernant l'analyse \emph{post hoc} relatif aux corpus, alors que la plupart des systèmes ont obtenu des performances comparables entre \emph{test-QMUL} et les corpus \emph{abstract-} et \emph{instance-QMUL}, tous algorithmes voient leurs résultats diminuer de manière significative pour les corpus  \emph{abstract-} et \emph{instance-IRCCYN}}.
 
-Comme on peut clairement le voir sur la figure~\ref{fig:irccyn}, seul le système SCS (gagnant du challenge AED DCASE 2013), arrive à maintenir des performances similaires entre tous les corpus considérés. Cette capacité de généralisation est par ailleurs cohérente, le système parvenant en effet à généraliser sur des scènes dont on a fait varier: 
+\gl{De plus, l'analyse \emph{post hoc} des systèmes révèle que, à l'exception du système SCS, tous les systèmes ont des résultats équivalents ou significativement inférieurs (NVM) à ceux de la \emph{baseline} pour les deux corpus \emph{IRCCYN}. En particulier le système DHV, qui pourtant montre de bons résultats pour les corpus \emph{QMUL}}.
+
+L'ensemble de ces résultats nous permet de conclure que, pour les systèmes DHV, GVV, NR, NVM et VVK, le gain de performance par rapport à la baseline observé sur le corpus \emph{test-QMUL} n'est dû qu'à une sur-adaptation des systèmes aux données d'entraînement (corpus d'entraînement et de développement du challenge DCASE 2013). 
+
+Comme on peut clairement le voir sur la figure~\ref{fig:irccyn}, seul le système SCS (gagnant du challenge AED DCASE 2013), arrive à maintenir des performances stables entre tous les corpus considérés. Cette capacité de généralisation est par ailleurs cohérente, le système parvenant en effet à généraliser quelque soit la condition expérimentale que l'on fait varier, nommément: 
 
 \begin{itemize}
 \item les samples sélectionnés (en considérant deux banques de sons isolés différentes);
@@ -635,7 +641,7 @@ L'analyse s'effectue en trois temps:
 \item dans un troisième temps, nous évaluons l'impact des différentes conditions expérimentales ($nec$, $EBR$) sur les performances des algorithmes, en considérant séparément les scènes polyphoniques, et les scènes non-polyphoniques. Pour $nec$, les différences entre les systèmes sont appréciées à l'aide d'une ANOVA à mesures répétées (\cf~Annexe~\ref{app:anova}) comportant 1 facteur intra-sujet (\emph{within subject}: les différents systèmes) et 1 facteur inter-sujet (\emph{between subject}: $nec$). Pour $EBR$ cependant, les différences sont appréciées à l'aide d'une ANOVA à mesures répétées à deux facteurs intra-sujets (les différents systèmes et $EBR$). En effet, les samples et les positions des \emph{onsets} n'étant pas modifiés lors d'un changement d'$EBR$, il existe clairement une relation de dépendance entre les différents niveaux d'$EBR$. Nous n'évaluons jamais les deux conditions expérimentales $nec$ et $EBR$ en même temps, les observations disponibles (au nombre de trois) n'étant pas jugées suffisantes.
 \end{itemize}
 
-Pour les ANOVA à mesures répétées, la sphéricité est évaluée à l'aide d'un test de Mauchly. Si l'hypothèse de sphéricité est violée, la valeur $p$ est calculée à l'aide d'une correction de Greenhouse-Geisser (\cf~Annexe~\ref{app:anova}). Dans ce cas, nous notons $p_{gg}$ la valeur $p$ ainsi corrigée. L'analyse \emph{post hoc} est conduite en suivant la procédure de Tukey-Kramer, celle de Bonferroni étant jugée trop sévère pour le cadre de notre étude. Un seuil de significativité de $\alpha=0.05$ est choisi.
+Pour les ANOVA à mesures répétées, la sphéricité est évaluée à l'aide d'un test de Mauchly. Si l'hypothèse de sphéricité est violée, la valeur $p$ est calculée à l'aide d'une correction de Greenhouse-Geisser (\cf~Annexe~\ref{app:anova}). Dans ce cas, nous notons $p_{gg}$ la valeur $p$ ainsi corrigée. L'analyse \emph{post hoc} est conduite en suivant la procédure de Tukey-Kramer. Un seuil de significativité de $\alpha=0.05$ est choisi.
 
 \subsection{Systèmes de détection}
 
