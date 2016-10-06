@@ -1271,9 +1271,9 @@ Il est remarquable de constater que 44\% des labels utilisés (50\% si l'on fait
 Considérons maintenant les labels des qualités affectives perçues (\cf~Figure~\ref{fig:countLabelQualiTot}). Ces derniers font directement  référence aux indicateurs perceptifs habituellement utilisés par la communauté travaillant sur les paysages sonores pour caractériser les environnements sonores (\cf~Section~\ref{sec:descripteursPercetifs}), à savoir:
 
 \begin{itemize}
-\item l'agrément (unpleasant, very unpleasant)
-\item le calme / la tranquillité (medium calm, calm, very calm, relaxing)
-\item la gêne (bearable, annoying, tiresome, oppressive, unbearable)
+\item l'agrément (unpleasant, very unpleasant);
+\item le calme / la tranquillité (medium calm, calm, very calm, relaxing);
+\item la gêne (bearable, annoying, tiresome, oppressive, unbearable).
 \end{itemize}
 
 Deux derniers groupes de termes semblent faire référence à la nature prédictible de l'environnement (``\,usual\,'', ``\,unpredictitable\,''), ainsi qu'à la structure temporelle de ce dernier (``\,agitated\,''). 
@@ -1541,7 +1541,7 @@ $L(T)$                & $F[3,68]=8$  & $F[4,67]=6$   & $F[5,66]=5$   & $F[6,65]=
 $D$                   & $F[3,68]=3$  & $F[4,67]=3$   & $F[5,66]=2.5$ & $F[6,65]=2.1$  \\
                       & $p<0.05$     & $p<0.05$      & $p<0.05$      & $p=0.07$   \\
 $D(E)$                & $F[3,68]=2$  & $F[4,67]=2.5$ & $F[5,66]=2.1$ & $F[6,65]=1.8$  \\
-                      & $p=0.13$     & $p<0.05$      & $p=0.07$      & $p=0.12$   \\
+                      & $p=0.13$     & $p=0.05$      & $p=0.07$      & $p=0.12$   \\
 \hline
 \end{tabular}
 \vspace{0.5mm}
@@ -1561,13 +1561,21 @@ Pour les partitions $P(3)$, $P(4)$, $P(5)$ et $P(6)$ les ANOVA montrent un effet
 
 Les résultats montrent que la distinction observée sur $Q$ pour les partitions $P(3)$ et $P(4)$ entre les qualités ``\,unpleasant\,'' ($3_{P(3)}$ et $4_{P(4)}$) et ``\,very unpleasant\,'' ($4_{P(3)}$ et $5_{P(4)}$) se retrouvent si l'on considère l'agrément perçu. \\
 
-\gl{TODO: vérifier tukey-Kramer}
-
 \subsubsection{Descripteurs structurels}
 
-Nous considérons 5 descripteurs structurels, respectivement $L$, $L(E)$, $L(T)$, $D$ et $D(E)$. Les résultats des ANOVA sont présentés sur le tableau~\ref{tab:ANOVAhac}. Pour les niveaux sonores ($L$, $L(E)$ et $L(T)$), les ANOVA montrent un effet significatif des groupes sur les variables considérées. Pour $D$, on observe un effet significatif jusqu’à la partition $P(6)$. Pour $D(E)$, seul un effet significatif est relevé pour la partition $P(4)$
+Nous considérons 5 descripteurs structurels, respectivement $L$, $L(E)$, $L(T)$, $D$ et $D(E)$. Les résultats des ANOVA sont présentés sur le tableau~\ref{tab:ANOVAhac}. Pour les niveaux sonores ($L$, $L(E)$ et $L(T)$), les ANOVA montrent un effet significatif des groupes sur les variables considérées pour toutes les partitions. Pour $D$, on observe un effet significatif jusqu’à la partition $P(5)$. Pour $D(E)$, aucun effet significatif n'est trouvé, nous ne considérons ainsi plus cette variable.
 
-Concernant l'analyse \emph{post hoc}, si nous considérons séparément les comparaisons faites entre les groupes relatifs aux i-scènes, aucune différence significative n'est relevée, et ce quelque soit la partition considérée. Il en est de même pour les groupes relatifs aux ni-scènes. Les effets significatives des groupements obtenus par l'ANOVA rende uniquement compte des différences entre les i- et ni-scènes.
+Concernant l'analyse \emph{post hoc}:
+
+\begin{itemize}
+\item $L$, $L(T)$ et : on observe des différences significatives uniquement en comparant des groupes relatifs aux i-scènes à des groupes relatifs aux ni-scènes.  Les effets significatives  rendent ainsi uniquement compte des différences entre les i- et ni-scènes;
+\item $L(E)$: deux différences significatives sont relevées entre des groupes relatifs aux ni-scènes, à savoir $3_{P(3)}$ \vs~$4_{P(3)}$ et $4_{P(5)}$ \vs~$6_{P(5)}$.
+\end{itemize}
+
+Ainsi, $L(E)$ est le seul descripteur structurel à manifester une information permettant de discriminer des groupes relatifs à un même type d'environnement. Cette discrimination n'est cependant effective que pour les groupes relatifs aux ni-scènes. Elle s'accompagne d'un changement de qualité, les groupes ayant les niveaux sonores les plus faibles étant ceux possédant les labels ``\,unpleasant\,'', ``\,agitated\,'' et ``\,bearable\,'' ($3_{P(3)}$ et $4_{P(5)}$), tandis que ceux affichant des niveaux élevés ($4_{P(3)}$ et $6_{P(5)}$) sont qualifiés par les termes ``\,very unpleasant\,'', ``\,unbearable\,'',``\,tiresome\,'' et ``\,oppressant\,''.
+
+Concernant le groupe $5_{P(6)}$, qui n'est pas caractérisé par une classe de son ou un label de source, il apparaît également qu'aucun descripteur structurel global ne semble rendre compte de ce groupement.
+
 
 \subsubsection{Contributions des sources sonores}
 
