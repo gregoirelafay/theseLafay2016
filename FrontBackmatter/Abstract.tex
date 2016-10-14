@@ -8,32 +8,45 @@
 \let\cleardoublepage\relax
 \let\cleardoublepage\relax
 
-\chapter*{Abstract}
-TODO
-
-\vfill
-
-
-\pdfbookmark[1]{Zusammenfassung}{Zusammenfassung}
 \chapter*{Résumé}
 
-Le présent travail de thèse porte sur l'analyse des scènes sonores. 
+La présente thèse traite de l'analyse de scènes extraites d'environnements sonores, résultat auditif du mélange de sources émettrices distinctes et concomitantes. Ouvrant le champ des sources et des recherches possibles au-delà des domaines plus spécifiques que sont la parole ou la musique, l'environnement sonore est un objet complexe. Son analyse, le processus par lequel le sujet lui donne sens, porte à la fois sur les données perçues et sur le contexte de perception de ces données.
 
-Par scène sonore, on entend ici un extrait d'un environnement sonore, le résultat auditif du mélange de différentes sources émettrices. 
+Tant dans le domaine de la perception que de l'apprentissage machine, toute expérience suppose un contrôle fin de l'expérimentateur sur les stimuli proposés. Néanmoins, la nature de l'environnement sonore nécessite de se placer dans un cadre écologique, c'est à dire de recourir à des données réelles, enregistrées, plutôt qu'à des stimuli de synthèse.
 
-La notion d'environnement ne restreint pas la nature des sources considérées, nous éloignant de fait des champs de recherche portant spécifiquement sur la parole ou la musique. 
+Conscient de cette problématique, nous proposons un modèle permettant de simuler, à partir d'enregistrements de sons isolés, des scènes sonores dont nous maîtrisons les propriétés structurelles -- intensité, densité et diversité des sources. Appuyé sur les connaissances disponibles sur le système auditif humain, le modèle envisage la scène sonore comme un objet composite, une somme de sons sources.
 
-L'étude est pluridisciplinaire. Elle traite à la fois de l'analyse sensorielle, des mécanismes mises en œuvre par le système auditif afin d'acquérir, organiser et utiliser l'information, et de l'analyse automatique, des algorithmes ayant pour but de mimer ces mécanismes. Elle s'inscrit alors complètement dans le champs des sciences cognitives, portant à la fois sur la perception et l'intelligence artificielle. 
+Nous investissons à l'aide de cet outil deux champs d'application. Le premier concerne la perception, et la notion d'agrément perçu dans des environnements urbains. L'usage de données simulées nous permet d'apprécier finement l'impact de chaque source sonore sur celui-ci. Le deuxième concerne la détection automatique d'événements sonores et propose une méthodologie d'évaluation des algorithmes mettant à l'épreuve leurs capacités de généralisation.
 
-De part sa diversité, l'environnement sonore est un objet complexe. De plus, son analyse, le fait d'en extraire du sens, est un processus qui relève à la fois de l'information contenue dans les données, mais également du contexte. 
+\newpage
 
-Comprendre comment capter l'information utile dans un tel objet demande de se placer dans un cadre écologique, de privilégier l'utilisation de données réels, enregistrés, aux données de synthèses. 
+\pdfbookmark[1]{Zusammenfassung}{Zusammenfassung}
+\chapter*{Abstract}
 
-Toute expérience suppose une certaine emprise de la part de l'expérimentateur sur la nature des stimuli considérés. Or dans les cas des environnements sonores, peu de travaux portent sur des moyens permettant au chercheur de faire varier de manière contrôlée les caractéristiques des stimuli.
+This thesis deals with environmental scene analysis, the auditory result of mixing separate but concurrent emitting sources.  The sound environment is a complex object, which opens the field of possible research beyond the specific areas that are speech or music. For a person to make sense of its sonic environment, the involved process relies on both the perceived data and its context.
 
-Conscient de cette problématique, nous proposons ici un modèle permettant de simuler, à partir d'enregistrements de sons isolés, des scènes sonores dont nous contrôlons les propriétés structurelles, à savoir, l'intensité, la densité et la diversité des sources sonores en présence. Le modèle envisage la scène sonore comme un objet composite, une somme de sons sources. Cette vision hétéroclite est motivée par les connaissances disponibles sur le système auditif humain.
+For each experiment, one must be, as much as possible, in control of the evaluated stimuli, whether the field of investigation is perception or machine learning. Nevertheless, the sound environment needs to be studied in an ecological framework, using real recordings of sounds as stimuli rather than synthetic pure tones.
 
-Fort de ce modèle, nous choisissons trois cas d'application. Le premier porte sur la perception et questionne la notion d'agrément perçu dans des environnements urbains. Le deuxième porte sur la détection automatique des événements sonores et propose une méthodologie afin d'évaluer les performances des algorithmes. Ces deux premiers cas profitent directement du processus de génération de stimuli proposé. Le troisième porte le recouvrement automatique des similarités entre scènes sonores, et s'appuie sur la vision hétéroclite des scènes afin de proposer un algorithme adapté.
+We therefore propose a model of sound scenes allowing us to simulate complex sound environments from isolated sound recordings. The high level structural properties of the simulated scenes -- such as the type of sources, their sound levels or the event density -- are set by the experimenter. Based on knowledge of the human auditory system,  the model abstracts the sound environment as a composite object, a sum of sound sources.
+
+The usefulness of the proposed model is assessed on two areas of investigation. The first is related to the soundscape perception issue, where the model is used to propose an innovative experimental protocol to study pleasantness perception of urban soundscape. The second tackles the major issue of evaluation in machine listening, for which we consider simulated data in order to powerfully assess the generalization capacities of automatic sound event detection systems. 
+
+%\newpage
+%\chapter*{Résumé Long}
+%
+%La présente thèse traite de l'analyse des scènes sonores. Par scène sonore, on entend un extrait d'environnement sonore, le résultat auditif du mélange de sources émettrices distinctes et concomitantes. La notion d'environnement ouvre large le champ des sources et des recherches possibles, à la différences des domaines plus spécifiques que sont la parole ou la musique.
+%
+%L'environnement sonore est un objet complexe. Son analyse, le processus par lequel le sujet lui donne sens, porte à la fois sur les données perçues et sur le contexte de perception de ces données.
+%
+%Comprendre comment extraire l'information utile de tels objets nécessite donc de se placer dans un cadre écologique, c'est à dire de recourir à des données réelles, enregistrées, plutôt qu'à des stimuli de synthèse, comme des bruits blancs ou des sons purs.
+%
+%Dans le même temps, que ce soit dans le domaine de la perception ou de l'apprentissage machine, toute expérience suppose un certain contrôle de l'expérimentateur sur les caractéristiques des stimuli proposés. En ce qui concerne les environnements sonores, peu de travaux ont porté sur les outils pouvant permettre aux chercheurs d'agir sur ces stimuli.
+%
+%Conscient de cette problématique, nous proposons ici un modèle génératif permettant de simuler, à partir d'enregistrements de sons isolés, des scènes sonores dont nous maîtrisons les propriétés structurelles, à savoir, l'intensité, la densité et la diversité des sources sonores en présence. Le modèle envisage la scène sonore comme un objet composite, une somme de sons sources. Le niveau d'abstraction choisi  est motivé par les connaissances disponibles sur le système auditif humain.
+%
+%Fort des banques de données ainsi constituées, nous investissons deux champs d'application. Le premier concerne la perception, et questionne la notion d'agrément perçu dans des environnements urbains. L'utilisation de données simulés nous permet d'apprécier finement les contributions de chacune des sources sonores dans l'agrément perçu. Le deuxième concerne la détection automatique des événements sonores et propose une méthodologie afin d'évaluer les performances des algorithmes dédiés à cette tâche. Les données simulées se révèlent un outil précieux afin d'évaluer la capacité de généralisation des algorithmes.
+%
+%Les résultats de nos travaux montrent qu'en générant des scènes sonores artificielles à partir d'enregistrements naturels, d'une manière solidement fondée en théorie, il est possible de dépasser certaines limitations des stimuli synthétiques ou réels, et ainsi d'ouvrir le champ des études sonores à l'usage de données simulées pour l'expérimentation et l'apprentissage. Cette approche s'inscrit dans une tendance de fond pour l'analyse de données complexes, étant la seule à même d'assurer la fiabilité de systèmes fondés sur des algorithmes dont la complexité croissante dépasse aujourd'hui, au même titre que le cerveau humain, nos capacités d'explicitation.
 
 \endgroup			
 

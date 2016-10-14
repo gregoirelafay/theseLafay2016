@@ -16,11 +16,11 @@
   {}
 \endgroup
 
-\entry{lagrange2015bag}{article}{}
+\entry{benetos2016detection}{inproceedings}{}
   \name{author}{4}{}{%
     {{}%
-     {Lagrange}{L.}%
-     {Mathieu}{M.}%
+     {Benetos}{B.}%
+     {Emmanouil}{E.}%
      {}{}%
      {}{}}%
     {{}%
@@ -29,38 +29,91 @@
      {}{}%
      {}{}}%
     {{}%
-     {Defreville}{D.}%
-     {Boris}{B.}%
+     {Lagrange}{L.}%
+     {Mathieu}{M.}%
      {}{}%
      {}{}}%
     {{}%
-     {Aucouturier}{A.}%
-     {Jean-Julien}{J.-J.}%
+     {Plumbley}{P.}%
+     {Mark~D.}{M.~D.}%
      {}{}%
      {}{}}%
   }
-  \list{publisher}{1}{%
-    {Acoustical Society of America}%
+  \list{organization}{1}{%
+    {IEEE}%
   }
-  \strng{namehash}{LM+1}
-  \strng{fullhash}{LMLGDBAJJ1}
-  \field{labelyear}{2015}
-  \field{sortinit}{L}
-  \field{number}{5}
-  \field{pages}{EL487\bibrangedash EL492}
-  \field{title}{The bag-of-frames approach: a not so sufficient model for urban
-  soundscapes}
-  \field{volume}{138}
-  \field{journaltitle}{The Journal of the Acoustical Society of America,
-  express letter}
-  \field{year}{2015}
+  \strng{namehash}{BE+1}
+  \strng{fullhash}{BELGLMPMD1}
+  \field{labelyear}{2016}
+  \field{sortinit}{B}
+  \field{booktitle}{Proceedings of the International Conference on Acoustics
+  Speech and Signal Processing (ICASSP)}
+  \field{pages}{6450\bibrangedash 6454}
+  \field{title}{Detection of overlapping acoustic events using a
+  temporally-constrained probabilistic model}
+  \list{location}{1}{%
+    {Shanghai, China}%
+  }
+  \field{year}{2016}
+  \warn{\item Invalid format of field 'month'}
 \endentry
 
-\entry{Lostenlen2016ScatteringObjet}{unpublished}{}
+\entry{lafay2014new}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Lafay}{L.}%
+     {Gr{\'e}goire}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rossignol}{R.}%
+     {Mathias}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Misdariis}{M.}%
+     {Nicolas}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lagrange}{L.}%
+     {Mathieu}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Petiot}{P.}%
+     {Jean-Fran{\c{c}}ois}{J.-F.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {SFA}%
+  }
+  \strng{namehash}{LG+1}
+  \strng{fullhash}{LGRMMNLMPJF1}
+  \field{labelyear}{2014}
+  \field{sortinit}{L}
+  \field{booktitle}{Proceedings of the International Symposium on Musical
+  Acoustics (ISMA)}
+  \field{title}{A new experimental approach for urban soundscape
+  characterization based on sound manipulation: A pilot study}
+  \list{location}{1}{%
+    {Le Mans, France}%
+  }
+  \field{year}{2014}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{rossignol2015alternate}{inproceedings}{}
   \name{author}{4}{}{%
     {{}%
-     {Lostanlen}{L.}%
-     {Vincent}{V.}%
+     {Rossignol}{R.}%
+     {Mathias}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lagrange}{L.}%
+     {Mathieu}{M.}%
      {}{}%
      {}{}}%
     {{}%
@@ -69,8 +122,40 @@
      {}{}%
      {}{}}%
     {{}%
-     {Anden}{A.}%
-     {Joakim}{J.}%
+     {Benetos}{B.}%
+     {Emmanouil}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{RM+1}
+  \strng{fullhash}{RMLMLGBE1}
+  \field{labelyear}{2015}
+  \field{extrayear}{1}
+  \field{sortinit}{R}
+  \field{booktitle}{Proceedings of the European Signal Processing Conference
+  (EUSIPCO)}
+  \field{pages}{2023\bibrangedash 2027}
+  \field{title}{Alternate level clustering for drum transcription}
+  \list{location}{1}{%
+    {Nice, France}%
+  }
+  \field{year}{2015}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{rossignol2015simscene}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Rossignol}{R.}%
+     {Mathias}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lafay}{L.}%
+     {Gr{\'e}goire}{G.}%
      {}{}%
      {}{}}%
     {{}%
@@ -78,16 +163,27 @@
      {Mathieu}{M.}%
      {}{}%
      {}{}}%
+    {{}%
+     {Misdariis}{M.}%
+     {Nicolas}{N.}%
+     {}{}%
+     {}{}}%
   }
-  \strng{namehash}{LV+1}
-  \strng{fullhash}{LVLGAJLM1}
-  \field{labelyear}{2016}
-  \field{sortinit}{L}
-  \field{title}{Object-based Auditory Scenes Similarity Retrieval and
-  Classification With Wavelet Scattering}
-  \field{journaltitle}{IEEE Transactions on audio, speech and language
-  processing, Special issue on Sound Scene and Event Analysis, (submitted)}
-  \field{year}{2016}
+  \list{organization}{1}{%
+    {IRCAM}%
+  }
+  \strng{namehash}{RM+1}
+  \strng{fullhash}{RMLGLMMN1}
+  \field{labelyear}{2015}
+  \field{extrayear}{2}
+  \field{sortinit}{R}
+  \field{booktitle}{Proceedings of the Web Audio Conference (WAC)}
+  \field{title}{SimScene: a web-based acoustic scenes simulator}
+  \list{location}{1}{%
+    {Paris, France}%
+  }
+  \field{year}{2015}
+  \warn{\item Invalid format of field 'month'}
 \endentry
 
 \lossort

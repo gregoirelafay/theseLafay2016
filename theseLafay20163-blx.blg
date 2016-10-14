@@ -14,48 +14,48 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: theseLafay2016-blx.bib
-Database file #2: lafay_publications_simu.bib
+Database file #2: lafay_publications_other.bib
 Biblatex version: 3.3
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-You've used 7 entries,
+You've used 2 entries,
             6047 wiz_defined-function locations,
-            1165 strings with 9576 characters,
-and the built_in function-call counts, 20764 in all, are:
-= -- 711
-> -- 697
-< -- 159
-+ -- 229
-- -- 268
-* -- 1814
-:= -- 1460
+            1135 strings with 8491 characters,
+and the built_in function-call counts, 4433 in all, are:
+= -- 165
+> -- 160
+< -- 26
++ -- 71
+- -- 63
+* -- 307
+:= -- 482
 add.period$ -- 0
-call.type$ -- 7
-change.case$ -- 6
-chr.to.int$ -- 35
-cite$ -- 12
-duplicate$ -- 2333
-empty$ -- 2214
-format.name$ -- 496
-if$ -- 4596
+call.type$ -- 2
+change.case$ -- 1
+chr.to.int$ -- 34
+cite$ -- 2
+duplicate$ -- 394
+empty$ -- 434
+format.name$ -- 84
+if$ -- 980
 int.to.chr$ -- 0
-int.to.str$ -- 17
+int.to.str$ -- 2
 missing$ -- 0
-newline$ -- 224
-num.names$ -- 259
-pop$ -- 2045
+newline$ -- 54
+num.names$ -- 41
+pop$ -- 383
 preamble$ -- 1
-purify$ -- 89
+purify$ -- 14
 quote$ -- 0
-skip$ -- 1151
+skip$ -- 248
 stack$ -- 0
-substring$ -- 317
-swap$ -- 804
-text.length$ -- 185
-text.prefix$ -- 6
+substring$ -- 135
+swap$ -- 123
+text.length$ -- 44
+text.prefix$ -- 1
 top$ -- 1
-type$ -- 254
+type$ -- 64
 warning$ -- 0
-while$ -- 158
+while$ -- 66
 width$ -- 0
-write$ -- 216
+write$ -- 51

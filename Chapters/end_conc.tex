@@ -1,20 +1,116 @@
 %************************************************
-\chapter{Conclusions}\label{ch:end_conc}
+\chapter{Conclusions et perspectives}\label{ch:end_conc}
 %************************************************
+
+Ce chapitre, organisé en quatre parties, dresse un bilan des travaux effectués dans le cadre de cette thèse.
+
+La première partie aborde l'expérience sur la perception de l'agrément dans un environnement sonore urbain.
+
+La deuxième traite des campagnes d'évaluation des algorithmes de détection d'événements sonores.
+
+Nous concluons alors quant aux expériences menées, et présentons plusieurs pistes nouvelles d'investigation.
+
+La troisième fait un point sur l'utilisation des données simulées en général.
+
+La quatrième et dernière propose un résumé des contributions et efforts de valorisation, qu'il s'agisse des publications, des programmes informatiques, ou encore des corpus mis à disposition.
 
 \section{Analyse sensorielle}
 
+\subsection{Agrément des paysages sonores urbain}
+
+Les expériences ont montré que la majorité des descripteurs utilisés, qu'ils soient sémantiques ou structurels, permettent de faire la distinction entre une scène idéale et une scène non-idéale.
+
+Cependant, nous observons que les caractéristiques physiques corrélées à l'agrément diffèrent clairement suivant la nature hédonique des scènes. Dans le cas des scènes idéales, c'est avant tout l'émergence de marqueurs sonores qui détermine la qualité perçue, alors que dans le cas des scènes non-idéales, c'est le niveau sonore global qui influe sur l'agrément.
+
+Ces résultats, déjà suggérés par d'autres études (\cf~Section~\ref{sec:ch3_contribSource}), tendent à confirmer que la perception des qualités d'une scène dépend avant tout des sources sonores qui la composent, les caractéristiques structurelles mobilisées dans le processus perceptif semblant varier d'une source à l'autre, et d'un type d'environnement à l'autre. Ce fait montre qu'il est illusoire d'envisager qu'un descripteur physique holistique puisse rendre compte, de manière pertinente des qualités affectives de tout type d'environnement.
+
+\subsection{Simulation et cognition}
+
+Des études portant sur les processus perceptifs et cognitifs (\cf~Section~\ref{sec:ch3_perceptionCognition}), nous retenons que demander à un sujet de simuler une scène est un moyen efficace d'accéder à la représentation mentale qu'il se fait de celle-ci. De fait, si l'on se place dans une vision ancrée de la cognition, le sujet se construit une image intérieure modale de la représentation qu'il a de l'environnement (\cf~Section~\ref{sec:ch3_groundedCognition}). La simulation est alors un processus d'objectivation qui lui permet de traduire les modalités physiques de cette image mentale en données sonores.
+
+Ainsi, la scène simulée apparaît comme une donnée physique et objective, mais ancrée dans une réalité cognitive. Ce qui en fait une ressource idéale permettant de faire le lien entre la structure de l'environnement sonore et les qualités affectives qu'il suscite.
+
+Afin de faciliter la matérialisation de l'image mentale, les paramètres de contrôle du simulateur ont tous trait à des attributs reconnus par la communauté (\cf~Section~\ref{ch3_soundscapeDiscussion}) pour leur importance dans la perception des scènes, à savoir, les classes de sons présentes, les niveaux sonores, la structure des séquences événementielles.
+
+Ces réflexions ont mené à l'élaboration d'un outil de simulation opérationnel, accessible (aux fonctionnalités rapidement maîtrisées), et permettant à un sujet même non-initié de générer sans peine un environnement complet.
+
+Par ailleurs, l'application de la simulation à l’étude de la perception de l'agrément dans les environnements sonores urbains valide les qualités écologiques des scènes simulées, bon nombre de résultats présents dans la littérature étant retrouvés (\cf~Section~\ref{ch3_soundscapeDiscussion}).
+
+\subsection{Perspectives}
+
+Au terme de notre étude, nous pensons que la simulation est un outil dont le développement pourrait permettre aux décideurs urbains d'interroger toute une communauté sur ses représentations propres des environnements sonores auxquels elle est exposée, et, pourquoi pas, sur les représentations des environnements sonores auxquels elle voudrait être exposée.
+
+Dans la continuité des travaux réalisés, il conviendrait de multiplier les expériences de simulation, en faisant varier les qualités affectives (calme, confortable, gênante, \etc), mais aussi en spécifiant des lieux particuliers (parc, place, rue, \etc), afin d'élaborer des corpus entiers de scènes cognitivement renseignées de paysages sonores variés.
+
+Un autre développement pourrait être d'étudier plus avant l'influence des contextes socio-culturels sur la perception. Dans les faits, si le son de cloche est le plus souvent un marqueur d'environnement de qualité pour un occidental, cela ne se vérifie pas nécessairement auprès de sujets de culture orientale, moyen-orientale ou autre. 
+
+Outre les possibilités déjà évoquées, la simulation présente encore deux avantages:
+
+\begin{itemize}
+\item le simulateur peut être déployé à large échelle via internet;
+\item les scènes simulées peuvent être analysées sans avoir à tenir compte des différentes langues maternelles des sujets, la nature sémantique des classes de sons utilisées étant connue \emph{a priori} par l'expérimentateur.
+\end{itemize}
+
+Bien évidemment, ces approches nécessitent d'accroître la taille des banques de sons isolés disponibles, un effort conséquent et, de l'avis de l'auteur, souvent négligé.
+
 \section{Analyse automatique}
 
-\section{Approche pluridisciplinaire}
+\subsection{Détection automatique d'événements sonores}
 
-\section{Délivrables}
+Les campagnes d'évaluation menées dans le cadre des deux sessions des challenges DCASE ont montré que tous les algorithmes n'avaient pas les mêmes capacités de généralisation.
+
+Ces observations ont été possibles par l'utilisation de corpus de scènes simulées. La simulation nous permettant de contrôler les caractéristiques structurelles des scènes, nous pouvons apprécier l’effet de leurs variations sur les performances des algorithmes.
+
+Sans simulation, de telles observations seraient difficiles à déduire, l’expérimentateur ne possédant plus, en sortie, qu’un résultat brut, lié à aucune condition expérimentale particulière.
+
+L'ensemble de ces résultats valide l'intérêt d'évaluer des algorithmes sur des scènes dont l'expérimentateur maîtrise la nature.
+
+\subsection{Perspectives}
+
+On peut noter que ce soin donné à l’interrogation des systèmes complexes que sont les processus computationnels utilisés dans le cadre de l’écoute artificielle par la simulation des données contrôlées n’est pas un fait isolé, mais bien un exemple de ce que nous pensons être un processus de maturation ubiquitaire en apprentissage artificiel.
+
+En effet, dans beaucoup de domaines d’application de l’intelligence artificielle, des interrogations se posent quant à la validité, et surtout à la robustesse des systèmes chargés d’effectuer des tâches, ou de prendre des décisions, qui peuvent impacter à des degrés divers la vie du citoyen (weapons of math destruction citation).
+
+A l’opposé des systèmes experts (mathias citation), dont l’algorithmie, même complexe, pouvait être étudiée pour prédire le comportement du système, les systèmes actuels (notamment les réseaux profonds) sont d’une complexité telle que l'approche analytique (mathias) n'est pas privilégiée par la communauté. Pour exemple, on citera les travaux de Ian Goodfellow sur l’amélioration de la robustesse des réseaux neuronaux profonds en analyse d’image par l'utilisation d'``\,adversarial exemples\,'', des exemples d’apprentissage peu, mais judicieusement modifiés. On peut également citer, dans le domaine, les travaux de Nguyen et al montrant comment l’utilisation d'images synthétiques optimisant la réponse du système de détection permet de générer des images facilement reconnaissables par le système interrogé, mais totalement éloignées de la représentation que peut s’en faire le sujet.
+
+Toutes ces études se basent sur le postulat que, devant la complexité de l’objet d’étude, il est possible, par la génération de données judicieusement choisies, d'interroger cette complexité de manière pertinente. Ce postulat est repris en neurosciences.
+
+\section{Contributions}
+
+\subsection{Valorisation scientifique}
+
+Les recherches réalisées dans le cadre de cette thèse ont donné lieu à plusieurs communications.
+
+Concernant l'évaluation des systèmes de détection d'événements sonores, la campagne de ré-évaluation des algorithmes ayant participé au challenge DCASE 2013 (\cf~Section~\ref{sec:ch5_appDcase2013}) a fait l'objet d'une publication à part entière \citep{lafay2016morphological}, laquelle publication a introduit également le modèle de scène proposé (\cf~Section~\ref{sec:ch4_model}). Les résultats obtenus lors du challenge DCASE 2016 (\cf~Section~\ref{sec:ch5_appDcase2016}) seront eux aussi prochainement présentés, à l'occasion d'une communication conjointe des organisateurs des différentes tâches du challenge.
+
+D'autres recherches ont porté sur le recouvrement automatique des similarités entre scènes sonores. Elles ont montré notamment l'intérêt de considérer la scène comme un objet composite dont les éléments constitutifs (sources sonores) n'impactent pas de la même manière les similarités inter-scènes. Deux de ces études ont été, l'une, publiée \citep{lagrange2015bag}, l'autre, soumise \citep{Lostenlen2016ScatteringObjet}. Comme elles ne portent pas directement sur l'utilisation expérimentale des scènes simulées, elles ne sont pas abordées dans ce document.
+
+Concernant l'analyse sensorielle, les fonctionnalités de l'outil de simulation \emph{SimScene} ont fait l'objet de deux articles de conférence  \citep{rossignol2015simscene,lafay2016JAES}. La valorisation de l'expérience pilote de simulation \citep{lafay2014new} a également fait partie de nos travaux.
+
+Par ailleurs, plusieurs travaux réalisés en collaboration ont permis de motiver l'utilisation de corpus de scènes simulées afin d'évaluer de manière fine les performances de différents systèmes en apprentissage machine \citep{benetos2016detectionLDC,rossignol2015alternate,benetos2016detection}.
+
+\subsection{Programmes et banques de données}
+
+L'auteur a participé au développement de deux simulateurs d’environnements sonores.
+
+Le premier est supporté par navigateur web, et possède une interface optimisée afin de pouvoir être utilisée facilement par des sujets dans le cadre d'expériences sur la perception des environnements sonores (\cf~Section~\ref{sec:ch4_simscene}).
+
+Le deuxième, développé en MATLAB, est dédié à la génération de corpus d'évaluation en apprentissage machine (\cf~Section~\ref{sec:ch4_simsceneMatlab}).
+
+Les deux simulateurs sont accessibles au public\footnote{\emph{Simscene} Web : \\ \url{http://www.irccyn.ec-nantes.fr/~lagrange/demonstrations/simScene.html} \\ \emph{Simscene} MATLAB : \\ \url{https://bitbucket.org/mlagrange/simscene/downloads}}.
+
+Par ailleurs, les campagnes d'évaluation menées dans le cadre des deux sessions des challenges DCASE ont abouti à la création de plusieurs corpus de scènes sonores simulées et complètement annotées. Ces simulations ont requis l'enregistrement d'une banque de données conséquente de sons isolés.
+
+Les corpus de scènes simulées dans le cadre des challenges DCASE 2013\footnote{DCASE 2013 \emph{instance-QMUL}, \emph{abstract-QMUL}: \\ \url{https://archive.org/details/dcase_replicate_qmul}; \\ DCASE 2013 \emph{instance-IRCCYN}, \emph{abstract-IRCCYN}: \\ \url{https://archive.org/details/dcase_replicate}.} et 2016\footnote{DCASE 2016 entraînement, développement et évaluation: \\ \url{http://www.cs.tut.fi/sgn/arg/dcase2016/task-sound-event-detection-in-synthetic-audio}.}, ainsi que la banque de sons isolés sont accessibles au public.
+
 
 %*****************************************
 %*****************************************
 %*****************************************
 %*****************************************
 %*****************************************
+
+
 
 
 

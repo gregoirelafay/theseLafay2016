@@ -16,51 +16,11 @@
   {}
 \endgroup
 
-\entry{benetos2016detection}{inproceedings}{}
+\entry{Lostenlen2016ScatteringObjet}{article}{}
   \name{author}{4}{}{%
     {{}%
-     {Benetos}{B.}%
-     {E.}{E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lafay}{L.}%
-     {G.}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lagrange}{L.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Plumbley}{P.}%
-     {M.~D.}{M.~D.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{BE+1}
-  \strng{fullhash}{BELGLMPMD1}
-  \field{labelyear}{2016}
-  \field{extrayear}{1}
-  \field{sortinit}{B}
-  \field{booktitle}{2016 IEEE International Conference on Acoustics, Speech and
-  Signal Processing (ICASSP)}
-  \verb{doi}
-  \verb 10.1109/ICASSP.2016.7472919
-  \endverb
-  \field{pages}{6450\bibrangedash 6454}
-  \field{title}{Detection of overlapping acoustic events using a
-  temporally-constrained probabilistic model}
-  \field{year}{2016}
-  \warn{\item Invalid format of field 'month'}
-\endentry
-
-\entry{benetos2016detectionLDC}{unpublished}{}
-  \name{author}{3}{}{%
-    {{}%
-     {Benetos}{B.}%
-     {Emmanouil}{E.}%
+     {Lostanlen}{L.}%
+     {Vincent}{V.}%
      {}{}%
      {}{}}%
     {{}%
@@ -69,159 +29,25 @@
      {}{}%
      {}{}}%
     {{}%
+     {Anden}{A.}%
+     {Joakim}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
      {Lagrange}{L.}%
      {Mathieu}{M.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{BE+2}
-  \strng{fullhash}{BELGLM1}
+  \strng{namehash}{LV+1}
+  \strng{fullhash}{LVLGAJLM1}
   \field{labelyear}{2016}
-  \field{extrayear}{2}
-  \field{sortinit}{B}
-  \field{title}{Polyphonic Sound Event Tracking using LDS}
-  \field{journaltitle}{IEEE Transactions on audio, speech and language
+  \field{sortinit}{L}
+  \field{title}{Object-based Auditory Scenes Similarity Retrieval and
+  Classification With Wavelet Scattering}
+  \field{journaltitle}{IEEE/ACM Transactions on audio, speech and language
   processing, Special issue on Sound Scene and Event Analysis, (submitted)}
   \field{year}{2016}
-\endentry
-
-\entry{lafay2016morphological}{article}{}
-  \name{author}{5}{}{%
-    {{}%
-     {Lafay}{L.}%
-     {G.}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lagrange}{L.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Benetos}{B.}%
-     {E.}{E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Rossignol}{R.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Roebel}{R.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{LG+1}
-  \strng{fullhash}{LGLMBERMRA1}
-  \field{labelyear}{2016}
-  \field{sortinit}{L}
-  \verb{doi}
-  \verb 10.1109/TASLP.2016.2587218
-  \endverb
-  \field{issn}{2329-9290}
-  \field{number}{99}
-  \field{pages}{1\bibrangedash 1}
-  \field{title}{A Morphological Model for Simulating Acoustic Scenes and Its
-  Application to Sound Event Detection}
-  \field{volume}{PP}
-  \field{journaltitle}{IEEE/ACM Transactions on Audio, Speech, and Language
-  Processing}
-  \field{year}{2016}
-\endentry
-
-\entry{dcase2016}{unpublished}{}
-  \name{author}{2}{}{%
-    {{}%
-     {Lagrange}{L.}%
-     {Mathieu}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lafay}{L.}%
-     {Gr{\'e}goire}{G.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{LMLG1}
-  \strng{fullhash}{LMLG1}
-  \field{labelyear}{2016}
-  \field{sortinit}{L}
-  \field{title}{Results of the DCASE 2016 challenge}
-  \field{journaltitle}{IEEE Transactions on audio, speech and language
-  processing, (under redaction)}
-  \field{year}{2016}
-\endentry
-
-\entry{rossignol2015alternate}{inproceedings}{}
-  \name{author}{4}{}{%
-    {{}%
-     {Rossignol}{R.}%
-     {Mathias}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lagrange}{L.}%
-     {Mathieu}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lafay}{L.}%
-     {Gr{\'e}goire}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Benetos}{B.}%
-     {Emmanouil}{E.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{organization}{1}{%
-    {IEEE}%
-  }
-  \strng{namehash}{RM+1}
-  \strng{fullhash}{RMLMLGBE1}
-  \field{labelyear}{2015}
-  \field{extrayear}{1}
-  \field{sortinit}{R}
-  \field{booktitle}{Signal Processing Conference (EUSIPCO), 2015 23rd European}
-  \field{pages}{2023\bibrangedash 2027}
-  \field{title}{Alternate level clustering for drum transcription}
-  \field{year}{2015}
-\endentry
-
-\entry{rossignol2015simscene}{inproceedings}{}
-  \name{author}{4}{}{%
-    {{}%
-     {Rossignol}{R.}%
-     {Mathias}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lafay}{L.}%
-     {Gr{\'e}goire}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lagrange}{L.}%
-     {Mathieu}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Misdariis}{M.}%
-     {Nicolas}{N.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{RM+1}
-  \strng{fullhash}{RMLGLMMN1}
-  \field{labelyear}{2015}
-  \field{extrayear}{2}
-  \field{sortinit}{R}
-  \field{booktitle}{1st Web Audio Conference (WAC)}
-  \field{title}{SimScene: a web-based acoustic scenes simulator}
-  \field{year}{2015}
 \endentry
 
 \lossort

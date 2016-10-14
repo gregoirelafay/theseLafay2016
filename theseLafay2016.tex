@@ -25,11 +25,12 @@
 \documentclass[ twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,% letterpaper a4paper
                 footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
                 BCOR=5mm,paper=a4,fontsize=11pt,%11pt,a4paper,%
-                francais,ngerman,american%
+                francais ,ngerman,american%
                 ]{scrreprt}
 
 
 \newcommand{\gl}[1]{\textcolor{blue}{GL : #1}}
+%\newcommand{\gl}[1]{#1}
 \newcommand{\jlc}[1]{\textcolor{green}{J.L. correction : #1}}
 \newcommand{\jls}[1]{\textcolor{red}{J.L. suggestion : #1}}
 \newcommand{\jlv}[1]{\textcolor{magenta}{J.L. vise : #1}}
@@ -43,9 +44,9 @@
 % Bibliographies
 %*******************************************************
 \addbibresource{Bibliography.bib}
-\addbibresource[label=ownpubs_psycho]{lafay_publications_psycho.bib}
-\addbibresource[label=ownpubs_simu]{lafay_publications_simu.bib}
-\addbibresource[label=ownpubs_ml]{lafay_publications_ml.bib}
+\addbibresource[label=ownpubs_rev]{lafay_publications_rev.bib}
+\addbibresource[label=ownpubs_proc]{lafay_publications_proc.bib}
+\addbibresource[label=ownpubs_other]{lafay_publications_other.bib}
 %********************************************************************
 % Hyphenation
 %*******************************************************
@@ -55,7 +56,7 @@
 \frenchspacing
 \raggedbottom
 \selectlanguage{francais} % american ngerman
-%\renewcommand*{\bibname}{new name}
+\renewcommand*{\bibname}{Bibliographie}
 %\setbibpreamble{}
 \pagenumbering{roman}
 \pagestyle{plain}
@@ -83,40 +84,43 @@
 \ctparttext{preamble text here.}
 \part{Préambule \label{part:preamb}}
 \include{Chapters/pream_intro}
-\include{Chapters/pream_motiv}
 
 \cleardoublepage
 \ctparttext{preamble text here.}
-\part{Analyse sensorielle de scènes sonores \label{part:anaSo}}
+\part{Vers un modèle morphologique \label{part:model}}
 \include{Chapters/psycho_ea}
 \include{Chapters/psycho_model}
-\include{Chapters/psycho_xp}
 
 \cleardoublepage
 \ctparttext{preamble text here.}
-\part{Analyse automatique de scènes sonores \label{part:anaAu}}
-\include{Chapters/ml_ea}
+\part{Utilisation pratique de la simulation \label{part:simu}}
+\include{Chapters/psycho_xp}
 \include{Chapters/ml_simuperf}
-\include{Chapters/ml_xp}
 
 \cleardoublepage
 \ctparttext{preamble text here.}
 \part{Conclusions et perspectives \label{part:conc}}
 \include{Chapters/end_conc}
-\include{Chapters/end_perspec}
 
-% ********************************************************************
+%********************************************************************
+% REMOVE
+%*******************************************************
+% \include{Chapters/pream_motiv}
+% \include{Chapters/ml_ea}
+% \include{Chapters/ml_xp}
+% \include{Chapters/end_perspec}
+
+%********************************************************************
 % Backmatter
 %*******************************************************
 \appendix
-%\renewcommand{\thechapter}{\alph{chapter}}
+%%\renewcommand{\thechapter}{\alph{chapter}}
 \cleardoublepage
 \part{Appendices}
 \include{Chapters/app_statuni}
 \include{Chapters/app_statmulti}
 \include{Chapters/app_xp_texture}
 \include{Chapters/app_xp_congruence}
-
 
 %********************************************************************
 % Other Stuff in the Back
