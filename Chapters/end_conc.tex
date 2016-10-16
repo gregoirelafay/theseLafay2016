@@ -59,7 +59,7 @@ Bien évidemment, ces approches nécessitent d'accroître la taille des banques 
 
 Les campagnes d'évaluation menées dans le cadre des deux sessions des challenges DCASE ont montré que tous les algorithmes n'avaient pas les mêmes capacités de généralisation.
 
-Ces observations ont été possibles par l'utilisation de corpus de scènes simulées. La simulation nous permettant de contrôler les caractéristiques structurelles des scènes, nous pouvons apprécier l’effet de leurs variations sur les performances des algorithmes.
+Ces observations ont été rendues possibles par l'utilisation de corpus de scènes simulées. La simulation nous permettant de contrôler les caractéristiques structurelles des scènes, nous pouvons apprécier l’effet de leurs variations sur les performances des algorithmes.
 
 Sans simulation, de telles observations seraient difficiles à déduire, l’expérimentateur ne possédant plus, en sortie, qu’un résultat brut, lié à aucune condition expérimentale particulière.
 
@@ -67,13 +67,13 @@ L'ensemble de ces résultats valide l'intérêt d'évaluer des algorithmes sur d
 
 \subsection{Perspectives}
 
-On peut noter que ce soin donné à l’interrogation des systèmes complexes que sont les processus computationnels utilisés dans le cadre de l’écoute artificielle par la simulation des données contrôlées n’est pas un fait isolé, mais bien un exemple de ce que nous pensons être un processus de maturation ubiquitaire en apprentissage artificiel.
+On peut noter que ce soin donné à l'interrogation des systèmes complexes que sont les processus computationnels utilisés dans le cadre de l’écoute artificielle par la simulation des données contrôlées n’est pas un fait isolé, mais bien un exemple de ce que nous pensons être un processus de maturation ubiquitaire en apprentissage artificiel.
 
-En effet, dans beaucoup de domaines d’application de l’intelligence artificielle, des interrogations se posent quant à la validité, et surtout à la robustesse des systèmes chargés d’effectuer des tâches, ou de prendre des décisions, qui peuvent impacter à des degrés divers la vie du citoyen (weapons of math destruction citation).
+En effet, dans beaucoup de domaines d’application de l’intelligence artificielle, des interrogations se posent quant à la validité, et surtout à la robustesse des systèmes chargés d’effectuer des tâches, ou de prendre des décisions, qui peuvent impacter à des degrés divers la vie du citoyen \citep{o2016weapons}.
 
-A l’opposé des systèmes experts (mathias citation), dont l’algorithmie, même complexe, pouvait être étudiée pour prédire le comportement du système, les systèmes actuels (notamment les réseaux profonds) sont d’une complexité telle que l'approche analytique (mathias) n'est pas privilégiée par la communauté. Pour exemple, on citera les travaux de Ian Goodfellow sur l’amélioration de la robustesse des réseaux neuronaux profonds en analyse d’image par l'utilisation d'``\,adversarial exemples\,'', des exemples d’apprentissage peu, mais judicieusement modifiés. On peut également citer, dans le domaine, les travaux de Nguyen et al montrant comment l’utilisation d'images synthétiques optimisant la réponse du système de détection permet de générer des images facilement reconnaissables par le système interrogé, mais totalement éloignées de la représentation que peut s’en faire le sujet.
+A l'opposé des systèmes experts \citep{Leondes2002xxiii}, dont l'algorithmie, même complexe, pouvait être étudiée pour prédire le comportement du système, les systèmes actuels (notamment les réseaux profonds) sont d’une complexité telle que l'approche analytique  n'est pas privilégiée par la communauté. Pour exemple, on citera les travaux de Ian Goodfellow sur l'amélioration de la robustesse des réseaux neuronaux profonds en analyse d'image par l'utilisation d'``\,adversarial exemples\,'', des exemples d'apprentissage peu, mais judicieusement modifiés. On peut également citer, dans le domaine, les travaux de Nguyen et al montrant comment l'utilisation d'images synthétiques optimisant la réponse du système de détection permet de générer des images facilement reconnaissables par le système interrogé, mais totalement éloignées de la représentation que peut s'en faire le sujet.
 
-Toutes ces études se basent sur le postulat que, devant la complexité de l’objet d’étude, il est possible, par la génération de données judicieusement choisies, d'interroger cette complexité de manière pertinente. Ce postulat est repris en neurosciences.
+Toutes ces études se basent sur le postulat que, devant la complexité de l'objet d'étude, il est possible, par la génération de données judicieusement choisies, d'interroger cette complexité de manière pertinente. Ce postulat est repris en neurosciences.
 
 \section{Contributions}
 
@@ -91,7 +91,7 @@ Par ailleurs, plusieurs travaux réalisés en collaboration ont permis de motive
 
 \subsection{Programmes et banques de données}
 
-L'auteur a participé au développement de deux simulateurs d’environnements sonores.
+L'auteur a participé au développement de deux simulateurs d'environnements sonores.
 
 Le premier est supporté par navigateur web, et possède une interface optimisée afin de pouvoir être utilisée facilement par des sujets dans le cadre d'expériences sur la perception des environnements sonores (\cf~Section~\ref{sec:ch4_simscene}).
 

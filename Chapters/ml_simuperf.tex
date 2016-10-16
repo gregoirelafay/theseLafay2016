@@ -1,5 +1,5 @@
 %************************************************
-\chapter[Données simulées et analyse automatique]{Utilisation de données simulées en analyse sensorielle}\label{ch:ml_simuperf}
+\chapter[Données simulées et analyse automatique]{Utilisation de données simulées en analyse automatique}\label{ch:ml_simuperf}
 %************************************************
 % \gl{TODO: MFCCs \citep{Davis80a}} \gl{TODO: HMM \citep{Rabiner1989}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -25,10 +25,10 @@ La troisième présente les résultats de la deuxième tâche du challenge DCASE
 
 \subsection{Présentation}
 
-Le challenge DCASE est un challenge international\footnote{Le challenge DCASE est soutenu par les organisations IEEE et AASP.} d'évaluation des performances des systèmes d'analyse automatique des environnements sonores. Il comprend quatre tâches:
+Le challenge DCASE est un challenge international d'évaluation des performances des systèmes d'analyse automatique des environnements sonores, soutenu par les organisations IEEE et AASP. Il comprend quatre tâches:
 
 \begin{itemize}
-\item classification de scènes environnementales: l'objectif est de classifier des scènes sonores enregistrées en fonction de leur classe. Cette classe est définie en fonction du lieu d'enregistrement des scènes (\eg~parc, métro, bureaux, \etc);
+\item classification de scènes environnementales: l'objectif est de regrouper des scènes sonores enregistrées en fonction de leur classe d'appartenance. Cette classe est définie en fonction du lieu d'enregistrement des scènes (\eg~parc, métro, bureaux, \etc);
 \item détection d'événements sonores sur un corpus de scènes réelles: l'objectif est de détecter et de classifier des événements sonores sur des scènes réelles enregistrées;
 \item détection d'événements sonores sur des scènes simulées: l'objectif est de détecter et de classifier des événements sonores sur des scènes simulées;
 \item marquage d'événements audio (uniquement DCASE 2016): l'objectif est d'identifier les classes d'événements présents sur de courts extraits sonores (4 secondes).
@@ -40,12 +40,12 @@ La deuxième édition du challenge DCASE a lieu en 2016. La tâche d'évaluation
 
 \subsection{Évaluer la détection automatique d'événements sonores}
 
-L'objectif des systèmes de détection automatique d'événements et de localiser et d'identifier, dans une scène sonore donnée, les événements qui la peuplent.
+L'objectif des systèmes de détection automatique d'événements est de localiser et d'identifier, dans une scène sonore donnée, les événements qui la peuplent.
 
 Par scène sonore, on entend ici un enregistrement d'environnement sonore composé de deux éléments:
 
 \begin{itemize}
-\item les événements sonores, événements qui occurrent ponctuellement, à différents moments de la scène. Ces événements sont regroupés en classes (\eg~clef, porte, clavier, voix, \etc). Ce sont ces classes que les systèmes doivent identifier;
+\item les événements sonores, événements qui occurrent ponctuellement, à différents moments de la scène. Ils sont regroupés en classes (\eg~clef, porte, clavier, voix, \etc). Ce sont ces classes que les systèmes doivent identifier;
 \item le \emph{background}, ou fond sonore, fond qui est présent durant toute la durée de la scène, et qui fait office de bruit pour les systèmes, ces derniers ne devant pas le détecter.
 \end{itemize}
 
@@ -74,10 +74,10 @@ La première métrique est la F-mesure \citep{Giannoulis2013database,giannoulis2
 F=\dfrac{2\times P \times R}{P+R}
 \end{equation}
 
-où $P$ et $R$ représentent respectivement la précision et le rappel. La precision rend compte du rapport entre le nombre d'événements correctement détectés, $c$, par le nombre d'événements effectivement détectés par l'algorithme, $e$, tandis que le rappel rend lui compte du rapport entre le nombre d'événements correctement détectés, $c$, par le nombre d'événements à détecter (le nombre d'événements présents dans la scène),$r$.
+où $P$ et $R$ représentent respectivement la précision et le rappel. La precision rend compte du rapport entre le nombre d'événements correctement détectés, $c$, par le nombre d'événements effectivement détectés par l'algorithme, $e$, tandis que le rappel rend lui compte du rapport entre le nombre d'événements correctement détectés, $c$, par le nombre d'événements à détecter (le nombre d'événements présents dans la scène), $z$.
 
 \begin{equation}
-P=\dfrac{c}{e}  \quad \textrm{, } \quad R=\dfrac{c}{r} \quad \textrm{, } \quad  e=c+fp \quad \textrm{, } \quad  r=c+fn
+P=\dfrac{c}{e}  \quad \textrm{, } \quad R=\dfrac{c}{z} \quad \textrm{, } \quad  e=c+fp \quad \textrm{, } \quad  z=c+fn
 \end{equation}
 
 avec $fp$ le nombre de faux positifs, et $fn$ le nombre de faux négatifs.
@@ -97,7 +97,7 @@ $F$ et $ER$ peuvent être calculées de deux manières, suivant que l'on tient c
 \item du nombre d'événements correctement identifiés ($eb$: \emph{event based}).
 \end{itemize}
 
-Considérer le nombre d'événements plutôt que les trames permets, entre autre, d'obtenir une mesure de performance indépendante de la durée des événements.On estime habituellement qu'un événement est correctement identifié si son \emph{onset} et/ou son \emph{offset} sont correctement identifiés. La détection d'une frontière (\emph{onset} - \emph{offset}), est toujours considérée avec un seuil de tolérance ($\pm100$ms et $\pm200$ms pour les challenges DCASE 2013 et 2016).
+Considérer le nombre d'événements plutôt que les trames permet, entre autre, d'obtenir une mesure de performance indépendante de la durée des événements.On estime habituellement qu'un événement est correctement identifié si son \emph{onset} et/ou son \emph{offset} sont correctement identifiés. La détection d'une frontière (\emph{onset} - \emph{offset}), est toujours considérée avec un seuil de tolérance ($\pm100$ms et $\pm200$ms pour les challenges DCASE 2013 et 2016).
 
 Ainsi nous notons $F_{sb}$ et $ER_{sb}$, les F-mesures et taux d'erreurs acoustiques calculés en tenant compte des trames, et $F_{eb}$ et $ER_{eb}$ les F-mesures et taux d'erreurs acoustiques calculés en tenant compte des événements.
 
@@ -112,7 +112,7 @@ Fcw=\dfrac{1}{C}\sum_{i=1}^C F^i \quad \textrm{, } \quad ERcw=\dfrac{1}{C}\sum_{
 
 avec $C$ le nombre de classes à détecter, et $F^i$ et $ER^i$ la F-measure et le taux d'erreurs acoustiques obtenus par un système en ne considérant que la classe d'événements $i$. 
 
-Au final, 8 métriques sont donc disponibles pour évaluer les algorithmes en AED:, nommément $F_{sb}$, $F_{eb}$,$Fcw_{sb}$, $Fcw_{eb}$, $ER_{sb}$, $ER_{eb}$, $ERcw_{sb}$ et $ERcw_{eb}$.
+Au final, 8 métriques sont donc disponibles pour évaluer les algorithmes en AED, nommément $F_{sb}$, $F_{eb}$,$Fcw_{sb}$, $Fcw_{eb}$, $ER_{sb}$, $ER_{eb}$, $ERcw_{sb}$ et $ERcw_{eb}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   DCASE 2013   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -175,7 +175,7 @@ Il s'agit alors d'éprouver les algorithmes sur ces nouveaux corpus, et de compa
 
 Cette partie décrit les différents corpus de scènes simulées utilisés lors de l'expérience. 
 
-Tous les corpus de scènes simulées sont générés à partir des scènes enregistrées du corpus \emph{test-QMUL}, le corpus de \emph{test} de la tâche de détection d'événements (AED) du challenge DCASE 2013  \citep{giannoulis2013detection} (\cf~Section~\ref{sec:ch6_dcase2013AED}). 
+Tous les corpus de scènes simulées sont générés à partir des scènes enregistrées du corpus \emph{test-QMUL}, le corpus de \emph{test} de la tâche de détection d'événements (AED) du challenge DCASE 2013  \citep{giannoulis2013detection}. 
 
 \emph{test-QMUL} a été enregistré à l'université \emph{Queen Mary University of London}. Il est composé de 11 enregistrements d'ambiances de bureau, tous d'une durée proche de la minute. Chaque scène est une séquence d'événements sonores non enchevêtrés. Ces événements sont repartis en 16 classes de sons, classes détaillées dans le tableau~\ref{tab:eventDCASE2013}. Les enregistrements ont été effectués dans 5 environnements acoustiques différents. Les scènes sont annotées par deux sujets différents. Pour chaque scène, et à chaque événement entendu, l'annotateur indique la classe de l'événement, son \emph{onset} (la position du début de l'événement) et son \emph{offset} (la position de fin de l'événement). Toutes les annotations sont utilisées. Les 22 couples scène-annotateur permettent de composer une vérité terrain.
 
@@ -199,7 +199,7 @@ Deux banques de sons isolés sont utilisées pour générer les scènes isolées
 \item les \emph{backgrounds}: les enregistrements de fonds sonores, \ie~des scènes amorphes (textures ne possédant pas d'événement saillant, \cf~Section~\ref{sec:ch4_eventTextureAmorphe}) rendant compte de l’environnement acoustique naturel du lieu d'occurrence des événements. 
 \end{itemize}
 
-Les sons isolés de la banque \emph{QMUL} sont extraits de scènes enregistrées à l'université \emph{Queen Mary University of London} (QMUL), dans le cadre de la préparation du challenge AED DCASE-2013, mais n'ayant pas été utilisées lors de l'évaluation, \ie~ne faisant pas partie des corpus d'évaluation (\emph{test-QMUL}) et de développement. Ces sons isolés profitent donc des mêmes conditions d’enregistrement que les scènes du corpus \emph{test-QMUL} \citep{Giannoulis2013database}. Le nombre d'événements par classe varie de 3 à 23. Les enregistrements de \emph{backgrounds} ont été réalisés sur les mêmes environnements acoustiques que ceux utilisés pour le corpus \emph{test-QMUL}, avec, là encore, les mêmes conditions d'enregistrements.
+Les sons isolés de la banque \emph{QMUL} sont extraits de scènes enregistrées à l'université \emph{Queen Mary University of London} (QMUL), dans le cadre de la préparation du challenge AED DCASE-2013, mais n'ayant pas été utilisées lors de l'évaluation, \ie~ne faisant pas partie des corpus d'évaluation (\emph{test-QMUL}) et de développement. Ces sons isolés ont donc été enregistrés dans les mêmes conditions que les scènes du corpus \emph{test-QMUL} \citep{Giannoulis2013database}. Le nombre d'événements par classe varie de 3 à 23. Les enregistrements de \emph{backgrounds} ont été réalisés sur les mêmes environnements acoustiques que ceux utilisés pour le corpus \emph{test-QMUL}, avec, là encore, les mêmes conditions d'enregistrements.
 
 La banque \emph{IRCCYN} est une nouvelle banque de sons isolés, enregistrés à l'Institut de Recherche en Cybernétique de Nantes (IRCCyN). Cette banque comprend les mêmes classes que celles présentes dans le corpus \emph{test-QMUL} (\cf~Tableau~\ref{tab:eventDCASE2013}). Les enregistrements ont été effectués dans un environnement calme, à l'aide d'un micro canon \emph{AT8035} connecté à un enregistreur \emph{ZOOM H4n}. Chaque classe est composée de 20 événements sonores, ce qui correspond au nombre d'événements disponibles dans le corpus d'entraînement du challenge DCASE-2013 \citep{Giannoulis2013database,giannoulis2013detection}. Les \emph{background} ont été enregistrés de nuit, dans les bureaux de l'IRCCyN, afin qu'ils ne soient pas pollués par des bruits non souhaités. 
 
@@ -211,10 +211,8 @@ La banque \emph{IRCCYN} est une nouvelle banque de sons isolés, enregistrés à
 Pour le processus de simulation \emph{instance}, l'objectif est de générer des scènes simulées qui ressemblent le plus possible aux scènes du corpus \emph{test-QMUL}. Cette ressemblance s'entend sous deux aspects:
 
 \begin{itemize}
-\item \emph{la structure temporelle}: le positionnement temporel en terme d'\emph{onsets} des événements sonores;
-\item \emph{les niveaux sonores des événements}: la puissance du ratio entre l'énergie de l'événement et celle du \emph{background}, notée EBR (\emph{event to Background power Ratios}). L'$EBR$ d'un événement de $N$ échantillons est obtenu en calculant 
-
-le ratio en décibels entre la valeur efficace (niveau $RMS$, \cf~Section~\ref{sec:ch5_recordDataSet}) du signal de l'événement ($E_{rms}$), et celui du \emph{background}  $B_{rms}$).
+\item \emph{la structure temporelle}: le positionnement temporel en termes d'\emph{onsets} des événements sonores;
+\item \emph{les niveaux sonores des événements}: la puissance du ratio entre l'énergie de l'événement et celle du \emph{background}, notée EBR (\emph{event to Background power Ratios}). L'$EBR$ d'un événement de $N$ échantillons est obtenu en calculant le ratio en décibels entre la valeur efficace (niveau $RMS$, \cf~Section~\ref{sec:ch5_recordDataSet}) du signal de l'événement ($E_{rms}$), et celui du \emph{background}  $B_{rms}$).
 
 \begin{equation}
 \label{eq:ch7_eq1}
@@ -233,7 +231,7 @@ Pour chaque événement, et chaque couple scène-annotateur du corpus \emph{test
  
 % \gl{TODO: expliquer comment on supprime le niveau de bruit dans $E_{rms}$} \\
 
-Les positions \emph{onsets} et les $EBRs$ ainsi recouvrés sont utilisés pour simuler un nouveau corpus de scènes. Pour chaque scène simulée, à chaque \emph{onset} d'une annotation (couple scène-annotateur), nous plaçons un événement de la même classe, choisi aléatoirement parmi la banque de sons isolés (\emph{QMUL} ou \emph{IRCCYN}). Afin de garantir que les samples ne soient pas trop longs, ces derniers sont coupés s'ils dépassent d'au moins $0.5$ la durée de l'annotation. Les niveaux des événements des scènes simulées sont fixés par rapport aux $EBRs$ calculés sur les scènes enregistrées. 
+Les positions \emph{onsets} et les $EBRs$ ainsi extraits sont utilisés pour simuler un nouveau corpus de scènes. Pour chaque scène simulée, à chaque \emph{onset} d'une annotation (couple scène-annotateur), nous plaçons un événement de la même classe, choisi aléatoirement parmi la banque de sons isolés (\emph{QMUL} ou \emph{IRCCYN}). Afin de garantir que les samples ne soient pas trop longs, ces derniers sont coupés s'ils dépassent d'au moins $0.5$ la durée de l'annotation. Les niveaux des événements des scènes simulées sont fixés par rapport aux $EBRs$ calculés sur les scènes enregistrées. 
 
 Le processus de simulation \emph{instance} ne s'appuie donc pas sur le modèle introduit à la section~\ref{sec:ch4_modelForm}. L'objectif ici est d’obtenir des scènes simulées possédant des samples différents des scènes enregistrées, mais dont les structures temporelles et les $EBRs$ sont aussi proches que possible de ceux des scènes du corpus \emph{test-QMUL}.
 
@@ -264,7 +262,7 @@ Cinq corpus sont considérés pour l'évaluation (\cf~Figure~ref{fig:databasesDC
 
 Les labels ``\,QMUL\,'' et ``\,IRCCYN\,'' font référence aux banques de données de sons isolés utilisées pour générer les scènes simulées. Les labels ``\,instance\,'' et ``\,abstract\,'' désignent, eux, les processus de simulation utilisés. 
 
-Afin d'évaluer l'influence du niveau relatif des événements par rapport au \emph{background} sur les performances des algorithmes, le corpus \emph{instance-QMUL} est composé de quatre sous-corpus appelés respectivement \emph{insQ-EBR(6)}, \emph{insQ-EBR(0)}, \emph{insQ-EBR(-6)} et \emph{insQ-EBR(-12)}. Pour \emph{insQ-EBR(0)}, les $EBRs$ estimés sur \emph{test-QMUL} sont préservés.  Pour \emph{insQ-EBR(6)}, \emph{insQ-EBR(-6)} et \emph{insQ-EBR(-12)}, des compensations de +6$dB$, -6$dB$, -12$dB$ sont ajoutées, lors de la simulation, aux $EBRs$ d'origines. A noter que pour ces sous-corpus, seul l'$EBR$ est modifié. Les positions temporelles des événements, ainsi que les samples sélectionnés, sont strictement identiques entre les quatre sous-corpus.
+Afin d'évaluer l'influence du niveau relatif des événements par rapport au \emph{background} sur les performances des algorithmes, le corpus \emph{instance-QMUL} est composé de quatre sous-corpus appelés respectivement \emph{insQ-EBR(6)}, \emph{insQ-EBR($0$)}, \emph{insQ-EBR(-6)} et \emph{insQ-EBR(-12)}. Pour \emph{insQ-EBR($0$)}, les $EBRs$ estimés sur \emph{test-QMUL} sont préservés.  Pour \emph{insQ-EBR(6)}, \emph{insQ-EBR(-6)} et \emph{insQ-EBR(-12)}, des compensations de +6$dB$, -6$dB$, -12$dB$ sont ajoutées, lors de la simulation, aux $EBRs$ d'origines. A noter que pour ces sous-corpus, seul l'$EBR$ est modifié. Les positions temporelles des événements, ainsi que les samples sélectionnés, sont strictement identiques entre les quatre sous-corpus.
 
 Pour tous les corpus (\emph{abstract-QMUL}, \emph{instance-IRCCYN} et \emph{abstract-IRCCYN}), ainsi que les sous-corpus de \emph{instance-QMUL}, une simulation est réalisée pour chaque couple scène-annotateur de \emph{test-QMUL} ($11\times2=22$ couples). 
 
@@ -278,7 +276,7 @@ Chaque corpus/sous-corpus est ainsi composé de 220 scènes simulées ($11\times
 
 Afin d'évaluer le réalisme des scènes acoustiques simulées, une expérience sensorielle d'analyse sémantique différentielle est conduite. \\
 
-\textbf{Procédure} \\
+{\setlength{\parindent}{0cm}\textbf{Procédure}} \\
 
 22 stimuli doivent être notés, comprenant 11 scènes enregistrées de \emph{test-QMUL} et 11 scènes simulées de \emph{instance-IRCCYN}. Les sujets doivent évaluer le réalisme de chaque scène suivant une échelle graduée de 7 points, allant de 1 (non réaliste) à 7 (très réaliste). 
 
@@ -286,15 +284,15 @@ L'ordre de présentation est différent pour chaque sujet. Les sujets doivent é
 
 À la fin de l'expérience, les sujets sont invités à commenter librement leurs notations. \\
 
-\textbf{Apparatus} \\
+{\setlength{\parindent}{0cm}\textbf{Dispositif expérimental}} \\
 
 L'audio est diffusé en monophonique. Au début de l'expérience, il est demandé aux sujets d'utiliser un casque audio, et de régler le volume sonore à un niveau confortable.  \\
 
-\textbf{Participant} \\
+{\setlength{\parindent}{0cm}\textbf{Participant}} \\
 
 15 sujets ont participé à l'étude. Tous ont réalisé l'expérience avec succès. \\
 
-\textbf{Résultats} \\
+{\setlength{\parindent}{0cm}\textbf{Résultats}} \\
 
 Nous notons $\mathcal{R}_{sujet}$ les notes de réalisme par sujet, notes moyennées en considérant séparément les scènes de \emph{test-QMUL} et celles de \emph{instance-IRCCYN}.
 
@@ -307,7 +305,7 @@ En ce qui concerne les scènes simulées, les sujets ont rapporté que:
 \item ``\,certains événements sont coupés\,''. Ce dernier point est en effet avéré. La coupe de certains événements est due à un choix de conception du corpus \emph{instance-IRCCYN} discuté à la section~\ref{sec:ch7_simuProcessInstance}. Ce choix est pris dans le but de minimiser la différence entre la scène simulée, et celle de référence. 
 \end{itemize}
 
-Il convient de noter que, pour de nombreux participants, certaines scènes simulées ont reçu une note de réalisme plus élevée que certaines des scènes naturelles, ce qui montre que, bien que des différences notables peuvent être faites, elles n'influencent le réalisme acoustique que dans une moindre mesure.
+Il convient de noter que, pour de nombreux participants, certaines scènes simulées ont reçu une note de réalisme plus élevée que certaines des scènes naturelles, ce qui montre que, bien que des différences notables puissent être faites, elles n'influencent le réalisme acoustique que dans une moindre mesure.
 
 \begin{figure}[t]
 \begin{center}
@@ -351,9 +349,9 @@ L'analyse s'effectue en deux temps, suivant le corpus de sons isolés considér�
 \item corpus de sons isolés \emph{QMUL}: cette analyse considère les trois corpus \emph{test-QMUL}, \emph{instance-QMUL} et \emph{abstract-QMUL}. Elle a deux objectifs:
 
 \begin{enumerate}
-\item évaluer s'il existe des différences significatives entre les performances des algorithmes observées sur les corpus \emph{test-QMUL}, \emph{insQ-EBR(0)} et \emph{abstract-QMUL}. Il s'agit ici de vérifier que les algorithmes sont capables de généraliser les performances obtenues sur \emph{test-QMUL} pour des corpus simulés avec des sons isolés enregistrés dans les mêmes conditions, et dont les scènes possèdent une structure ($EBR$ et positions des \emph{onsets}) identique (\emph{insQ-EBR(0)}) ou similaire (\emph{abstract-QMUL}). Pour apprécier la significativité des différences observées, nous considérons une ANOVA à mesures répétées comportant 1 facteur intra-sujet (les systèmes) et 1 facteur inter-sujet (les corpus). L'analyse \emph{post hoc} s'effectue suivant une procédure de Tukey-Kramer;
+\item évaluer s'il existe des différences significatives entre les performances des algorithmes observées sur les corpus \emph{test-QMUL}, \emph{insQ-EBR($0$)} et \emph{abstract-QMUL}. Il s'agit ici de vérifier que les algorithmes sont capables de généraliser les performances obtenues sur \emph{test-QMUL} pour des corpus simulés avec des sons isolés enregistrés dans les mêmes conditions, et dont les scènes possèdent une structure ($EBR$ et positions des \emph{onsets}) identique (\emph{insQ-EBR($0$)}) ou similaire (\emph{abstract-QMUL}). Pour apprécier la significativité des différences observées, nous considérons une ANOVA à mesures répétées comportant 1 facteur intra-sujet (les systèmes) et 1 facteur inter-sujet (les corpus). L'analyse \emph{post hoc} s'effectue suivant une procédure de Tukey-Kramer;
 
-\item évaluer s'il existe des différences significatives entre les performances des algorithmes observées sur les corpus \emph{insQ-EBR(6)}, \emph{insQ-EBR(0)}, \emph{insQ-EBR(-6)} et \emph{insQ-EBR(-12)}. Il s'agit ici de vérifier que les algorithmes sont capables de généraliser les performances obtenues sur \emph{insQ-EBR(0)} pour des corpus simulés identiques, mais possédant des niveaux de bruits différents. Pour apprécier la significativité des différences observées, nous considérons une ANOVA à mesures répétées comportant 2 facteurs intra-sujet (les systèmes et les $EBR$). L'analyse \emph{post hoc} s'effectue suivant une procédure de Tukey-Kramer;
+\item évaluer s'il existe des différences significatives entre les performances des algorithmes observées sur les corpus \emph{insQ-EBR(6)}, \emph{insQ-EBR($0$)}, \emph{insQ-EBR(-6)} et \emph{insQ-EBR(-12)}. Il s'agit ici de vérifier que les algorithmes sont capables de généraliser les performances obtenues sur \emph{insQ-EBR($0$)} pour des corpus simulés identiques, mais possédant des niveaux de bruits différents. Pour apprécier la significativité des différences observées, nous considérons une ANOVA à mesures répétées comportant 2 facteurs intra-sujet (les systèmes et les $EBR$). L'analyse \emph{post hoc} s'effectue suivant une procédure de Tukey-Kramer;
 
 \end{enumerate}
 
@@ -363,9 +361,7 @@ L'analyse s'effectue en deux temps, suivant le corpus de sons isolés considér�
 
 Pour les ANOVA à mesures répétées, la sphéricité est évaluée à l'aide d'un test de Mauchly. Si l'hypothèse de sphéricité est violée, la valeur $p$ est calculée à l'aide d'une correction de Greenhouse-Geisser (\cf~Annexe~\ref{app:anova}). Dans ce cas, nous notons $p_{gg}$ la valeur $p$ ainsi corrigée. L'analyse \emph{post hoc} est conduite en suivant la procédure de Tukey-Kramer, celle de Bonferroni étant jugée trop sévère pour le cadre de notre étude. Le seuil de significativité est fixé à $\alpha=0.05$ pour toutes les analyses.
 
-Un point méthodologique. Notre analyse statistique, ici appliquée à la détection d'événements, s'éloigne légèrement de celle pratiquée habituellement en apprentissage machine pour des tâches de classification \citep{demvsar2006statistical}. Dans ces dernières, le corpus est un ensemble d'objets qu'il convient de classer. On a donc une valeur de métrique par corpus, autrement dit, chaque corpus correspond à une observation pour l'analyse statistique. Dans le cas de la détection d'événements sonores, un corpus est un ensemble de scènes, et il convient alors de détecter les événements sur chacune d'elle. On a donc une valeur de métrique par scène\footnote{Formellement, chaque scène peut être considérée comme un corpus d'objets à détecter puis classifier.}, et à chaque scène correspond une observation. Notons enfin que nous faisons le choix ici d'utiliser des méthodes d'analyses paramétriques (ANOVA), mais qu'il est tout a fait possible de considérer leurs pendants non-paramétriques (test de Friedman) \citep{demvsar2006statistical}.
-
-%\gl{TODO: un point méthodologique, ici corpus de scènes et non corpus d'objets, du coup chaque scène est un sous corpus, du coup on a une métrique par scène et une métrique moyenne par corpus, du coup théorème centrale limite, du coup test paramétrique, du coup on s'éloigne des recommandations de }
+Sur le plan méthodologique, il peut être utile de relever que notre analyse statistique, ici appliquée à la détection d'événements, s'éloigne légèrement de celle pratiquée habituellement en apprentissage machine pour des tâches de classification \citep{demvsar2006statistical}. Dans ces dernières, le corpus est un ensemble d'objets qu'il convient de classer. On a donc une valeur de métrique par corpus, autrement dit, chaque corpus correspond à une observation pour l'analyse statistique. Dans le cas de la détection d'événements sonores, un corpus est un ensemble de scènes, et il convient alors de détecter les événements sur chacune d'elle. On a donc une valeur de métrique par scène\footnote{Formellement, chaque scène peut être considérée comme un corpus d'objets à détecter puis classer.}, et à chaque scène correspond une observation. Notons enfin que nous faisons le choix ici d'utiliser des méthodes d'analyses paramétriques (ANOVA), mais qu'il est tout a fait possible de considérer leurs pendants non-paramétriques (test de Friedman) \citep{demvsar2006statistical}.
 
 \subsection{Système de détection}
 
@@ -381,7 +377,7 @@ node[pos=0.15, below=10pt] {\footnotesize dé-bruitage}
 node[pos=0.38, below=10pt] {\footnotesize MFCCs} 
 node[pos=0.6, below=10pt] {\footnotesize HMM} 
 node[pos=0.85, below=10pt] {\footnotesize lissage};
-\caption[Vision schématisée des systèmes de détection d'événements du challenge DCASE 2013.]{Vision schématisée des systèmes de détection d'événements du challenge DCASE 2013; $*$ indique que le nœud n'est pas systématiquement utilisé; les choix états de l'art sont donnés en exemple sous les nœuds.}
+\caption[Vision schématisée des systèmes de détection d'événements du challenge DCASE 2013.]{Vision schématisée des systèmes de détection d'événements du challenge DCASE 2013; $*$ indique que le nœud n'est pas systématiquement utilisé; les choix état de l'art sont donnés en exemple sous les nœuds.}
 \label{fig:schematicSys}
 \end{figure}
 
@@ -426,7 +422,7 @@ Tous les algorithmes ayant été évalués lors de la tâche 2 (AED) du challeng
 
 La majorité des systèmes suivent la chaîne de traitement illustrée à la figure~\ref{fig:schematicSys}, incluant parfois une étape de prétraitement de dé-bruitage.
 
-Le classifieur de choix est un modèle de Markov caché (HMM: \emph{Hidden markov model}) \citep{Rabiner1989} à 2 couches, dont la première modélise l'événement, et la seconde, la transition entre les événements. D'autres classifieurs incluant les forêts d'arbres décisionnels (RF: \emph{Random Forests}), les machines à vecteurs de support (SVM: \emph{Support Vector Machines}), la factorisation en matrices non négatives (NMF: \emph{Non-negative Matrix Factorization}), ainsi que des modèles de mélanges gaussiens (GMM: \emph{Gaussian mixture model}) sont également utilisés. Nous invitons le lecteur à se référer à \citep{Stowell15} ou/et aux publications indiquées dans le tableau~\ref{tab:systemsDcase2013} pour une description détaillée des algorithmes.
+Le classifieur de choix est un modèle de Markov caché (HMM: \emph{Hidden markov model}) \citep{Rabiner1989} à 2 couches, dont la première modélise l'événement, et la seconde, la transition entre les événements. D'autres classifieurs incluant les forêts d'arbres décisionnels (RF: \emph{Random Forests}), les machines à vecteurs de support (SVM: \emph{Support Vector Machines}), la factorisation en matrices non négatives (NMF: \emph{Non-negative Matrix Factorization}), ainsi que des modèles de mélanges gaussiens (GMM: \emph{Gaussian mixture model}) sont également utilisés. Nous invitons le lecteur à se référer à \citep{Stowell15} ou aux publications indiquées dans le tableau~\ref{tab:systemsDcase2013} pour une description détaillée des algorithmes.
 
 Au niveau des descripteurs, on distingue 5 groupes:
 
@@ -454,7 +450,7 @@ Tous les algorithmes sont entraînés et paramétrés sur les corpus d'entraîne
 \begin{table}[t] 
 \begin{center}  
 \begin{tabular}{lccc}  
-Système  & testQ & insQ-EBR(0) & absQ \\ 
+Système  & testQ & insQ-EBR($0$) & absQ \\ 
 \hline 
 Baseline & 9.0$\pm$4.8      & 10.5$\pm$3.0$^*$     & 9.9$\pm$3.5 \\ 
 CPS      & 0.7$\pm$0.8      & 0.8$\pm$1.3          & 0.8$\pm$1.4$^*$ \\ 
@@ -467,29 +463,29 @@ VVK      & 24.6$\pm$6.8$^*$ & 19.7$\pm$8.7         & 19.2$\pm$9.2 \\
 \hline
 \end{tabular} 
 \end{center} 
-\caption[Résultats mesurés par $Fcw_{eb}$ pour chacun des systèmes évalués dans le cadre du challenge DCASE 2013 en considérant les corpus \emph{test-QMUL}, \emph{insQ-EBR(0)} et \emph{abstract-QMUL}.]{Résultats mesurés par $Fcw_{eb}$ pour chacun des systèmes évalués dans le cadre du challenge DCASE 2013 en considérant les corpus \emph{test-QMUL}, \emph{insQ-EBR(0)} et \emph{abstract-QMUL}. Les résultats en gras présentent des différences significatives par ligne (procédure de Tukey-Kramer) avec le résultat obtenu pour \emph{test-QMUL}. Le meilleur résultat de la ligne est indiqué par ($^*$).} 
+\caption[Résultats mesurés par $Fcw_{eb}$ pour chacun des systèmes évalués dans le cadre du challenge DCASE 2013 en considérant les corpus \emph{test-QMUL}, \emph{insQ-EBR($0$)} et \emph{abstract-QMUL}.]{Résultats mesurés par $Fcw_{eb}$ pour chacun des systèmes évalués dans le cadre du challenge DCASE 2013 en considérant les corpus \emph{test-QMUL}, \emph{insQ-EBR($0$)} et \emph{abstract-QMUL}. Les résultats en gras présentent des différences significatives par ligne (procédure de Tukey-Kramer) avec le résultat obtenu pour \emph{test-QMUL}. Le meilleur résultat de la ligne est indiqué par ($^*$).} 
 \label{tab:qmul} 
 \end{table} 
 
-Avec la permission des auteurs des différents systèmes proposés (\cf~Tableau~\ref{tab:systemsDcase2013}), ces derniers sont testés sur les corpus de scènes simulées, en utilisant les mêmes serveurs de calculs que ceux utilisés pour la tache 2 (AED) du challenge DCASE 2013. Les systèmes ont par ailleurs été re-testés sur le corpus \emph{test-QMUL} (corpus de \emph{test} du challenge AED DCASE 2013), afin de vérifier la réplicabilité des résultats précédemment publiés \citep{Stowell15}.
+Avec la permission des auteurs des différents systèmes proposés (\cf~Tableau~\ref{tab:systemsDcase2013}), ces derniers sont testés sur les corpus de scènes simulées, en utilisant les mêmes serveurs de calculs que ceux utilisés pour la tache 2 (AED) du challenge DCASE 2013. Les systèmes ont par ailleurs été re-testés sur le corpus \emph{test-QMUL} (corpus de \emph{test} du challenge AED DCASE 2013), afin de vérifier la réplicabilité des résultats précédemment publiés \citep{Stowell15} \gl{TODO: vérifiée ?}.
 
-Le Tableau~\ref{tab:qmul} affiche les $Fcw_{eb}$ en pourcentages pour les corpus \emph{test-QMUL}, \emph{insQ-EBR(0)} et \emph{abstract-QMUL}. Le système CPS, tel que soumis au challenge DCASE 2013, présente un problème d'implémentation l'empêchant de fonctionner correctement. Ce problème est à l'origine des faibles résultats obtenus pour \emph{test-QMUL}, résultats qui se retrouvent sur \emph{insQ-EBR(0)} et \emph{abstract-QMUL}. Pour ces raisons nous ne considérons pas plus avant ce système.
+Le Tableau~\ref{tab:qmul} affiche les $Fcw_{eb}$ en pourcentages pour les corpus \emph{test-QMUL}, \emph{insQ-EBR($0$)} et \emph{abstract-QMUL}. Le système CPS, tel que soumis au challenge DCASE 2013, présente un problème d'implémentation l'empêchant de fonctionner correctement. Ce problème est à l'origine des faibles résultats obtenus pour \emph{test-QMUL}, résultats qui se retrouvent sur \emph{insQ-EBR($0$)} et \emph{abstract-QMUL}. Pour ces raisons nous ne considérons pas plus avant ce système.
 
-L'ANOVA montre un effet significatif du corpus  ($F[2,30]=6$, $p<0.01$), des systèmes  ($F[6,180]=173$, $p_{gg}<0.01$) et de l'interaction  ($F[12,180]=10$, $p_{gg}<0.01$). Il semble ainsi, au premier abord, que le changement de corpus a bien provoqué une modification des performances, et ce bien que les sons utilisés pour simuler les corpus \emph{abstract-QMUL} et \emph{insQ-EBR(0)} soient similaires à ceux que l'on trouve dans \emph{test-QMUL}.
+L'ANOVA montre un effet significatif du corpus  ($F[2,30]=6$, $p<0.01$), des systèmes  ($F[6,180]=173$, $p_{gg}<0.01$) et de l'interaction  ($F[12,180]=10$, $p_{gg}<0.01$). Il semble ainsi, au premier abord, que le changement de corpus a bien provoqué une modification des performances, et ce bien que les sons utilisés pour simuler les corpus \emph{abstract-QMUL} et \emph{insQ-EBR($0$)} soient similaires à ceux que l'on trouve dans \emph{test-QMUL}.
 
-Cependant, l'analyse \emph{post hoc} au niveau des corpus révèle que la \emph{Baseline}, DHV, GVV, SCS et VVK ne présentent pas de différences significatives entre les performances observées pour \emph{test-QMUL} d'une part, et celles relevées pour \emph{abstract-QMUL} et \emph{insQ-EBR(0)} d'autre part. Seuls les résultats de NVM et NR décroissent significativement entre \emph{test-QMUL} et les deux corpus simulés.
+Cependant, l'analyse \emph{post hoc} au niveau des corpus révèle que la \emph{Baseline}, DHV, GVV, SCS et VVK ne présentent pas de différences significatives entre les performances observées pour \emph{test-QMUL} d'une part, et celles relevées pour \emph{abstract-QMUL} et \emph{insQ-EBR($0$)} d'autre part. Seuls les résultats de NVM et NR décroissent significativement entre \emph{test-QMUL} et les deux corpus simulés.
 
 Ainsi, exception faite de NR et NVM, les classements des systèmes établis par rapport à leurs performances sont égaux pour les 3 corpus. Ces résultats permettent de conclure deux points quant aux performances de DHV, GVV, SCS et VVK:
 
 \begin{itemize}
-\item comparaison entre \emph{test-QMUL} et \emph{insQ-EBR(0)}: les performances comparables montrent que les algorithmes sont robustes au changement d'événements. À noter que les samples proviennent tous des enregistrements de QMUL, \ie~ont été enregistrés dans les mêmes conditions;
+\item comparaison entre \emph{test-QMUL} et \emph{insQ-EBR($0$)}: les performances comparables montrent que les algorithmes sont robustes au changement d'événements. À noter que les samples proviennent tous des enregistrements de QMUL, \ie~ont été enregistrés dans les mêmes conditions;
 \item comparaison entre \emph{test-QMUL} et \emph{abstract-QMUL}: les performances comparables montrent que les algorithmes sont robustes à un changement de positions temporelles des samples, si les paramètres structuraux des scènes ($EBRs$ et espacements inter-\emph{onsets}) sont conservés.
 \end{itemize}
   
 \begin{table}[t]
 \begin{center} 
 \begin{tabular}{lllllll}  
-  Système &   testQ         &  insQ-EBR(0)      &   absQ          \\
+  Système &   testQ         &  insQ-EBR($0$)      &   absQ          \\
  \hline
  Baseline & 3.14            &  8.63             &  7.40    \\
           & (tiroir)        &  (tiroir)         & (tiroir) \\
@@ -522,7 +518,7 @@ Considérons dans un premier temps les descripteurs extraits. Les valeurs minima
 
 Une inspection des matrices de confusion inter-classes révèle que c'est, pour les deux systèmes, l'étape de classification qui serait responsable de la dégradation des performances. Le tableau~\ref{tab:fp} affiche, pour tous les systèmes, le plus grand nombre de faux positifs moyennés sur l'ensemble des scènes pour les trois corpus, ainsi que la classe correspondante. Pour NVM et NR, une classe en particulier (NVM: toux, NR: porte-claquer) semble être détectée de manière abusive, augmentant drastiquement le nombre de faux positifs, et diminuant \emph{de facto} les résultats.
 
-Nous concluons que, pour ces deux systèmes, la diminution des performances n'est probablement pas un artefact dû au processus de simulation, mais plutôt a un phénomène de sur-apprentissage de l'étape de classification. Considérant que ces systèmes sont les seuls à faire usage d'une approche de classification discriminative (NR: SVMs; NVM: RFs), nous conjecturons que le cadre d'entraînement proposé par le challenge DCASE, et notamment le faible nombre de samples disponibles pour l'apprentissage (20 par classe), n'est pas adapté pour ces deux algorithmes.
+Nous concluons que, pour ces deux systèmes, la diminution des performances n'est probablement pas un artefact dû au processus de simulation, mais plutôt a un phénomène de sur-apprentissage de l'étape de classification. Considérant que ces systèmes sont les seuls à faire usage d'une approche de classification discriminative (NR: SVMs; NVM: RFs), nous conjecturons que le cadre d'entraînement proposé par le challenge DCASE, et notamment le faible nombre de samples disponibles pour l'apprentissage (20 par classe), n'est pas adapté pour ces deux algorithmes. \gl{Le processus de simulation peut ainsi être considéré comme sain.}
 
 \subsubsection{Corpus instance-QMUL en considérant différents niveaux de bruit}
 
@@ -534,11 +530,11 @@ Nous concluons que, pour ces deux systèmes, la diminution des performances n'es
 \end{center}
 \end{figure}
 
-Nous considérons maintenant l'influence de l'$EBR$ sur les performances des algorithmes. Les résultats obtenus pour les corpus \emph{insQ-EBR(-12)}, \emph{insQ-EBR(-6)}, \emph{insQ-EBR(0)} et \emph{insQ-EBR(6)} (\cf~Section~\ref{sec:ch7_datasetEtEbr}) sont présentés sur la figure~\ref{fig:ebr}. 
+Nous considérons maintenant l'influence de l'$EBR$ sur les performances des algorithmes. Les résultats obtenus pour les corpus \emph{insQ-EBR(-12)}, \emph{insQ-EBR(-6)}, \emph{insQ-EBR($0$)} et \emph{insQ-EBR(6)} (\cf~Section~\ref{sec:ch7_datasetEtEbr}) sont présentés sur la figure~\ref{fig:ebr}. 
 
 L'ANOVA montre un effet significatif de l'$EBR$ ($F[3,30]=63$, $p_{gg}<0.01$), des systèmes ($F[6,60]=128$, $p_{gg}<0.01$) et de l'interaction ($F[18,180]=16$, $p_{gg}<0.01$).
 
-Concernant l'analyse \emph{post hoc} sur l'$EBR$, tous les systèmes affichent une dégradation de performances significative lorsque l'on passe d'un $EBR$ de $0dB$ à un $EBR$ de $-12dB$, ainsi qu'une amélioration significative lorsque l'on passe d'un $EBR$ de $0dB$ à un $EBR$ de $+6dB$ (excepté DHV). Ainsi, et sans surprise, plus l'$EBR$ est faible, et plus les performances diminuent. Par ailleurs, plus l'$EBR$ est faible, et plus les écarts entre les algorithmes se réduisent. Le seul système qui ne suit pas cette tendance est SCS, qui maintient des performances stables pour les différents $EBRs$, et améliore même significativement ces dernières pour des $EBRs$ allant de $6$ à -6$dB$. Ces résultats montrent l'efficacité de l'étape de dé-bruitage dont bénéficie SCS, pré-traitement qui est au cœur de son algorithme \citep{SCS}. \\
+Concernant l'analyse \emph{post hoc} sur l'$EBR$, tous les systèmes affichent une dégradation de performances significative lorsque l'on passe d'un $EBR$ de $0dB$ à un $EBR$ de $-12dB$, ainsi qu'une amélioration significative lorsque l'on passe d'un $EBR$ de $0dB$ à un $EBR$ de $+6dB$ (\gl{excepté DHV pour lequel l'amélioration n'est pas significative}). Ainsi, et sans surprise, plus l'$EBR$ est faible, et plus les performances diminuent. Par ailleurs, plus l'$EBR$ est faible, et plus les écarts entre les algorithmes se réduisent. Le seul système qui ne suit pas cette tendance est SCS, qui maintient des performances stables pour les différents $EBRs$, et améliore même significativement ces dernières pour des $EBRs$ allant de $6$ à -6$dB$. Ces résultats montrent l'efficacité de l'étape de dé-bruitage dont bénéficie SCS, pré-traitement qui est au cœur de son algorithme \citep{SCS}. \\
 
 % \gl{TODO: expliquer pourquoi la baseline ne varie pas ?} \\
 
@@ -569,11 +565,11 @@ VVK      & 24.6$\pm$6.8$^*$ &  \textbf{6.6$\pm$5.7}  &  \textbf{7.3$\pm$6.3} \\
 \label{tab:irccyn} 
 \end{table} 
 
-Les résultats sont affichés sur le tableau~\ref{tab:irccyn} et la figure~\ref{fig:irccyn}. L'ANOVA montre un effet significatif du corpus ($F[2,30]=89$, $p<0.01$), des systèmes ($F[6,180]=249$, $p_{gg}<0.01$) et de l'interaction ($F[12,180]=17$, $p_{gg}<0.01$).
+Concernant l'évaluation menée sur les corpus simulés utilisant la nouvelle banque de sons isolés enregistrés à l'IRCCyN, les résultats sont affichés sur le tableau~\ref{tab:irccyn} et la figure~\ref{fig:irccyn}. L'ANOVA montre un effet significatif du corpus ($F[2,30]=89$, $p<0.01$), des systèmes ($F[6,180]=249$, $p_{gg}<0.01$) et de l'interaction ($F[12,180]=17$, $p_{gg}<0.01$).
 
-Concernant l'analyse \emph{post hoc} relative aux corpus, alors que la plupart des systèmes ont obtenu des performances comparables entre \emph{test-QMUL} et les corpus \emph{abstract-} et \emph{instance-QMUL}, tous les algorithmes voient leurs résultats diminuer de manière significative pour les corpus  \emph{abstract-} et \emph{instance-IRCCYN}.
+Alors que la plupart des systèmes ont obtenu des performances comparables entre \emph{test-QMUL} et les corpus \emph{abstract-} et \emph{instance-QMUL}, l'analyse \emph{post hoc} relative aux corpus montre que tous les algorithmes voient leurs résultats diminuer de manière significative pour les corpus  \emph{abstract-} et \emph{instance-IRCCYN}.
 
-De plus, l'analyse \emph{post hoc} des systèmes révèle que, à l'exception du système SCS, tous les systèmes ont des résultats équivalents ou significativement inférieurs (NVM) à ceux de la \emph{baseline} pour les deux corpus \emph{IRCCYN}. En particulier le système DHV, qui pourtant montre de bons résultats pour les corpus \emph{QMUL}.
+De plus, l'analyse \emph{post hoc} des systèmes révèle que, à l'exception du système SCS, tous les systèmes ont des résultats équivalents ou significativement inférieurs (NVM) à ceux de la \emph{baseline} pour les deux corpus \emph{IRCCYN}. C'est en particulier le cas du système DHV, qui pourtant montre de bons résultats pour les corpus \emph{QMUL}.
 
 L'ensemble de ces résultats nous permet de conclure que, pour les systèmes DHV, GVV, NR, NVM et VVK, le gain de performance observé sur le corpus \emph{test-QMUL}, par rapport à la baseline, n'est dû qu'à une sur-adaptation des systèmes aux données d'entraînement (corpus d'entraînement et de développement du challenge DCASE 2013). 
 
@@ -645,7 +641,7 @@ Par ailleurs nous faisons la distinction entre deux types de scènes, à savoir:
 \hline      
 \end{tabular}
 \end{center}
-\caption{Classes d'événements sonores utilisées dans le cadre du challenge DCASE 2016}
+\caption{Classes d'événements sonores utilisées dans le cadre du challenge DCASE 2016.}
 \label{tab:eventDCASE2016}
 \end{table}
 
@@ -672,18 +668,18 @@ Deux paramètres sont considérés pour contrôler la simulation des scènes son
 
 \begin{itemize}
 \item $EBR$: le rapport moyen entre les niveaux des événements et du \emph{background} (\cf~Section~\ref{sec:ch7_simuProcessInstance});
-\item $nombre d'événement$ ($nec$): le nombre d'événements présents pour chaque classe;
+\item nombre d'événements ($nec$): le nombre d'événements présents pour chaque classe;
 \end{itemize}
 
 Contrairement à ce qui s'était fait pour les scènes simulées du Challenge DCASE 2013, nous ne considérons plus l'espacement moyen entre les \emph{onsets} des événements pour contrôler la densité d'événements présents, mais directement le nombre d'événements ($nec$). Ainsi, nous garantissons que chaque classe soit représentée par le même nombre d'événements, indépendamment de leurs durées.
 
 Par ailleurs, les $EBRs$ des événements sont constants, \ie~fixer un $EBR$ de -6$dB$ pour une scène revient à fixer un $EBR$ de -6$dB$ pour chaque événement de cette scène.
 
-Enfin, deux types de scènes sont considérés. Les scènes polyphoniques, scènes où les événements de différentes classes peuvent se recouvrer, et les scènes non-polyphoniques, scènes où un seul événement peut être actif à un moment donné.
+Enfin, deux types de scènes sont considérés. Les scènes polyphoniques, scènes où les événements de différentes classes peuvent se recouvrir, et les scènes non-polyphoniques, scènes où un seul événement peut être actif à un moment donné.
 
 Pour chaque scène, la position des \emph{onsets} des événements est tirée aléatoirement, suivant une distribution uniforme. Dans le cas des scènes non-polyphoniques, une étape de post-traitement assure qu'aucun événement ne se recouvre.
 
-Nous considérons trois niveaux pour les paramètres $EBR$ et $nec$. Pour $nec$. Les valeurs de ces niveaux dépendent de la nature polyphonique de la scène:
+Nous considérons trois niveaux pour les paramètres $EBR$ et $nec$. Les valeurs de ces niveaux dépendent de la nature polyphonique de la scène:
 
 \begin{itemize}
 \item $EBR$: -6, 0 et +6$dB$;
@@ -714,9 +710,9 @@ Un même sample de \emph{background} est utilisé pour simuler l'ensemble des sc
 
 Les scènes du corpus d'évaluation sont simulées à partir d'une banque de sons isolés composée de 440 sons d'événements, 40 pour chacune des classes considérées, et 3 sons de \emph{background}.
 
-Pour chacune des 18 conditions expérimentales définies par les paramètres de contrôle (\cf~Section~\ref{sec:ch7_simulationDcase2016}), la simulation est répliquée trois fois, nous donnant ainsi un corpus de 54 scènes sonores simulées (18 $\times$ 3). Pour chaque réplication, la position des \emph{onsets} est retirée. Les graines des générateurs aléatoires sont différentes de celles employées pour simuler le corpus de développement.
+Pour chacune des 18 conditions expérimentales définies par les paramètres de contrôle (\cf~Section~\ref{sec:ch7_simulationDcase2016}), la simulation est répliquée trois fois, nous donnant ainsi un corpus de 54 scènes sonores simulées (18 $\times$ 3). Pour chaque réplication, la position des \emph{onsets} est re-tirée. Les graines des générateurs aléatoires sont différentes de celles employées pour simuler le corpus de développement.
 
-Concernant les samples d'événements sélectionnés, ces derniers sont différents pour chaque valeur de $nec$, de polyphonie et chaque $replication$. 
+Concernant les samples d'événements sélectionnés, ces derniers sont différents pour chaque valeur de $nec$, de polyphonie et chaque réplication. 
  
 Concernant les samples de \emph{background}, ces derniers sont différents pour chaque $replication$. 
 
@@ -724,7 +720,7 @@ Les scènes ont toutes une durée de 2 minutes. La durée totale du corpus est a
 
 \subsection{Métrique}
 
-Parmi les 4 métriques utilisées dans le cadre du challenge DCASE 2016 (\cf~Section~\ref{sec:ch6_metriqueAED}), nous en choisissons 1 dans le cadre de cette analyse:
+Parmi les 4 métriques utilisées dans le cadre du challenge DCASE 2016 (\cf~Section~\ref{sec:ch6_metriqueAED}), nous en choisissons une dans le cadre de cette analyse:
 
 \begin{itemize}
 \item $Fcw_{eb}$: la F-mesure, calculée en prenant en compte les \emph{onsets} des événements, et en normalisant les résultats par classe.
@@ -734,7 +730,7 @@ L'identification des \emph{onsets} des événements est effectuée avec une fen�
 
 \subsection{Données et analyses}
 
-Les métriques sont calculées séparément sur chacune des scènes du corpus d'évaluation, et moyennées en fonction des conditions expérimentales considérées. Cela étant, nous nous éloignons de l'évaluation officielle réalisée pour le challenge 2016, où le calcul des métriques est effectué sur l'ensemble des scènes, \ie~en considérant que toutes les scènes n'en forment qu'une.
+Les métriques sont calculées séparément sur chacune des scènes du corpus d'évaluation, et moyennées en fonction des conditions expérimentales considérées. De ce fait, nous nous éloignons de l'évaluation officielle réalisée pour le challenge 2016, où le calcul des métriques est effectué sur l'ensemble des scènes, \ie~en considérant que toutes les scènes n'en forment qu'une.
 
 L'analyse s'effectue en trois temps:
 
@@ -790,7 +786,7 @@ Pour les ANOVA à mesures répétées, la sphéricité est évaluée à l'aide d
 \hline 
 \end{tabular}
 \end{center}
-\caption{Description synthétique des systèmes soumis dans le cadre de la tâche 2 du challenge DCASE 2016}
+\caption{Description synthétique des systèmes soumis dans le cadre de la tâche 2 du challenge DCASE 2016.}
 \label{tab:systemsDcase2016}
 \end{table}
 
@@ -799,13 +795,13 @@ Cette partie décrit les systèmes soumis à la tâche 2 du challenge DCASE 2013
 Concernant les descripteurs, on peut regrouper les algorithmes en 4 groupes:
 
 \begin{itemize}
-\item \emph{mel/bark}: une représentation temps-fréquence, où l'axe fréquentiel à été projeté sur une échelle particulière, soit de Bark (\emph{Pikrakis}) soit de Mel (\emph{Choi}, \emph{Hayashi 1}, \emph{Hayashi 2}, \emph{Giannoulis} et \emph{Kong});
-\item \emph{VQT/CQT}: une représentation temps-fréquence; % \gl{TODO}
+\item \emph{mel/bark}: une représentation temps-fréquence, où l'axe fréquentiel a été projeté sur une échelle particulière, soit de Bark (\emph{Pikrakis}) soit de Mel (\emph{Choi}, \emph{Hayashi 1}, \emph{Hayashi 2}, \emph{Giannoulis} et \emph{Kong});
+\item \emph{VQT/CQT}: une représentation temps-fréquence;  \gl{TODO}
 \item \emph{MFCC}: une représentation basée sur des coefficients cepstraux calculés sur échelle de Mel (MFCCs: \emph{Mel-Frequency Cepstral Coefficients});
 \item \emph{GTCC}: une représentation basée sur des coefficients cepstraux calculés sur échelle de Gammatone (GTCCs: \emph{Gammatone cepstral coefficients}).
 \end{itemize}
 
-Les classifieurs utilisés sont variés, allant du plus simple (KNN: plus proches voisins), au plus récent (DNN: réseaux de neurones profonds).
+Les classifieurs utilisés sont variés, allant du plus classique (KNN: plus proches voisins), au plus récent (DNN: réseaux de neurones profonds).
 
 \subsection{Résultats}
 
@@ -824,16 +820,16 @@ Les résultats globaux sont affichés sur la figure~\ref{fig:overall_eb_class_wi
 \item \emph{Komatsu}, \emph{Hayashi 1}, \emph{Hayashi 2} et \emph{choi}: les performances moyennes allant de 67\% (\emph{choi}) à 71\% (\emph{Komatsu});
 \item \emph{Phan}, \emph{Giannoulis} et \emph{Pikrakis}: les performances moyennes allant de 34\% (\emph{Pikrakis}) à 36\% (\emph{Phan});
 \item \emph{Baseline}, \emph{Vu} et \emph{Gutierrez}: les performances allant de 21\% (\emph{Baseline}) à 23\% (\emph{Gutierrez});
-\item \emph{Kong}: la performance moyenne étant de 22\%;
+\item \emph{Kong}: la performance moyenne étant de 22\%.
 \end{enumerate}
 
 Ainsi sur les 10 systèmes soumis, 7 parviennent à surpasser les résultats présentés par la \emph{Baseline}, les systèmes du groupe 2 affichant une amélioration d'environ 15\%, ceux du groupe 1 améliorant les résultats de près de 45\%.
 
-Il est difficile de dégager l'influence d'un classifieur particulier, les systèmes du groupe 1 faisant usage de DNN, de NMF et de BLSTM. Pour les descripteurs cependant, 3 systèmes sur 4 du groupe 1 utilisent des bandes de Mel. Notons également l'importance, pour le système, de considérer le bruit (\emph{background}), soit en le modélisant, soit en réduisant ce dernier sur les données à évaluer. En effet, les trois systèmes n'ayant pas tenu compte de l'influence du bruit présentent les trois performances les plus faibles.
+Il est difficile de dégager l'influence d'un classifieur particulier, ceux utilisés par le groupe 1 étant variés. Pour les descripteurs cependant, 3 systèmes sur 4 du groupe 1 utilisent des bandes de Mel. Notons également l'importance, pour le système, de considérer le bruit (\emph{background}), soit en le modélisant, soit en réduisant ce dernier sur les données à évaluer. En effet, les trois systèmes n'ayant pas tenu compte de l'influence du bruit présentent les trois performances les plus faibles.
 
 Le système affichant les résultats les moins bons est \emph{Kong}. Ce dernier est le seul a présenter des résultats systématiquement en deçà de la \emph{baseline}. Une explication possible de ces faibles performances: la phase d'apprentissage du DNN utilisé \citep{Kong2016}. En effet, l’entraînement d'un tel classifieur nécessite un grand nombre de données afin d'être robuste, \ie~capable de généraliser. Or la banque d'entraînement proposée dans le cadre de cette tâche est loin d'être suffisante. 
 
-L'autre système faisant usage d'un DNN (\emph{Choi}) applique, lui, une étape d'augmentation de données, visant à augmenter artificiellement le nombre d'items sur lesquels entraîner l'algorithme \citep{Choi2016} (ce qui manque dans l'apprentissage de \emph{Kong}). Nous ne considérons pas plus avant les résultats de ce système dans la suite de l'analyse.
+L'autre système faisant usage d'un DNN (\emph{Choi}) applique, lui, une étape d'augmentation de données, visant à augmenter artificiellement le nombre d'items sur lesquels entraîner l'algorithme \citep{Choi2016} (ce qui manque dans l'apprentissage de \emph{Kong}). Nous ne considérons pas plus avant les résultats de \emph{Kong} dans la suite de l'analyse.
 
 \subsubsection{Influence de la polyphonie}
 
@@ -843,7 +839,7 @@ L'autre système faisant usage d'un DNN (\emph{Choi}) applique, lui, une étape 
 \label{fig:overall_poly_eb_class_wise_F}
 \end{figure}
 
-Les résultats par type de scènes (polyphoniques et non-polyphoniques) sont affichés sur la figure~\ref{fig:overall_poly_eb_class_wise_F}. L'ANOVA pratiquée sur $Fcw_{eb}$ révèle un effet positif du type de système ($F[9,468]=358$, $p_{gg}<0.01$), mais pas de la polyphonie ($F[1,52]=3.5$, $p=0.07$). Un effet d'interaction est néanmoins constaté ($F[10,520]=2.5$, $p_{gg}<0.05$).
+Les résultats par type de scènes (polyphoniques et non-polyphoniques) sont affichés sur la figure~\ref{fig:overall_poly_eb_class_wise_F}. L'ANOVA pratiquée sur $Fcw_{eb}$ révèle un effet positif du type de système ($F[9,468]=358$, $p_{gg}<0.01$), mais pas d'effet significatif de la polyphonie ($F[1,52]=3.5$, $p=0.07$). Un effet d'interaction est néanmoins constaté ($F[10,520]=2.5$, $p_{gg}<0.05$).
 
 Ainsi, la qualité polyphonique des scènes n'a pas affecté les performances des algorithmes, ces derniers étant capables de gérer de manière équivalente les deux types de scènes. L'analyse \emph{post hoc} sur le facteur polyphonique nous indique que sur les 10 systèmes considérés, 4 affichent des performances différentes, suivant le caractère polyphonique des scènes, nommément \emph{choi}, \emph{Giannoulis}, \emph{Komatsu} et \emph{Pikrakis}. Pour ces 4 systèmes, le passage au polyphonique dégrade les performances, constat qui était déjà suggéré par l'effet significatif de l'interaction dans l'ANOVA.
 
@@ -866,7 +862,7 @@ Concernant l'analyse \emph{post hoc}, nous observons si les systèmes présenten
 
 \begin{enumerate}
 \item \emph{Komatsu}: performances supérieures à celles de la \emph{Baseline};
-\emph{choi}, \emph{Hayashi 1} et \emph{Hayashi 2}: performances supérieures à celles de la \emph{Baseline} mais inférieures à celles du groupe 1;
+\item \emph{choi}, \emph{Hayashi 1} et \emph{Hayashi 2}: performances supérieures à celles de la \emph{Baseline} mais inférieures à celles du groupe 1;
 \item \emph{Gianoulis}: performances supérieures à celles de la \emph{Baseline}, mais inférieures à celles du groupe 2;
 \item \emph{Gutierrez}, \emph{Pikrakis}, \emph{Phan} et \emph{Vu}: performances ne présentant pas de différences significatives avec celles de la \emph{Baseline}.
 \end{enumerate}
@@ -887,7 +883,7 @@ Enfin, pour un $+6dB$, seulement trois groupes émergent:
 \item \emph{Gutierrez} et \emph{Phan}: performances ne présentant pas de différences significatives avec celles de la \emph{Baseline}.
 \end{enumerate}
 
-S'agissant des scènes non polyphoniques, il apparaît que le système \emph{Komatsu} permet d'obtenir les meilleures performances, notamment dans les situations de niveau de bruit élevé ($EBR=-6dB$). A noter que seul cet algorithme voit ses performances décroître avec l'$EBR$, ceci étant dû, sans doute, à l'attention particulière portée par ses auteurs à la modélisation du \emph{Background}.
+S'agissant des scènes non polyphoniques, il apparaît que le système \emph{Komatsu} permet d'obtenir les meilleures performances, notamment dans les situations de niveau de bruit élevé ($EBR=-6dB$). À noter que seul cet algorithme voit ses performances décroître avec l'$EBR$, ceci étant dû, sans doute, à l'attention particulière portée par ses auteurs à la modélisation du \emph{Background}.
 
 % \gl{TODO: ses performances décroître avec l'$EBR$})
 
@@ -901,7 +897,7 @@ Pour un $EBR$ de $-6dB$, l'analyse \emph{post hoc} met en évidence 4 groupes de
 
 \begin{enumerate}
 \item \emph{Komatsu}: performances supérieures à celles de la \emph{Baseline};
-\emph{choi}, \emph{Hayashi 1} et \emph{Hayashi 2}: performances supérieures à celles de la \emph{Baseline} mais inférieures à celles du groupe 1;
+\item \emph{choi}, \emph{Hayashi 1} et \emph{Hayashi 2}: performances supérieures à celles de la \emph{Baseline} mais inférieures à celles du groupe 1;
 \item \emph{Gianoulis}: performances supérieures à celles de la \emph{Baseline}, mais inférieures à celles du groupe 2;
 \item \emph{Gutierrez}, \emph{Pikrakis}, \emph{Phan} et \emph{Vu}: performances ne présentant pas de différences significatives avec celles de la \emph{Baseline}.
 \end{enumerate}
@@ -918,7 +914,7 @@ Les résultats, pour les scènes polyphoniques, sont similaires à ceux obtenus 
 
 \begin{itemize}
 \item  \emph{Vu}, \emph{Pikrakis} et \emph{Gutierrez} présentent des résultats équivalents à ceux de la \emph{Baseline} quel que soit l'$EBR$ considéré;
-\item  \emph{Phan} semble clairement améliorer ses performances par rapport à celles de la \emph{Baseline} pour des $EBR$ de $0$ et $+6dB$. Ce dernier système semble souffrir d'une mauvaise prise en compte du bruit, ce qui est particulièrement pénalisant dans le cas de scènes polyphoniques ($0dB\rightarrow -6dB$: $41\%\rightarrow 24\%$ )
+\item  \emph{Phan} semble clairement améliorer ses performances par rapport à celles de la \emph{Baseline} pour des $EBR$ de $0$ et $+6dB$. Ce dernier système semble souffrir d'une mauvaise prise en compte du bruit, ce qui est particulièrement pénalisant dans le cas de scènes polyphoniques ($0dB\rightarrow -6dB$: $41\%\rightarrow 24\%$).
 \end{itemize}
 
 \subsubsection{Influence du nombre d'événements}
@@ -944,7 +940,7 @@ Alors que l'augmentation du niveau de bruit a globalement tendance à diminuer l
 
 Des trois conditions expérimentales testées, seul l'$EBR$ semble avoir une influence significative sur les performances des algorithmes. Aucun impact réel n'est détecté pour la polyphonie et le nombre d'événements sonores par classe ($EBR$). Ces résultats indiquent qu'il est capital, afin d'améliorer les performances des algorithmes, de proposer des systèmes de gestion du bruit efficaces.
 
-Quel que soit l'$EBR$ considéré, quatre algorithmes (\emph{Hayashi 1}, \emph{Hayashi 2}, \emph{Komatsu} et \emph{choi}) présentent systématiquement des performances supérieures à celles de la \emph{Baseline}. Parmi ces quatre algorithmes, \emph{Komatsu} est le seul à présenter des performances significativement supérieures aux trois autres. Ce détachement se produit dans le cas des scènes non-polyphoniques, pour un $EBR$ de $-6dB$.
+Quel que soit l'$EBR$ considéré, quatre algorithmes (\emph{Hayashi 1}, \emph{Hayashi 2}, \emph{Komatsu} et \emph{choi}) présentent systématiquement des performances supérieures à celles de la \emph{Baseline}. Parmi ces quatre algorithmes, \emph{Komatsu} est le seul à présenter des performances significativement supérieures aux trois autres. Ce détachement se produit pour un $EBR$ de $-6dB$.
 
 À ce titre, \emph{Komatsu} peut être considéré comme le système présentant les meilleurs capacités de généralisation, et ce, toujours, grâce à sa gestion efficace des niveaux de bruit.
 
@@ -952,11 +948,11 @@ Quel que soit l'$EBR$ considéré, quatre algorithmes (\emph{Hayashi 1}, \emph{H
 
 Concernant le challenge DCASE 2013 (\cf~Section~\ref{sec:ch5_appDcase2013}), seul un algorithme (le vainqueur) arrive a maintenir des résultats stables pour toutes les conditions expérimentales (sélection des samples, $EBR$ et espacement moyen). Tous les autres voient leurs résultats chuter jusqu'à atteindre le niveau de la \emph{baseline}.
 
-Concernant le challenge DCASE 2016 (\cf~Section~\ref{sec:ch5_appDcase2016}), nous observons des variations significatives des métriques relevées en fonction de l'$EBR$ et du nombre d'événements présents par classe, variations pouvant atteindre les $20\%$. La polyphonie cependant n’impacte que modérément le fonctionnement des algorithmes.
+Concernant le challenge DCASE 2016 (\cf~Section~\ref{sec:ch5_appDcase2016}), nous observons des variations significatives des métriques relevées en fonction de l'$EBR$, variations pouvant atteindre les $20\%$. La polyphonie et le nombre d'événements présents par classe n'impacte cependant que modérément le fonctionnement des algorithmes.
 
 Dans les deux challenges, les algorithmes semblent particulièrement sensibles à l'$EBR$, ce dernier ayant, dans la grande majorité des cas, un effet négatif sur les performances. Ce résultat montre l'importance de considérer un pré-traitement permettant de gérer l'influence du bruit. Les algorithmes présentant les meilleurs résultats sont systématiquement dotés de la fonction.
 
-Les conditions d'enregistrement des événements paraissent, par ailleurs, impacter significativement les résultats du challenge DCASE 2013 \footnote{À noter que dans le cas du challenge DCASE 2016, les corpus sont tous enregistrés dans les mêmes conditions}. Dans ce challenge, les algorithmes ont, pour la plupart, souffert d'un phénomène de sur-apprentissage, leurs performances étant conditionnées à des scènes présentant des caractéristiques identiques ou égales à celles des sons de la banque d’entraînement.
+Les conditions d'enregistrement des événements paraissent, par ailleurs, impacter significativement les résultats du challenge DCASE 2013\footnote{À noter que dans le cas du challenge DCASE 2016, les corpus sont tous enregistrés dans les mêmes conditions.}. Dans ce challenge, les algorithmes ont, pour la plupart, souffert d'un phénomène de sur-apprentissage, leurs performances étant conditionnées à des scènes présentant des caractéristiques identiques ou égales à celles des sons de la banque d’entraînement.
 
 En résumé, il apparaît que parmi toutes les conditions expérimentales testées, deux semblent être primordiales pour évaluer
 les performances des algorithmes: l'$EBR$ et les conditions d'enregistrement.
@@ -972,7 +968,7 @@ Les facteurs influant sur les performances tels que le niveau de bruit, le nivea
 \item d'annoter manuellement les données.
 \end{enumerate}
 
-Nous pensons que, de même que l'usage exclusif de données simulées pour valider une approche algorithmique est insuffisant, l'utilisation seule de données réelles ne permet pas d'acquérir des connaissances sur l'impact de certains problèmes de conception et de paramétrisation rencontrés dans la mise en œuvre d'un système d'ingénierie. Les données réelles sont, la plupart du temps, des ressources rares, la conception  de grands ensembles de données d'évaluation est une tâche prenante et exigeante. Par ailleurs, l'annotation \emph{a posteriori} des événements, suppose chez les sujets un relatif consensus, qui n'est pas forcément garanti. L'utilisation de données de simulation est un entre deux, qui, combiné à une validation sur données réelles, permet d'obtenir une meilleure compréhension des systèmes en cours d'évaluation. 
+Nous pensons que, de même que l'usage exclusif de données simulées pour valider une approche algorithmique est insuffisant, l'utilisation seule de données réelles ne permet pas d'acquérir des connaissances sur l'impact de certains problèmes de conception et de paramétrisation rencontrés dans la mise en œuvre d'un système d'ingénierie. Les données réelles sont, la plupart du temps, des ressources rares, la conception  de grands ensembles de données d'évaluation est une tâche prenante et exigeante. Par ailleurs, l'annotation \emph{a posteriori} des événements, suppose chez les sujets un relatif consensus, qui n'est pas forcément garanti. L'utilisation de données de simulation est un entre deux, qui, combiné à une validation sur données réelles, permet d'obtenir une meilleure compréhension des systèmes en cours d'évaluation. \gl{Il est ainsi possible de dépasser le simple objectif de « notation » de l'évaluation, qui devient un guide précieux pour le développement et l'amélioration des systèmes évalués, en pointant précisément leurs forces et faiblesses.}
 
 %*****************************************
 %*****************************************
