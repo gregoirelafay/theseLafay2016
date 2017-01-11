@@ -5,9 +5,9 @@
 
 \subsection{L'environnement sonore}
 
-Émuler la capacité humaine à percevoir et analyser les objets de l'environnement à partir de données sensibles brutes est aujourd'hui un défi central de l'informatique appliquée. Dans ces recherches, le domaine de l'image s'est taillé la part du lion, stimulé par les nombreuses applications possibles, tant dans le domaine de la recherche d'information que dans celui de la robotique -- avec aujourd'hui l'apparition des premiers véhicules intelligents, capables d'analyser leur environnement. La sphère sonore, pour sa part, a d'abord vu se développer les recherches portant sur les objets spécifiques que sont la voix, puis la musique: chacun bénéficie de champs de recherche dédiés, que ce soit en perception ou en intelligence artificielle (SP: \emph{Speech Processing}, traitement automatique de la parole, et MIR: \emph{Music Information Retrieval}, recouvrement de l'information musicale). Plus récemment, suivant un intérêt croissant pour les problématiques de nuisance sonore, d'une part, et de prise en compte du contexte (\emph{context awareness}), de l'autre, la question de l'analyse d'environnements sonores, c'est-à-dire de scènes sonores « ordinaires » ne relevant ni de la parole, ni de la musique a gagné en importance. C'est dans ce domaine que se positionne le travail présenté dans cette thèse.
+Émuler la capacité humaine à percevoir et analyser les objets de l'environnement à partir de données sensibles brutes est aujourd'hui un défi central de l'informatique appliquée. Dans ces recherches, le domaine de l'image s'est taillé la part du lion, stimulé par les nombreuses applications possibles, tant dans le domaine de la recherche d'information que dans celui de la robotique -- avec aujourd'hui l'apparition des premiers véhicules intelligents, capables d'analyser leur environnement. La sphère sonore, pour sa part, a d'abord vu se développer les recherches portant sur les objets spécifiques que sont la voix, puis la musique: chacun bénéficie maintenant de champs de recherche dédiés, que ce soit en perception ou en intelligence artificielle (SP: \emph{Speech Processing}, traitement automatique de la parole, et MIR: \emph{Music Information Retrieval}, recouvrement de l'information musicale). Plus récemment, suivant un intérêt croissant pour les problématiques de nuisance sonore, d'une part, et de prise en compte du contexte (\emph{context awareness}), de l'autre, la question de l'analyse d'environnements sonores, c'est-à-dire de scènes sonores « ordinaires » ne relevant ni de la parole, ni de la musique a gagné en importance. C'est dans ce domaine que se positionne le travail présenté dans cette thèse.
 
-On peut tout d'abord remarquer que cette définition des sons environnementaux\footnote{Dans ce document, par souci rédactionnel, nous parlerons indifféremment de son(s) environnemental(aux), d'environnement(s) sonore(s), de scène(s) sonore(s), et de scène(s) sonore(s) environnementale(s), pour désigner les sons environnementaux.} par exclusion --- ni parole, ni musique --- n'est pas satisfaisante. D'un côté, elle réduit les sons environnementaux à des entités secondaires. D'un autre côté, l'opposition suggérée entre sons environnementaux et sons de paroles et/ou de musique, deux domaines où le sens donné aux sons est de première importance, peut mener à penser que l'influence de la valeur sémantique des sons environnementaux est anecdotique, induisant, \emph{de facto}, la primauté de leurs caractéristiques physiques. Ce qui n'est apparemment pas le cas \citep{ballas1987interpreting}.
+On peut tout d'abord remarquer que cette définition des sons environnementaux\footnote{Dans ce document, par souci rédactionnel, nous parlerons indifféremment de son(s) environnemental(aux), d'environnement(s) sonore(s), de scène(s) sonore(s), et de scène(s) sonore(s) environnementale(s), pour désigner les sons environnementaux.} par exclusion --- ni parole, ni musique --- n'est pas satisfaisante. D'un côté, elle réduit les sons environnementaux à des entités secondaires. D'un autre côté, l'opposition suggérée entre sons environnementaux et sons de paroles et/ou de musique, deux domaines où le sens donné aux sons est de première importance, peut mener à penser que l'influence de la valeur sémantique des sons environnementaux est anecdotique, induisant, \emph{de facto}, la primauté de leurs caractéristiques physiques. Postulat largement réfuté dans la littérature \citep{ballas1987interpreting}.
 
 Nous préfèrerons ici la définition donnée par \cite{vanderveer1980ecological} (cité par \cite{ballas1987interpreting}) qui se pose en quatre points. Un son environnemental:
 
@@ -33,8 +33,11 @@ Partant de cette vision composite des scènes, l'objectif de nos travaux est tri
 
 \begin{itemize}
 \item proposer un modèle morphologique des scènes sonores environnementales, fondé sur une étude approfondie de la littérature ayant trait aux mécanismes régissant la perception des sons environnementaux;
-\item montrer l'utilité d'un tel modèle dans le cadre de l'analyse sensorielle;
-\item montrer l'utilité d'un tel modèle dans le cadre de l'analyse automatique.
+\item montrer l'utilité d'un tel modèle: 
+\begin{itemize}
+\item dans le cadre de l'analyse sensorielle;
+\item dans le cadre de l'analyse automatique.
+\end{itemize} 
 \end{itemize}
 
 \subsection{Pourquoi modéliser une scène sonore ?}
@@ -45,7 +48,7 @@ Conscient de cette problématique, nous proposons ici un modèle génératif per
 
 Fort des banques de données ainsi constituées, nous investissons deux champs d'application. Le premier concerne la perception des paysages sonores, et questionne plus spécifiquement la notion d'agrément perçu dans des lieux urbains. L'utilisation de données simulées nous permet d'apprécier finement les contributions de chacune des sources sonores dans l'agrément perçu. Elle nous permet encore de retravailler les scènes en modifiant les paramètres afin de mesurer leurs effets.
 
-Le deuxième concerne la détection automatique des événements sonores, et propose une méthodologie novatrice afin d'évaluer les performances des algorithmes dédiés à cette tâche. Les données simulées se révèlent un outil précieux afin d'évaluer la capacité de généralisation des algorithmes.
+Le deuxième concerne la détection automatique des événements sonores, et propose une méthodologie novatrice afin d'évaluer les performances des algorithmes dédiés à cette tâche. Les données simulées se révèlent un outil précieux afin d'évaluer notamment la capacité de généralisation des algorithmes.
 
 % \gl{Suggérer les résultats que l’on  peut avoir avec la simulation et pas avec le reste}
 
@@ -70,17 +73,15 @@ La ville est un environnement bruyant. Elle l'a été de tous temps. Déjà dans
 
 Les chercheurs se concentrent alors sur l'identification des sources du bruit, et sur les moyens d'abaisser les niveaux sonores. Les premières législations anti-bruit apparaissent, qui proposent/imposent une réduction du niveau des bruits produits, essentiellement, par les transports et l'industrie.
 
-Mais le problème persiste, le bruit demeurant un phénomène subjectif, autrement dit, dépendant de l'appréciation de l'auditeur. Le bruit est affaire de contexte, et beaucoup de lieux urbains sont appréciés aussi pour leur atmosphère vivante, c'est à dire « bruyante ». Ville agréable ne rime pas nécessairement avec ville silencieuse.
+Mais le problème persiste, le bruit demeurant un phénomène subjectif, autrement dit, dépendant de l'appréciation de l'auditeur. Le bruit est affaire de contexte, et beaucoup de lieux urbains sont appréciés aussi pour leur atmosphère vivante, c'est à dire « bruyante ». Ville agréable ne rime donc pas nécessairement avec ville silencieuse.
 
-Il est aujourd'hui communément admis que des mesures objectives de niveaux sonores (\eg~$L_{Aeq}$) ne peuvent, seules, rendre compte de la qualité d'un environnement, et que vouloir réhabiliter cet environnement en s'attaquant uniquement aux paramètres acoustiques, par définition objectifs, est illusoire \citep{yang2005acoustic,schulte2006soundscape,kang2010semantic,aletta2016soundscape}. Il faut désormais envisager le bruit non plus seulement comme un objet physique, mais encore comme un objet cognitif \citep{guastavino_etude_2003}. Le problème n'est plus de savoir à partir de quand un son est gênant, mais pourquoi il est perçu comme tel, et par tel individu.
+Par conséquent, il est aujourd'hui communément admis que des mesures objectives de niveaux sonores (\eg~$L_{Aeq}$) ne peuvent, seules, rendre compte de la qualité d'un environnement, et que vouloir réhabiliter cet environnement en s'attaquant uniquement aux paramètres acoustiques, par définition objectifs, est illusoire \citep{yang2005acoustic,schulte2006soundscape,kang2010semantic,aletta2016soundscape}. Il faut désormais envisager le bruit non plus seulement comme un objet physique, mais encore comme un objet cognitif \citep{guastavino_etude_2003}. Le problème n'est plus de savoir à partir de quand un son est gênant, mais pourquoi il est perçu comme tel, et par tel individu.
 
 C'est l'objet de la recherche sur les paysages sonores: envisager l'environnement sonore du point de vue de celui qui le perçoit.
 
 Centrées sur le sujet, ces recherches sont par essence interdisciplinaires \citep{davies2013perception,aletta2016soundscape}, faisant appel à des outils et des méthodes provenant de champs de recherche variés comme l'acoustique, la psychologie cognitive, la psycho-linguistique, la sociologie, et plus récemment, l’intelligence artificielle.
 
-Depuis vingt ans, l'approche par les paysages sonores a permis de développer une base de descripteurs qualitatifs et acoustiques grâce auxquels nous jugeons mieux, et sommes mieux à même d'améliorer l'environnement sonore urbain. \citep{kang2006urban,schulte2007soundscape}
-
-L'enjeu est aujourd'hui de relier ces données perceptives à des mesures acoustiques, afin de pouvoir établir une politique de réduction du bruit efficace, adaptée à chaque situation \citep{schulte2013soundscape}.
+Depuis vingt ans, l'approche par les paysages sonores a permis de développer une base de descripteurs qualitatifs et acoustiques grâce auxquels nous jugeons mieux, et sommes mieux à même d'améliorer l'environnement sonore urbain \citep{kang2006urban,schulte2007soundscape}. L'enjeu est aujourd'hui de relier ces données perceptives à des mesures acoustiques, afin de pouvoir établir une politique de réduction du bruit efficace, adaptée à chaque situation \citep{schulte2013soundscape}.
 
 Cependant, le caractère pluridisciplinaire de ces recherches, et l'utilisation de protocoles expérimentaux variés pour évaluer l'environnement sonore, rendent l’intégration des résultats difficile \citep{davies2013perception}. De plus, il n'y a toujours pas de consensus sur les descripteurs (acoustiques ou perceptifs) à utiliser pour caractériser un paysage sonore \citep{brocolini2012prediction,aletta2016soundscape}, ce qui empêche la communauté, d'une part, de présenter aux décideurs des indicateurs génériques d'évaluation des paysages sonores, et d'autre part, d'élaborer/proposer des modèles crédibles sur la base de ces expertises.
 
@@ -104,7 +105,7 @@ Si on demande au sujet d'évaluer un environnement donné (évaluez le « calme 
 
 Si, à l'inverse, on demande au sujet de décrire un environnement donné (décrivez une scène sonore urbaine « calme »), l'expérimentateur obtient bien une information symbolique, sémantique, et riche de la représentation que se fait le sujet de cet environnement, mais en l'absence de données sonores, il ne peut la caractériser physiquement.
 
-Nous pensons que la simulation permet de faire un lien élégant entre ces deux approches auparavant disjointes. Celle-ci peut être vue comme une description modale, \ie~définie sur des dimensions physiques (le signal de la scène simulée), de la représentation mentale du sujet, description modale dont il est possible d'extraire les caractéristiques physiques.
+Nous pensons que la simulation permet de faire un lien élégant entre ces deux approches auparavant distinctes. Elle peut être vue comme une description modale, \ie~définie sur des dimensions physiques (le signal de la scène simulée), de la représentation mentale du sujet, description modale dont il est possible d'extraire les caractéristiques physiques. Elle ouvre la voie à de vastes champs d'analyses et d'investigations.
 
 
 \subsection{La détection automatique d'événements sonores}
@@ -129,15 +130,16 @@ C'est de cette dernière tâche que nous allons traiter.
 
 \subsubsection{Évaluation des algorithmes de détection d'événements}
 
-Si la reconnaissance automatique de la parole \citep{Rabiner93}, ou encore le recouvrement automatique de l'information musicale \citep{Muller07} sont des domaines d'investigation aujourd'hui bien établis, l'A$^2$S$^2$ en est à ses balbutiements, et ne profite pas encore des banques de données suffisantes, en volume et en qualité, ce qui contraint l'effort de recherche.
+Si la reconnaissance automatique de la parole \citep{Rabiner93}, ou encore le recouvrement automatique de l'information musicale \citep{Muller07} sont des domaines d'investigation aujourd'hui bien établis, l'A$^2$S$^2$ est un domaine jeune, et ne profite pas encore des banques de données suffisantes, en volume et en qualité, ce qui contraint l'effort de recherche.
 
 Ces banques de données sont cependant essentielles pour obtenir une évaluation saine et informative des systèmes proposés. Une mauvaise conception de ces dernières peut mener à des erreurs d’appréciation des systèmes. 
 
-Ce fait a déjà été constaté dans les domaines liés à l’analyse automatique de la musique \citep{sturm2014simple}, mais également dans le cadre de nos travaux, en ce qui concerne le recouvrement de similarités entre scènes sonores environnementales \citep{lafay2016JAES}.
+Ce fait a déjà été constaté dans les domaines liés à l’analyse automatique en image\footnote{\cf~Neural Network Follies: \url{https://neil.fraser.name/writing/tank/}}, en musique \citep{sturm2014simple}, mais également dans le cadre de nos travaux, en ce qui concerne le recouvrement de similarités entre scènes sonores environnementales \citep{lafay2016JAES}.
 
-Dans le cas de l’évaluation des algorithmes de détection d'événements sonores, il nous apparaît donc important de considérer des corpus de scènes dont les caractéristiques structurelles sont maîtrisées par l'expérimentateur. 
+Nous montrons dans ce document comment l'utilisation de données simulées permet de répondre à ces problématiques de fond en fournissant a l'expérimentateur un degré de contrôle plus élevé sur les données.
 
-%\gl{TODO: cette dernière précision tombe un peu comme un cheveu dans la soupe, jusque là on traitait de la qualité et du volume des banques de données. Si parler maintenant de la maîtrise des caractéristiques structurelles des scènes, il faut amener le sujet}
+
+
 
 \section{Plan}
 
@@ -149,7 +151,7 @@ La partie~\ref{part:model} introduit le modèle morphologique de scènes sonores
 
 La partie~\ref{part:simu} présente des cas d'applications concrets pouvant profiter de l'utilisation de données simulées. Elle est composée des chapitres~\ref{ch:psycho_xp}, et~\ref{ch:ml_simuperf}. Le chapitre~\ref{ch:psycho_xp} présente une série d'expériences montrant comment le modèle introduit permet d'étendre les possibilités des méthodologies traditionnellement utilisées en analyse sensorielle. Le cadre applicatif choisi par ces expériences est l'évaluation de l'agrément dans les environnements sonores urbains. Le chapitre~\ref{ch:ml_simuperf} précise comment le modèle de scènes sonores proposé peut être appliqué à l'évaluation des algorithmes de détection automatique d'événements sonores. Il montre notamment comment il permet de gagner en connaissance quant à la capacité de généralisation des systèmes de détection proposés.
 
-La partie~\ref{part:conc}, partie conclusive, comprend le chapitre~\ref{ch:end_conc}, qui résume les différentes contributions de cette thèse, conclut quant au travail effectué, et propose de nouvelles pistes à explorer.
+La partie~\ref{part:conc}, partie conclusive, comprend le chapitre~\ref{ch:end_conc}, qui résume les différentes contributions de cette thèse, conclut quant au travail effectué, et propose de nouvelles pistes à explorer. 
 
 % La présente thèse traite des environnements sonores. Donnons une définition. Habituellement on entend par son environnemental\footnote{Dans ce document, par souci rédactionnel, nous parlerons indifféremment de son(s) environnemental(aux), d'environnement(s) sonore(s), de scène(s) sonore(s), et de scène(s) sonore(s) environnementale(s), pour désigner les sons environnementaux.} tout extrait sonore qui ne se réclame ni de la parole, ni de la musique. Il s'agit alors d'une définition par exclusion, musique et parole étant des stimuli étudiés depuis longtemps, bien plus que leurs pendants environnementaux. Chacun bénéficie de champs de recherche dédiés, que ce soit en perception\footnote{on parle de perception de la parole (\emph{speech perception}) et de perception de la musique (\emph{music perception})}, ou en intelligence artificielle\footnote{On parle de traitement automatique de la parole (SP: \emph{Speech Processing}) et de recouvrement de l'information musicale pour la musique (MIR: \emph{Music Information Retrieval})}.
 

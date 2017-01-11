@@ -9,18 +9,195 @@
 %http://www.theanalysisfactor.com/can-likert-scale-data-ever-be-continuous/ \\
 %http://satisfactionscale.refinedigital.com/ \\
 
-\section{Test paramétriques à deux populations}
-\label{app:student}
+\section{Tests paramétriques à deux populations}
+\label{app:Student}
 
-\section{Test paramétriques à deux populations ou plus}
+Un test paramétrique à deux populations est un test statistique permettant d'apprécier si les moyennes de deux échantillons présentent une différence significative, la valeur statistique calculée étant supposée émaner d'une distribution particulière, nommée distribution nulle. 
+
+Le test de Student est, lui, un test paramétrique pour lequel la valeur statistique calculée est sensée procéder d'une distribution de Student. La valeur $p$ mesure alors la probabilité que la valeur statistique calculée émane effectivement d'une distribution de Student. La significativité de la valeur $p$ est évaluée à partir d'un seuil critique arbitraire $\alpha$.
+
+On distingue deux types de tests de Student:
+
+\begin{itemize}
+\item Test de Student à deux échantillons appariés: les deux échantillons sont liés points à points par une relation de dépendance. On peut citer comme exemple deux mesures de poids, prises sur un même groupe de sujets avant et après l'administration d'un traitement donné; 
+\item Test de Student à deux échantillons indépendants: les deux échantillons ne sont liés par aucune relation de dépendance. Pour reprendre l'exemple précédent, les deux mesures de poids sont cette fois ci prises sur deux groupes de sujets distincts, les sujets de l'un des groupes ayant reçu un traitement particulier, les sujets de l'autre étant vierges de tout traitement;
+\end{itemize}
+
+\subsection{Test de Student à deux échantillons appariés}
+
+Considérant $x$ et $y$ deux échantillons de $n$ individus, le test de Student à deux échantillons appariés éprouve l'hypothèse nulle que l'échantillon $x-y$ vienne d'une population déterminée par une distribution normale, de moyenne nulle, et de variance inconnue.
+
+Il s'agit alors de calculer la valeur statistique $t$:
+
+\begin{equation}
+t=\dfrac{m}{s\sqrt{\frac{1}{n}}}
+\end{equation}
+
+avec $m$ et $s$ respectivement la moyenne et l'écart type de l'échantillon $x-y$. La valeur $p$ est obtenue en cherchant la valeur $t$ dans une table des valeurs de la distribution d'une loi de Student à $n-1$ degrés de liberté.
+
+\subsection{Test de Student à deux échantillons indépendants}
+
+Considérant $x$ et $y$ deux échantillons de $n$ et $m$ individus, le test de Student à deux échantillons indépendants éprouve l'hypothèse nulle que les échantillons $x$ et $y$ viennent de deux populations déterminées par deux distributions normales, ayant la même moyenne et la même variance.
+
+Il s'agit alors de calculer la valeur statistique $t$:
+
+\begin{equation}
+t=\dfrac{\overline{x}-\overline{y}}{s\sqrt{\frac{1}{n}+\frac{1}{m}}}
+\end{equation}
+
+\begin{equation}
+s=\sqrt{\dfrac{(n-1)s^2_x + (m-1)s^2_y}{n+m-2}}
+\end{equation}
+
+avec $\overline{x}$ et $\overline{y}$ les moyennes des échantillons $x$ et $y$, et $s_x$ et $s_y$ les écarts types des échantillons $x$ et $y$. La valeur $p$ est obtenue en cherchant la valeur $t$ dans une table des valeurs de la distribution d'une loi de Student à $n+m-2$ degrés de liberté.
+
+\section{Tests paramétriques à deux échantillons ou plus}
 \label{app:anova}
 
-%\url{https://sakai.duke.edu/access/content/group/25e08a3d-9fc4-41b0-a7e9-815732c1c4ba/New\%20folder/Course\%20Files/BME244L/stat_module_5-post_hoc_chi_square_gof.html} \\
+L'analyse de variance (ANOVA) est un ensemble de tests statistiques paramétriques permettant d'apprécier si les moyennes de deux échantillons, ou plus, présentent des différences significatives.
 
-%\url{http://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-modmixt0-intro.pdf} \\
+L'ANOVA considère une variable dépendante quantitative, \ie~la mesure considérée, et une ou plusieurs variable(s) indépendante(s) catégorielle(s). Les variables indépendantes sont appelées « facteurs ». Les valeurs (catégories) prises par la(es) facteur(s) sont appelées « niveaux ».
 
-\section{Mesures de corrélation paramétrique}
+La valeur statistique calculée par l'ANOVA est sensée procéder d'une distribution de Fisher. La valeur $p$ mesure alors la probabilité que la valeur statistique calculée émane effectivement d'une distribution de Fisher. La significativité de la valeur $p$ est évaluée à partir d'un seuil critique arbitraire $\alpha$.
+
+On distingue deux types d'ANOVA:
+
+\begin{itemize}
+\item l'ANOVA à mesures répétées: les échantillons sont liés points à points par une relation de dépendance. On peut citer comme exemple trois mesures de poids, prises sur un même groupe de sujets, après trois administrations d'un traitement donné. Dans ce cas il y une variable dépendante, la mesure de poids, et un facteur indépendant, la prise de traitement, ce dernier ayant trois niveaux (prise 1, prise 2 et prise 3);  
+\item l'ANOVA à mesures indépendantes: les deux échantillons ne sont liés par aucune relation de dépendance. Pour reprendre l'exemple précédent, les trois mesures de poids sont cette fois ci prises sur trois groupes de sujets distincts, l'un ayant reçu une fois le traitement, l'autre deux fois, et le dernier trois fois.
+\end{itemize}
+
+Il est également possible de considérer une ANOVA comportant deux facteurs, un facteur à mesures répétées, et un facteur à mesures indépendantes. Dans ce cas, le facteur à mesures répétées est appelé facteur intra-sujet, et le facteur à mesures indépendantes, facteur inter-sujet. 
+
+Nous détaillons dans la suite deux exemples simples de modèles d'ANOVA: un modèle à un facteur inter-sujet, et un modèle à un facteur intra-sujet.
+
+\subsection{Analyse de variance à un facteur inter-sujet}
+
+Considérons les groupes $y_i$ ($i=1,\ldots,k$), relatifs aux $k$ niveaux du facteur analysé. Chaque groupe $y_i$ est composé de $n_i$ mesures. On note $N=\sum\limits_i n_i$ le nombre total de mesures. L'ANOVA à mesures indépendantes teste l'hypothèse nulle que tous les échantillons sont issus de distributions normales ayant la même moyenne. L'hypothèse alternative est qu'au moins une de ces distributions présente une moyenne différente des autres.
+
+L'ANOVA cherche a partitionner la variation totale $S_{totale}$ en une variation inter-groupe $S_{inter-groupe}$, celle que l'on cherche à évaluer, et une variation intra-groupe $S_{intra-groupe}$, considérée comme l'erreur.
+
+\begin{equation}
+S_{Totale}= S_{inter-groupe} + S_{intra-groupe}
+\end{equation}
+
+\begin{equation}
+S_{Totale}=\sum_{i=1}^k \sum_{j=1}^{n_i} (y_{ij}-\overline{y})^2
+\end{equation}
+
+\begin{equation}
+S_{inter-groupe}=\sum_{i=1}^k n_i(\overline{y_i} - \overline{y})^2 
+\end{equation}
+
+\begin{equation}
+S_{intra-groupe}=\sum_{i=1}^k \sum_{j=1}^{n_i} (y_{ij} - \overline{y_i})^2
+\end{equation}
+
+
+avec $\overline{y_i}$ la moyenne des observations relatives au groupe $i$, et $\overline{y}$ la moyenne globale des observations. Il s'agit de calculer une valeur statistique $F$:
+
+\begin{equation}
+F=\dfrac{S_{inter-groupe}/k-1}{S_{intra-groupe}/(N-k)}
+\end{equation}
+
+La valeur $p$ est obtenue en cherchant la valeur $F$ dans une table des valeurs de la distribution d'une loi de Fisher à $[k-1,N-k]$ degrés de liberté.
+
+\subsection{Analyse de variance à un facteur intra-sujet}
+
+Considérons les groupes $y_i$ ($i=1,\ldots,k$), relatifs aux $k$ niveaux du facteur analysé. Chaque groupe $y_i$ est composé de $n_i$ mesures. On note $N=\sum\limits_i n_i$ le nombre total de mesures. L'ANOVA à mesures répétées teste l'hypothèse nulle que tous les échantillons sont issus de distributions normales ayant la même moyenne. L'hypothèse alternative est qu'au moins une de ces distributions présente une moyenne différente des autres.
+
+Comme pour l'ANOVA à mesures indépendantes, l'ANOVA à mesures répétées cherche a partitionner la variation totale $S_{totale}$ en une variation inter-groupe $S_{inter-groupe}$, et une variation intra-groupe $S_{intra-groupe}$. Seulement, dans le cas de l'ANOVA à mesures répétées, $S_{intra-groupe}$ se retrouve elle même partitionnée en une variation intra-sujet $S_{intra-sujet}$\footnote{Le terme sujet est ici générique et désigne l'entité sur laquelle on réalise la mesure. Il peut s'agir d'un individu, ou, comme souvent dans ce document, d'une scène sonore.}, et une variation due à l'erreur $S_{erreur}$.
+
+\begin{align}
+S_{Totale} &= S_{inter-groupe} + S_{intra-groupe} \\
+           &= S_{inter-groupe} + S_{intra-sujet} + S_{erreur}
+\end{align}
+
+\begin{equation}
+S_{Totale}=\sum_{i=1}^k \sum_{j=1}^{n_i} (y_{ij}-\overline{y})^2
+\end{equation}
+
+\begin{equation}
+S_{inter-groupe}=\sum_{i=1}^k n_i(\overline{y_i} - \overline{y})^2 
+\end{equation}
+
+\begin{equation}
+S_{intra-groupe}=\sum_{i=1}^k \sum_{j=1}^{n_i} (y_{ij} - \overline{y_i})^2
+\end{equation}
+
+\begin{equation}
+S_{intra-sujet}= k \sum_{j=1}^n (\overline{y_j} - \overline{y})^2 
+\end{equation}
+
+\begin{equation}
+S_{erreur}= S_{intra-groupe} - S_{intra-sujet}
+\end{equation}
+
+avec $\overline{y_i}$ la moyenne des observations relatives au groupe $i$, $\overline{y_j}$ la moyenne des observations relatives au sujet $j$, et $\overline{y}$ la moyenne globale des observations. Il s'agit de calculer une valeur statistique $F$:
+
+\begin{equation}
+F=\dfrac{S_{inter-groupe}/k-1}{S_{erreur}/(n-1)(k-1)}
+\end{equation}
+
+La valeur $p$ est obtenue en cherchant la valeur $F$ dans une table des valeurs de la distribution d'une loi de Fisher à  $[k-1,(n-1)(k-1)]$ degrés de liberté.
+
+\subsection{Comparaisons multiples}
+
+L'ANOVA permet seulement de savoir si tous les échantillons sont issus de la même loi normale. Dans le cas où l'hypothèse nulle est rejetée, l'ANOVA seule ne permet pas de savoir quels sont les échantillons qui présentent des différences significatives. 
+
+Pour ce faire, on peut avoir recours à une analyse dite \emph{Post hoc} de comparaisons multiples. Il s'agit d'effectuer un test statistique pour toutes les paires d'échantillons considérées, afin d'établir les couples qui présentent une différence significative au niveau de leurs moyennes. 
+
+L'analyse \emph{Post hoc} implique d'effectuer une succession de tests statistiques. Il est nécessaire dans ce cas de corriger les valeurs $p$ obtenues, afin de tenir compte de la multiplicité des tests opérés. En effet, analyser un même jeu de données en effectuant une série de tests statistiques entraîne un accroissement du risque d'erreur de type I, \ie~rejeter l'hypothèse nulle alors qu'elle est vraie.
+
+Plusieurs procédures peuvent être considérées. Nous en détaillons deux, nommément la procédure de Tukey-Kramer, et la procédure de Bonferroni.
+
+\subsubsection{Procédure de Tukey-Kramer}
+
+La procédure de Tukey-Kramer s'appuie sur la statistique d'« écart studentisé », notée $q$, afin de corriger la valeur critique des comparaisons. 
+
+Considérons $k$ groupes $y_i$ ($i=1,\ldots,k$). Pour chaque paire $y_i$ et $y_j$, on calcule la statistique $q_{ij}$ comme suit: 
+
+\begin{equation}
+q_{ij}=\dfrac{\overline{y_{i}}-\overline{y_{j}}}{s\sqrt{\frac{1}{2}(\frac{1}{n_{i}} \frac{1}{n_{j}})}}
+\end{equation}
+
+avec $\overline{y_{i}}$ et $\overline{y_{j}}$ les moyennes des groupes $y_i$ et $y_j$, et $n_{i}$ et $n_{j}$ le nombre d'observations des groupes $y_{i}$ et $y_{j}$. La valeur $q_{ij}$ est supposée émaner d'une distribution $Q$ dite d'« écart studentisé » (studentized range). La table des valeurs de la distribution $Q$ nous permet d'établir la valeur $q_c$ critique permettant de rejeter l'hypothèse nulle avec un seuil critique $\alpha=0.05$, en tenant compte du nombre d'échelons, \ie~du nombre de groupes à comparer, ici $k$.
+
+\subsubsection{Procédure de Bonferonni}
+
+La procédure de Bonferonni, aussi appelée correction de Bonferonni, consiste à corriger le seuil critique $\alpha$ en fonction du nombre de comparaisons à effectuer. Formellement, si l'on considère un seuil critique d'origine $\alpha_{o}$, et une comparaison multiple impliquant $d$ comparaisons, chacun des tests statistiques sera mené avec un seuil $\alpha=\frac{\alpha_{o}}{k}$. 
+
+À noter que la correction de Bonferonni peut s'appliquer à n'importe quel test statistique. Dans le cas d'une comparaison multiple suivant une ANOVA, on pourra considérer un test de Student.
+
+\section{Mesures de corrélation paramétriques}
 \label{app:corr}
 
-\section{Régression linéaire multiple}
-\label{app:regressionMultiple}
+\begin{table}[t]
+\centering
+\begin{tabular}{c c }  
+valeur & interprétation  \\      
+\hline
+0   & inexistante \\
+0.3 & faible \\
+0.5 & modérée \\
+0.7 & forte \\
+1   & exacte \\
+\hline
+\end{tabular}
+\vspace{0.5mm}
+\caption[Interprétation du coefficient de corrélation de Pearson.]{Interprétation du coefficient de corrélation de Pearson. Un signe négatif indique une corrélation négative et inversement.}
+\label{tab:coefPearson}
+\end{table}
+
+On dit que deux variables sont corrélées si un changement chez l'une est suivi d'un changement chez l'autre. Le coefficient de corrélation de Pearson $r$ permet de mesurer les relations linéaires existant entre deux variables. Considérant deux variables $x$ et $y$, le coefficient $r$ se calcule comme suit:
+
+\begin{equation}
+r_{x,y}=\dfrac{\frac{1}{n}\sum\limits_i(x_i - m_x)(y_i-m_y)}{s_x s_y}
+\end{equation}
+
+avec $m_x$ et $m_y$ les moyennes des variables $x$ et $y$, et $s_x$ et $s_y$ les écarts types des variables $x$ et $y$. Il est possible d'évaluer la significativité de la relation $r$ mesurée, en reportant la valeur sur une table de coefficients de corrélation de Pearson. Cette table nous renseigne sur le risque $\alpha$ de rejeter, par erreur, l’hypothèse nulle qu'il n'y a pas de relation entre les deux variables $x$ et $y$. Le risque $\alpha$ obtenu dépend du nombre d'observations considéré. Plus ce nombre est important, plus le risque est faible. 
+
+Le coefficient $r$ prend des valeurs comprises entre -1 et 1. Nous nous appuyons sur le tableau~\ref{tab:coefPearson} pour donner une appréciation qualitative du coefficient $r$.
+
+
+

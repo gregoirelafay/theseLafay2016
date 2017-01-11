@@ -1,5 +1,5 @@
 %************************************************
-\chapter[Données simulées et analyse sensorielle]{Utilisation de données simulées en analyse sensorielle}\label{ch:psycho_xp}
+\chapter[Données simulées en analyse sensorielle]{Données simulées en analyse sensorielle}\label{ch:psycho_xp}
 %************************************************
 
 \section{Introduction}
@@ -17,17 +17,158 @@ Ce chapitre présente les résultats d'une série d'expériences s'appuyant sur 
 \item \emph{catégorisation libre}: les sujets doivent catégoriser les scènes sonores simulées. Au delà du problème initial de l'agrément, cette dernière expérience nous amène à considérer logiquement l'influence de la composition sémantique des scènes sur les jugements de similarités.
 \end{enumerate}
 
-Le chapitre, comprend quatre sections.
+Le chapitre, comprend cinq sections. La première constitue notre introduction. La deuxième introduit le protocole expérimental ainsi que l'outil de simulation \emph{SimScene}. La troisième reprend l'expérience de simulation à proprement parler, ainsi que l'épreuve \emph{évaluation de l'agrément} qui nous semblent aller de pair. La quatrième décrit l'épreuve \emph{évaluation de l'agrément après modification des scènes}. La cinquième et dernière détaille, elle, l'épreuve \emph{catégorisation libre}.
 
-La première constitue notre introduction.
-
-La deuxième reprend l'expérience de simulation à proprement parler, ainsi que l'épreuve \emph{évaluation de l'agrément} qui nous semblent aller de pair.
-
-La troisième décrit l'épreuve \emph{évaluation de l'agrément après modification des scènes}.
-
-La quatrième et dernière détaille, elle, l'épreuve \emph{catégorisation libre}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% Protocole %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
+\subsection{Protocole expérimental basé sur la simulation}
+
+\subsubsection{Organisation des sons isolés}
+\label{sec:ch4_dbEventTexture}
+
+L'objectif de l'expérimentation est de permettre à un sujet de simuler un environnement sonore cible, à partir de sons isolés. La banque de sons suit l'organisation décrite à la section~\ref{sec:ch4_collecSons}. Les éléments sont regroupés en classes hiérarchisées, afin de former une taxonomie. Plus le niveau d'abstraction de la classe est élevé, plus la variabilité des enregistrements appartenant à la classe est importante (\cf~Figure~\ref{fig:orgDb}).
  
+Nous conservons la distinction observée entre les événements et les textures, en créant deux taxonomies (\ie~deux banques de sons) séparées.
+
+\subsubsection{Sélection des sons isolés}
+
+L'objectif de la simulation est d'obtenir une image sonore de la représentation mentale que se fait un sujet d'un environnement donné. Afin que cette image soit la plus « juste » possible, il faut que le protocole limite les biais pouvant influer sur les choix du sujet.
+
+Un de ces biais intervient dans le processus de sélection. La grande majorité des outils permettant de parcourir une banque de données propose une recherche textuelle sur la base de mots clefs. L’efficacité de ce principe repose avant tout sur la structure typologique, et la nomenclature de la base de données. Dans le cadre d'une expérience sensorielle visant à objectiver la représentation interne du sujet, cette approche pose plusieurs problèmes:
+
+\begin{itemize}
+\item les sons peuvent ne pas être annotés d'une manière satisfaisante. En effet, sémantiquement, un son peut être décrit de plusieurs façons. Nous pouvons en désigner la source (une portière de voiture), comme nous pouvons désigner l'action de la source (le claquement d’une portière de voiture) ou encore son environnement (le claquement d’une portière de voiture dans un garage). Concevoir un système de recherche par mots clefs efficace suppose une description précise de chaque son, qui plus est, adaptable à la représentation que s’en fait chaque sujet, ce qui est difficilement réalisable;
+
+\item lors d'une recherche par mots clefs, le sujet doit objectiver un nom décrivant l'objet recherché. Or cette objectivation dépend des connaissances collectives du sujet, connaissances liées à sa sphère socioculturelle, et en particulier à sa langue. L'expérience visant une diffusion internationale, cette contrainte est difficilement surmontable;
+
+\item la description verbale du son, si elle est accessible par le sujet, peut potentiellement influencer sa sélection. Dans les faits, pour construire une scène environnementale « calme », le sujet sélectionne a priori les sons référencés sous le vocable \emph{parc}. Cette réalité constitue encore une difficulté.
+\end{itemize}
+
+Imposer au sujet une terminologie à travers les labels décrivant les classes est un risque. Nous pensons que la sélection doit s'éloigner le plus possible d'un ancrage sémantique, et s'effectuer à l'aveugle, \ie~sur la base uniquement de l'écoute. Une interface développée spécialement dans ce but est présentée à la section~\ref{sec:ch4_ssf}.
+
+Enfin, il est important de noter que le sujet ne peut accéder qu'aux classes du niveau d'abstraction le plus bas, classes qui ne possèdent pas de sous-classes, et sont directement liées à une collection de samples.
+
+L’organisation hiérarchique sert alors deux buts:
+
+\begin{itemize}
+\item faciliter le parcours, par les sujets, des banques de sons isolés (\cf~Section~\ref{sec:ch4_ssf});
+\item faciliter le travail d'analyse de l'expérimentateur, en lui permettant d'observer la composition en terme de sources sonores des scènes, suivant différents niveaux d'abstraction.
+\end{itemize}
+
+\subsubsection{Processus de simulation}
+\label{sec:ch4_processSimu}
+
+\begin{figure}[t]
+        \myfloatalign
+        \includegraphics[width=.8\linewidth]{gfx/ch_4/4}
+       \caption{Etape de processus de simulation pour l'analyse sensorielle}\label{fig:etapeSimu}
+\end{figure}
+
+Trois étapes composent le processus de simulation (\cf~Figure~\ref{fig:etapeSimu}):
+
+\begin{itemize}
+\item \emph{sélection} d'une classe de sons. Une fois une classe sélectionnée, une piste est générée; 
+\item \emph{identification} de la classe de sons sélectionnée. Le sujet nomme la classe de sons qu'il a sélectionnée;
+\item \emph{paramétrisation} de la piste liée à la classe de sons. Le sujet fixe les paramètres de la piste (pour plus de détails sur les paramètres proposés \cf~Section~\ref{sec:ch4_param}).
+\end{itemize}
+
+Ces étapes peuvent être répétées, et dans n'importe quel ordre, le sujet pouvant agir rétroactivement sur les pistes déjà crées. A la fin de la simulation, et afin d'accumuler le maximum de connaissances sur la scène simulée, le sujet peut: 
+
+\begin{itemize}
+\item nommer l'environnement simulé;
+\item fournir un commentaire libre décrivant son processus de création, ainsi que le paysage sonore qu'il a voulu illustrer.
+\end{itemize}
+
+\subsubsection{Paramètres de contrôle}
+\label{sec:ch4_param}
+
+Les paramètres du modèle permettent au sujet de contrôler la structure de chaque piste. Ils agissent sur tous les samples à la fois, et non sur un en particulier.
+
+Parmi ces paramètres, on retrouve ceux introduits pour le modèle initial de scène sonore (\cf~Section~\ref{sec:ch4_modelParam} et~\ref{sec:ch4_modelForm}), à savoir:
+
+\begin{itemize}
+\item \emph{niveau sonore} ($dB$): pour chaque sample, les niveaux sont tirés aléatoirement à partir d'une distribution normale, paramétrée par le sujet en terme de moyenne et de variance;
+\item \emph{espacement inter-onset} (seconde): (piste d'événements seulement) comme pour les niveaux, les espacements sont tirés aléatoirement à partir d'une distribution normale, paramétrée par le sujet en terme de moyenne et de variance;
+\item \emph{début et fin} (seconde): le sujet fixe le début et la fin de chaque piste.
+\end{itemize}
+
+Afin de faciliter la simulation, deux paramètres supplémentaires sont proposés:
+
+\begin{itemize}
+\item \emph{fondu par événement} (seconde): (piste d'événements seulement) le sujet fixe une durée de fondu (entrée et sortie), appliquée à chaque sample d'une piste d'événements;
+\item \emph{fondu global} (seconde): le sujet fixe les durées de fondus séparément, pour l'entrée et la sortie de la piste. Ces fondus s'appliquent ainsi à l'ensemble des samples de la piste.
+\end{itemize}
+
+Deux de ces paramètres ne s’appliquent que pour les pistes d'événements (\emph{fondu par événement} et \emph{espacement inter-onset}), les samples des textures étant séquencés sans espacement (\cf~Section~\ref{sec:ch4_modelParam})
+
+\subsubsection{Données produites par le processus de simulation}
+
+\begin{figure}[t]
+        \myfloatalign
+        \includegraphics[width=.8\linewidth]{gfx/ch_4/schemaXP}
+       \caption{Paradigme du protocole expérimental basé sur la simulation.}\label{fig:paradigmeSimu2}
+\end{figure}
+
+Ce protocole de simulation peut potentiellement produire un grand nombre de données. Ces dernières sont décrites à la figure~\ref{fig:paradigmeSimu2}.  Nous les résumons dans la liste suivante:
+
+\begin{itemize}
+\item données sémantiques objectives: la banque de données nous permet d'obtenir une information objective quant aux sources sonores présentes dans la scène. Les données sémantiques objectives sont les labels des classes sélectionnées;
+\item données sémantiques subjectives: il s'agit des noms donnés par le sujet 1) à la scène simulée, 2) aux classes de sons sélectionnées;
+\item données quantitatives issues de la partition: il s'agit de toutes les données relatives à la partition, \ie~pour chaque piste, le positionnement des samples et les paramètres (\cf~Section~\ref{sec:ch4_modelParam});
+\item données quantitatives issues du signal: il s'agit d'indicateurs acoustiques extraits du signal, \eg~le niveau sonore global. Comme nous possédons les samples isolés utilisés pour la synthèse, il est possible de calculer ces descripteurs pour une classe, ou un ensemble de classes, en particulier.
+\end{itemize}
+
+Le protocole nous permet de caractériser avec précision une scène simulée, sur la base de données sémantiques, subjectives ou objectives, ainsi que quantitatives. Considérant l'ensemble des données générées, les potentiels d'analyse sont vastes.
+
+\subsubsection{Interface de sélection aveugle des sons isolés}
+\label{sec:ch4_ssf}
+
+\begin{figure}[t]
+        \myfloatalign
+        \includegraphics[width=.8\linewidth]{gfx/ch_4/SSF}
+       \caption{L'interface de sélection aveugle de l'outil de simulation \emph{Simscene}.}\label{fig:ssf}
+\end{figure}
+
+Pour limiter l’influence de l’interface sur le sujet, il nous paraît nécessaire de libérer sa recherche de toute information textuelle. Nous proposons à l'utilisateur une interface graphique lui permettant d’explorer la banque de sons exclusivement à partir de l’écoute.
+
+Visuellement, les classes du dernier niveau (les seules accessibles par le sujet) sont représentées par des cercles, et positionnées sur un plan. La disposition des cercles dans l'espace dépend de l’organisation hiérarchique de la base de données: les sous-classes appartenant à la même classe sont proches les unes des autres, et ainsi de suite jusqu'à atteindre les classes des niveaux d'abstraction élevés.
+
+La figure~\ref{fig:ssf} présente l'interface pour la banque de données d'événements sonores. Cette organisation visuelle à été pensée afin de:
+
+\begin{enumerate}
+\item faciliter le parcours de la banque de données, les sons similaires (au sens des classes) étant proches les uns des autres. L'organisation hiérarchique se fonde, en effet, sur des principes cognitifs. Les classes ont été établies à partir de la littérature traitant des catégories de sources sonores (\cf~Section~\ref{sec:ch4_collecSons}).
+\item permettre aux sujets de rapidement appréhender toute l'étendue de la banque de données, \ie~l'ensemble des sons disponibles.
+\end{enumerate}
+
+Chaque classe possède un son prototype. Ces sons ont été choisis par les expérimentateurs. Lorsqu’on « clique » sur un cercle, le prototype associé à la classe est joué. Le sujet parcourt la banque de sons en cliquant sur les cercles. Cette interface a fait l'objet d'une étude approfondie dont les résultats sont publiés dans \citep{lafay2016JAES}.
+
+%\gl{TODO: résumer les résultats JAES}
+
+\subsubsection{Interface de simulation: l'outil \emph{Simscene}}
+\label{sec:ch4_simscene}
+
+\begin{figure}[t]
+        \myfloatalign
+        \includegraphics[width=\linewidth]{gfx/ch_4/simscene}
+       \caption{L'outil de simulation \emph{Simscene}.}\label{fig:simscene}
+\end{figure}
+
+\emph{Simscene} est un environnement de travail audio-numérique, supporté par navigateur internet, et dont la première version a été développée dans le cadre du projet HOULE\footnote{Pour plus d’informations sur le Projet HOULE voir \url{http://houle.ircam.fr/}}. Il permet de simuler des paysages sonores à partir d'un corpus de sons. Il est prévu pour fonctionner sur les navigateurs internet \emph{Chrome} et \emph{Firefox}. L'outil a été développé en javascript à l'aide de la bibliothèque \emph{angular.js}\footnote{\emph{angular.js}: \cf~\url{https://angularjs.org/}} et du standard \emph{web-audio}\footnote{\emph{web-audio}: \cf~\url{http://www.w3.org/TR/webaudio/}}. L'interface de sélection (\cf~Section~\ref{sec:ch4_ssf}) a été développée à l'aide de la bibliothèque \emph{D3.js} \citep{d32011}.
+
+\emph{Simscene} est présenté en détail dans \citep{rossignol2015simscene}. Nous résumons ici ses fonctionnalités d'importance pour notre étude. 
+
+Le fonctionnement de \emph{Simscene} se rapproche de celui d'un séquenceur audio. Chaque utilisateur choisit une classe de sons via l'interface de sélection (\cf~Section~\ref{sec:ch4_ssf}). Une fois la classe de sons sélectionnée, une piste audio, liée à cette classe, est créée. L'utilisateur peut alors modifier certaines propriétés de la piste via un groupe de paramètres de contrôle propre à chacune (\cf~Section~\ref{sec:ch4_param}). Des champs de texte sont prévus afin de permettre à l'utilisateur 1) de nommer chaque piste, 2) de donner un titre à la scène simulée 3) de commenter la scène simulée.
+
+L'interface propose un rendu graphique schématisé de la scène en cours de création (\cf~Figure~\ref{fig:simscene}). La piste est représentée par une bande possédant un axe temporel. Sur cette bande, chaque sample est représenté par un rectangle. L'espacement entre les rectangles est relatif à l'espacement entre les samples. De même, la hauteur des rectangles est proportionnelle au niveau sonore des samples. Dans le cas d'une piste de texture, un unique rectangle apparaît sur toute la longueur de la piste, un son de texture ne pouvant être entrecoupé de silences. Les caractéristiques des rectangles évoluent en fonction des changements de paramètres de la piste.
+
+L'utilisateur a la possibilité, à tout moment, d'écouter la scène simulée.
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% XP 1      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section[Agrément perçu et composition sémantique]{L'impact de la composition sémantique des scènes sur la perception de l'agrément}
 \label{sec:xp1_2}
 
@@ -209,7 +350,7 @@ Trois expérimentateurs, un dans chaque pièce, sont présents durant la totalit
 
 44 étudiants (14 femmes) de L’École Centrale de Nantes ont participé à l'expérience. Ils ont tous sensiblement le même âge (moyenne: 21.6, écart-type: 2). Tous les sujets sont Nantais, et vivent dans cette ville depuis deux ans ou plus.
 
-Sur les 44 sujets, 40 réalisent l'expérience avec succès, produisant au final 80 scènes sonores simulées, dont 40 scènes idéales, et 40 scènes non idéales. 4 sont éliminés pour non respect et/ou incompréhension des consignes, d'une part, dépassement du temps, d'autre part.
+Sur les 44 sujets, 40 réalisent l'expérience avec succès, produisant au final 80 scènes sonores simulées, dont 40 scènes idéales, et 40 scènes non idéales. 4 sont éliminés pour non respect ou incompréhension des consignes, d'une part, et dépassement du temps, d'autre part.
 
 \subsubsection{Épreuve d'évaluation de l'agrément}
 \label{sec:ch5_planExpEvaA}
@@ -218,7 +359,7 @@ Nous nommons cette expérience: \emph{expérience 1.b}. \\
 
 {\setlength{\parindent}{0cm}\textbf{Procédure}} \\
 
-En raison de contraintes temporelles, les sujets n'évaluent que des séquences de 30 secondes des scènes simulées, chacune de ces séquences commençant à la seconde 15, et finissant à le seconde 45, de la scène évaluée.
+En raison de contraintes temporelles, les sujets n'évaluent que des séquences de 30 secondes des scènes simulées, chacune de ces séquences commençant à la seconde 15, et finissant à le seconde 45 de la scène d'une durée d'origine de 1 minute.
 
 L'évaluation s'effectue sur une échelle sémantique bipolaire de 7 points, allant de -3 (non-idéale/très désagréable) à +3 (idéale/très agréable). Avant de noter une scène, les sujets doivent obligatoirement écouter les 20 premières secondes de cette dernière. Après la notation, ils sont libres de passer à la scène suivante.
 
@@ -328,7 +469,7 @@ où $\bigoplus$ désigne l'opérateur du \emph{ou-exclusif}. Plus la composition
 \item \emph{étude de l'influence spécifique des marqueurs sonores sur l'agrément perçu}: afin d'évaluer les contributions spécifiques de certaines sources sonores, nous évaluons une nouvelle fois l'impact potentiel des descripteurs structurels sur l'agrément perçu, mais en ne tenant compte, cette fois, que des marqueurs sonores pour calculer ces descripteurs.
 \end{itemize}
 
-Excepté le V-test, tous les tests de significativité sont effectués avec un seuil critique $\alpha=0.05$. Pour le V-test, étant donné que nous testons beaucoup de classes, une correction de Bonferroni (\cf~Annexe~\ref{app:statuni}) est appliquée. Pour les valeurs $p$, dans le cas où $p\geq0.05$, nous indiquons sa valeur. Dans le cas où $0.01\leq p<0.05$, nous indiquons seulement $p<0.05$. Dans le dernier cas nous indiquons $p<0.01$.
+Excepté le V-test, tous les tests de significativité sont effectués avec un seuil critique $\alpha=0.05$. Pour le V-test, étant donné que nous testons beaucoup de classes, une correction de Bonferroni (\cf~Annexe~\ref{app:anova}) est appliquée. Pour les valeurs $p$, dans le cas où $p\geq0.05$, nous indiquons sa valeur. Dans le cas où $0.01\leq p<0.05$, nous indiquons seulement $p<0.05$. Dans le dernier cas nous indiquons $p<0.01$.
 
 Concernant l'interprétation du coefficient de corrélation de Pearson adoptée dans ce document, nous invitons le lecteur à se référer à l'annexe~\ref{app:corr}.
 
@@ -354,7 +495,7 @@ Nous en concluons que l'interface de sélection, sans texte, ne perturbe pas les
 
 \subsubsection{Ergonomie de l'interface de simulation}
 
-\gl{Aucun sujet n'a rapporté de problèmes majeurs concernant l'interface de simulation.}
+Aucun sujet n'a rapporté de problèmes majeurs concernant l'interface de simulation. Plusieurs sujets l'ont par ailleurs spontanément décrite comme étant ludique.
 
 \subsection{Vérification de l'agrément des scènes simulées}
 
@@ -727,7 +868,8 @@ Nous observons qu'une description sémantique des scènes, basée sur la présen
 Parmi les descripteurs structurels spécifiques, calculés en tenant compte des marqueurs sonores, plusieurs permettent maintenant de faire la distinction entre les i-scènes et ni-scènes:
 
 \begin{itemize}
-\item \gl{TODO}.
+\item niveau sonore: $L_m$, $L_{b}$, $L(E)_{m}$, $L(E)_{b}$, $L(T)_{m}$, $L(T)_{b}$, $L_{m}-L_{b}$ et $L(E)_{m}-L(E)_{b}$;
+\item densité: $D_{m}$.
 \end{itemize}
 
 Parmi ces descripteurs, 8 semblent impacter l'agrément perçu: 
@@ -743,7 +885,7 @@ De cette analyse, nous retenons les points suivants:
 \begin{itemize}
 \item \emph{distinguer les i- et ni-scènes}: les descripteurs sémantiques, ainsi que certains descripteurs structurels globaux, permettent de faire la distinction entre les i-scènes et les ni-scènes. La description sémantique semble être plus performante;
 \item \emph{événements ou textures}: que ce soit pour les descripteurs sémantiques ou structurels, ce sont majoritairement les événements qui permettent de distinguer les deux types d'environnements, les textures n'apportant, au mieux, qu'une information limitée;
-\item \emph{prédire l'agrément}: si l'on considère une description fine de l'agrément, il semble que la manière de percevoir la qualité de l'environnement diffère en fonction de la nature de ce dernier (i ou ni). Il n'apparaît pas envisageable de considérer un même jeu de descripteurs pour prédire, à la fois, l'agrément des i-scènes, et l'agrément des ni-scènes. Pour les ni-scènes, ce sont le niveau global ($L$ et $L(E)$), la densité globale ($D$ et $D(E)$), et/ou le niveau des marqueurs sonores ($L_m$ et $L$), qui impactent négativement l'agrément. On note ici que prendre en compte les contributions de différentes sources n'améliore pas la capacité de prédiction de l'agrément, par rapport à une analyse holistique de l'environnement. Pour les i-scènes, par contre, prédire l'agrément requiert d'étudier, de manière séparée, les caractéristiques des marqueurs sonores, et celles de l'ensemble des autres sons. Ainsi, le niveau des marqueurs relatifs au bruit est positivement corrélé à l'agrément, alors que le niveau du bruit est, lui, négativement corrélé.  
+\item \emph{prédire l'agrément}: si l'on considère une description fine de l'agrément, il semble que la manière de percevoir la qualité de l'environnement diffère en fonction de la nature de ce dernier (i ou ni). Il n'apparaît pas envisageable de considérer un même jeu de descripteurs pour prédire, à la fois, l'agrément des i-scènes, et l'agrément des ni-scènes. Pour les ni-scènes, ce sont le niveau global ($L$ et $L(E)$), la densité globale ($D$ et $D(E)$), ou le niveau des marqueurs sonores ($L_m$ et $L$), qui impactent négativement l'agrément. On note ici que prendre en compte les contributions de différentes sources n'améliore pas la capacité de prédiction de l'agrément, par rapport à une analyse holistique de l'environnement. Pour les i-scènes, par contre, prédire l'agrément requiert d'étudier, de manière séparée, les caractéristiques des marqueurs sonores, et celles de l'ensemble des autres sons. Ainsi, le niveau des marqueurs relatifs au bruit est positivement corrélé à l'agrément, alors que le niveau du bruit est, lui, négativement corrélé.  
 \end{itemize}
 
 Le fait que l'agrément des scènes agréables ne se corrèlent pas avec des descripteurs physique holistiques, contrairement à l'agrément des scènes désagréable, a récemment été déjà observé \citep{gozalo2015relationship}.
@@ -757,9 +899,9 @@ Ces résultats peuvent potentiellement influer sur les stratégies à adopter po
 \item dans le cadre de scènes idéales, il s'agit 1) d'identifier les sons agréables, \ie~les marqueurs sonores, 2) de baisser le niveau des autres sons, 3) voire, en restant dans la limite du raisonnable, d'augmenter le niveau des marqueurs par rapport aux autres sons.
 \end{itemize}
 
-Nous montrons que les descripteurs à utiliser dépendent de la nature de l'environnement, et que cette nature est elle même dépendante de la composition sémantique, \ie~des sources sonores présentes. Dans une certaine mesure, nous pouvons donc dire que les descripteurs dépendent des sources sonores présentes. Mais nous observons également que le type de descripteurs à utiliser, pour une même source, varie en fonction de la nature de l'environnement.
+Nous montrons que les descripteurs à utiliser dépendent de la nature de l'environnement, et que cette nature est elle même dépendante de la composition sémantique, \ie~des sources sonores présentes. Dans une certaine mesure, nous pouvons donc dire que les descripteurs dépendent des sources sonores présentes. 
 
-%\gl{TODO: "varie en fonction de la nature de l'environnement" : développer sur le contexte environnemental pour l'agrément, reprendre l'exemple de \emph{foule}} \\
+%\gl{TODO: "Mais nous observons également que le type de descripteurs à utiliser, pour une même source, varie en fonction de la nature de l'environnement." : développer sur le contexte environnemental pour l'agrément, reprendre l'exemple de \emph{foule}} \\
 %\gl{TODO: Reprendre la conclusion de l'article et Proposer un modèle perceptif sur la base du modèle prédictif}\\
 %\gl{TODO, l'utilisation de trafic reprendre les conclusions de \citep{lavandier2006contribution}}\\
 %\gl{TODO, les résultats (2 modes d'obs) concordent avec les observations faites pas \citep{ricciardi2015sound}.}\\
@@ -849,7 +991,7 @@ L'expérience aborde trois problématiques:
 
 \begin{itemize}
 \item \emph{influence des descripteurs structurels des scènes avec marqueurs sur l'agrément perçu: une analyse comparative}: les 72 am-scènes utilisées par l'expérience 1.b étant ré-évaluées lors de cette expérience, il est donc possible de réaliser une étude comparative entre les expériences 1.b et 2, afin de vérifier la cohérence des résultats obtenus lors de l'expérience 1.b. Les méthodes d'analyse appliquées sont identiques à celles de l'expérience 1.b (\cf~Section~\ref{sec:ch5_methodoEtStat1});
-\item \emph{influence de la présence des marqueurs sur l'agrément perçu}: il s'agit ici de vérifier que la suppression des i- et ni-marqueurs impacte l'agrément perçu. Pour ce faire, nous utilisons l'analyse de variance (\cf~Annexe~\ref{app:anova}). Nous considérons, comme variable dépendante,  $\mathcal{A}_{sujet}$, et, comme variables indépendantes, le type d'environnement (i/ni), et la présence/absence de marqueurs (am/sm). Chaque sujet devant évaluer la totalité des stimuli, une ANOVA à mesures répétées à deux facteurs (\cf~Annexe~\ref{app:anova}) est utilisée afin vérifier s'il existe des différences significatives d'agrément perçu. Les deux variables indépendantes sont considérées comme des facteurs intra-sujet (\emph{within-subject}, \cf~Annexe~\ref{app:anova}). Les facteurs n'étant composés que de deux niveaux chacun (type: i/ni; marqueur: am/sm), l'hypothèse de sphéricité n'a pas besoin d'être vérifiée. Les analyses \emph{post hoc} sont conduites en appliquant la procédure de Tukey-Kramer;
+\item \emph{influence de la présence des marqueurs sur l'agrément perçu}: il s'agit ici de vérifier que la suppression des i- et ni-marqueurs impacte l'agrément perçu. Pour ce faire, nous utilisons l'analyse de variance (\cf~Annexe~\ref{app:anova}). Nous considérons, comme variable dépendante,  $\mathcal{A}_{sujet}$, et, comme variables indépendantes, le type d'environnement (i/ni), et la présence/absence de marqueurs (am/sm). Chaque sujet devant évaluer la totalité des stimuli, une ANOVA à mesures répétées à deux facteurs (\cf~Annexe~\ref{app:anova}) est utilisée afin vérifier s'il existe des différences significatives d'agrément perçu. Les deux variables indépendantes sont considérées comme des facteurs intra-sujet (\emph{within-subject}, \cf~Annexe~\ref{app:anova}). Les facteurs n'étant composés que de deux niveaux chacun (type: i/ni; marqueur: am/sm), l'hypothèse de sphéricité n'a pas besoin d'être vérifiée. Les analyses \emph{post hoc} sont conduites en appliquant la procédure de Tukey-Kramer (\cf~Annexe~\ref{app:anova});
 \item \emph{influence des descripteurs structurels des sm-scènes sur l'agrément perçu}: il s'agit là d'étudier l'agrément en fonction des indicateurs structurels des scènes. Dans un premier temps, nous vérifions que l'agrément moyen de chaque type de scènes (i, ni, am et sm) varie significativement. Une analyse de variance est pratiquée, avec, comme variable dépendante, $\mathcal{A}_{scene}$, et, comme variables indépendantes, le type d'environnement (i/ni), et la présence/absence de marqueurs (am/sm). Dans cette analyse, les observations considérées sont les scènes. Comme il existe une dépendance entre les am et sm-scènes, une ANOVA à mesures répétées est utilisée, comprenant, comme facteur intra-sujet (\emph{within-subject}), la présence/absence de marqueurs, et comme facteur inter-sujet (\emph{between-subject}), le type d'environnement. Les analyses \emph{post hoc} sont conduites en appliquant la procédure de Tukey-Kramer. Dans un second temps, comme pour l'expérience 1.b, nous étudions l'existence de relations linéaires entre les descripteurs structurels des sm-scènes et $\mathcal{A}_{scene}$. Pour mesurer la corrélation, nous utilisons le coefficient de Pearson (\cf~Annexe~\ref{app:statuni}).
 \end{itemize}
 
@@ -1057,11 +1199,11 @@ Ainsi, il apparaît que supprimer les marqueurs rapproche les manières dont son
 
 De cette expérience nous retenons principalement deux points.
 
-Pour le premier, il apparaît que la présence, dans une scène, des marqueurs relevés à l'expérience 1 impacte bien l'agrément perçu. La suppression des ni-marqueurs a un effet bénéfique sur le ressenti, tandis que, plus surprenant, la suppression des i-marqueurs dégrade légèrement la qualité. Ce dernier point est d'autant plus marquant que, du fait de la suppression des marqueurs, le niveau des i/am-scènes est supérieur à celui des i/sm-scènes.
+Premièrement, il apparaît que la présence, dans une scène, des marqueurs relevés à l'expérience 1 impacte bien l'agrément perçu. La suppression des ni-marqueurs a un effet bénéfique sur le ressenti, tandis que, plus surprenant, la suppression des i-marqueurs dégrade légèrement la qualité. Ce dernier point est d'autant plus marquant que, du fait de la suppression des marqueurs, le niveau des i/am-scènes est supérieur à celui des i/sm-scènes.
 
 Les i-marqueurs ont donc bien un effet bénéfique sur la perception d'un environnement. Le fait que leur suppression diminue $\mathcal{A}_{scene}$ montre clairement qu'il est possible d'améliorer la qualité sonore d'un lieu en ajoutant des sons bien acceptés comme \emph{oiseau}. Ces conclusions vont dans le sens de l'approche positive comme introduite par Schafer \citep{schafer1977tuning} (\cf~Section~\ref{sec:ch3_urbanNoiseSoundscape}).
 
-Pour le deuxième pointe, il apparaît que la suppression des marqueurs modifie les liens existant entre niveaux sonores et agrément perçu. Pour les i-scènes ce lien est renforcé, tandis que pour les ni-scènes, il est dégradé. Ces résultats vont dans le sens de ceux obtenus lors de l'expérience 1, à savoir que l'influence d'un descripteur sur la perception d'une scène est conditionnée par la qualité hédonique de cette dernière. En l'occurrence, nous observons que plus l'agrément d'une scène est élevé, moins les descripteurs structurels influent sur la perception.
+Deuxièmement, il apparaît que la suppression des marqueurs modifie les liens existant entre niveaux sonores et agrément perçu. Pour les i-scènes ce lien est renforcé, tandis que pour les ni-scènes, il est dégradé. Ces résultats vont dans le sens de ceux obtenus lors de l'expérience 1, à savoir que l'influence d'un descripteur sur la perception d'une scène est conditionnée par la qualité hédonique de cette dernière. En l'occurrence, nous observons que plus l'agrément d'une scène est élevé, moins les descripteurs structurels influent sur la perception.
 
 Enfin, si l'on considère les représentations mentales, ces observations nous incitent à conjecturer les points suivants:
  
@@ -1120,7 +1262,7 @@ L'expérience est prévue pour durer entre 1h et 1h30. \\
 
 {\setlength{\parindent}{0cm}\textbf{Dispositif expérimental}} \\
 
-L'Apparatus est identique à celui de l'expérience 1.b (\cf~Section~\ref{sec:ch5_planExpEvaA}) \\
+Le dispositif expérimental est identique à celui de l'expérience 1.b (\cf~Section~\ref{sec:ch5_planExpEvaA}) \\
 
 {\setlength{\parindent}{0cm}\textbf{Participant}} \\
 
@@ -1365,7 +1507,7 @@ cloche          & pas         & parc    & klaxon     &      &     & alarme \\
 \hline
 \end{tabular}
 \vspace{0.5mm}
-\caption{Répartitions des labels relatifs aux sources sonores relevées par les sujets en fonction des partitions établies par la classification ascendante hiérarchique.}
+\caption{Répartitions des labels relatifs aux sources sonores relevées par les sujets en fonction des partitions établies par la classification ascendante hiérarchique (\cf~Figure~\ref{fig:dendrogram}).}
 \label{tab:markerHacSource}
 \end{table}
 
@@ -1414,7 +1556,7 @@ calme                 & relaxant   & relaxant  & désagréable     & habituel   
 \hline
 \end{tabular} 
 \vspace{0.5mm}
-\caption{Répartitions des labels relatifs aux qualités affectives perçues en fonction des partitions établies par la classification ascendante hiérarchique.}
+\caption{Répartitions des labels relatifs aux qualités affectives perçues en fonction des partitions établies par la classification ascendante hiérarchique (\cf~Figure~\ref{fig:dendrogram}).}
 \label{tab:markerHacQualite}
 \end{table}
 
@@ -1428,7 +1570,7 @@ Pour $P(5)$ et $P(6)$, seul le groupe $4_{P(4)}$, relatif aux ni-scènes, et rep
 
 Le descripteur sémantique subjectif relatif aux sources ne rend ainsi compte du partitionnement que jusqu'à $P(4)$.
 
-Considérons maintenant le descripteur $Q$ (\cf~Tableau~\ref{tab:markerHacSource}). $P(1)$ fait la distinction entre, d'un coté, les qualités positives, dominées par les labels « calme » et « relaxant » ($1_{P(1)}$), et, de l'autre, les qualités négatives, dominées par les labels « énervant » et « désagréable » ($2_{P(1)}$). La partition $P(2)$ subdivise les qualités positives ($1_{P(1)}$) en faisant la distinction entre celles relatives au calme et à la tranquillité ($1_{P(2)}$), et celles relatives à l'aspect régénératif (relaxant, reposant) des scènes ($2_{P(2)}$). Par ailleurs le terme bucolique de $2_{P(2)}$ fait directement écho aux labels de sources de ce même groupes, labels décrivant des sons naturels.  La distinction opérée à la partition $P(3)$ est principalement fonction de l'agrément, les scènes de $3_{P(3)}$ étant caractérisées par « désagréable », et celles de  $3_{P(4)}$ par « très désagréable ».  $3_{P(4)}$ conserve par ailleurs les qualités  « insupportable »,« fatiguant » et « oppressant ». Enfin, c'est à ce niveau que l'impression de la structure temporelle des scènes fait son apparition,  « agité » étant caractéristique de $3_{P(3)}$. Au niveau $P(4)$, la qualité « calme » des scènes de $1_{P(3)}$ (similaire à $1_{P(2)}$) se subdivise entre, d'un coté, les scènes moyennement calmes/calmes ($1_{P(4)}$), et, de l'autre, les scènes calmes/très calmes ($2_{P(4)}$). Le label relaxant est également associé au groupe $2_{P(5)}$.
+Considérons maintenant le descripteur $Q$ (\cf~Tableau~\ref{tab:markerHacSource}). $P(1)$ fait la distinction entre, d'un coté, les qualités positives, dominées par les labels « calme » et « relaxant » ($1_{P(1)}$), et, de l'autre, les qualités négatives, dominées par les labels « énervant » et « désagréable » ($2_{P(1)}$). La partition $P(2)$ subdivise les qualités positives ($1_{P(1)}$) en faisant la distinction entre celles relatives au calme et à la tranquillité ($1_{P(2)}$), et celles relatives à l'aspect régénératif (relaxant, reposant) des scènes ($2_{P(2)}$). Par ailleurs le terme bucolique de $2_{P(2)}$ fait directement écho aux labels de sources de ce même groupe, labels décrivant des sons naturels.  La distinction opérée à la partition $P(3)$ est principalement fonction de l'agrément, les scènes de $3_{P(3)}$ étant caractérisées par « désagréable », et celles de  $3_{P(4)}$ par « très désagréable ».  $3_{P(4)}$ conserve par ailleurs les qualités  « insupportable »,« fatiguant » et « oppressant ». Enfin, c'est à ce niveau que l'impression de la structure temporelle des scènes fait son apparition,  « agité » étant caractéristique de $3_{P(3)}$. Au niveau $P(4)$, la qualité « calme » des scènes de $1_{P(3)}$ (similaire à $1_{P(2)}$) se subdivise entre, d'un coté, les scènes moyennement calmes/calmes ($1_{P(4)}$), et, de l'autre, les scènes calmes/très calmes ($2_{P(4)}$). Le label relaxant est également associé au groupe $2_{P(5)}$.
 
 Au niveau $P(5)$, le groupe $4_{P(4)}$ se subdivise entre les groupes $4_{P(5)}$ et $5_{P(5)}$. Les qualités de $4_{P(4)}$  (« désagréable » et « agité ») sont cependant entièrement conservées par $4_{P(5)}$,  $5_{P(5)}$ étant caractérisé par « oppressant ».
 
@@ -1445,9 +1587,9 @@ Comparons maintenant $Q$ et $S$. Contrairement à $S$, le descripteur $Q$ permet
 % \gl{TODO: "décrits que par les qualités perçues": citation de résultats similaires}
 
 \begin{itemize}
-\item « calme » ($1_{P(2)}$)~\vs « relaxant » ($2_{P(2)}$): la qualité « relaxant » semble liée aux sons naturels et la qualité « calme » aux sons d'origine humaine, ainsi qu'aux sons de cloches. Notons que la qualité « relaxant » apparaît également dans $2_{P(4)}$, simultanément à l'apparition du label « nature »;
-\item « medium calme »/« calme » ($1_{P(4)}$)~\vs « calme »/« très calme » ($2_{P(4)}$): la qualité « medium calme »/« calme » semble liée aux sons de cloches, et la qualité « calme »/« très calme » aux sons d'origine humaine;
-\item « désagréable » ($3_{P(3)}$)~\vs « très désagréable » ($4_{P(3)}$): les sources « travaux » et « trafic » semblent liées à « désagréable », alors que les sources « alarme » et « sirène » semblent correspondre à « désagréable ». Notons cependant que les sons « klaxon » et « alarme » ($4_{P(6)}$) sont également liés aux qualités « désagréable » et « supportable ».
+\item « calme » ($1_{P(2)}$) \vs~« relaxant » ($2_{P(2)}$): la qualité « relaxant » semble liée aux sons naturels et la qualité « calme » aux sons d'origine humaine, ainsi qu'aux sons de cloches. Notons que la qualité « relaxant » apparaît également dans $2_{P(4)}$, simultanément à l'apparition du label « nature »;
+\item « medium calme »/« calme » ($1_{P(4)}$) \vs~« calme »/« très calme » ($2_{P(4)}$): la qualité « medium calme »/« calme » semble liée aux sons de cloches, et la qualité « calme »/« très calme » aux sons d'origine humaine;
+\item « désagréable » ($3_{P(3)}$) \vs~« très désagréable » ($4_{P(3)}$): les sources « travaux » et « trafic » semblent liées à « désagréable », alors que les sources « alarme » et « sirène » semblent correspondre à « désagréable ». Notons cependant que les sons « klaxon » et « alarme » ($4_{P(6)}$) sont également liés aux qualités « désagréable » et « supportable ».
 \end{itemize}
 
 \subsection{Descripteurs sémantiques objectifs}
@@ -1473,7 +1615,7 @@ Pour les groupes relatifs aux ni-scènes, les correspondances sont évidentes po
 
 Notons enfin le groupe $5_{P(6)}$ pour lequel aucune classe et aucun label ne sont relevés, le groupe étant seulement caractérisé par les qualités « désagréable » et « habituel ».
 
-Le fait que les labels et les classes concordent jusqu'à la partition $P(2)$ nous permets de conclure que les premiers groupements s'opèrent bien suivant la présence des sources. Cette stratégie perdure pour les groupes relatifs aux i-scènes. Pour ces dernières, les qualités affectives ne semblent qu'être une conséquence de la présence des classes (sons naturels $\Rightarrow$ environnement relaxant et bucolique). Pour les groupes relatifs aux ni-scènes, les résultats obtenus soulèvent trois questions:
+Le fait que les labels et les classes concordent jusqu'à la partition $P(2)$ nous permet de conclure que les premiers groupements s'opèrent bien suivant la présence des sources. Cette stratégie perdure pour les groupes relatifs aux i-scènes. Pour ces dernières, les qualités affectives ne semblent qu'être une conséquence de la présence des classes (sons naturels $\Rightarrow$ environnement relaxant et bucolique). Pour les groupes relatifs aux ni-scènes, les résultats obtenus soulèvent trois questions:
 outils électriques
 \begin{enumerate} 
 \item présence des labels et absence des classes ($4_{P(3)}$, $5_{P(4)}$, $6_{P(5)}$ et $7_{P(6)}$): pourquoi les sujets ont-ils relevé des classes qui ne sont pas caractéristiques des scènes à décrire, \ie~des classes qui sont également présentes sur d'autres scènes ? Une hypothèse est que les caractéristiques structurelles de ces classes (intensité sonore, densité d'événements), sont saillantes pour les scènes du groupe décrit;
@@ -1548,7 +1690,7 @@ L'expérience permet de confirmer les résultats de \citep{maffiolo_caracterisat
 
 Les qualités perçues font référence à l'agrément, le calme et la gêne. La première partition $P(1)$ fait ainsi la distinction entre les i- et ni-scènes. Les qualités permettent de caractériser l'ensemble des partitions.
 
-Les labels de sources permettent de caractériser les partitions jusqu'à $P(4)$. A ce niveau, la distinction entre les groupes s'opère autour des sons de cloche, des sons d'origine humaine, des sons naturel , des sons de travaux et de trafic, ainsi que des sons d'alarme et de sirène.
+Les labels de sources permettent de caractériser les partitions jusqu'à $P(4)$. A ce niveau, la distinction entre les groupes s'opère autour des sons de cloche, des sons d'origine humaine, des sons naturels, des sons de travaux et de trafic, ainsi que des sons d'alarme et de sirène.
 
 On constate une correspondance forte entre les labels et les classes pour les groupes relatifs aux i-scènes. Pour ceux relatifs aux ni-scènes, la correspondance ne tient que jusqu'à $P(2)$.
 
@@ -1561,7 +1703,7 @@ En conclusion, le processus de catégorisation des scènes semble s'appuyer esse
 
 \section{Conclusion}
 
-Ces expériences ont permis de mettre en avant plusieurs points importants sur notre manière de percevoir l'agrément dans un milieux urbain:
+Les expériences 1 et 2 ont permis de mettre en avant plusieurs points importants sur notre manière de percevoir l'agrément dans un milieux urbain:
 
 \begin{itemize}
 \item la distinction entre une scène idéale et une scène non-idéale est fonction:
@@ -1580,11 +1722,25 @@ Ces expériences ont permis de mettre en avant plusieurs points importants sur n
 \item la valeur hédonique de la scène est fonction de la présence des marqueurs;
 
 \item la capacité des descripteurs structurels à caractériser l'agrément est fonction de la valeur hédonique de la scène.
-
 \end{itemize}
 
+Ces résultats nous permettent de conjecturer quant à la nature des représentations mentales des concepts « environnement sonore urbain agréable » (EA) et « environnement sonore urbain désagréable » (ED). 
 
-\gl{Validation du protocole et des scènes simulées+ go sur la grounded cognition, et the END.}
+Premièrement, le fait que les informations sémantiques (sources sonores présentes) et structurelles soient différentes pour les i et ni-scènes nous porte à croire que ces deux types d'informations caractérisent les concepts EA et ED. 
+
+Deuxièmement, le fait que la suppression des marqueurs sonores modifie l'agrément perçu nous porte à croire que le concept abstrait lié à l'agrément dépend de l'activation d'un réseau de concepts concrets liés aux sources.
+
+Troisièmement, le fait que les descripteurs structurels corrélés à l'agrément diffèrent en fonction du type de scène (i ou ni) nous porte à croire que les caractéristiques structurelles permettant de distinguer deux instances d'un même concept abstrait lié à l'agrément ne sont pas les mêmes pour EA et EB.
+
+Nous pensons que le fonctionnement prédictif du système auditive (\cf~Section~\ref{sec:ch3_asaNeuro}) permet d'apporter une explication simple et intuitive quant aux phénomènes observés. 
+
+Lorsqu'il doit se prononcer sur la qualité sonore d'un environnement, le système auditif commence par enregistrer une information globale. Il identifie les sources émettrices et intègre de manière holistique la structure de la scène. 
+
+Ces informations permettent d'activer des concepts concrets liés aux sources présentes. L'activation de ces concepts participe alors à la génération d'une image mentale de l'environnement perçu. Cet image, bâtie entre autre à partir des connaissances de l'individu, permet au système 1) de situer globalement la nature hédonique de la scène et 2) d'inférer ses propriétés non perçues. 
+
+Le système peut alors adapter le traitement de l'information sensorielle. Cette adaptation a deux conséquences: 1) elle favorise le traitement de certaines sources, et 2) elle affine l'information structurelle enregistrée. Plus le système est confiant quant à l'image qu'il se fait de l'environnement perçu (EA et EB), et plus il est à même de rechercher une information dédiée, ce afin de spécifier plus avant son jugement hédonique.
+
+L'expérience 3 a permis, elle, de montrer que la ressemblance entre deux scènes sonores dépend avant tout de leurs compositions sémantiques, et de leurs valeurs affectives intrinsèques. Les caractéristiques structurelles y jouent un rôle secondaire. Ce point ayant été déjà observé, nous pensons qu'il tend à montrer la validité écologique des scènes simulées.
 
 \begin{table}[t]
 \centering
@@ -1658,7 +1814,7 @@ cloche$_{1,2,3}^E$       & pas$_{1}^E$             & sonnette vélo$_{1,2,3}^E$ 
 
 \end{tabular}
 \vspace{0.5mm}
-\caption[Répartitions des classes de sons en fonction des partitions établies par la classification ascendante hiérarchique.]{Répartitions des classes de sons d'événements ($^E$) et de textures ($^T$) en fonction des partitions établies par la classification ascendante hiérarchique. Les indices $_{x}$ indique le niveau d'abstraction de la classe considérée.}
+\caption[Répartitions des classes de sons en fonction des partitions établies par la classification ascendante hiérarchique.]{Répartitions des classes de sons d'événements ($^E$) et de textures ($^T$) en fonction des partitions établies par la classification ascendante hiérarchique. Les indices $_{x}$ indique le niveau d'abstraction de la classe considérée (\cf~Figure~\ref{fig:dendrogram}).}
 \label{tab:markerHacClass}
 \end{table}
 %*****************************************

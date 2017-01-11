@@ -373,15 +373,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.86831673"
-     inkscape:cx="413.03285"
-     inkscape:cy="113.58581"
+     inkscape:zoom="2.4559706"
+     inkscape:cx="37.416036"
+     inkscape:cy="267.02049"
      inkscape:current-layer="layer1"
      id="namedview4064"
      showgrid="false"
-     inkscape:window-width="2495"
-     inkscape:window-height="1416"
-     inkscape:window-x="1985"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
      units="mm"
@@ -397,7 +397,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -479,7 +479,17 @@
          x="28.925629"
          y="50.344028"
          id="tspan4390"
-         style="font-size:17.5px">piste 1</tspan></text>
+         style="font-size:17.5px">piste 1 \\</tspan><tspan
+         sodipodi:role="line"
+         x="28.925629"
+         y="72.219025"
+         style="font-size:17.5px"
+         id="tspan4404">(événement)</tspan><tspan
+         sodipodi:role="line"
+         x="28.925629"
+         y="94.094025"
+         style="font-size:17.5px"
+         id="tspan4402" /></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:2.12598419;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL);marker-mid:none;marker-end:url(#StopL)"
        d="m 644.23926,110.20615 106.05074,0"
@@ -677,7 +687,7 @@
          x="27.228939"
          y="78.654892"
          id="tspan4390-75"
-         style="font-size:17.5px">(événement)</tspan></text>
+         style="font-size:17.5px" /></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:24px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
