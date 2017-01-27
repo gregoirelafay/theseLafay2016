@@ -183,32 +183,85 @@ En considérant $s$, une scène composée de $z$ classes de sons, le modèle de 
 
 avec $n$ un indice temporel discret, et $p_i$ la piste correspondant à la classe $c_i$. La classe $c_i$ est composée de $\vert c_i\vert$ samples $c_{i,m}$, $1<m<\vert c_i\vert$. 
 
-Une piste $p_i$ est définie comme une séquence de $n_i$ samples d'événements $e^k_i(n)$ ($k=(1,2,\ldots,n_i)$) choisis aléatoirement parmi les $\vert c_i\vert$ samples de la classe $c_i$. Considérant $\mathcal{U}(x,y)$, une distribution uniforme d'entiers allant de $x$ à $y$ ($x<y$), on a alors:
+Une piste $p_i$ est définie comme une séquence de $k_i$ samples d'événements $e_j^i(n)$ ($j=\lbrace 1,2,\ldots,k_i\rbrace$) choisis aléatoirement parmi les $\vert c_i\vert$ samples de la classe $c_i$. 
 
- \begin{equation}
- e^k_i=c_{i,\mathcal{U}(1,\vert c_i \vert)}
- \end{equation}
+Considérant $\mathcal{U}(x,y)$, une distribution uniforme d'entiers allant de $x$ à $y$ ($x<y$), on définit $E_j^i$ des variables aléatoires indépendantes et identiquement distribuées (iid) obtenues à partir de la distribution $\mathcal{U}(1,\vert c_i \vert)$.
 
- Pour chaque piste $p_i$, un facteur d'amplitude est tiré aléatoirement à partir d'une distribution normale de moyenne $\mu^a_i$ et de variance $\sigma^a_i$. De même, les espacements inter-\emph{onsets} sont tirés d'une distribution normale de moyenne $\mu^t_i$ et de variance $\sigma^t_i$. Les indices temporels de début et de fin de chaque piste sont notés $u_i$ et $v_i$ respectivement. Formellement, une piste $p_i$ se définit comme suit:
+\begin{equation}
+E_j^i \textrm{ iid : } \mathcal{U}(1,\vert c_i \vert) \textrm{ } \forall j 
+\end{equation}
+
+On a alors:
+
+\begin{equation}
+e_j^i=c_{i,E_j^i}
+\end{equation}
+
+Pour chaque piste $p_i$ et chaque événement $e_j^i$, un facteur d'amplitude $A_j^i$ est tiré aléatoirement à partir d'une distribution normale de moyenne $\mu_a^i$ et de variance $\sigma_a^i$. De même, les espacements inter-\emph{onsets} $T_j^i$ sont tirés d'une distribution normale de moyenne $\mu_t^i$ et de variance $\sigma_t^i$. 
+
+On définit $A^i_j$ et $T^i_j$, des variables aléatoires \emph{iid} obtenues respectivement à partir des distributions $\mathcal{N}(\mu_a^{i},\sigma_a^{i})$ et $\mathcal{N}({\mu_t^{i},\sigma_t^{i}})$.
+
+\begin{equation}
+A_j^i \textrm{ iid : } \mathcal{N}(\mu_a^{i},\sigma_a^{i}) \textrm{ } \forall j \textrm{; et } T_j^i \textrm{ iid : } \mathcal{N}({\mu_t^{i},\sigma_t^{i}}) \textrm{ } \forall j
+\end{equation}
+
+Les indices temporels de début et de fin de chaque piste sont notés $u^i$ et $v^i$ respectivement. Formellement, une piste $p_i$ se définit alors comme suit:
  
 \begin{equation}
 \label{eq:ch4_eq1}
-p_{i}(n)= \sum_{j=1}^{n_i} \mathcal{N}(\mu^a_{i},\sigma^a_{i})c_{i, \mathcal{U} (1, |c_i|)}(n-n^j_i)
+p_{i}(n)= \sum_{j=1}^{k_i} A_j^i e_j^i(n-n_j^i)
 \end{equation}
 
 \begin{equation}
 \label{eq:ch4_eq2}
-n_i^j=n_i^{j-1} + \mathcal{N}({\mu^t_{i},\sigma^t_{i}})
+n_j^i=n_{j-1}^i + T_j^i
 \end{equation}
 
-où $n_i^0=u_i$ par convention. Le signal d'une piste est défini de telle sorte que $p_i(n)=0$ si $n>v_i$. Les paramètres du modèle sont, $\mu^a_i$,  $\sigma^a_i$,   $\mu^t_i$,  $\sigma^t_i$, $u_i$ et $v_i$, et doivent être réglés pour chaque piste $p_i$. La figure~\ref{fig:modelSequence} offre une illustration de l'action des paramètres introduits.
+où $n^i_0=u^i$ par convention. Le signal d'une piste est défini de telle sorte que $p_i(n)=0$ si $n>v^i$. Les paramètres du modèle sont, $\mu_a^i$,  $\sigma_a^i$,   $\mu_t^i$,  $\sigma_t^i$, $u^i$ et $v^i$, et doivent être réglés pour chaque piste $p_i$. La figure~\ref{fig:modelSequence} offre une illustration de l'action des paramètres introduits.
 
 Pour les textures, deux distinctions sont à observer avec le modèle défini précédemment: 
 
 \begin{enumerate}
-\item l'amplitude du signal ($\mu^a_i$,  $\sigma^a_i$) n'est tirée qu'une seule fois, et la valeur est appliquée à tous les samples;
+\item l'amplitude du signal ($A^i \textrm{ : } \mathcal{N}(\mu_a^{i},\sigma_a^{i})$) n'est tirée qu'une seule fois, et la valeur est appliquée à tous les samples;
 \item afin d'éviter toute sensation de discontinuité, deux samples de texture sont concaténés en considérant un recouvrement fixé, sur lequel est appliqué un fondu enchaîné (\emph{cross-fade}) à valeur d'énergie constante entre les samples, afin de donner l'illusion de continuité.
 \end{enumerate}
+
+%La formalisation présentée ici vaut uniquement pour les classes d'événements sonores. Nous décrivons par la suite les diverses contraintes qui s'appliquent pour une classe de textures.
+% 
+%En considérant $s$, une scène composée de $z$ classes de sons, le modèle de $s$ se définit comme suit:
+% 
+% \begin{equation}
+% s(n)=\sum_{i=1}^{z}p_i(n)
+% \end{equation}
+%
+%avec $n$ un indice temporel discret, et $p_i$ la piste correspondant à la classe $c_i$. La classe $c_i$ est composée de $\vert c_i\vert$ samples $c_{i,m}$, $1<m<\vert c_i\vert$. 
+%
+%Une piste $p_i$ est définie comme une séquence de $n_i$ samples d'événements $e^k_i(n)$ ($k=(1,2,\ldots,n_i)$) choisis aléatoirement parmi les $\vert c_i\vert$ samples de la classe $c_i$. Considérant $\mathcal{U}(x,y)$, une distribution uniforme d'entiers allant de $x$ à $y$ ($x<y$), on a alors:
+%
+% \begin{equation}
+% e^k_i=c_{i,\mathcal{U}(1,\vert c_i \vert)}
+% \end{equation}
+%
+% Pour chaque piste $p_i$, un facteur d'amplitude est tiré aléatoirement à partir d'une distribution normale de moyenne $\mu^a_i$ et de variance $\sigma^a_i$. De même, les espacements inter-\emph{onsets} sont tirés d'une distribution normale de moyenne $\mu^t_i$ et de variance $\sigma^t_i$. Les indices temporels de début et de fin de chaque piste sont notés $u_i$ et $v_i$ respectivement. Formellement, une piste $p_i$ se définit comme suit:
+% 
+%\begin{equation}
+%\label{eq:ch4_eq1}
+%p_{i}(n)= \sum_{j=1}^{n_i} \mathcal{N}(\mu^a_{i},\sigma^a_{i})c_{i, \mathcal{U} (1, |c_i|)}(n-n^j_i)
+%\end{equation}
+%
+%\begin{equation}
+%\label{eq:ch4_eq2}
+%n_i^j=n_i^{j-1} + \mathcal{N}({\mu^t_{i},\sigma^t_{i}})
+%\end{equation}
+%
+%où $n_i^0=u_i$ par convention. Le signal d'une piste est défini de telle sorte que $p_i(n)=0$ si $n>v_i$. Les paramètres du modèle sont, $\mu^a_i$,  $\sigma^a_i$,   $\mu^t_i$,  $\sigma^t_i$, $u_i$ et $v_i$, et doivent être réglés pour chaque piste $p_i$. La figure~\ref{fig:modelSequence} offre une illustration de l'action des paramètres introduits.
+%
+%Pour les textures, deux distinctions sont à observer avec le modèle défini précédemment: 
+%
+%\begin{enumerate}
+%\item l'amplitude du signal ($\mu^a_i$,  $\sigma^a_i$) n'est tirée qu'une seule fois, et la valeur est appliquée à tous les samples;
+%\item afin d'éviter toute sensation de discontinuité, deux samples de texture sont concaténés en considérant un recouvrement fixé, sur lequel est appliqué un fondu enchaîné (\emph{cross-fade}) à valeur d'énergie constante entre les samples, afin de donner l'illusion de continuité.
+%\end{enumerate}
 
 \section{Un modèle pour la simulation}
 \label{sec:ch4_modAnaSo}
