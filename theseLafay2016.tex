@@ -22,6 +22,8 @@
 %
 % **************************************************************************************************************
 \RequirePackage{fix-cm} % fix some latex issues see: http://texdoc.net/texmf-dist/doc/latex/base/fixltx2e.pdf
+\RequirePackage[hyphens]{url}
+
 \documentclass[ twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,% letterpaper a4paper
                 footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
                 BCOR=5mm,paper=a4,fontsize=11pt,%11pt,a4paper,%
@@ -30,13 +32,11 @@
 
 
 \newcommand{\gl}[1]{\textcolor{blue}{GL : #1}}
-%\newcommand{\gl}[1]{#1}
 \newcommand{\jlc}[1]{\textcolor{red}{jlc correction : #1}}
 \newcommand{\jls}[1]{\textcolor{red}{jls suggestion : #1}}
 \newcommand{\jlv}[1]{\textcolor{red}{jlv vise : #1}}
+\newcommand{\mrR}[1]{\textcolor{black}{#1}}
 
-%\newcommand{\mrR}[1]{\textcolor{green}{mr Remove : #1}}
-\newcommand{\mrR}[1]{#1}
 %********************************************************************
 % Note: Make all your adjustments in here
 %*******************************************************
@@ -65,7 +65,7 @@
 
 % Frontmatter
 %*******************************************************
-\include{FrontBackmatter/DirtyTitlepage}
+%\include{FrontBackmatter/DirtyTitlepage}
 \include{FrontBackmatter/Titlepage}
 \include{FrontBackmatter/Titleback}
 \cleardoublepage\include{FrontBackmatter/Dedication}
@@ -83,24 +83,24 @@
 % use \cleardoublepage here to avoid problems with pdfbookmark
 
 \cleardoublepage
-\ctparttext{preamble text here.}
+%\ctparttext{preamble text here.}
 \part{Préambule \label{part:preamb}}
 \include{Chapters/pream_intro}
 
 \cleardoublepage
-\ctparttext{preamble text here.}
+%\ctparttext{preamble text here.}
 \part{Un modèle morphologique \label{part:model}}
 \include{Chapters/psycho_ea}
 \include{Chapters/psycho_model}
 
 \cleardoublepage
-\ctparttext{preamble text here.}
+%\ctparttext{preamble text here.}
 \part{Utilisation pratique de la simulation \label{part:simu}}
 \include{Chapters/psycho_xp}
 \include{Chapters/ml_simuperf}
 
 \cleardoublepage
-\ctparttext{preamble text here.}
+%\ctparttext{preamble text here.}
 \part{Conclusions et perspectives \label{part:conc}}
 \include{Chapters/end_conc}
 
@@ -128,8 +128,8 @@
 % Other Stuff in the Back
 %*******************************************************
 \cleardoublepage\include{FrontBackmatter/Bibliography}
-\cleardoublepage\include{FrontBackmatter/Declaration}
-\cleardoublepage\include{FrontBackmatter/Colophon}
+%\cleardoublepage\include{FrontBackmatter/Declaration}
+%\cleardoublepage\include{FrontBackmatter/Colophon}
 % ********************************************************************
 
 \end{document}

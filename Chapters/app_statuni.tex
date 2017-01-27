@@ -9,8 +9,8 @@
 %http://www.theanalysisfactor.com/can-likert-scale-data-ever-be-continuous/ \\
 %http://satisfactionscale.refinedigital.com/ \\
 
-\section{Tests paramétriques à deux populations}
-\label{app:Student}
+\section{Tests paramétriques à deux échantillons}
+\label{app:student}
 
 Un test paramétrique à deux populations est un test statistique permettant d'apprécier si les moyennes de deux échantillons présentent une différence significative, la valeur statistique calculée étant supposée émaner d'une distribution particulière, nommée distribution nulle. 
 
@@ -23,7 +23,7 @@ On distingue deux types de tests de Student:
 \item Test de Student à deux échantillons indépendants: les deux échantillons ne sont liés par aucune relation de dépendance. Pour reprendre l'exemple précédent, les deux mesures de poids sont cette fois ci prises sur deux groupes de sujets distincts, les sujets de l'un des groupes ayant reçu un traitement particulier, les sujets de l'autre étant vierges de tout traitement;
 \end{itemize}
 
-\subsection{Test de Student à deux échantillons appariés}
+\subsection*{Test de Student à deux échantillons appariés}
 
 Considérant $x$ et $y$ deux échantillons de $n$ individus, le test de Student à deux échantillons appariés éprouve l'hypothèse nulle que l'échantillon $x-y$ vienne d'une population déterminée par une distribution normale, de moyenne nulle, et de variance inconnue.
 
@@ -35,7 +35,7 @@ t=\dfrac{m}{s\sqrt{\frac{1}{n}}}
 
 avec $m$ et $s$ respectivement la moyenne et l'écart type de l'échantillon $x-y$. La valeur $p$ est obtenue en cherchant la valeur $t$ dans une table des valeurs de la distribution d'une loi de Student à $n-1$ degrés de liberté.
 
-\subsection{Test de Student à deux échantillons indépendants}
+\subsection*{Test de Student à deux échantillons indépendants}
 
 Considérant $x$ et $y$ deux échantillons de $n$ et $m$ individus, le test de Student à deux échantillons indépendants éprouve l'hypothèse nulle que les échantillons $x$ et $y$ viennent de deux populations déterminées par deux distributions normales, ayant la même moyenne et la même variance.
 
@@ -51,7 +51,7 @@ s=\sqrt{\dfrac{(n-1)s^2_x + (m-1)s^2_y}{n+m-2}}
 
 avec $\overline{x}$ et $\overline{y}$ les moyennes des échantillons $x$ et $y$, et $s_x$ et $s_y$ les écarts types des échantillons $x$ et $y$. La valeur $p$ est obtenue en cherchant la valeur $t$ dans une table des valeurs de la distribution d'une loi de Student à $n+m-2$ degrés de liberté.
 
-\section{Tests paramétriques à deux échantillons ou plus}
+\section{Tests paramétriques à plus de deux échantillons}
 \label{app:anova}
 
 L'analyse de variance (ANOVA) est un ensemble de tests statistiques paramétriques permettant d'apprécier si les moyennes de deux échantillons, ou plus, présentent des différences significatives.
@@ -71,7 +71,7 @@ Il est également possible de considérer une ANOVA comportant deux facteurs, un
 
 Nous détaillons dans la suite deux exemples simples de modèles d'ANOVA: un modèle à un facteur inter-sujet, et un modèle à un facteur intra-sujet.
 
-\subsection{Analyse de variance à un facteur inter-sujet}
+\subsection*{Analyse de variance à un facteur inter-sujet}
 
 Considérons les groupes $y_i$ ($i=1,\ldots,k$), relatifs aux $k$ niveaux du facteur analysé. Chaque groupe $y_i$ est composé de $n_i$ mesures. On note $N=\sum\limits_i n_i$ le nombre total de mesures. L'ANOVA à mesures indépendantes teste l'hypothèse nulle que tous les échantillons sont issus de distributions normales ayant la même moyenne. L'hypothèse alternative est qu'au moins une de ces distributions présente une moyenne différente des autres.
 
@@ -102,7 +102,7 @@ F=\dfrac{S_{inter-groupe}/k-1}{S_{intra-groupe}/(N-k)}
 
 La valeur $p$ est obtenue en cherchant la valeur $F$ dans une table des valeurs de la distribution d'une loi de Fisher à $[k-1,N-k]$ degrés de liberté.
 
-\subsection{Analyse de variance à un facteur intra-sujet}
+\subsection*{Analyse de variance à un facteur intra-sujet}
 
 Considérons les groupes $y_i$ ($i=1,\ldots,k$), relatifs aux $k$ niveaux du facteur analysé. Chaque groupe $y_i$ est composé de $n_i$ mesures. On note $N=\sum\limits_i n_i$ le nombre total de mesures. L'ANOVA à mesures répétées teste l'hypothèse nulle que tous les échantillons sont issus de distributions normales ayant la même moyenne. L'hypothèse alternative est qu'au moins une de ces distributions présente une moyenne différente des autres.
 
@@ -141,7 +141,7 @@ F=\dfrac{S_{inter-groupe}/k-1}{S_{erreur}/(n-1)(k-1)}
 
 La valeur $p$ est obtenue en cherchant la valeur $F$ dans une table des valeurs de la distribution d'une loi de Fisher à  $[k-1,(n-1)(k-1)]$ degrés de liberté.
 
-\subsection{Comparaisons multiples}
+\subsection*{Comparaisons multiples}
 
 L'ANOVA permet seulement de savoir si tous les échantillons sont issus de la même loi normale. Dans le cas où l'hypothèse nulle est rejetée, l'ANOVA seule ne permet pas de savoir quels sont les échantillons qui présentent des différences significatives. 
 
@@ -151,7 +151,8 @@ L'analyse \emph{Post hoc} implique d'effectuer une succession de tests statistiq
 
 Plusieurs procédures peuvent être considérées. Nous en détaillons deux, nommément la procédure de Tukey-Kramer, et la procédure de Bonferroni.
 
-\subsubsection{Procédure de Tukey-Kramer}
+\subsubsection*{Procédure de Tukey-Kramer}
+\label{app:tukey}
 
 La procédure de Tukey-Kramer s'appuie sur la statistique d'« écart studentisé », notée $q$, afin de corriger la valeur critique des comparaisons. 
 
@@ -163,7 +164,8 @@ q_{ij}=\dfrac{\overline{y_{i}}-\overline{y_{j}}}{s\sqrt{\frac{1}{2}(\frac{1}{n_{
 
 avec $\overline{y_{i}}$ et $\overline{y_{j}}$ les moyennes des groupes $y_i$ et $y_j$, et $n_{i}$ et $n_{j}$ le nombre d'observations des groupes $y_{i}$ et $y_{j}$. La valeur $q_{ij}$ est supposée émaner d'une distribution $Q$ dite d'« écart studentisé » (studentized range). La table des valeurs de la distribution $Q$ nous permet d'établir la valeur $q_c$ critique permettant de rejeter l'hypothèse nulle avec un seuil critique $\alpha=0.05$, en tenant compte du nombre d'échelons, \ie~du nombre de groupes à comparer, ici $k$.
 
-\subsubsection{Procédure de Bonferonni}
+\subsubsection*{Procédure de Bonferonni}
+\label{app:bonferonni}
 
 La procédure de Bonferonni, aussi appelée correction de Bonferonni, consiste à corriger le seuil critique $\alpha$ en fonction du nombre de comparaisons à effectuer. Formellement, si l'on considère un seuil critique d'origine $\alpha_{o}$, et une comparaison multiple impliquant $d$ comparaisons, chacun des tests statistiques sera mené avec un seuil $\alpha=\frac{\alpha_{o}}{k}$. 
 
