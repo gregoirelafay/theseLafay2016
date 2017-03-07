@@ -20,7 +20,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 You've used 2 entries,
             6047 wiz_defined-function locations,
-            1135 strings with 8491 characters,
+            1135 strings with 8503 characters,
 and the built_in function-call counts, 4433 in all, are:
 = -- 165
 > -- 160

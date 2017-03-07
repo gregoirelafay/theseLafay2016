@@ -4,7 +4,7 @@
 
 Ce chapitre, organisé en trois parties, dresse un bilan des travaux effectués dans le cadre de cette thèse.
 
-La première partie aborde l'expérience sur la perception de l'agrément dans un environnement sonore urbain. La deuxième traite des campagnes d'évaluation des algorithmes de détection d'événements sonores. Nous concluons alors quant aux expériences menées, et présentons plusieurs pistes nouvelles d'investigation. La troisième et dernière propose un résumé des contributions et efforts de valorisation, qu'il s'agisse des publications, des programmes informatiques, ou encore des corpus mis à disposition.
+La première partie aborde l'expérience sur la perception de l'agrément des environnements sonores urbains. La deuxième traite des campagnes d'évaluation des algorithmes de détection d'événements sonores. Nous concluons alors quant aux expériences menées, et présentons plusieurs pistes nouvelles d'investigation. La troisième et dernière propose un résumé des contributions et efforts de valorisation, qu'il s'agisse des publications, des programmes informatiques, ou encore des corpus mis à disposition.
 
 \section{Analyse sensorielle}
 
@@ -14,7 +14,7 @@ En ce qui concerne l'agrément des paysages sonores urbains, les expériences on
 
 Cependant, nous observons que les caractéristiques physiques corrélées à l'agrément diffèrent clairement suivant la nature hédonique des scènes. Dans le cas des scènes idéales, c'est avant tout l'émergence de marqueurs sonores qui détermine la qualité perçue, alors que dans le cas des scènes non-idéales, c'est le niveau sonore global qui influe sur l'agrément.
 
-Ces résultats, déjà suggérés par d'autres études (\cf~Section~\ref{sec:ch3_contribSource}), tendent à confirmer que la perception des qualités d'une scène dépend avant tout des sources sonores qui la composent, les caractéristiques structurelles mobilisées dans le processus perceptif semblant varier d'une source à l'autre, et d'un type d'environnement à l'autre. Ce fait montre qu'il est illusoire d'envisager qu'un descripteur physique holistique puisse rendre compte, de manière pertinente des qualités affectives de tous types d'environnements.
+Ces résultats, déjà suggérés par d'autres études (\cf~Section~\ref{sec:ch3_contribSource}), tendent à confirmer que la perception des qualités d'une scène dépend avant tout des sources sonores qui la composent, les caractéristiques structurelles mobilisées dans le processus perceptif semblant varier d'une source à l'autre, et d'un type d'environnement à l'autre. Ce fait montre qu'il est illusoire d'envisager qu'un descripteur physique holistique puisse rendre compte, de manière pertinente, des qualités affectives de tous types d'environnements.
 
 \subsection{Simulation et cognition}
 
@@ -53,21 +53,21 @@ Bien évidemment, ces approches nécessitent d'accroître la taille des banques 
 
 Les campagnes d'évaluation menées dans le cadre des deux sessions des challenges DCASE ont montré que tous les algorithmes n'avaient pas les mêmes capacités de généralisation.
 
-\gl{Ces observations ont été rendues possibles grâce à l'utilisation de corpus de scènes simulées. La simulation nous permettant de contrôler les caractéristiques structurelles des scènes, il nous est possible de finement apprécier l’effet de leurs variations respectives sur les performances des algorithmes.}
+Ces observations ont été rendues possibles grâce à l'utilisation de corpus de scènes simulées. La simulation nous permettant de contrôler les caractéristiques structurelles des scènes, il nous est possible de finement apprécier l’effet de leurs variations respectives sur les performances des algorithmes.
 
-\gl{Sans simulation, de telles observations seraient difficiles à déduire, l’expérimentateur ne possédant plus, en sortie, qu’un résultat brut, global, dissocié de l'état structurel des scènes sonores considérées.}
+Sans simulation, de telles observations seraient difficiles à déduire, l’expérimentateur ne possédant plus, en sortie, qu’un résultat brut, global, dissocié de l'état structurel des scènes sonores considérées.
 
 L'ensemble de ces résultats valide l'intérêt d'évaluer des algorithmes sur des scènes dont l'expérimentateur maîtrise la nature.
 
 \subsection{Perspectives}
 
-\gl{L'interrogation de systèmes complexes, que sont les processus computationnels utilisés dans le cadre de l’écoute artificielle, par la simulation de données contrôlées, n’est pas un fait marginal, mais bien un exemple de ce que nous pensons être une phase de maturation ubiquitaire en apprentissage artificiel.} 
+L'interrogation, par la simulation de données contrôlées, de systèmes complexes comme les processus computationnels utilisés dans le cadre de l’écoute artificielle, n’est pas un fait marginal, mais bien ce que nous pensons être une phase de maturation ubiquitaire en apprentissage automatique.
 
-\gl{De fait, dans beaucoup de domaines d'application de l'intelligence artificielle, la question est posée de la validité et de la robustesse des systèmes chargés d'effectuer des tâches, ou de prendre des décisions susceptibles d'interférer dans nos vies \citep{o2016weapons}.}
+De fait, dans beaucoup de domaines d'application de l'intelligence artificielle, la question est posée de la validité et de la robustesse des systèmes chargés d'effectuer des tâches, ou de prendre des décisions susceptibles d'interférer dans nos vies \citep{o2016weapons}.
 
-\gl{Contrairement aux systèmes experts \citep{Leondes2002xxiii}, dont l'algorithmie peut être étudiée pour prédire leurs comportements, les systèmes actuels, notamment les réseaux profonds, sont d’une complexité telle que l'approche analytique n'est pas privilégiée par la communauté. L’approche consiste alors à analyser la réponse de ces systèmes complexes à des stimuli bien particuliers dont on contrôle à priori mieux les propriétés. Pour exemple, on citera les travaux novateurs de Ian Goodfellow \citep{goodfellow2014explaining} sur l'amélioration de la robustesse des réseaux neuronaux profonds, en analyse d'image, par l'utilisation d’exemples adversaires, des exemples d'apprentissage peu, mais judicieusement modifiés. On peut également citer les travaux de Nguyen et ses collègues \citep{nguyen2015deep} montrant comment l'utilisation d'images totalement synthétiques, optimisant la réponse du système de détection, permet de forcer le système interrogé.}
+Contrairement aux systèmes experts \citep{Leondes2002xxiii}, dont l'algorithmie peut être étudiée pour prédire les comportements, les systèmes actuels, notamment les réseaux profonds, sont difficilement approchables par la méthode analytique. La communauté privilégie l'étude de la réponse de ces systèmes à des stimuli choisis dont on contrôle \emph{a priori} mieux les propriétés. Pour exemple, on citera, en analyse d'image, les travaux novateurs de Ian Goodfellow \citep{goodfellow2014explaining} sur l'amélioration de la robustesse des réseaux neuronaux profonds par l'utilisation d’exemples adversaires, des exemples d'apprentissage peu, mais judicieusement modifiés. On peut également citer les travaux de Nguyen et consorts \citep{nguyen2015deep} montrant comment l'utilisation d'images totalement synthétiques, générées afin d'optimiser la réponse du système de détection, permet de forcer le système interrogé.
 
-\gl{Toutes ces études se basent sur le postulat que, devant la complexité de l'objet d'étude, il est possible, par la génération de données choisies, d'interroger cette complexité de manière pertinente. Une telle utilisation dans le domaine de l’apprentissage automatique de paradigmes expérimentaux courants en psychologie expérimentale et en neuroscience est exemplifié par l’utilisation dans la communauté du terme « artificial neuroscience ». Ce rapprochement au niveau méthodologique entre analyse sensorielle et apprentissage automatique est en bonne résonance avec les thèses défendues, à notre échelle, dans cette thèse, montrant son adéquation avec des questionnements majeurs de la communauté scientifique.}
+Tous ces travaux partent du postulat que, devant la complexité de l'objet d'étude, il est possible, par la génération de données précises, d'interroger cette complexité de manière pertinente. Une telle utilisation, dans le domaine de l’apprentissage automatique, de paradigmes expérimentaux courants en psychologie expérimentale et en neuroscience, est exemplifiée par l’usage, dans la communauté, du terme «~artificial neuroscience~». Ce rapprochement entre des pratiques méthodologiques propres à l'analyse sensorielle, d'une part, et à l'apprentissage automatique, d'autre part, résonne avec les thèses défendues, à notre échelle, dans ce document, montrant leurs adéquations avec des questionnements majeurs du monde scientifique.
 
 
 \section{Contributions}
@@ -76,7 +76,7 @@ L'ensemble de ces résultats valide l'intérêt d'évaluer des algorithmes sur d
 
 Les recherches réalisées dans le cadre de cette thèse ont donné lieu à plusieurs communications.
 
-Concernant l'évaluation des systèmes de détection d'événements sonores, la campagne de ré-évaluation des algorithmes ayant participé au challenge DCASE 2013 (\cf~Section~\ref{sec:ch5_appDcase2013}) a fait l'objet d'une publication \citep{lafay2016morphological}. Cette publication a introduit également le modèle de scène proposé (\cf~Section~\ref{sec:ch4_model}). Les résultats obtenus lors du challenge DCASE 2016 (\cf~Section~\ref{sec:ch5_appDcase2016}) seront eux aussi prochainement présentés, à l'occasion d'une communication conjointe des organisateurs des différentes tâches du challenge.
+Concernant l'évaluation des systèmes de détection d'événements sonores, la campagne de ré-évaluation des algorithmes ayant participé au challenge DCASE 2013 (\cf~Section~\ref{sec:ch5_appDcase2013}) a fait l'objet d'une publication \citep{lafay2016morphological}. Cette publication a introduit également le modèle de scènes sonores proposé (\cf~Section~\ref{sec:ch4_model}). Les résultats obtenus lors du challenge DCASE 2016 (\cf~Section~\ref{sec:ch5_appDcase2016}) seront eux aussi prochainement présentés, à l'occasion d'une communication conjointe des organisateurs des différentes tâches du challenge.
 
 D'autres recherches ont porté sur le recouvrement automatique des similarités entre scènes sonores. Elles ont montré notamment l'intérêt de considérer la scène comme un objet composite dont les éléments constitutifs (sources sonores) n'impactent pas de la même manière les similarités inter-scènes. Deux de ces études ont été, l'une, publiée \citep{lagrange2015bag}, l'autre, soumise \citep{Lostenlen2016ScatteringObjet}. Comme elles ne portent pas directement sur l'utilisation expérimentale des scènes simulées, elles ne sont pas abordées dans ce document.
 
